@@ -27,10 +27,10 @@ public class StartActivity extends Activity {
         ActionBar actionbar = getActionBar();
         actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         
-        ActionBar.Tab TweakTab = actionbar.newTab().setText("Tool's & Shortcut's..");
-        ActionBar.Tab AddonTab = actionbar.newTab().setText("Tweak's & Hack's..");
-        ActionBar.Tab OnlineTab = actionbar.newTab().setText("Online..");
-        ActionBar.Tab RecoveryTab = actionbar.newTab().setText("Recovery..");
+        ActionBar.Tab TweakTab = actionbar.newTab().setText("| Tool's ..|");
+        ActionBar.Tab AddonTab = actionbar.newTab().setText("| Tweak's ..|");
+        ActionBar.Tab OnlineTab = actionbar.newTab().setText("| Online..|");
+        ActionBar.Tab RecoveryTab = actionbar.newTab().setText("| Recovery..|");
         
         Fragment TweakFragment = new Tab1();
         Fragment AddonFragment = new Tab2();
