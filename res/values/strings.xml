@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, StartActivity!</string>
+    <string name="app_name">McBong Utility</string>
+    <!-- Tab Strings -->
+    
+    <!-- Menu Strings -->
+    <string name="menu_quit">Quit</string>
+    <string name="menu_about">About</string>
+    <string name="buttton_1">Test button 1</string>
+    <string name="test">Test Buttons</string>
+</resources>
