@@ -22,7 +22,7 @@ public class StartActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         appContext = getApplicationContext();
-        setRequestedOrientation(1); 
+	setRequestedOrientation(1); 
 
        //ActionBar
         ActionBar actionbar = getActionBar();
@@ -109,7 +109,5 @@ class MyTabsListener implements ActionBar.TabListener {
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 		ft.remove(fragment);
 	}
-	
-	
 	
 }
