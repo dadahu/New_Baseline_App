@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+//import android.widget.Button;
+//import android.widget.Toast;
 
 
 public class Tab1 extends Fragment {
@@ -16,5 +18,29 @@ public class Tab1 extends Fragment {
     
    
     
-}
-}
+//fucking piece of shit WORK!!!!!
+
+        //LinearLayout theLayout = (LinearLayout)inflater.inflate(R.layout.tab1_layout, container, false);
+ // Register for the Button.OnClick event
+
+ //Button a = (Button)findViewById(R.id.button1);
+
+ //a.setOnClickListener(new View.OnClickListener() {
+
+      
+
+   //  @Override
+
+   //  public void onClick(View v) {
+
+     //    Toast.makeText(Tab1.this.getActivity(), "OnClickMe button clicked", Toast.LENGTH_LONG).show();
+
+          
+
+   //  }
+
+// });
+
+ 
+
+}}

@@ -9,27 +9,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/test" />
+        android:background="@drawable/buttons"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:text="@string/test"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/test" />
+        android:background="@drawable/buttons"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:text="@string/test"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/test" />
+        android:background="@drawable/buttons"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:text="@string/test"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/test" />
+        android:background="@drawable/buttons"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:text="@string/test"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
 </LinearLayout>
