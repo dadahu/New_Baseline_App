@@ -56,13 +56,19 @@ public class StartActivity extends Activity {
         return true;
     }
 
-  //Set Back Key .....
+  //Set Hardware Back Key to do Nothing .....
   	@Override
   	public void onBackPressed() {
 
   	   return;
   	}
-  //.... /Set Back Key*/
+  //.... /Set Hardware Menu Key to do Nothing .....
+  	
+  public void onMenuPressed() {
+
+  	   return;
+  	}
+  
     
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
