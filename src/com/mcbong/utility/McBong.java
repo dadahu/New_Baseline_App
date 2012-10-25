@@ -28,9 +28,9 @@ public class McBong extends Activity {
         ActionBar actionbar = getActionBar();
         actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         
-        ActionBar.Tab TweakTab = actionbar.newTab().setText("| Tool's ..|");
-        ActionBar.Tab AddonTab = actionbar.newTab().setText("| Tweak's ..|");
-        ActionBar.Tab OnlineTab = actionbar.newTab().setText("| Online..|");
+        ActionBar.Tab TweakTab = actionbar.newTab().setText("| Tool's ..|..");
+        ActionBar.Tab AddonTab = actionbar.newTab().setText("| Tweak's ..|..");
+        ActionBar.Tab OnlineTab = actionbar.newTab().setText("| Online..|..");
         ActionBar.Tab RecoveryTab = actionbar.newTab().setText("| Recovery..|");
         
         Fragment TweakFragment = new Tab1();

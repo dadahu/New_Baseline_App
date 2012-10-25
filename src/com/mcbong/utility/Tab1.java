@@ -38,7 +38,7 @@ public class Tab1 extends Fragment {
 	        Button button5_views= (Button)view.findViewById(R.id.button5);
 	        button5_views.setBackgroundResource(R.drawable.button);
 	        
-	 
+	  
 	      // Define OnClick methods for buttons..
 	        
 	        button1.setOnClickListener(new OnClickListener() {
