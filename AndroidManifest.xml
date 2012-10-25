@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mcbong.utility"
     android:versionCode="009"
-    android:versionName="25102012.0.0.9" >
+    android:versionName="0.0.9...25102012" >
 
     <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="16"/>
-    
+    <uses-permission android:name="android.permission.INTERNET" />
     <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:hardwareAccelerated="true">
         <activity android:name=".McBong" android:label="@string/app_name" android:theme="@android:style/Theme.Holo">
             <intent-filter>

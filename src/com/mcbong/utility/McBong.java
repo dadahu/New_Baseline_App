@@ -23,9 +23,8 @@ public class McBong extends Activity {
         setContentView(R.layout.main);
         appContext = getApplicationContext();
         setRequestedOrientation(1); 
-
       
-       //ActionBar
+    // Define ActionBar and Tabs..
         ActionBar actionbar = getActionBar();
         actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         
@@ -48,7 +47,8 @@ public class McBong extends Activity {
         actionbar.addTab(AddonTab);
         actionbar.addTab(OnlineTab);
         actionbar.addTab(RecoveryTab);
-    }
+   }
+    
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,25 +57,25 @@ public class McBong extends Activity {
         return true;
     }
 
-  //Set Hardware Back Key to do Nothing .....
+    
+  // Set Hardware Back & Menu Key to do Nothing if pressed, as to use on-screen touch options instead..
   	@Override
   	public void onBackPressed() {
 
   	   return;
   	}
-  //.... /Set Hardware Menu Key to do Nothing .....
-  	
-  public void onMenuPressed() {
+  	public void onMenuPressed() {
 
   	   return;
   	}
   
     
+  	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()) {
 			//case R.id.menuitem_about:
-			//	Toast.makeText(appContext, "'McBong-Utility' } Internal test build -v1.0", Toast.LENGTH_SHORT).show();
+			//	Toast.makeText(appContext, "'McBong-Utility' } Internal test build", Toast.LENGTH_SHORT).show();
 			//	return true;
 			case R.id.menuitem_quit:
 				//Toast.makeText(appContext, "quit", Toast.LENGTH_SHORT).show();

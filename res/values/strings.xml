@@ -10,6 +10,9 @@
     <string name="menu_about">About</string>
     <string name="buttton_1">Test button 1</string>
     <string name="test">Test Buttons</string>
-    <string name="testbutton1">TEST BUTTON NUMBER 1 HAS BEEN CALLED</string><string name="testbutton2">TEST BUTTON NUMBER 2 HAS BEEN CALLED</string>
-    <string name="testbutton3">TEST BUTTON NUMBER 3 HAS BEEN CALLED</string><string name="testbutton4">TEST BUTTON NUMBER 14HAS BEEN CALLED</string>
+    <string name="testbutton1">TEST BUTTON NUMBER 1 HAS BEEN CALLED</string>
+    <string name="testbutton2">TEST BUTTON NUMBER 2 HAS BEEN CALLED</string>
+    <string name="testbutton3">TEST BUTTON NUMBER 3 HAS BEEN CALLED</string>
+    <string name="testbutton4">TEST BUTTON NUMBER 4 HAS BEEN CALLED</string>
+    <string name="testbutton5">TEST BUTTON NUMBER 5 HAS BEEN CALLED</string>
 </resources>

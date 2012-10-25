@@ -17,17 +17,16 @@ public class Tab1 extends Fragment {
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-		 //return inflater.inflate(R.layout.tab1, container, false);
-		   View view = inflater.inflate(R.layout.tab1, container, false);
+			View view = inflater.inflate(R.layout.tab1, container, false);
 	        
-	        // This is how you access your layout views. Notice how we call the findViewById() method
-	        // on our View directly. There is no method called findViewById() defined on Fragments like
-	        // there is in an Activity.
+		// Define buttons..	
 	        Button button1 = (Button) view.findViewById(R.id.button1);
 	        Button button2 = (Button) view.findViewById(R.id.button2);
 	        Button button3 = (Button) view.findViewById(R.id.button3);
 	        Button button4 = (Button) view.findViewById(R.id.button4);
-	        
+	        Button button5 = (Button) view.findViewById(R.id.button5);
+	       
+	    // Set button image resources..    
 	        Button button1_views= (Button)view.findViewById(R.id.button1);
 	        button1_views.setBackgroundResource(R.drawable.button);
 	        Button button2_views= (Button)view.findViewById(R.id.button2);
@@ -36,9 +35,12 @@ public class Tab1 extends Fragment {
 	        button3_views.setBackgroundResource(R.drawable.button);
 	        Button button4_views= (Button)view.findViewById(R.id.button4);
 	        button4_views.setBackgroundResource(R.drawable.button);
+	        Button button5_views= (Button)view.findViewById(R.id.button5);
+	        button5_views.setBackgroundResource(R.drawable.button);
 	        
-	        // A simple OnClickListener for our button. You can see here how a Fragment can encapsulate
-	        // logic and views to build out re-usable Activity components.
+	 
+	      // Define OnClick methods for buttons..
+	        
 	        button1.setOnClickListener(new OnClickListener() {
 	            @Override
 	            public void onClick(View v) {
@@ -83,45 +85,19 @@ public class Tab1 extends Fragment {
 	            }
 	            
 	        });
+	        button5.setOnClickListener(new OnClickListener() {
+	            @Override
+	            public void onClick(View v) {
+	                Activity activity = getActivity();
+	                
+	                if (activity != null) {
+	                    Toast.makeText(activity, R.string.testbutton5, Toast.LENGTH_LONG).show();
+	                }
+	            }
+	            
+	        });
 	        return view;
 	      
 	    }
-
-		 
-		 
-		 
-		// if (container == null) {
-		        //...
-		   //     return null;
-		  //  }
-
-		    //LinearLayout mLinearLayout = (LinearLayout) inflater.inflate(R.layout.tab1,
-		     //               container, false);
-//
-		    // note that we're looking for a button with id="@+id/button1" in your inflated layout
-		    // Naturally, this can be any View; it doesn't have to be a button
-		  //  Button mButton = (Button) mLinearLayout.findViewById(R.id.button1);
-		   // mButton.setOnClickListener(new OnClickListener() {
-		    //    @Override
-		    //    public void onClick(View v) {
-		            // here you set what you want to do when user clicks your button,
-		            // e.g. launch a new activity
-		        //	Toast.makeText(Tab1.this, R.string.testbutton, Toast.LENGTH_LONG).show();
-		        	
-		      //  }
-		//    });
-
-		    // after you've done all your manipulation, return your layout to be shown
-		  //  return mLinearLayout;
-		
-		
-		 
-
-       
+	
 	}
-       
-    
-
- 
-
-
