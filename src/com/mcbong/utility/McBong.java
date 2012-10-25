@@ -1,5 +1,6 @@
 package com.mcbong.utility;
 
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
@@ -7,14 +8,13 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
-//import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-//import android.widget.Toast;
 
-public class StartActivity extends Activity {
+public class McBong extends Activity {
 	public static Context appContext;
+	
 	
     /** Called when the activity is first created. */
     @Override
@@ -24,6 +24,7 @@ public class StartActivity extends Activity {
         appContext = getApplicationContext();
         setRequestedOrientation(1); 
 
+      
        //ActionBar
         ActionBar actionbar = getActionBar();
         actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -116,6 +117,6 @@ class MyTabsListener implements ActionBar.TabListener {
 		ft.remove(fragment);
 	}
 	
-	
+		
 	
 }
