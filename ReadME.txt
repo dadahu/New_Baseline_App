@@ -7,6 +7,18 @@
 
 ------------------------------------------------------------------------------------------------------
 
+
+Update 25/10/2012 ...  [Part 2] Update 3 ...
+
+		> properly configured fragment tabs, changed version string again to fit,
+		 added scrollview,  added webview for direct website access via tab,
+		 configured mobile version of website and added URL to code, enabled
+		 webview to intercept and handle any URL's called from within the webview
+		 fragment tab,  another minor code clean as well ...
+
+-
+
+
 Update 25/10/2012 ...  [Part 1] Update 3 ...
 		
 		> added proper 'onclick' method for buttons, created new button.png and
