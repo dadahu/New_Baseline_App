@@ -30,6 +30,8 @@ Update 18/10/2012 ...  Update 1 ... [Initial Git commit]
 		> Layout Partially Configured, configured App for Android 4.1+, 
 		  removed hardware 'menu' key activity, added direct quit button, added short 'about' toast message,
 		  configured initial app icon, configured initial manifest.	
-			
- 					
-					\\\.\\\\. BREAK .///.////
+	
+-
+
+				
+					\\\.\\\\. End Of ReadMe File .///.////
