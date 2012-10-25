@@ -7,6 +7,14 @@
 
 ------------------------------------------------------------------------------------------------------
 
+Update 25/10/2012 ...  [Part 1] Update 3 ...
+		
+		> added proper 'onclick' method for buttons, created new button.png and
+		  button_pressed.png, added button.xml for defining 'normal' and 'pressed'
+		  images, renamed activity properly, changed version code to have date of
+		  compile with version number,  small code clean.
+
+-
 
 
 Update 24/10/2012 ...  Update 2 ...
