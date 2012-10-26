@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -29,17 +28,16 @@ public class Tab3 extends Fragment {
     	//** Inflate the layout for this fragment */
     		View view = inflater.inflate(R.layout.tab3, container, false);
     		
-    	final TextView tv = (TextView) view.findViewById(R.id.textView1);
+    	final TextView tv = (TextView) view.findViewById(R.id.textView_webver);
     	
     	//** Define WebView component & Button,also load required WebSite.. */
     		WebView myWebView = (WebView) view.findViewById(R.id.webview);
     		myWebView.setWebViewClient(new WebViewClient());
     		myWebView.loadUrl("http://team-scrat.blogspot.co.uk");
-    		//myWebView.loadUrl("http://mobile.dudamobile.com/site/team-scrat-xda_goodluckwith");
-    		Button buttontext = (Button) view.findViewById(R.id.buttontext);
+    		Button button_check_webver = (Button) view.findViewById(R.id.button_check_webver);
     	
     
-        buttontext.setOnClickListener(new OnClickListener() {
+    		button_check_webver.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 Activity activity = getActivity();
                 

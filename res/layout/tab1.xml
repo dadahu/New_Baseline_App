@@ -10,30 +10,42 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/padder1_tab1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="" />
 
 		  <Button
-                android:id="@+id/button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/buttons_2"
-                android:gravity="center"
-                android:onClick="myClickHandler"
-                android:paddingBottom="10dp"
-                android:text="@string/test"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
+		      android:id="@+id/button_test1"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:layout_gravity="center_horizontal"
+		      android:background="@drawable/button_normal"
+		      android:gravity="center"
+		      android:onClick="myClickHandler"
+		      android:paddingBottom="10dp"
+		      android:text="@string/test"
+		      android:textColor="#FFFFFF"
+		      android:textStyle="bold" />
 
            <Button
-                android:id="@+id/button2"
+               android:id="@+id/button_test2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center_horizontal"
+               android:background="@drawable/button_normal"
+               android:gravity="center"
+               android:paddingBottom="10dp"
+               android:text="@string/test"
+               android:textColor="#FFFFFF"
+               android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button_test3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/buttons_2"
+                android:background="@drawable/button_normal"
                 android:gravity="center"
                 android:paddingBottom="10dp"
                 android:text="@string/test"
@@ -41,23 +53,11 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/button_test4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/buttons_2"
-                android:gravity="center"
-                android:paddingBottom="10dp"
-                android:text="@string/test"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/buttons_2"
+                android:background="@drawable/button_normal"
                 android:gravity="center"
                 android:paddingBottom="10dp"
                 android:text="@string/test"
@@ -65,11 +65,11 @@
                 android:textStyle="bold" />
             
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/button_test5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/buttons_2"
+                android:background="@drawable/button_normal"
                 android:gravity="center"
                 android:paddingBottom="10dp"
                 android:text="@string/test"

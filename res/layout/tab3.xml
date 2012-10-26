@@ -10,18 +10,18 @@
         android:layout_width="fill_parent"
         android:layout_height="300dp"
         android:layout_gravity="bottom" />
-
+
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/padder1_tab3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
+
   <Button
-      android:id="@+id/buttontext"
+      android:id="@+id/button_check_webver"
       android:layout_width="225dp"
       android:layout_height="wrap_content"
       android:layout_gravity="center_horizontal|bottom"
-      android:background="@drawable/buttons_2"
+      android:background="@drawable/button_normal"
       android:gravity="center"
       android:onClick="myClickHandler"
       android:paddingBottom="10dp"
@@ -29,9 +29,9 @@
       android:textColor="#FFFFFF"
       android:textSize="12dp"
       android:textStyle="bold" />
-
+
   <TextView
-      android:id="@+id/textView1"
+      android:id="@+id/textView_webver"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:gravity="center_horizontal"

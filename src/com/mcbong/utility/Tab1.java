@@ -20,73 +20,73 @@ public class Tab1 extends Fragment {
 			View view = inflater.inflate(R.layout.tab1, container, false);
 	        
 		//** Define buttons.. */	
-	        Button button1 = (Button) view.findViewById(R.id.button1);
-	        Button button2 = (Button) view.findViewById(R.id.button2);
-	        Button button3 = (Button) view.findViewById(R.id.button3);
-	        Button button4 = (Button) view.findViewById(R.id.button4);
-	        Button button5 = (Button) view.findViewById(R.id.button5);
+	        Button button_test1 = (Button) view.findViewById(R.id.button_test1);
+	        Button button_test2 = (Button) view.findViewById(R.id.button_test2);
+	        Button button_test3 = (Button) view.findViewById(R.id.button_test3);
+	        Button button_test4 = (Button) view.findViewById(R.id.button_test4);
+	        Button button_test5 = (Button) view.findViewById(R.id.button_test5);
 	       
 	    //** Set button image resources.. */    
-	        Button button1_views= (Button)view.findViewById(R.id.button1);
-	        button1_views.setBackgroundResource(R.drawable.button);
-	        Button button2_views= (Button)view.findViewById(R.id.button2);
-	        button2_views.setBackgroundResource(R.drawable.button);
-	        Button button3_views= (Button)view.findViewById(R.id.button3);
-	        button3_views.setBackgroundResource(R.drawable.button);
-	        Button button4_views= (Button)view.findViewById(R.id.button4);
-	        button4_views.setBackgroundResource(R.drawable.button);
-	        Button button5_views= (Button)view.findViewById(R.id.button5);
-	        button5_views.setBackgroundResource(R.drawable.button);
+	        Button button_test1_views= (Button)view.findViewById(R.id.button_test1);
+	        button_test1_views.setBackgroundResource(R.drawable.button);
+	        Button button_test2_views= (Button)view.findViewById(R.id.button_test2);
+	        button_test2_views.setBackgroundResource(R.drawable.button);
+	        Button button_test3_views= (Button)view.findViewById(R.id.button_test3);
+	        button_test3_views.setBackgroundResource(R.drawable.button);
+	        Button button_test4_views= (Button)view.findViewById(R.id.button_test4);
+	        button_test4_views.setBackgroundResource(R.drawable.button);
+	        Button button_test5_views= (Button)view.findViewById(R.id.button_test5);
+	        button_test5_views.setBackgroundResource(R.drawable.button);
 	        
 	  
 	      //** Define OnClick methods for buttons.. */
 	        
-	        button1.setOnClickListener(new OnClickListener() {
+	        button_test1.setOnClickListener(new OnClickListener() {
 	            public void onClick(View v) {
 	                Activity activity = getActivity();
 	                
 	                if (activity != null) {
-	                    Toast.makeText(activity, R.string.testbutton1, Toast.LENGTH_LONG).show();
+	                    Toast.makeText(activity, R.string.testbutton1, Toast.LENGTH_SHORT).show();
 	                }
 	            }
 	            
 	        });
-	        button2.setOnClickListener(new OnClickListener() {
+	        button_test2.setOnClickListener(new OnClickListener() {
 	            public void onClick(View v) {
 	                Activity activity = getActivity();
 	                
 	                if (activity != null) {
-	                    Toast.makeText(activity, R.string.testbutton2, Toast.LENGTH_LONG).show();
+	                    Toast.makeText(activity, R.string.testbutton2, Toast.LENGTH_SHORT).show();
 	                }
 	            }
 	            
 	        });
-	        button3.setOnClickListener(new OnClickListener() {
+	        button_test3.setOnClickListener(new OnClickListener() {
 	            public void onClick(View v) {
 	                Activity activity = getActivity();
 	                
 	                if (activity != null) {
-	                    Toast.makeText(activity, R.string.testbutton3, Toast.LENGTH_LONG).show();
+	                    Toast.makeText(activity, R.string.testbutton3, Toast.LENGTH_SHORT).show();
 	                }
 	            }
 	            
 	        });
-	        button4.setOnClickListener(new OnClickListener() {
+	        button_test4.setOnClickListener(new OnClickListener() {
 	            public void onClick(View v) {
 	                Activity activity = getActivity();
 	                
 	                if (activity != null) {
-	                    Toast.makeText(activity, R.string.testbutton4, Toast.LENGTH_LONG).show();
+	                    Toast.makeText(activity, R.string.testbutton4, Toast.LENGTH_SHORT).show();
 	                }
 	            }
 	            
 	        });
-	        button5.setOnClickListener(new OnClickListener() {
+	        button_test5.setOnClickListener(new OnClickListener() {
 	            public void onClick(View v) {
 	                Activity activity = getActivity();
 	                
 	                if (activity != null) {
-	                    Toast.makeText(activity, R.string.testbutton5, Toast.LENGTH_LONG).show();
+	                    Toast.makeText(activity, R.string.testbutton5, Toast.LENGTH_SHORT).show();
 	                }
 	            }
 	            
