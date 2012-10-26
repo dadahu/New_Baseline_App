@@ -20,4 +20,8 @@
     <string name="color">#43CD80</string>
     <string name="error_unsupported_p">Error, unsupported protocol</string>
     <string name="error_no_internet">Not Connected To Internet</string>
+    <string name="reboot">Reboot Device</string>
+    <string name="reboot_test">Test Reboot Clicker</string>
+    <string name="busybox_test">busybox is there, test 1 completed!</string>
+    <string name="busybox_test2">busybox is NOT there, test 1 still completed!</string>
 </resources>

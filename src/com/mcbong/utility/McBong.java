@@ -1,6 +1,8 @@
 package com.mcbong.utility;
 
 
+import com.stericson.RootTools.RootTools;
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
@@ -19,6 +21,9 @@ public class McBong extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+    	if (RootTools.isAccessGiven()) {
+    	    // your app has been granted root access
+    	}
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         appContext = getApplicationContext();
