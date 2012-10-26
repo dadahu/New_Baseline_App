@@ -15,6 +15,9 @@ Update 26/10/2012 ...  Update no.4 ...
 		  fixed Landscape tab fragment issue
 		  added new strings, changed 'online' webview url, major code cleanup.
 
+-
+
+
 Update 25/10/2012 ...  [Part 2] Update no.3 ...
 
 		> properly configured fragment tabs, changed version string again to fit,
