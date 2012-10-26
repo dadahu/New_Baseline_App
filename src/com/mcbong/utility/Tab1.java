@@ -16,17 +16,17 @@ public class Tab1 extends Fragment {
 
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        //** Inflate the layout for this fragment */
 			View view = inflater.inflate(R.layout.tab1, container, false);
 	        
-		// Define buttons..	
+		//** Define buttons.. */	
 	        Button button1 = (Button) view.findViewById(R.id.button1);
 	        Button button2 = (Button) view.findViewById(R.id.button2);
 	        Button button3 = (Button) view.findViewById(R.id.button3);
 	        Button button4 = (Button) view.findViewById(R.id.button4);
 	        Button button5 = (Button) view.findViewById(R.id.button5);
 	       
-	    // Set button image resources..    
+	    //** Set button image resources.. */    
 	        Button button1_views= (Button)view.findViewById(R.id.button1);
 	        button1_views.setBackgroundResource(R.drawable.button);
 	        Button button2_views= (Button)view.findViewById(R.id.button2);
@@ -39,10 +39,9 @@ public class Tab1 extends Fragment {
 	        button5_views.setBackgroundResource(R.drawable.button);
 	        
 	  
-	      // Define OnClick methods for buttons..
+	      //** Define OnClick methods for buttons.. */
 	        
 	        button1.setOnClickListener(new OnClickListener() {
-	            @Override
 	            public void onClick(View v) {
 	                Activity activity = getActivity();
 	                
@@ -53,7 +52,6 @@ public class Tab1 extends Fragment {
 	            
 	        });
 	        button2.setOnClickListener(new OnClickListener() {
-	            @Override
 	            public void onClick(View v) {
 	                Activity activity = getActivity();
 	                
@@ -64,7 +62,6 @@ public class Tab1 extends Fragment {
 	            
 	        });
 	        button3.setOnClickListener(new OnClickListener() {
-	            @Override
 	            public void onClick(View v) {
 	                Activity activity = getActivity();
 	                
@@ -75,7 +72,6 @@ public class Tab1 extends Fragment {
 	            
 	        });
 	        button4.setOnClickListener(new OnClickListener() {
-	            @Override
 	            public void onClick(View v) {
 	                Activity activity = getActivity();
 	                
@@ -86,7 +82,6 @@ public class Tab1 extends Fragment {
 	            
 	        });
 	        button5.setOnClickListener(new OnClickListener() {
-	            @Override
 	            public void onClick(View v) {
 	                Activity activity = getActivity();
 	                

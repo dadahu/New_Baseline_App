@@ -22,10 +22,11 @@ public class McBong extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         appContext = getApplicationContext();
-//** New layout seems to have fixed Landscape tab fragment issue, now auto-detect for both Portrait and Landscape views*/        
-//setRequestedOrientation(1); 
+        
+    //** New layout seems to have fixed Landscape tab fragment issue, now auto-detect for both Portrait and Landscape views. */        
+        //setRequestedOrientation(1); 
       
-    // Define ActionBar and Tabs..
+    //** Define ActionBar and Tabs.. */
         ActionBar actionbar = getActionBar();
         actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         
@@ -59,11 +60,11 @@ public class McBong extends Activity {
     }
 
     
-  // Set Hardware Back & Menu Key to do Nothing if pressed, as to use on-screen touch options instead..
+    	//** Set Hardware Back & Menu Key to do Nothing if pressed, as to use on-screen touch options instead.. */
   	@Override
   	public void onBackPressed() {
 
-  	   return;
+		return;
   	}
   	public void onMenuPressed() {
 
@@ -76,10 +77,11 @@ public class McBong extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()) {
 			//case R.id.menuitem_about:
-			//	Toast.makeText(appContext, "'McBong-Utility' } Internal test build", Toast.LENGTH_SHORT).show();
+		
+		//** Insert function for menuitem 'about' here.. */
+		
 			//	return true;
 			case R.id.menuitem_quit:
-				//Toast.makeText(appContext, "quit", Toast.LENGTH_SHORT).show();
 				android.os.Process.killProcess(android.os.Process.myPid());
 				return true;
 		}
@@ -103,17 +105,14 @@ class MyTabsListener implements ActionBar.TabListener {
 		this.fragment = fragment;
 	}
 	
-	@Override
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-		//Toast.makeText(StartActivity.appContext, "This Tab is already in view", Toast.LENGTH_SHORT).show();
+		//** Add Function for reselected tab here.. */ 
 	}
 
-	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 		ft.replace(R.id.fragment_container, fragment);
 	}
 
-	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 		ft.remove(fragment);
 	}

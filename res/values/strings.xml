@@ -18,4 +18,6 @@
     <string name="latest_version">Latest Online Version Is </string>
     <string name="app_version_check">Check Latest Online Version &gt;</string>
     <string name="color">#43CD80</string>
+    <string name="error_unsupported_p">Error, unsupported protocol</string>
+    <string name="error_no_internet">Not Connected To Internet</string>
 </resources>

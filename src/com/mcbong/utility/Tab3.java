@@ -26,18 +26,20 @@ public class Tab3 extends Fragment {
 	 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-    	View view = inflater.inflate(R.layout.tab3, container, false);
+    	//** Inflate the layout for this fragment */
+    		View view = inflater.inflate(R.layout.tab3, container, false);
+    		
     	final TextView tv = (TextView) view.findViewById(R.id.textView1);
-    	// Define WebView component & load required WebSite..
-    	WebView myWebView = (WebView) view.findViewById(R.id.webview);
-    	myWebView.setWebViewClient(new WebViewClient());
-    	myWebView.loadUrl("http://mobile.dudamobile.com/site/team-scrat-xda_goodluckwith");
-    	Button buttontext = (Button) view.findViewById(R.id.buttontext);
+    	
+    	//** Define WebView component & Button,also load required WebSite.. */
+    		WebView myWebView = (WebView) view.findViewById(R.id.webview);
+    		myWebView.setWebViewClient(new WebViewClient());
+    		myWebView.loadUrl("http://team-scrat.blogspot.co.uk");
+    		//myWebView.loadUrl("http://mobile.dudamobile.com/site/team-scrat-xda_goodluckwith");
+    		Button buttontext = (Button) view.findViewById(R.id.buttontext);
     	
     
         buttontext.setOnClickListener(new OnClickListener() {
-            @Override
             public void onClick(View v) {
                 Activity activity = getActivity();
                 
@@ -47,23 +49,24 @@ public class Tab3 extends Fragment {
                 	try {
                 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                     	StrictMode.setThreadPolicy(policy); 
-                        // Create a URL for the desired page
+                    	
+                    	//** Define a URL for the desired page */
                         URL url = new URL("http://dl.dropbox.com/u/18271886/version.txt");
 
-                        // Read all the text returned by the server
+                        //** Read all the text within remote file */
                         BufferedReader in = new BufferedReader(new     InputStreamReader(url.openStream()));
                         String str;
                         StringBuilder sb = new StringBuilder(100);
                         while ((str = in.readLine()) != null) {
                             sb.append(str);
-                            // str is one line of text; readLine() strips the newline character(s)
+                            //** str is one line of text; readLine() strips the newline character(s) */
                         }
                         in.close();
                         tv.setText(sb.toString());
                     } catch (MalformedURLException e) {
-                        tv.setText("mal");
+                        tv.setText(R.string.error_unsupported_p);
                     } catch (IOException e) {
-                        tv.setText("io");
+                        tv.setText(R.string.error_no_internet);
                     }
                 	
     	

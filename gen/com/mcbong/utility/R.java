@@ -45,6 +45,8 @@ public final class R {
         public static final int app_version_check=0x7f04000c;
         public static final int buttton_1=0x7f040004;
         public static final int color=0x7f04000d;
+        public static final int error_no_internet=0x7f04000f;
+        public static final int error_unsupported_p=0x7f04000e;
         public static final int hello=0x7f040000;
         public static final int latest_version=0x7f04000b;
         public static final int menu_about=0x7f040003;
