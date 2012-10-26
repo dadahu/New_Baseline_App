@@ -10,8 +10,8 @@ Update 26/10/2012 ...  Update no.4 ...
 
 		> Added Stericson's 'roottools' library to project for easy one time SU-
 		  init and shell command pass throughs.
-		  added some more test strings, implimented first 'recovery' fragment tab:
-		  option - 'Reboot'.
+		  added some more test strings, implimented first 'recovery' fragment tab
+		  option : 'Reboot'.
 		  fixed Landscape tab fragment issue
 		  added new strings, changed 'online' webview url, major code cleanup.
 
