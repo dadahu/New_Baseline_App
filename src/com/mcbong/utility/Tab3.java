@@ -5,10 +5,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,7 +19,6 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class Tab3 extends Fragment {
 	 
@@ -28,7 +30,7 @@ public class Tab3 extends Fragment {
     	//** Inflate the layout for this fragment */
     		View view = inflater.inflate(R.layout.tab3, container, false);
     		
-    	final TextView tv = (TextView) view.findViewById(R.id.textView_webver);
+    	//final TextView tv = (TextView) view.findViewById(R.id.textView_webver);
     	
     	//** Define WebView component & Button,also load required WebSite.. */
     		WebView myWebView = (WebView) view.findViewById(R.id.webview);
@@ -40,10 +42,12 @@ public class Tab3 extends Fragment {
     		button_check_webver.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 Activity activity = getActivity();
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 
+             	//builder.setTitle(R.string.latest_version);
                 if (activity != null) {
                     //Toast.makeText(activity, R.string.testbutton1, Toast.LENGTH_LONG).show();
-         
+                	
                 	try {
                 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                     	StrictMode.setThreadPolicy(policy); 
@@ -60,14 +64,17 @@ public class Tab3 extends Fragment {
                             //** str is one line of text; readLine() strips the newline character(s) */
                         }
                         in.close();
-                        tv.setText(sb.toString());
+                        builder.setTitle(R.string.latest_version);
+                        builder.setMessage(Html.fromHtml("<center>"+"<b>"+"<u>"+"<font color='green'>"+sb.toString()+"</font>"+"</u>"+"</b>"+"</center>"));
                     } catch (MalformedURLException e) {
-                        tv.setText(R.string.error_unsupported_p);
+                        builder.setMessage(R.string.error_unsupported_p);
                     } catch (IOException e) {
-                        tv.setText(R.string.error_no_internet);
+                        builder.setMessage(R.string.error_no_internet);
                     }
                 	
-    	
+                	// Create the AlertDialog
+ 	                AlertDialog dialog = builder.create();
+ 	                dialog.show();
     
                 }
             }

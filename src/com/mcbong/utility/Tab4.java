@@ -2,15 +2,17 @@ package com.mcbong.utility;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
+
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
@@ -30,26 +32,46 @@ public class Tab4 extends Fragment {
     		button_reboot_views.setBackgroundResource(R.drawable.button);
     		button_reboot_ui_views.setBackgroundResource(R.drawable.button);
     		
-    			        
+    		
     		Button button_reboot = (Button) view.findViewById(R.id.button_reboot);
     		button_reboot.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
                     Activity activity = getActivity();
                     if (activity != null) {
-                     //** Send shell command string to Superuser via 'roottools' .. */
-                    	CommandCapture command = new CommandCapture(0, "su", "-c", "reboot");
-                    	try {
-							RootTools.getShell(true).add(command).waitForFinish();
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						} catch (TimeoutException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+                    	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+ 	                	builder.setTitle(R.string.dialog_title_reboot_device);
+ 	                // Add the buttons
+ 	                builder.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
+ 	                           public void onClick(DialogInterface dialog, int id) {
+ 	                               // User clicked OK button
+ 	                        	  //** Send shell command string to Superuser via 'roottools' .. */
+ 	                          	CommandCapture command = new CommandCapture(0, "su", "-c", "reboot");
+ 	                          	try {
+ 	      							RootTools.getShell(true).add(command).waitForFinish();
+ 	      						} catch (InterruptedException e) {
+ 	      							// TODO Auto-generated catch block
+ 	      							e.printStackTrace();
+ 	      						} catch (IOException e) {
+ 	      							// TODO Auto-generated catch block
+ 	      							e.printStackTrace();
+ 	      						} catch (TimeoutException e) {
+ 	      							// TODO Auto-generated catch block
+ 	      							e.printStackTrace();
+ 	      						}
+ 	                           }
+ 	                       });
+ 	                builder.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
+ 	                           public void onClick(DialogInterface dialog, int id) {
+ 	                               // User cancelled the dialog
+ 	                           }
+ 	                       });
+ 	                // Set other dialog properties
+ 	               // ...
+
+ 	                // Create the AlertDialog
+ 	                AlertDialog dialog = builder.create();
+ 	                dialog.show();
+                   
                     	
                     }
                }
@@ -60,21 +82,42 @@ public class Tab4 extends Fragment {
  	            public void onClick(View v) {
  	                Activity activity = getActivity();
  	                if (activity != null) {
- 	                	Toast.makeText(activity, R.string.test_button_reboot_ui, Toast.LENGTH_SHORT).show();
- 	                //** Send shell command string to Superuser via 'roottools' .. */
- 	                	//CommandCapture command = new CommandCapture(0, "su", "-c", "busybox killall system_server");
-                    	//try {
-						//	RootTools.getShell(true).add(command).waitForFinish();
-						//} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-						//	e.printStackTrace();
-					//	} catch (IOException e) {
-							// TODO Auto-generated catch block
-						//	e.printStackTrace();
-						//} catch (TimeoutException e) {
-						//	// TODO Auto-generated catch block
-						//	e.printStackTrace();
-						//}
+ 	                	//Toast.makeText(activity, R.string.test_button_reboot_ui, Toast.LENGTH_SHORT).show();
+ 	                	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+ 	                	builder.setTitle(R.string.dialog_title_reboot_ui);
+ 	                // Add the buttons
+ 	                builder.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
+ 	                           public void onClick(DialogInterface dialog, int id) {
+ 	                               // User clicked OK button
+ 	                        		//** Send shell command string to Superuser via 'roottools' .. */
+ 	       	                	//CommandCapture command = new CommandCapture(0, "su", "-c", "busybox killall system_server");
+ 	                          	//try {
+ 	      						//	RootTools.getShell(true).add(command).waitForFinish();
+ 	      						//} catch (InterruptedException e) {
+ 	      							// TODO Auto-generated catch block
+ 	      						//	e.printStackTrace();
+ 	      					//	} catch (IOException e) {
+ 	      							// TODO Auto-generated catch block
+ 	      						//	e.printStackTrace();
+ 	      						//} catch (TimeoutException e) {
+ 	      						//	// TODO Auto-generated catch block
+ 	      						//	e.printStackTrace();
+ 	      						//}
+ 	                           }
+ 	                       });
+ 	                builder.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
+ 	                           public void onClick(DialogInterface dialog, int id) {
+ 	                               // User cancelled the dialog
+ 	                           }
+ 	                       });
+ 	                // Set other dialog properties
+ 	               // ...
+
+ 	                // Create the AlertDialog
+ 	                AlertDialog dialog = builder.create();
+ 	                dialog.show();
+ 	                
+ 	                
  	                }
  	            }
  	            

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello">Hello World, StartActivity!</string>
     <string name="app_name">McBong Utility</string>
     <!-- Tab Strings -->
     
@@ -15,10 +13,14 @@
     <string name="testbutton3">TEST BUTTON NUMBER 3 HAS BEEN CALLED</string>
     <string name="testbutton4">TEST BUTTON NUMBER 4 HAS BEEN CALLED</string>
     <string name="testbutton5">TEST BUTTON NUMBER 5 HAS BEEN CALLED</string>
-    <string name="latest_version">Latest Online Version Is </string>
+    <string name="latest_version">...... Latest Online Version is...... >>> </string>
     <string name="app_version_check">Check Latest Online Version &gt;</string>
    	<string name="error_unsupported_p">Error, unsupported protocol</string>
     <string name="error_no_internet">Not Connected To Internet</string>
     <string name="reboot">Reboot.. Device</string>
     <string name="reboot_ui">Reboot.. UI</string>
+   	<string name="dialog_cancel">Cancel</string>
+    <string name="dialog_ok">Yes, Do It Now</string>
+    <string name="dialog_title_reboot_ui"> Perform UI Reboot ?</string>
+    <string name="dialog_title_reboot_device"> Perform Device Reboot ?</string>
 </resources>
