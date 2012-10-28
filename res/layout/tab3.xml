@@ -2,7 +2,8 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="@drawable/background"
+        android:orientation="vertical" >
 
     <WebView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -33,5 +34,4 @@
       android:id="@+id/padder2_tab3"
       android:layout_width="match_parent"
       android:layout_height="15dp" />
-
 </LinearLayout>

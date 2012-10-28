@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -30,9 +29,7 @@ public class Tab3 extends Fragment {
     	//** Inflate the layout for this fragment */
     		View view = inflater.inflate(R.layout.tab3, container, false);
     		
-    	//final TextView tv = (TextView) view.findViewById(R.id.textView_webver);
-    	
-    	//** Define WebView component & Button,also load required WebSite.. */
+    		//** Define WebView component & Buttons,also load required WebSite.. */
     		WebView myWebView = (WebView) view.findViewById(R.id.webview);
     		myWebView.setWebViewClient(new WebViewClient());
     		myWebView.loadUrl("http://team-scrat.blogspot.co.uk");
@@ -43,12 +40,10 @@ public class Tab3 extends Fragment {
             public void onClick(View v) {
                 Activity activity = getActivity();
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                
-             	//builder.setTitle(R.string.latest_version);
-                if (activity != null) {
-                    //Toast.makeText(activity, R.string.testbutton1, Toast.LENGTH_LONG).show();
-                	
-                	try {
+                 if (activity != null) {
+                    try {
+                    	
+                    	//** ..... */
                 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                     	StrictMode.setThreadPolicy(policy); 
                     	

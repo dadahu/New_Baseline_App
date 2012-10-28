@@ -2,7 +2,6 @@ package com.mcbong.utility;
 
 
 import com.stericson.RootTools.RootTools;
-
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
