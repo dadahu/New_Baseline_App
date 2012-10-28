@@ -23,7 +23,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button_reboot_ui"
+        android:id="@+id/button_reboot_recovery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -31,7 +31,7 @@
         android:gravity="center"
         android:onClick="myClickHandler"
         android:paddingBottom="10dp"
-        android:text="@string/reboot_ui"
+        android:text="@string/reboot_recovery"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 

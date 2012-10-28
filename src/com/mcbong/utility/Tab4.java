@@ -26,11 +26,11 @@ public class Tab4 extends Fragment {
     		
     		//** Define buttons.. */
     		Button button_reboot_views= (Button)view.findViewById(R.id.button_reboot);
-    		Button button_reboot_ui_views= (Button)view.findViewById(R.id.button_reboot_ui);
+    		Button button_reboot_recovery_views= (Button)view.findViewById(R.id.button_reboot_recovery);
     		
     		//** Set button image resources.. */  
     		button_reboot_views.setBackgroundResource(R.drawable.button);
-    		button_reboot_ui_views.setBackgroundResource(R.drawable.button);
+    		button_reboot_recovery_views.setBackgroundResource(R.drawable.button);
     		
     		
     		Button button_reboot = (Button) view.findViewById(R.id.button_reboot);
@@ -77,32 +77,31 @@ public class Tab4 extends Fragment {
                }
                 
            });
-    		Button button_reboot_ui = (Button) view.findViewById(R.id.button_reboot_ui);
-    		button_reboot_ui.setOnClickListener(new OnClickListener() {
+    		Button button_reboot_recovery = (Button) view.findViewById(R.id.button_reboot_recovery);
+    		button_reboot_recovery.setOnClickListener(new OnClickListener() {
  	            public void onClick(View v) {
  	                Activity activity = getActivity();
  	                if (activity != null) {
- 	                	//Toast.makeText(activity, R.string.test_button_reboot_ui, Toast.LENGTH_SHORT).show();
  	                	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
- 	                	builder.setTitle(R.string.dialog_title_reboot_ui);
+ 	                	builder.setTitle(R.string.dialog_title_reboot_recovery);
  	                // Add the buttons
  	                builder.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
  	                           public void onClick(DialogInterface dialog, int id) {
  	                               // User clicked OK button
  	                        		//** Send shell command string to Superuser via 'roottools' .. */
- 	       	                	//CommandCapture command = new CommandCapture(0, "su", "-c", "busybox killall system_server");
- 	                          	//try {
- 	      						//	RootTools.getShell(true).add(command).waitForFinish();
- 	      						//} catch (InterruptedException e) {
+ 	       	                	CommandCapture command = new CommandCapture(0, "su", "-c", "reboot recovery");
+ 	                          	try {
+ 	      							RootTools.getShell(true).add(command).waitForFinish();
+ 	      						} catch (InterruptedException e) {
  	      							// TODO Auto-generated catch block
- 	      						//	e.printStackTrace();
- 	      					//	} catch (IOException e) {
+ 	      							e.printStackTrace();
+ 	      						} catch (IOException e) {
  	      							// TODO Auto-generated catch block
- 	      						//	e.printStackTrace();
- 	      						//} catch (TimeoutException e) {
+ 	      							e.printStackTrace();
+ 	      						} catch (TimeoutException e) {
  	      						//	// TODO Auto-generated catch block
- 	      						//	e.printStackTrace();
- 	      						//}
+ 	      							e.printStackTrace();
+ 	      						}
  	                           }
  	                       });
  	                builder.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {

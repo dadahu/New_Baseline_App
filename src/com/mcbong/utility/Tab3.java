@@ -37,7 +37,7 @@ public class Tab3 extends Fragment {
     		myWebView.setWebViewClient(new WebViewClient());
     		myWebView.loadUrl("http://team-scrat.blogspot.co.uk");
     		Button button_check_webver = (Button) view.findViewById(R.id.button_check_webver);
-    	
+    		button_check_webver.setBackgroundResource(R.drawable.button);
     
     		button_check_webver.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -65,7 +65,7 @@ public class Tab3 extends Fragment {
                         }
                         in.close();
                         builder.setTitle(R.string.latest_version);
-                        builder.setMessage(Html.fromHtml("<center>"+"<b>"+"<u>"+"<font color='green'>"+sb.toString()+"</font>"+"</u>"+"</b>"+"</center>"));
+                        builder.setMessage(Html.fromHtml("<p align='center'>"+"<b>"+"<font color='green'>"+sb.toString()+"</font>"+"</b>"+"</center>"+"</p align>"+"<br>"));
                     } catch (MalformedURLException e) {
                         builder.setMessage(R.string.error_unsupported_p);
                     } catch (IOException e) {
