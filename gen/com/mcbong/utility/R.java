@@ -12,32 +12,34 @@ public final class R {
     }
     public static final class drawable {
         public static final int background=0x7f020000;
-        public static final int button=0x7f020001;
-        public static final int button_normal=0x7f020002;
-        public static final int button_pressed=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
+        public static final int background_dialog=0x7f020001;
+        public static final int button=0x7f020002;
+        public static final int button_normal=0x7f020003;
+        public static final int button_pressed=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
     }
     public static final class id {
-        public static final int button_check_webver=0x7f06000d;
-        public static final int button_power_off=0x7f060012;
-        public static final int button_reboot=0x7f060010;
-        public static final int button_reboot_recovery=0x7f060011;
-        public static final int button_test1=0x7f060006;
-        public static final int button_test2=0x7f060007;
-        public static final int button_test3=0x7f060008;
-        public static final int button_test4=0x7f060009;
-        public static final int button_test5=0x7f06000a;
-        public static final int custom_dialog_image=0x7f060000;
-        public static final int custom_dialog_ok=0x7f060002;
-        public static final int custom_dialog_textview=0x7f060001;
-        public static final int fragment_container=0x7f060003;
-        public static final int menuitem_quit=0x7f060013;
-        public static final int padder1_tab1=0x7f060005;
-        public static final int padder1_tab3=0x7f06000c;
-        public static final int padder1_tab4=0x7f06000f;
-        public static final int padder2_tab3=0x7f06000e;
-        public static final int scroller=0x7f060004;
-        public static final int webview=0x7f06000b;
+        public static final int button_check_webver=0x7f06000e;
+        public static final int button_power_off=0x7f060013;
+        public static final int button_reboot=0x7f060011;
+        public static final int button_reboot_recovery=0x7f060012;
+        public static final int button_test1=0x7f060007;
+        public static final int button_test2=0x7f060008;
+        public static final int button_test3=0x7f060009;
+        public static final int button_test4=0x7f06000a;
+        public static final int button_test5=0x7f06000b;
+        public static final int custom_dialog_image=0x7f060001;
+        public static final int custom_dialog_ok=0x7f060003;
+        public static final int custom_dialog_textview=0x7f060002;
+        public static final int fragment_container=0x7f060004;
+        public static final int menuitem_quit=0x7f060014;
+        public static final int padder1_custom_dialog=0x7f060000;
+        public static final int padder1_tab1=0x7f060006;
+        public static final int padder1_tab3=0x7f06000d;
+        public static final int padder1_tab4=0x7f060010;
+        public static final int padder2_tab3=0x7f06000f;
+        public static final int scroller=0x7f060005;
+        public static final int webview=0x7f06000c;
     }
     public static final class layout {
         public static final int custom_dialog=0x7f030000;

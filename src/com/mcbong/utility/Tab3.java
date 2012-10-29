@@ -68,10 +68,11 @@ public class Tab3 extends Fragment {
             			final Dialog dialog = new Dialog(activity);
             			dialog.setContentView(R.layout.custom_dialog);
             			dialog.setTitle(R.string.latest_version);
+            			
              
             			//** set up the custom dialog components */ 
             			TextView text = (TextView) dialog.findViewById(R.id.custom_dialog_textview);
-            			text.setText("..."+sb.toString());
+            			text.setText(""+sb.toString()+"");
             			ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
             			image.setImageResource(R.drawable.ic_launcher);
              

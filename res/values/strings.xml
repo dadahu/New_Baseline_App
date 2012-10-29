@@ -12,7 +12,7 @@
     <string name="testbutton3">TEST BUTTON NUMBER 3 HAS BEEN CALLED</string>
     <string name="testbutton4">TEST BUTTON NUMBER 4 HAS BEEN CALLED</string>
     <string name="testbutton5">TEST BUTTON NUMBER 5 HAS BEEN CALLED</string>
-    <string name="latest_version">The Latest Online Version is......</string>
+    <string name="latest_version">The Latest Online Version is ..</string>
     <string name="app_version_check">Check Latest Online Version &gt;</string>
    	<string name="error_unsupported_p">Error, unsupported protocol</string>
     <string name="error_no_internet">Not Connected To Internet</string>
