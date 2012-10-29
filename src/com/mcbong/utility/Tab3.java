@@ -20,6 +20,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Tab3 extends Fragment {
 	 
@@ -46,7 +47,7 @@ public class Tab3 extends Fragment {
                 //AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                  if (activity != null) {
                     try {
-                    	
+                    	Toast.makeText(activity, R.string.checking, Toast.LENGTH_SHORT).show();
                     	//** ..... */
                 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                     	StrictMode.setThreadPolicy(policy); 
@@ -65,14 +66,14 @@ public class Tab3 extends Fragment {
                         in.close();
                         
                         //** call custom dialog into view */
-            			final Dialog dialog = new Dialog(activity);
+            			final Dialog dialog = new Dialog(activity, R.style.custom_dialog);
             			dialog.setContentView(R.layout.custom_dialog);
             			dialog.setTitle(R.string.latest_version);
             			
              
             			//** set up the custom dialog components */ 
             			TextView text = (TextView) dialog.findViewById(R.id.custom_dialog_textview);
-            			text.setText(""+sb.toString()+"");
+            			text.setText(sb.toString()+"");
             			ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
             			image.setImageResource(R.drawable.ic_launcher);
              
@@ -86,9 +87,9 @@ public class Tab3 extends Fragment {
             			
             			dialog.show();
                      } catch (MalformedURLException e) {
-                    	text.setText(R.string.error_unsupported_p);
+                    	//text.setText(R.string.error_unsupported_p);
                     } catch (IOException e) {
-                    	text.setText(R.string.error_no_internet);
+                    	Toast.makeText(activity, R.string.error_no_internet, Toast.LENGTH_SHORT).show();
                     }
                  }
             }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="custom_dialog" parent="android:Theme.Dialog">
+    <item name="android:textSize">15dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">#000000</item>
+        
+</style>
+    
+</resources>
