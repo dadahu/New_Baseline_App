@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mcbong.utility"
     android:versionCode="005"
-    android:versionName="0.0.5...28102012" >
+    android:versionName="0.0.5...29102012" >
 
     <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="16"/>
     <uses-permission android:name="android.permission.INTERNET" />

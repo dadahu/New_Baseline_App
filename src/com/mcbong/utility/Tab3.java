@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import android.app.Activity;
-import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,13 +18,17 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Tab3 extends Fragment {
 	 
 	 
 	 
 	 
-    @Override
+    protected static final TextView text = null;
+
+	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	//** Inflate the layout for this fragment */
     		View view = inflater.inflate(R.layout.tab3, container, false);
@@ -39,7 +43,7 @@ public class Tab3 extends Fragment {
     		button_check_webver.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 Activity activity = getActivity();
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                //AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                  if (activity != null) {
                     try {
                     	
@@ -59,19 +63,33 @@ public class Tab3 extends Fragment {
                             //** str is one line of text; readLine() strips the newline character(s) */
                         }
                         in.close();
-                        builder.setTitle(R.string.latest_version);
-                        builder.setMessage(Html.fromHtml("<p align='center'>"+"<b>"+"<font color='green'>"+sb.toString()+"</font>"+"</b>"+"</center>"+"</p align>"+"<br>"));
-                    } catch (MalformedURLException e) {
-                        builder.setMessage(R.string.error_unsupported_p);
+                        
+                        //** call custom dialog into view */
+            			final Dialog dialog = new Dialog(activity);
+            			dialog.setContentView(R.layout.custom_dialog);
+            			dialog.setTitle(R.string.latest_version);
+             
+            			//** set up the custom dialog components */ 
+            			TextView text = (TextView) dialog.findViewById(R.id.custom_dialog_textview);
+            			text.setText("..."+sb.toString());
+            			ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
+            			image.setImageResource(R.drawable.ic_launcher);
+             
+            			Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+            			// if button is clicked, close the custom dialog
+            			dialogButton.setOnClickListener(new OnClickListener() {
+            				public void onClick(View v) {
+            					dialog.dismiss();
+            				}
+            			});
+            			
+            			dialog.show();
+                     } catch (MalformedURLException e) {
+                    	text.setText(R.string.error_unsupported_p);
                     } catch (IOException e) {
-                        builder.setMessage(R.string.error_no_internet);
+                    	text.setText(R.string.error_no_internet);
                     }
-                	
-                	// Create the AlertDialog
- 	                AlertDialog dialog = builder.create();
- 	                dialog.show();
-    
-                }
+                 }
             }
             
         });
