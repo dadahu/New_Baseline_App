@@ -16,7 +16,10 @@ public final class R {
         public static final int button=0x7f020002;
         public static final int button_normal=0x7f020003;
         public static final int button_pressed=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
+        public static final int button_small_normal=0x7f020005;
+        public static final int button_small_pressed=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int small_button=0x7f020008;
     }
     public static final class id {
         public static final int button_check_webver=0x7f070013;
@@ -86,6 +89,7 @@ public final class R {
         public static final int testbutton3=0x7f040006;
         public static final int testbutton4=0x7f040007;
         public static final int testbutton5=0x7f040008;
+        public static final int white=0x7f040018;
     }
     public static final class style {
         public static final int custom_dialog=0x7f050000;

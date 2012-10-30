@@ -46,6 +46,7 @@ public class Tab1 extends Fragment {
 	                Activity activity = getActivity();
 	                
 	                if (activity != null) {
+	                	//* add code here for 'Tweak's' section.. */ 
 	                    Toast.makeText(activity, R.string.testbutton1, Toast.LENGTH_SHORT).show();
 	                }
 	            }
@@ -56,6 +57,7 @@ public class Tab1 extends Fragment {
 	                Activity activity = getActivity();
 	                
 	                if (activity != null) {
+	                	//* add code here for 'Tweak's' section.. */ 
 	                    Toast.makeText(activity, R.string.testbutton2, Toast.LENGTH_SHORT).show();
 	                }
 	            }
@@ -66,6 +68,7 @@ public class Tab1 extends Fragment {
 	                Activity activity = getActivity();
 	                
 	                if (activity != null) {
+	                	//* add code here for 'Tweak's' section.. */ 
 	                    Toast.makeText(activity, R.string.testbutton3, Toast.LENGTH_SHORT).show();
 	                }
 	            }
@@ -76,6 +79,7 @@ public class Tab1 extends Fragment {
 	                Activity activity = getActivity();
 	                
 	                if (activity != null) {
+	                	//* add code here for 'Tweak's' section.. */ 
 	                    Toast.makeText(activity, R.string.testbutton4, Toast.LENGTH_SHORT).show();
 	                }
 	            }
@@ -86,6 +90,7 @@ public class Tab1 extends Fragment {
 	                Activity activity = getActivity();
 	                
 	                if (activity != null) {
+	                	//* add code here for 'Tweak's' section.. */ 
 	                    Toast.makeText(activity, R.string.testbutton5, Toast.LENGTH_SHORT).show();
 	                }
 	            }

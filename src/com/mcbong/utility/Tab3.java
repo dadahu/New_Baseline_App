@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.Fragment;
@@ -32,20 +31,20 @@ public class Tab3 extends Fragment {
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	//** Inflate the layout for this fragment */
-    		View view = inflater.inflate(R.layout.tab3, container, false);
+    		final View view = inflater.inflate(R.layout.tab3, container, false);
     		
     		//** Define WebView component & Buttons,also load required WebSite.. */
     		WebView myWebView = (WebView) view.findViewById(R.id.webview);
     		myWebView.setWebViewClient(new WebViewClient());
     		myWebView.loadUrl("http://team-scrat.blogspot.co.uk");
+    		//* set up button image resources */
     		Button button_check_webver = (Button) view.findViewById(R.id.button_check_webver);
     		button_check_webver.setBackgroundResource(R.drawable.button);
     
     		button_check_webver.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 Activity activity = getActivity();
-                //AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                 if (activity != null) {
+                if (activity != null) {
                     try {
                     	Toast.makeText(activity, R.string.checking, Toast.LENGTH_SHORT).show();
                     	//** ..... */
@@ -76,9 +75,10 @@ public class Tab3 extends Fragment {
             			text.setText(sb.toString()+"");
             			ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
             			image.setImageResource(R.drawable.ic_launcher);
-             
+            			//* set up button image resources */
             			Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
-            			// if button is clicked, close the custom dialog
+            			dialogButton.setBackgroundResource(R.drawable.small_button);
+            			//** if OK button is clicked, close the custom dialog */
             			dialogButton.setOnClickListener(new OnClickListener() {
             				public void onClick(View v) {
             					dialog.dismiss();
@@ -87,7 +87,7 @@ public class Tab3 extends Fragment {
             			
             			dialog.show();
                      } catch (MalformedURLException e) {
-                    	//text.setText(R.string.error_unsupported_p);
+                    	 Toast.makeText(activity, R.string.error_unsupported_p, Toast.LENGTH_SHORT).show();
                     } catch (IOException e) {
                     	Toast.makeText(activity, R.string.error_no_internet, Toast.LENGTH_SHORT).show();
                     }

@@ -27,4 +27,5 @@
     <string name="dialog_title_reboot_recovery"> Perform Reboot into Recovery ?</string>
     <string name="dialog_title_reboot_device"> Perform Device Reboot ?</string>
     <string name="dialog_title_power_off_device"> Perform Device Shutdown ?</string>
+    <string name="white">#ffffff</string>
 </resources>

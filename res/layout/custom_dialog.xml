@@ -14,26 +14,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
-        android:layout_marginLeft="7dp" />
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="3dp" />
  
     <TextView
         android:id="@+id/custom_dialog_textview"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="#FFF" 
+        android:layout_marginTop="22dp"
+        android:layout_toRightOf="@+id/custom_dialog_image"
         android:gravity="center"
-        android:layout_marginTop="25dp"
-        android:layout_toRightOf="@+id/custom_dialog_image"/>
+        android:textColor="#FFF"
+        android:textSize="20dip" />
   
      <Button
-        android:id="@+id/custom_dialog_ok"
-        android:layout_width="80px"
-        android:layout_height="wrap_content"
-        android:text="@+string/ok"
-        android:layout_marginTop="3dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="3dp"
-        android:layout_below="@+id/custom_dialog_image"
-        />
+         android:id="@+id/custom_dialog_ok"
+         android:layout_width="53dp"
+         android:layout_height="53dp"
+         android:layout_below="@+id/custom_dialog_image"
+         android:layout_marginBottom="3dp"
+         android:layout_marginLeft="5dp"
+         android:layout_marginTop="3dp"
+         android:text="@+string/ok"
+         android:textColor="#FFFFFF"
+         android:textSize="10dip" />
  
 </RelativeLayout>
