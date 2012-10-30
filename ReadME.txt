@@ -6,6 +6,25 @@
  	[and will be updated and reconfigured hundreds more times before any kind of release]
 
 ------------------------------------------------------------------------------------------------------
+
+Update 30/10/2012 ...  Update no.5 ...
+
+		> added complete functions for all active buttons, added confirmation dialogs for reboot actions, 
+		  minor layout and function changes,		  
+		  added shutdown option, fixed layout again, 
+		  added current version dialog,
+		  added some other graphics,
+		  both 'custom_dialog' and 'custom_alert_dialog' have been created and
+		  relevant resources configured.
+		  all alert dialogs and builders have now all been replaced with dialog,
+		  calling layouts and styles. small buttons been added,
+		  remote and local version strings changed, 
+		  some other minor edits,
+		  general cleanup and format.
+
+
+-
+
 Update 26/10/2012 ...  Update no.4 ...
 
 		> Added Stericson's 'roottools' library to project for easy one time SU-
