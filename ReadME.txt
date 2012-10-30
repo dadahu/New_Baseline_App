@@ -10,14 +10,18 @@
 Update 30/10/2012 ...  Update no.5 ...
 
 		> added complete functions for all active buttons, added confirmation dialogs for reboot actions, 
-		  minor layout and function changes,		  
-		  added shutdown option, fixed layout again, 
+		  minor layout and function changes,	
+		  added new custom_dialog and new custom_alert_dialog layouts,
+		  created second buttons xml to define button_pressed etc,
+		  added shutdown option, reboot device option and reboot to recovery option,
+		  fixed layout again, 
 		  added current version dialog,
 		  added some other graphics,
 		  both 'custom_dialog' and 'custom_alert_dialog' have been created and
 		  relevant resources configured.
-		  all alert dialogs and builders have now all been replaced with dialog,
-		  calling layouts and styles. small buttons been added,
+		  all alert dialogs and builders have now all been replaced with dialog-
+		  calling new layouts and styles. 
+		  small buttons been added,
 		  remote and local version strings changed, 
 		  some other minor edits,
 		  general cleanup and format.
