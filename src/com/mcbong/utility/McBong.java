@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,6 +21,8 @@ public class McBong extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+    	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
     	if (RootTools.isAccessGiven()) {
     	    // your app has been granted root access
     	}

@@ -18,8 +18,9 @@ public final class R {
         public static final int button_pressed=0x7f020004;
         public static final int button_small_normal=0x7f020005;
         public static final int button_small_pressed=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int small_button=0x7f020008;
+        public static final int button_version=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int small_button=0x7f020009;
     }
     public static final class id {
         public static final int button_check_webver=0x7f070013;
@@ -39,7 +40,8 @@ public final class R {
         public static final int custom_dialog_ok=0x7f070008;
         public static final int custom_dialog_textview=0x7f070007;
         public static final int fragment_container=0x7f070009;
-        public static final int menuitem_quit=0x7f070019;
+        public static final int menu_item_version=0x7f070019;
+        public static final int menuitem_quit=0x7f07001a;
         public static final int padder1_custom_alert_dialog=0x7f070000;
         public static final int padder1_custom_dialog=0x7f070005;
         public static final int padder1_tab1=0x7f07000b;
@@ -74,11 +76,11 @@ public final class R {
         public static final int error_no_internet=0x7f04000d;
         public static final int error_unsupported_p=0x7f04000c;
         public static final int latest_version=0x7f040009;
-        public static final int menu_about=0x7f040002;
         /**  Tab Strings 
  Menu Strings 
          */
         public static final int menu_quit=0x7f040001;
+        public static final int menu_version=0x7f040002;
         public static final int ok=0x7f040014;
         public static final int power_off=0x7f040010;
         public static final int reboot=0x7f04000e;

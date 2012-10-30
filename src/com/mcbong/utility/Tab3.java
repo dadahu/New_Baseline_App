@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.Fragment;
@@ -31,6 +32,7 @@ public class Tab3 extends Fragment {
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	//** Inflate the layout for this fragment */
+		
     		final View view = inflater.inflate(R.layout.tab3, container, false);
     		
     		//** Define WebView component & Buttons,also load required WebSite.. */
