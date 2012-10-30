@@ -65,34 +65,35 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f040000;
-        public static final int app_version_check=0x7f04000b;
-        public static final int checking=0x7f04000c;
-        public static final int confirm=0x7f040014;
-        public static final int dialog_cancel=0x7f040012;
-        public static final int dialog_ok=0x7f040013;
-        public static final int dialog_title_power_off_device=0x7f040018;
-        public static final int dialog_title_reboot_device=0x7f040017;
-        public static final int dialog_title_reboot_recovery=0x7f040016;
-        public static final int error_no_internet=0x7f04000e;
-        public static final int error_unsupported_p=0x7f04000d;
-        public static final int installed_version=0x7f040003;
-        public static final int latest_version=0x7f04000a;
+        public static final int app_version_check=0x7f04000c;
+        public static final int checking=0x7f04000d;
+        public static final int confirm=0x7f040015;
+        public static final int dialog_cancel=0x7f040013;
+        public static final int dialog_ok=0x7f040014;
+        public static final int dialog_title_power_off_device=0x7f040019;
+        public static final int dialog_title_reboot_device=0x7f040018;
+        public static final int dialog_title_reboot_recovery=0x7f040017;
+        public static final int error_no_internet=0x7f04000f;
+        public static final int error_unsupported_p=0x7f04000e;
+        public static final int installed_version=0x7f040004;
+        public static final int latest_version=0x7f04000b;
         /**  Tab Strings 
  Menu Strings 
          */
         public static final int menu_quit=0x7f040001;
         public static final int menu_version=0x7f040002;
-        public static final int ok=0x7f040015;
-        public static final int power_off=0x7f040011;
-        public static final int reboot=0x7f04000f;
-        public static final int reboot_recovery=0x7f040010;
-        public static final int test=0x7f040004;
-        public static final int testbutton1=0x7f040005;
-        public static final int testbutton2=0x7f040006;
-        public static final int testbutton3=0x7f040007;
-        public static final int testbutton4=0x7f040008;
-        public static final int testbutton5=0x7f040009;
-        public static final int white=0x7f040019;
+        public static final int ok=0x7f040016;
+        public static final int power_off=0x7f040012;
+        public static final int reboot=0x7f040010;
+        public static final int reboot_recovery=0x7f040011;
+        public static final int test=0x7f040005;
+        public static final int testbutton1=0x7f040006;
+        public static final int testbutton2=0x7f040007;
+        public static final int testbutton3=0x7f040008;
+        public static final int testbutton4=0x7f040009;
+        public static final int testbutton5=0x7f04000a;
+        public static final int version=0x7f040003;
+        public static final int white=0x7f04001a;
     }
     public static final class style {
         public static final int custom_dialog=0x7f050000;

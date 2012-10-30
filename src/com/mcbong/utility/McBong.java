@@ -91,14 +91,14 @@ public class McBong extends Activity {
 			case R.id.menuitem_version:
 		//** Insert function for menuitem 'about' here.. */
 				 //** call custom dialog into view */
+				
     			final Dialog dialog = new Dialog(this, R.style.custom_dialog);
     			dialog.setContentView(R.layout.custom_dialog);
     			dialog.setTitle(R.string.installed_version);
     			
-     
     			//** set up the custom dialog components */ 
     			TextView text = (TextView) dialog.findViewById(R.id.custom_dialog_textview);
-    			text.setText("");
+    			text.setText(R.string.version);
     			ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
     			image.setImageResource(R.drawable.ic_launcher);
     			//* set up button image resources */

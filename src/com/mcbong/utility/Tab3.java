@@ -68,8 +68,8 @@ public class Tab3 extends Fragment {
                     	
                     	//** Define a URL for the desired page */
                         URL url = new URL("http://dl.dropbox.com/u/18271886/version.txt");
-
-                        //** Read all the text within remote file */
+                    	
+                    	//** Read all the text within remote file */
                         BufferedReader in = new BufferedReader(new     InputStreamReader(url.openStream()));
                         String str;
                         StringBuilder sb = new StringBuilder(100);
@@ -84,7 +84,6 @@ public class Tab3 extends Fragment {
             			dialog.setContentView(R.layout.custom_dialog);
             			dialog.setTitle(R.string.latest_version);
             			
-             
             			//** set up the custom dialog components */ 
             			TextView text = (TextView) dialog.findViewById(R.id.custom_dialog_textview);
             			text.setText(sb.toString()+"");
