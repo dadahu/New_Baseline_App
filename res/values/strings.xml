@@ -6,6 +6,7 @@
     <!-- Menu Strings -->
     <string name="menu_quit">Quit</string>
     <string name="menu_version">App Version</string>
+    <string name="installed_version">Current Installed Version ..</string>
    	<string name="test">Test Buttons</string>
    	<string name="testbutton1">TEST BUTTON NUMBER 1 HAS BEEN CALLED</string>
     <string name="testbutton2">TEST BUTTON NUMBER 2 HAS BEEN CALLED</string>

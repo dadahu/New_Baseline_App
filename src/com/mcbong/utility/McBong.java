@@ -1,10 +1,10 @@
 package com.mcbong.utility;
 
 
-import com.stericson.RootTools.RootTools;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
@@ -13,6 +13,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.stericson.RootTools.RootTools;
 
 public class McBong extends Activity {
 	public static Context appContext;
@@ -78,16 +85,34 @@ public class McBong extends Activity {
   	   return;
   	}
   
-    
-  	
-	@Override
+    @Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()) {
-			//case R.id.menuitem_about:
-		
+			case R.id.menuitem_version:
 		//** Insert function for menuitem 'about' here.. */
-		
-			//	return true;
+				 //** call custom dialog into view */
+    			final Dialog dialog = new Dialog(this, R.style.custom_dialog);
+    			dialog.setContentView(R.layout.custom_dialog);
+    			dialog.setTitle(R.string.installed_version);
+    			
+     
+    			//** set up the custom dialog components */ 
+    			TextView text = (TextView) dialog.findViewById(R.id.custom_dialog_textview);
+    			text.setText("");
+    			ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
+    			image.setImageResource(R.drawable.ic_launcher);
+    			//* set up button image resources */
+    			Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+    			dialogButton.setBackgroundResource(R.drawable.small_button);
+    			//** if OK button is clicked, close the custom dialog */
+    			dialogButton.setOnClickListener(new OnClickListener() {
+    				public void onClick(View v) {
+    					dialog.dismiss();
+    				}
+    			});
+    			
+    			dialog.show();
+				return true;
 			case R.id.menuitem_quit:
 				android.os.Process.killProcess(android.os.Process.myPid());
 				return true;
