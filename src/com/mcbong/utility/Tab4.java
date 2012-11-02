@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
 
@@ -27,11 +29,15 @@ public class Tab4 extends Fragment {
     		Button button_reboot_views= (Button)view.findViewById(R.id.button_reboot);
     		Button button_reboot_recovery_views= (Button)view.findViewById(R.id.button_reboot_recovery);
     		Button button_power_off_views= (Button)view.findViewById(R.id.button_power_off);
+    		Button button_wireless_adb_enable= (Button)view.findViewById(R.id.button_wireless_adb_enable);
+    		Button button_wireless_adb_disable= (Button)view.findViewById(R.id.button_wireless_adb_disable);
     		
     		//** Set button image resources.. */  
     		button_reboot_views.setBackgroundResource(R.drawable.button);
     		button_reboot_recovery_views.setBackgroundResource(R.drawable.button);
     		button_power_off_views.setBackgroundResource(R.drawable.button);
+    		button_wireless_adb_enable.setBackgroundResource(R.drawable.button);
+    		button_wireless_adb_disable.setBackgroundResource(R.drawable.button);
     		
     		Button button_reboot = (Button) view.findViewById(R.id.button_reboot);
     		button_reboot.setOnClickListener(new OnClickListener() {
@@ -55,7 +61,7 @@ public class Tab4 extends Fragment {
             			//** if button is clicked, execute the shell commands through root-tools */
             			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
             				public void onClick(View v) {
-            					CommandCapture command = new CommandCapture(0, "su", "-c", "reboot");
+            					CommandCapture command = new CommandCapture(0, "reboot");
  	                          	try {
  	      							RootTools.getShell(true).add(command).waitForFinish();
  	      						} catch (InterruptedException e) {
@@ -107,7 +113,7 @@ public class Tab4 extends Fragment {
             			//** if button is clicked, execute the shell commands through root-tools */
             			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
             				public void onClick(View v) {
-            					CommandCapture command = new CommandCapture(0, "su", "-c", "reboot recovery");
+            					CommandCapture command = new CommandCapture(0, "reboot recovery");
  	                          	try {
  	      							RootTools.getShell(true).add(command).waitForFinish();
  	      						} catch (InterruptedException e) {
@@ -159,7 +165,7 @@ public class Tab4 extends Fragment {
             			//** if button is clicked, execute the shell commands through root-tools */
             			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
             				public void onClick(View v) {
-            					CommandCapture command = new CommandCapture(0, "su", "-c", "reboot -p");
+            					CommandCapture command = new CommandCapture(0, "reboot -p");
  	                          	try {
  	      							RootTools.getShell(true).add(command).waitForFinish();
  	      						} catch (InterruptedException e) {
@@ -188,6 +194,65 @@ public class Tab4 extends Fragment {
                }
                 
            });
+    		button_wireless_adb_enable.setOnClickListener(new OnClickListener() {
+ 	            public void onClick(View v) {
+ 	                Activity activity = getActivity();
+ 	                
+ 	                if (activity != null) {
+ 	                	
+ 	                	Toast.makeText(activity, R.string.enabling, Toast.LENGTH_SHORT).show();
+ 	                	
+ 	                	CommandCapture command = new CommandCapture(0, "setprop service.adb.tcp.port", "5555", "stop adbd", "start adbd");
+                       	try {
+   							RootTools.getShell(true).add(command).waitForFinish();
+   						} catch (InterruptedException e) {
+   							// TODO Auto-generated catch block
+   							e.printStackTrace();
+   						} catch (IOException e) {
+   							// TODO Auto-generated catch block
+   							e.printStackTrace();
+   						} catch (TimeoutException e) {
+   							// TODO Auto-generated catch block
+   							e.printStackTrace();
+   						}
+    				
+ 	                	 
+ 	                }
+ 	            }
+ 	            
+ 	        });
+    		button_wireless_adb_disable.setOnClickListener(new OnClickListener() {
+ 	            public void onClick(View v) {
+ 	                Activity activity = getActivity();
+ 	                
+ 	                if (activity != null) {
+ 	                	
+ 	                	Toast.makeText(activity, R.string.disabling, Toast.LENGTH_SHORT).show();
+ 	                	
+ 	                	CommandCapture command = new CommandCapture(0, "setprop service.adb.tcp.port", "-1", "stop adbd", "start adbd");
+                       	try {
+   							RootTools.getShell(true).add(command).waitForFinish();
+   						} catch (InterruptedException e) {
+   							// TODO Auto-generated catch block
+   							e.printStackTrace();
+   						} catch (IOException e) {
+   							// TODO Auto-generated catch block
+   							e.printStackTrace();
+   						} catch (TimeoutException e) {
+   							// TODO Auto-generated catch block
+   							e.printStackTrace();
+   						}
+    				
+ 	                	 
+ 	                }
+ 	            }
+ 	            
+ 	        });
+    		
+    		
+    		
+    		
+    		
     		
     		return view;
     	}
