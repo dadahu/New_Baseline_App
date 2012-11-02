@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
 
@@ -202,7 +201,7 @@ public class Tab4 extends Fragment {
  	                	
  	                	Toast.makeText(activity, R.string.enabling, Toast.LENGTH_SHORT).show();
  	                	
- 	                	CommandCapture command = new CommandCapture(0, "setprop service.adb.tcp.port", "5555", "stop adbd", "start adbd");
+ 	                	CommandCapture command = new CommandCapture(0, "setprop service.adb.tcp.port 5555", "stop adbd", "start adbd");
                        	try {
    							RootTools.getShell(true).add(command).waitForFinish();
    						} catch (InterruptedException e) {
@@ -229,7 +228,7 @@ public class Tab4 extends Fragment {
  	                	
  	                	Toast.makeText(activity, R.string.disabling, Toast.LENGTH_SHORT).show();
  	                	
- 	                	CommandCapture command = new CommandCapture(0, "setprop service.adb.tcp.port", "-1", "stop adbd", "start adbd");
+ 	                	CommandCapture command = new CommandCapture(0, "setprop service.adb.tcp.port -1", "stop adbd", "start adbd");
                        	try {
    							RootTools.getShell(true).add(command).waitForFinish();
    						} catch (InterruptedException e) {
