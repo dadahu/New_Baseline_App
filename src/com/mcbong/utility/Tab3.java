@@ -61,7 +61,7 @@ public class Tab3 extends Fragment {
                 Activity activity = getActivity();
                 if (activity != null) {
                     try {
-                    	Toast.makeText(activity, R.string.checking, Toast.LENGTH_SHORT).show();
+                    	//Toast.makeText(activity, R.string.checking, Toast.LENGTH_SHORT).show();
                     	//** ..... */
                 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                     	StrictMode.setThreadPolicy(policy); 
@@ -87,11 +87,25 @@ public class Tab3 extends Fragment {
             			//** set up the custom dialog components */ 
             			TextView text = (TextView) dialog.findViewById(R.id.custom_dialog_textview);
             			text.setText(sb.toString()+"");
+            			
+            			String remote_version_string = sb.toString().toString();
+            			String current_version_string = getString(R.string.version).toString();
+            			
+            			if (current_version_string.equals(remote_version_string))
+            			{
+            				Toast.makeText(activity, R.string.version_uptodate, Toast.LENGTH_SHORT).show();
+            			}	
+            			else
+            			{
+            				Toast.makeText(activity, R.string.version_notuptodate, Toast.LENGTH_SHORT).show();
+            			}
+            			
             			ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
             			image.setImageResource(R.drawable.ic_launcher);
             			//* set up button image resources */
             			Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
             			dialogButton.setBackgroundResource(R.drawable.small_button);
+            			
             			//** if OK button is clicked, close the custom dialog */
             			dialogButton.setOnClickListener(new OnClickListener() {
             				public void onClick(View v) {

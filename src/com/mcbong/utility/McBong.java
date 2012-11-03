@@ -18,7 +18,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.stericson.RootTools.RootTools;
 
 public class McBong extends Activity {
@@ -31,7 +30,7 @@ public class McBong extends Activity {
     	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
     	if (RootTools.isAccessGiven()) {
-    	    // your app has been granted root access
+    //** Grant app full root access via roottools interactive shell */
     	}
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);

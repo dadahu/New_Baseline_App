@@ -16,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.stericson.RootTools.Command;
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
 
@@ -28,27 +27,28 @@ public class Tab4 extends Fragment {
     		View view = inflater.inflate(R.layout.tab4, container, false);
     		
     		//** Retrieve wireless adb setting on tab4 inflate, and set icon according to whether enabled or disabled */
-    		Command command = new Command(0, "getprop service.adb.tcp.port")
-    		{
-    		        @Override
-    		        public void output(int id, String line)
-    		        {
-    		        	
-    		           //** Do something with the output here.. */
-    		        }
-    		};
-    		try {
-				RootTools.getShell(true).add(command).waitForFinish();
-			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (TimeoutException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+    		
+    		//Command command = new Command(0, "getprop service.adb.tcp.port")
+    		//{
+    		//        @Override
+    		//      public void output(int id, String line)
+    		//        {
+    		//       	
+    		//           //** Do something with the output here.. */
+    		//        }
+    		// };
+    		//try {
+			//	RootTools.getShell(true).add(command).waitForFinish();
+			//} catch (InterruptedException e1) {
+			//	// TODO Auto-generated catch block
+			//	e1.printStackTrace();
+			//} catch (IOException e1) {
+			//	// TODO Auto-generated catch block
+			//	e1.printStackTrace();
+			//} catch (TimeoutException e1) {
+			//	// TODO Auto-generated catch block
+			//	e1.printStackTrace();
+			//}
     		
     		
     		//** Define buttons.. */
@@ -57,6 +57,7 @@ public class Tab4 extends Fragment {
     		Button button_power_off_views= (Button)view.findViewById(R.id.button_power_off);
     		Button button_wireless_adb_enable= (Button)view.findViewById(R.id.button_wireless_adb_enable);
     		Button button_wireless_adb_disable= (Button)view.findViewById(R.id.button_wireless_adb_disable);
+    		Button button_download= (Button)view.findViewById(R.id.button_download);
     		
     		//** Set button image resources.. */  
     		button_reboot_views.setBackgroundResource(R.drawable.button);
@@ -64,6 +65,7 @@ public class Tab4 extends Fragment {
     		button_power_off_views.setBackgroundResource(R.drawable.button);
     		button_wireless_adb_enable.setBackgroundResource(R.drawable.button);
     		button_wireless_adb_disable.setBackgroundResource(R.drawable.button);
+    		button_download.setBackgroundResource(R.drawable.button);
     		
     		Button button_reboot = (Button) view.findViewById(R.id.button_reboot);
     		button_reboot.setOnClickListener(new OnClickListener() {
@@ -169,6 +171,7 @@ public class Tab4 extends Fragment {
                 
            });
     		
+    		
     		Button dialog_title_power_off_device = (Button) view.findViewById(R.id.button_power_off);
     		dialog_title_power_off_device.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
@@ -220,6 +223,37 @@ public class Tab4 extends Fragment {
                }
                 
            });
+    		
+    		button_download.setOnClickListener(new OnClickListener() {
+	            public void onClick(View v) {
+	                Activity activity = getActivity();
+	                
+	                if (activity != null) {
+	                	
+	               	//** Download latest version from server ... */
+	                	
+	                	//String url = "http://dl.dropbox.com/u/18271886/McBong-Utility.apk";
+	                	//DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+	                	//request.setDescription("McBong Utility Updater");
+	                	//request.setTitle("McBong-Utility Download Complete");
+	                	// in order for this if to run, you must use the android 3.2 to compile your app
+	                	//if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+	                	//    request.allowScanningByMediaScanner();
+	                	//    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+	                	//}
+	                	//request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "McBong-Utility.apk");
+
+	                	// get download service and enqueue file
+	                	//DownloadManager manager = (DownloadManager) activity.getSystemService(Context.DOWNLOAD_SERVICE);
+	                	//manager.enqueue(request);
+	                	//Toast.makeText(activity, R.string.downloading, Toast.LENGTH_SHORT).show();
+	                	//Toast.makeText(activity, R.string.downloading_instructions, Toast.LENGTH_LONG).show();
+	                  
+	                }
+	            }
+	            
+	        });
+    		
     		button_wireless_adb_enable.setOnClickListener(new OnClickListener() {
  	            public void onClick(View v) {
  	                Activity activity = getActivity();
@@ -274,11 +308,6 @@ public class Tab4 extends Fragment {
  	            }
  	            
  	        });
-    		
-    		
-    		
-    		
-    		
     		
     		return view;
     	}
