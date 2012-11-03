@@ -7,9 +7,20 @@
 
 ------------------------------------------------------------------------------------------------------
 
+
+Update 3/11/2012 ... Update no.6 ...
+		> added update downloader, added proper online version checker,added 
+		  compare both remote and local strings function and return if update available,
+		  added OnCreate getprop wireless adb value, cleaned up layouts, added …
+		  more icons. added tablelayout for tab4. Changed versioning value.
+		  added simple wireless adb on/off option, updated version.txt to reflect
+		  build date,
+		  
+-
+
 Update 30/10/2012 ...  Update no.5 ...
 
-		> added complete functions for all active buttons, added confirmation dialogs for reboot actions, 
+		> added complete functions for all active buttons, added confirmation dialogs for 			  reboot actions, 
 		  minor layout and function changes,	
 		  added new custom_dialog and new custom_alert_dialog layouts,
 		  created second buttons xml to define button_pressed etc,
