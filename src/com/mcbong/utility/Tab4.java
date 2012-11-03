@@ -2,6 +2,7 @@ package com.mcbong.utility;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.Fragment;
@@ -14,6 +15,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.stericson.RootTools.Command;
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
 
@@ -23,6 +26,30 @@ public class Tab4 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	 //** Inflate the layout for this fragment */
     		View view = inflater.inflate(R.layout.tab4, container, false);
+    		
+    		//** Retrieve wireless adb setting on tab4 inflate, and set icon according to whether enabled or disabled */
+    		Command command = new Command(0, "getprop service.adb.tcp.port")
+    		{
+    		        @Override
+    		        public void output(int id, String line)
+    		        {
+    		        	
+    		           //** Do something with the output here.. */
+    		        }
+    		};
+    		try {
+				RootTools.getShell(true).add(command).waitForFinish();
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (TimeoutException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+    		
     		
     		//** Define buttons.. */
     		Button button_reboot_views= (Button)view.findViewById(R.id.button_reboot);

@@ -19,22 +19,29 @@ public final class R {
         public static final int button_small_normal=0x7f020005;
         public static final int button_small_pressed=0x7f020006;
         public static final int button_version=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int small_button=0x7f020009;
+        public static final int exit=0x7f020008;
+        public static final int ic_launcher=0x7f020009;
+        public static final int ic_stat_name=0x7f02000a;
+        public static final int power_off=0x7f02000b;
+        public static final int power_offbackup=0x7f02000c;
+        public static final int reboot=0x7f02000d;
+        public static final int reboot_recovery=0x7f02000e;
+        public static final int small_button=0x7f02000f;
     }
     public static final class id {
         public static final int TextView01=0x7f070015;
+        public static final int TextView02=0x7f07001f;
         public static final int button_check_webver=0x7f070013;
-        public static final int button_power_off=0x7f070018;
-        public static final int button_reboot=0x7f070016;
-        public static final int button_reboot_recovery=0x7f070017;
+        public static final int button_power_off=0x7f07001d;
+        public static final int button_reboot=0x7f070017;
+        public static final int button_reboot_recovery=0x7f07001a;
         public static final int button_test1=0x7f07000c;
         public static final int button_test2=0x7f07000d;
         public static final int button_test3=0x7f07000e;
         public static final int button_test4=0x7f07000f;
         public static final int button_test5=0x7f070010;
-        public static final int button_wireless_adb_disable=0x7f07001b;
-        public static final int button_wireless_adb_enable=0x7f07001a;
+        public static final int button_wireless_adb_disable=0x7f070023;
+        public static final int button_wireless_adb_enable=0x7f070021;
         public static final int custom_alert_dialog_cancel=0x7f070003;
         public static final int custom_alert_dialog_image=0x7f070001;
         public static final int custom_alert_dialog_ok=0x7f070004;
@@ -43,15 +50,22 @@ public final class R {
         public static final int custom_dialog_ok=0x7f070008;
         public static final int custom_dialog_textview=0x7f070007;
         public static final int fragment_container=0x7f070009;
-        public static final int menuitem_quit=0x7f07001d;
-        public static final int menuitem_version=0x7f07001c;
+        public static final int imageView1=0x7f070018;
+        public static final int imageView2=0x7f07001b;
+        public static final int imageView3=0x7f07001e;
+        public static final int menuitem_quit=0x7f070025;
+        public static final int menuitem_version=0x7f070024;
         public static final int padder1_custom_alert_dialog=0x7f070000;
         public static final int padder1_custom_dialog=0x7f070005;
         public static final int padder1_tab1=0x7f07000b;
         public static final int padder1_tab3=0x7f070012;
-        public static final int padder1_tab4=0x7f070019;
         public static final int padder2_tab3=0x7f070014;
         public static final int scroller=0x7f07000a;
+        public static final int tableRow1=0x7f070016;
+        public static final int tableRow2=0x7f070019;
+        public static final int tableRow3=0x7f07001c;
+        public static final int tableRow4=0x7f070020;
+        public static final int tableRow5=0x7f070022;
         public static final int webview=0x7f070011;
     }
     public static final class layout {

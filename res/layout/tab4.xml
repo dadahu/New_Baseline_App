@@ -20,75 +20,137 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/button_reboot"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/button_normal"
-        android:gravity="center"
-        android:onClick="myClickHandler"
-        android:paddingBottom="10dp"
-        android:text="@+string/reboot"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold" />
+        android:layout_gravity="center" >
 
-    <Button
-        android:id="@+id/button_reboot_recovery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/button_normal"
-        android:gravity="center"
-        android:onClick="myClickHandler"
-        android:paddingBottom="10dp"
-        android:text="@+string/reboot_recovery"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold" />
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
 
-    <Button
-        android:id="@+id/button_power_off"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/button_normal"
-        android:gravity="center"
-        android:onClick="myClickHandler"
-        android:paddingBottom="10dp"
-        android:text="@+string/power_off"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold" />
+            <Button
+                android:id="@+id/button_reboot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_normal"
+                android:gravity="center"
+                android:onClick="myClickHandler"
+                android:paddingBottom="10dp"
+               	android:text="@+string/reboot"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/padder1_tab4"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingBottom="12dp"
+               	android:src="@drawable/reboot" />
 
-    <Button
-        android:id="@+id/button_wireless_adb_enable"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/button_normal"
-        android:gravity="center"
-        android:onClick="myClickHandler"
-        android:paddingBottom="10dp"
-        android:text="@+string/wireless_adb_enable"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold" />
+        </TableRow>
 
-    <Button
-        android:id="@+id/button_wireless_adb_disable"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/button_normal"
-        android:gravity="center"
-        android:onClick="myClickHandler"
-        android:paddingBottom="10dp"
-        android:text="@+string/wireless_adb_disable"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold" />
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
+
+            <Button
+                android:id="@+id/button_reboot_recovery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_normal"
+                android:gravity="center"
+                android:onClick="myClickHandler"
+                android:paddingBottom="10dp"
+                android:text="@+string/reboot_recovery"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingBottom="10dp"
+                android:paddingLeft="4dp"
+                android:src="@drawable/reboot_recovery" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
+
+            <Button
+                android:id="@+id/button_power_off"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_normal"
+                android:gravity="center"
+                android:onClick="myClickHandler"
+                android:paddingBottom="10dp"
+                android:text="@+string/power_off"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingBottom="10dp"
+                android:src="@drawable/power_off" />
+
+        </TableRow>
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="fill_parent"
+            android:layout_height="5dp" />
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button_wireless_adb_enable"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:background="@drawable/button_normal"
+                android:gravity="center"
+                android:onClick="myClickHandler"
+                android:paddingBottom="10dp"
+                android:text="@+string/wireless_adb_enable"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button_wireless_adb_disable"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:background="@drawable/button_normal"
+                android:gravity="center"
+                android:onClick="myClickHandler"
+                android:paddingBottom="10dp"
+                android:text="@+string/wireless_adb_disable"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+    </TableLayout>
 
 </LinearLayout>
 </ScrollView>
