@@ -6,7 +6,7 @@
     <!-- Menu Strings -->
     <string name="menu_quit">Quit</string>
     <string name="menu_version">App Version</string>
-    <string name="version">Test Build 111 (03/11)</string>
+    <string name="version">Test Build 117 (04/11)</string>
     <string name="installed_version">Current Installed Version ..</string>
    	<string name="test">Test Buttons</string>
    	<string name="testbutton1">TEST BUTTON NUMBER 1 HAS BEEN CALLED</string>
@@ -16,6 +16,7 @@
     <string name="testbutton5">TEST BUTTON NUMBER 5 HAS BEEN CALLED</string>
     <string name="latest_version">The Latest Online Version is ..</string>
     <string name="download_latest">Download Update ?</string>
+    <string name="update">Download Update ?</string>
     <string name="downloading">Downloading Update ..</string>
     <string name="downloading_instructions">Please install manually once download completes</string>
     <string name="app_version_check">Check Latest Online Version &gt;</string>

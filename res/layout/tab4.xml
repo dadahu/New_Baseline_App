@@ -155,18 +155,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
-            <Button
-                android:id="@+id/button_download"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:background="@drawable/button_normal"
-                android:gravity="center"
-                android:onClick="myClickHandler"
-                android:paddingBottom="10dp"
-                android:text="@+string/download_latest"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
-
         </TableRow>
 
     </TableLayout>

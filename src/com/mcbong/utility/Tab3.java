@@ -5,10 +5,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.DownloadManager;
 import android.app.Fragment;
+import android.content.Context;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.StrictMode;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -98,21 +104,66 @@ public class Tab3 extends Fragment {
             			else
             			{
             				Toast.makeText(activity, R.string.version_notuptodate, Toast.LENGTH_SHORT).show();
+            				Button custom_dialog_update = (Button) dialog.findViewById(R.id.custom_dialog_update);
+                			custom_dialog_update.setVisibility(View.VISIBLE);
+                			Button dialogButton2 = (Button) dialog.findViewById(R.id.custom_dialog_ok2);
+                			dialogButton2.setBackgroundResource(R.drawable.small_button);
+                			dialogButton2.setVisibility(View.VISIBLE);
+                			Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+                			dialogButton.setVisibility(View.INVISIBLE);
+                			
             			}
             			
             			ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
             			image.setImageResource(R.drawable.ic_launcher);
+            			
             			//* set up button image resources */
+            			Button custom_dialog_update = (Button) dialog.findViewById(R.id.custom_dialog_update);
+            			custom_dialog_update.setBackgroundResource(R.drawable.small_button_update);
+            			// if OK button is clicked, close the custom dialog */
+            			custom_dialog_update.setOnClickListener(new OnClickListener() {
+            				public void onClick(View v) {
+            					Activity activity = getActivity();
+            					//** Download latest version from server ... */
+        	                	
+        	                	String url = "http://dl.dropbox.com/u/18271886/McBong-Utility.apk";
+        	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+        	                	request.setDescription("McBong Utility Updater");
+        	                	request.setTitle("McBong-Utility Download Complete");
+        	                	// in order for this if to run, you must use the android 3.2 to compile your app
+        	                	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+        	                	    request.allowScanningByMediaScanner();
+        	                	    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        	                	}
+        	                	request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "McBong-Utility.apk");
+
+        	                	// get download service and enqueue file
+        	                	DownloadManager manager = (DownloadManager) activity.getSystemService(Context.DOWNLOAD_SERVICE);
+        	                	manager.enqueue(request);
+        	                	Toast.makeText(activity, R.string.downloading, Toast.LENGTH_SHORT).show();
+        	                	Toast.makeText(activity, R.string.downloading_instructions, Toast.LENGTH_LONG).show();
+        	                  
+            					
+            				}
+            			});	
             			Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
             			dialogButton.setBackgroundResource(R.drawable.small_button);
-            			
             			//** if OK button is clicked, close the custom dialog */
             			dialogButton.setOnClickListener(new OnClickListener() {
             				public void onClick(View v) {
             					dialog.dismiss();
             				}
             			});
+            			Button dialogButton2 = (Button) dialog.findViewById(R.id.custom_dialog_ok2);
+            			dialogButton2.setBackgroundResource(R.drawable.small_button);
+            			//** if OK button is clicked, close the custom dialog */
+            			dialogButton2.setOnClickListener(new OnClickListener() {
+            				public void onClick(View v) {
+            					dialog.dismiss();
+            				}
+            			});
             			
+            		
             			dialog.show();
                      } catch (MalformedURLException e) {
                     	 Toast.makeText(activity, R.string.error_unsupported_p, Toast.LENGTH_SHORT).show();
