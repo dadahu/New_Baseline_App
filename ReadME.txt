@@ -7,10 +7,8 @@
 
 ------------------------------------------------------------------------------------------------------
 
-		  
--
-
 Update 3/11/2012 ... Update no.6 ...
+
 		> added update downloader, added proper online version checker,added 
 		  compare both remote and local strings function and return if update available,
 		  added OnCreate getprop wireless adb value, cleaned up layouts, added …
