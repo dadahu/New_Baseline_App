@@ -73,7 +73,7 @@ public class Tab3 extends Fragment {
                     	StrictMode.setThreadPolicy(policy); 
                     	
                     	//** Define a URL for the desired page */
-                        URL url = new URL("http://dl.dropbox.com/u/18271886/version.txt");
+                        URL url = new URL("http://dl.dropbox.com/u/18271886/Test_Builds/version.txt");
                     	
                     	//** Read all the text within remote file */
                         BufferedReader in = new BufferedReader(new     InputStreamReader(url.openStream()));
@@ -126,7 +126,7 @@ public class Tab3 extends Fragment {
             					Activity activity = getActivity();
             					//** Download latest version from server ... */
         	                	
-        	                	String url = "http://dl.dropbox.com/u/18271886/McBong-Utility.apk";
+        	                	String url = "http://dl.dropbox.com/u/18271886/Test_Builds/McBong-Utility.apk";
         	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
         	                	request.setDescription("McBong Utility Updater");
         	                	request.setTitle("McBong-Utility Download Complete");
