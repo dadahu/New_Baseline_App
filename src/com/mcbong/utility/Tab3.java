@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DownloadManager;
@@ -130,14 +129,14 @@ public class Tab3 extends Fragment {
         	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
         	                	request.setDescription("McBong Utility Updater");
         	                	request.setTitle("McBong-Utility Download Complete");
-        	                	// in order for this if to run, you must use the android 3.2 to compile your app
+        	                	
         	                	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
         	                	    request.allowScanningByMediaScanner();
         	                	    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         	                	}
         	                	request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "McBong-Utility.apk");
 
-        	                	// get download service and enqueue file
+        	                	//** get download service and enqueue file */
         	                	DownloadManager manager = (DownloadManager) activity.getSystemService(Context.DOWNLOAD_SERVICE);
         	                	manager.enqueue(request);
         	                	Toast.makeText(activity, R.string.downloading, Toast.LENGTH_SHORT).show();
@@ -174,15 +173,6 @@ public class Tab3 extends Fragment {
             }
             
         });
-    	
-    	
-        return view;
+    	 return view;
        }
-    
-    
     }
-
-    	 
-    
-    
-

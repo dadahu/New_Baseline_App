@@ -2,7 +2,6 @@ package com.mcbong.utility;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.Fragment;
@@ -15,7 +14,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
 
@@ -280,6 +278,4 @@ public class Tab4 extends Fragment {
     		
     		return view;
     	}
-}
-
-    
+} 

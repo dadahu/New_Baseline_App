@@ -28,18 +28,15 @@ public class McBong extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
+    	
+    	//** Grant app full root access via roottools interactive shell */
     	if (RootTools.isAccessGiven()) {
-    //** Grant app full root access via roottools interactive shell */
     	}
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         appContext = getApplicationContext();
-        
-    //** New layout seems to have fixed Landscape tab fragment issue, now auto-detect for both Portrait and Landscape views. */        
-        //setRequestedOrientation(1); 
-      
-    //** Define ActionBar and Tabs.. */
+              
+        //** Define ActionBar and Tabs.. */
         ActionBar actionbar = getActionBar();
         actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         
