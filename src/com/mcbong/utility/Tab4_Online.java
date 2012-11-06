@@ -28,7 +28,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Tab3 extends Fragment {
+public class Tab4_Online extends Fragment {
 	 
 	 
 	 
@@ -39,7 +39,7 @@ public class Tab3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		    //** Inflate the layout for this fragment */
 
-    		final View view = inflater.inflate(R.layout.tab3, container, false);
+    		final View view = inflater.inflate(R.layout.tab4_online, container, false);
     		
     		//** Define WebView component & Buttons,also load required WebSite.. */
     		final WebView myWebView = (WebView) view.findViewById(R.id.webview);
@@ -128,7 +128,7 @@ public class Tab3 extends Fragment {
         	                	String url = "http://dl.dropbox.com/u/18271886/Test_Builds/McBong-Utility.apk";
         	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
         	                	request.setDescription("McBong Utility Updater");
-        	                	request.setTitle("McBong-Utility Download Complete");
+        	                	request.setTitle("McBong-Utility Update");
         	                	
         	                	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
         	                	    request.allowScanningByMediaScanner();
@@ -140,8 +140,9 @@ public class Tab3 extends Fragment {
         	                	DownloadManager manager = (DownloadManager) activity.getSystemService(Context.DOWNLOAD_SERVICE);
         	                	manager.enqueue(request);
         	                	Toast.makeText(activity, R.string.downloading, Toast.LENGTH_SHORT).show();
+        	                	dialog.dismiss();
         	                	Toast.makeText(activity, R.string.downloading_instructions, Toast.LENGTH_LONG).show();
-        	                  
+        	                	        	                  
             					
             				}
             			});	

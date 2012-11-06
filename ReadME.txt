@@ -22,8 +22,8 @@ Update 3/11/2012 ... Update no.6 ...
 
 Update 30/10/2012 ...  Update no.5 ...
 
-		> added complete functions for all active buttons,
-		  added confirmation dialogs for reboot actions, 
+		> added complete functions for all active buttons, added confirmation dialogs for 	
+		  reboot actions, 
 		  minor layout and function changes,	
 		  added new custom_dialog and new custom_alert_dialog layouts,
 		  created second buttons xml to define button_pressed etc,
@@ -78,8 +78,7 @@ Update 25/10/2012 ...  [Part 1] Update no.3 ...
 
 Update 24/10/2012 ...  Update no.2 ...
 
-		> Properly removed hardware 'Menu' and 'Back' button activities,
-    	  added test buttons, 
+		> Properly removed hardware 'Menu' and 'Back' button activities, added test buttons, 
 		  added new button.png with shadow,other minor changes here and there
 
 -
@@ -88,8 +87,7 @@ Update 24/10/2012 ...  Update no.2 ...
 Update 18/10/2012 ...  Update no.1 ... [Initial Git commit]
 
 		> Layout Partially Configured, configured App for Android 4.1+, 
-		  removed hardware 'menu' key activity, added direct quit button,
-		  added short 'about' toast message,
+		  removed hardware 'menu' key activity, added direct quit button, added short 'about' toast message,
 		  configured initial app icon, configured initial manifest.	
 	
 -

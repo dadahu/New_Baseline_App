@@ -40,23 +40,27 @@ public class McBong extends Activity {
         ActionBar actionbar = getActionBar();
         actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         
-        ActionBar.Tab TweakTab = actionbar.newTab().setText("| Tool's ..|..");
-        ActionBar.Tab AddonTab = actionbar.newTab().setText("| Tweak's ..|..");
+        ActionBar.Tab ToolsTab = actionbar.newTab().setText("| Tool's ..|..");
+        ActionBar.Tab AddonsTab = actionbar.newTab().setText("| Add-on's ..|..");
+        ActionBar.Tab TweaksTab = actionbar.newTab().setText("| Tweak's ..|..");
         ActionBar.Tab OnlineTab = actionbar.newTab().setText("| Online..|..");
         ActionBar.Tab RecoveryTab = actionbar.newTab().setText("| Recovery..|");
         
-        Fragment TweakFragment = new Tab1();
-        Fragment AddonFragment = new Tab2();
-        Fragment OnlineFragment = new Tab3();
-        Fragment RecoveryFragment = new Tab4();
+        Fragment ToolsFragment = new Tab1_Tools();
+        Fragment AddonsFragment = new Tab2_Addons();
+        Fragment TweaksFragment = new Tab3_Tweaks();
+        Fragment RecoveryFragment = new Tab5_Recovery();
+        Fragment OnlineFragment = new Tab4_Online();
 
-        TweakTab.setTabListener(new MyTabsListener(TweakFragment));
-        AddonTab.setTabListener(new MyTabsListener(AddonFragment));
+        ToolsTab.setTabListener(new MyTabsListener(ToolsFragment));
+        AddonsTab.setTabListener(new MyTabsListener(AddonsFragment));
+        TweaksTab.setTabListener(new MyTabsListener(TweaksFragment));
         OnlineTab.setTabListener(new MyTabsListener(OnlineFragment));
         RecoveryTab.setTabListener(new MyTabsListener(RecoveryFragment));
 
-        actionbar.addTab(TweakTab);
-        actionbar.addTab(AddonTab);
+        actionbar.addTab(ToolsTab);
+        actionbar.addTab(AddonsTab);
+        actionbar.addTab(TweaksTab);
         actionbar.addTab(OnlineTab);
         actionbar.addTab(RecoveryTab);
    }

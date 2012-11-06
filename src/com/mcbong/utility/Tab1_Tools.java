@@ -10,14 +10,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class Tab1 extends Fragment {
+public class Tab1_Tools extends Fragment {
 	
    
 
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //** Inflate the layout for this fragment */
-			View view = inflater.inflate(R.layout.tab1, container, false);
+			View view = inflater.inflate(R.layout.tab1_tools, container, false);
 	        
 		//** Define buttons.. */	
 	        Button button_test1 = (Button) view.findViewById(R.id.button_test1);
