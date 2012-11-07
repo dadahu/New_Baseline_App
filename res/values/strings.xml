@@ -32,6 +32,7 @@
     <string name="wireless_adb_disable">Disable Wireless ADB </string>
    	<string name="dialog_cancel">Cancel</string>
     <string name="dialog_ok">Yes, Do It Now</string>
+    <string name="ok">OK</string>
   	<string name="confirm">Are you sure ?</string>
   	<string name="dialog_title_reboot_recovery"> Perform Reboot into Recovery ?</string>
     <string name="dialog_title_reboot_device"> Perform Device Reboot ?</string>
