@@ -8,6 +8,37 @@
 ------------------------------------------------------------------------------------------------------
 
 
+Update 7/11/2012 ... Update no.7 ...
+
+		> integrated update downloader into the update checker, so now its an 
+		  all-in-one check and download,
+		  changed URL's for test builds and test version.txt's to new remote location.
+		  added roottools library to source for easy compilation from any device,
+		  Created new Tab and renamed and reordered all Tabs,
+		  also added options to download latest ADW launcher, NOVA launcher and
+		  Go-launcher apk's from remote server.
+		  changed the way custom_alert_dialog and custom_dialog behave when
+		  'update' / 'download' is called......  alert_dialog.dismiss(); is called
+		  when download/update starts.
+		  edited the way downloads & updates are processed,
+		  added initial deletion of requested download/update from SDcard/Download
+		  if file exists, to stop multiple files being created.
+		  added broadcast receiver to get Download_Complete call once the file
+		  download is done
+		  added instant call for download/update's package to be installed
+		  directly after download completes....  alot less hassle being an all in
+		  one function.
+		  added downloads for Launchers and Themes held remotely,
+		  all downloads will be notified when finished and will call the package
+		  manager to install them automatically,
+		  more layout changes, much nicer clean ui now,.
+		  added more icons,
+		  strings cleanup,
+		  removed 'test buttons' from tab1_tools,
+		  re-arranged ALL layouts, cleaned code etc ...
+		  
+-
+
 Update 3/11/2012 ... Update no.6 ...
 
 		> added update downloader, added proper online version checker,added 
