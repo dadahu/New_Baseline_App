@@ -37,6 +37,9 @@ public class Tab2_Addons extends Fragment {
 		        Button button_install_adw = (Button) view.findViewById(R.id.button_install_adw);
 		        Button button_install_golauncher = (Button) view.findViewById(R.id.button_install_golauncher);
 		        Button button_install_nova = (Button) view.findViewById(R.id.button_install_nova);
+		        Button button_install_ssdred = (Button) view.findViewById(R.id.button_install_ssdred);
+		        Button button_install_popstyle = (Button) view.findViewById(R.id.button_install_popstyle);
+		        Button button_install_redics = (Button) view.findViewById(R.id.button_install_redics);
 		        
 		        //** Set button image resources.. */    
 		        Button button_install_adw_views= (Button)view.findViewById(R.id.button_install_adw);
@@ -45,6 +48,12 @@ public class Tab2_Addons extends Fragment {
 		        button_install_golauncher_views.setBackgroundResource(R.drawable.button);
 		        Button button_install_nova_views= (Button)view.findViewById(R.id.button_install_nova);
 		        button_install_nova_views.setBackgroundResource(R.drawable.button);
+		        Button button_install_ssdred_views= (Button)view.findViewById(R.id.button_install_ssdred);
+		        button_install_ssdred_views.setBackgroundResource(R.drawable.button);
+		        Button button_install_popstyle_views= (Button)view.findViewById(R.id.button_install_popstyle);
+		        button_install_popstyle_views.setBackgroundResource(R.drawable.button);
+		        Button button_install_redics_views= (Button)view.findViewById(R.id.button_install_redics);
+		        button_install_redics_views.setBackgroundResource(R.drawable.button);
 	    		
 	    		
 		        button_install_adw.setOnClickListener(new OnClickListener() {
@@ -300,6 +309,258 @@ public class Tab2_Addons extends Fragment {
 		            }
 		            
 		        });
-		       return view;
+		         button_install_ssdred.setOnClickListener(new OnClickListener() {
+		            public void onClick(View v) {
+		                Activity activity = getActivity();
+		                
+		                if (activity != null) {
+		                	
+		                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
+	                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+	                    	alert_dialog.setTitle(R.string.install_ssdred);
+	            			
+	             
+	            			//** set up the custom dialog components */ 
+	            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
+	            			alert_text.setText(R.string.confirm);
+	            			ImageView image = (ImageView) alert_dialog.findViewById(R.id.custom_alert_dialog_image);
+	            			image.setImageResource(R.drawable.ssdred);
+	            			//* set up button image resources */
+	            			Button custom_alert_dialog_ok = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_ok);
+	            			custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+	            			//** if button is clicked, execute the shell commands through root-tools */
+	            			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
+	            				public void onClick(View v) {
+	            					Activity activity = getActivity();
+	            					
+	            					//** Remove any old downloads of SSD-Red from /Download folder before downloading new version */
+	            					CommandCapture command = new CommandCapture(0, "rm /sdcard/Download/ssdred.apk");
+	 	                          	try {
+	 	      							RootTools.getShell(true).add(command).waitForFinish();
+	 	      						} catch (InterruptedException e) {
+	 	      							// TODO Auto-generated catch block
+	 	      							e.printStackTrace();
+	 	      						} catch (IOException e) {
+	 	      							// TODO Auto-generated catch block
+	 	      							e.printStackTrace();
+	 	      						} catch (TimeoutException e) {
+	 	      							// TODO Auto-generated catch block
+	 	      							e.printStackTrace();
+	 	      						}
+	            					
+	            					//** download SSD-Red Theme from server .. */
+	            					String url = "http://dl.dropbox.com/u/18271886/Themes/ssdred.apk";
+	        	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+	        	                	request.setDescription("SSD-Red Theme Download");
+	        	                	request.setTitle("SSD-Red Theme Download Complete");
+	        	                	
+	        	                	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+	        	                	    request.allowScanningByMediaScanner();
+	        	                	    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+	        	                	}
+	        	                	request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "ssdred.apk");
+
+	        	                	//** get download service and enqueue file */
+	        	                	DownloadManager manager = (DownloadManager) activity.getSystemService(Context.DOWNLOAD_SERVICE);
+	        	                	manager.enqueue(request);
+	        	                	alert_dialog.dismiss();
+	        	                	Toast.makeText(activity, R.string.downloading_theme, Toast.LENGTH_SHORT).show();
+	        	                	
+	        	                	//** Set up broadcast receiver to detect when the download completes.. */
+	        	                	BroadcastReceiver onComplete=new BroadcastReceiver() {
+	 	                          	    public void onReceive(Context ctxt, Intent intent) {
+	 	                          	    	Toast.makeText(ctxt, R.string.installing_theme, Toast.LENGTH_SHORT).show();
+	 	                          	    	Intent install = new Intent(Intent.ACTION_VIEW);
+	 	                          	    	install.setDataAndType(Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/Download/" + "ssdred.apk")), "application/vnd.android.package-archive");
+	 		        	                	startActivity(install);
+	 	                          	    }
+	 	                          	};
+	 	                          	activity.registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+	 	                        }
+	            			});
+	            			Button custom_alert_dialog_cancel = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_cancel);
+	            			custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
+	            			// if OK button is clicked, close the custom dialog */
+	            			custom_alert_dialog_cancel.setOnClickListener(new OnClickListener() {
+	            				public void onClick(View v) {
+	            					alert_dialog.dismiss();
+	            				}
+	            			});
+	            			
+	            			alert_dialog.show();
+	                    
+		                }
+		            }
+		            
+		        });
+		         button_install_popstyle.setOnClickListener(new OnClickListener() {
+			            public void onClick(View v) {
+			                Activity activity = getActivity();
+			                
+			                if (activity != null) {
+			                	
+			                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
+		                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+		                    	alert_dialog.setTitle(R.string.install_popstyle);
+		            			
+		             
+		            			//** set up the custom dialog components */ 
+		            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
+		            			alert_text.setText(R.string.confirm);
+		            			ImageView image = (ImageView) alert_dialog.findViewById(R.id.custom_alert_dialog_image);
+		            			image.setImageResource(R.drawable.popstyle);
+		            			//* set up button image resources */
+		            			Button custom_alert_dialog_ok = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_ok);
+		            			custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+		            			//** if button is clicked, execute the shell commands through root-tools */
+		            			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
+		            				public void onClick(View v) {
+		            					Activity activity = getActivity();
+		            					
+		            					//** Remove any old downloads of PopStyle Theme from /Download folder before downloading new version */
+		            					CommandCapture command = new CommandCapture(0, "rm /sdcard/Download/popstyle.apk");
+		 	                          	try {
+		 	      							RootTools.getShell(true).add(command).waitForFinish();
+		 	      						} catch (InterruptedException e) {
+		 	      							// TODO Auto-generated catch block
+		 	      							e.printStackTrace();
+		 	      						} catch (IOException e) {
+		 	      							// TODO Auto-generated catch block
+		 	      							e.printStackTrace();
+		 	      						} catch (TimeoutException e) {
+		 	      							// TODO Auto-generated catch block
+		 	      							e.printStackTrace();
+		 	      						}
+		            					
+		            					//** download PopStyle Theme from server .. */
+		            					String url = "http://dl.dropbox.com/u/18271886/Themes/popstyle.apk";
+		        	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+		        	                	request.setDescription("PopStyle Theme Download");
+		        	                	request.setTitle("PopStyle Theme Download Complete");
+		        	                	
+		        	                	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+		        	                	    request.allowScanningByMediaScanner();
+		        	                	    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+		        	                	}
+		        	                	request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "popstyle.apk");
+
+		        	                	//** get download service and enqueue file */
+		        	                	DownloadManager manager = (DownloadManager) activity.getSystemService(Context.DOWNLOAD_SERVICE);
+		        	                	manager.enqueue(request);
+		        	                	alert_dialog.dismiss();
+		        	                	Toast.makeText(activity, R.string.downloading_theme, Toast.LENGTH_SHORT).show();
+		        	                	
+		        	                	//** Set up broadcast receiver to detect when the download completes.. */
+		        	                	BroadcastReceiver onComplete=new BroadcastReceiver() {
+		 	                          	    public void onReceive(Context ctxt, Intent intent) {
+		 	                          	    	Toast.makeText(ctxt, R.string.installing_theme, Toast.LENGTH_SHORT).show();
+		 	                          	    	Intent install = new Intent(Intent.ACTION_VIEW);
+		 	                          	    	install.setDataAndType(Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/Download/" + "popstyle.apk")), "application/vnd.android.package-archive");
+		 		        	                	startActivity(install);
+		 	                          	    }
+		 	                          	};
+		 	                          	activity.registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+		 	                        }
+		            			});
+		            			Button custom_alert_dialog_cancel = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_cancel);
+		            			custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
+		            			// if OK button is clicked, close the custom dialog */
+		            			custom_alert_dialog_cancel.setOnClickListener(new OnClickListener() {
+		            				public void onClick(View v) {
+		            					alert_dialog.dismiss();
+		            				}
+		            			});
+		            			
+		            			alert_dialog.show();
+		                    
+			                }
+			            }
+			            
+			        });
+		         		button_install_redics.setOnClickListener(new OnClickListener() {
+			            public void onClick(View v) {
+			                Activity activity = getActivity();
+			                
+			                if (activity != null) {
+			                	
+			                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
+		                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+		                    	alert_dialog.setTitle(R.string.install_redics);
+		            			
+		             
+		            			//** set up the custom dialog components */ 
+		            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
+		            			alert_text.setText(R.string.confirm);
+		            			ImageView image = (ImageView) alert_dialog.findViewById(R.id.custom_alert_dialog_image);
+		            			image.setImageResource(R.drawable.redics);
+		            			//* set up button image resources */
+		            			Button custom_alert_dialog_ok = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_ok);
+		            			custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+		            			//** if button is clicked, execute the shell commands through root-tools */
+		            			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
+		            				public void onClick(View v) {
+		            					Activity activity = getActivity();
+		            					
+		            					//** Remove any old downloads of Red-ICS Theme from /Download folder before downloading new version */
+		            					CommandCapture command = new CommandCapture(0, "rm /sdcard/Download/redics.apk");
+		 	                          	try {
+		 	      							RootTools.getShell(true).add(command).waitForFinish();
+		 	      						} catch (InterruptedException e) {
+		 	      							// TODO Auto-generated catch block
+		 	      							e.printStackTrace();
+		 	      						} catch (IOException e) {
+		 	      							// TODO Auto-generated catch block
+		 	      							e.printStackTrace();
+		 	      						} catch (TimeoutException e) {
+		 	      							// TODO Auto-generated catch block
+		 	      							e.printStackTrace();
+		 	      						}
+		            					
+		            					//** download Red-ICS Theme from server .. */
+		            					String url = "http://dl.dropbox.com/u/18271886/Themes/redics.apk";
+		        	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+		        	                	request.setDescription("Red-ICS Theme Download");
+		        	                	request.setTitle("Red-ICS Theme Download Complete");
+		        	                	
+		        	                	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+		        	                	    request.allowScanningByMediaScanner();
+		        	                	    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+		        	                	}
+		        	                	request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "redics.apk");
+
+		        	                	//** get download service and enqueue file */
+		        	                	DownloadManager manager = (DownloadManager) activity.getSystemService(Context.DOWNLOAD_SERVICE);
+		        	                	manager.enqueue(request);
+		        	                	alert_dialog.dismiss();
+		        	                	Toast.makeText(activity, R.string.downloading_theme, Toast.LENGTH_SHORT).show();
+		        	                	
+		        	                	//** Set up broadcast receiver to detect when the download completes.. */
+		        	                	BroadcastReceiver onComplete=new BroadcastReceiver() {
+		 	                          	    public void onReceive(Context ctxt, Intent intent) {
+		 	                          	    	Toast.makeText(ctxt, R.string.installing_theme, Toast.LENGTH_SHORT).show();
+		 	                          	    	Intent install = new Intent(Intent.ACTION_VIEW);
+		 	                          	    	install.setDataAndType(Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/Download/" + "redics.apk")), "application/vnd.android.package-archive");
+		 		        	                	startActivity(install);
+		 	                          	    }
+		 	                          	};
+		 	                          	activity.registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+		 	                        }
+		            			});
+		            			Button custom_alert_dialog_cancel = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_cancel);
+		            			custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
+		            			// if OK button is clicked, close the custom dialog */
+		            			custom_alert_dialog_cancel.setOnClickListener(new OnClickListener() {
+		            				public void onClick(View v) {
+		            					alert_dialog.dismiss();
+		            				}
+		            			});
+		            			
+		            			alert_dialog.show();
+		                    
+			                }
+			            }
+			            
+			        });
+		        return view;
 	    	}
 	    }

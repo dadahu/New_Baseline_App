@@ -111,6 +111,7 @@ public class Tab4_Online extends Fragment {
             				Toast.makeText(activity, R.string.version_notuptodate, Toast.LENGTH_SHORT).show();
             				Button custom_dialog_update = (Button) dialog.findViewById(R.id.custom_dialog_update);
                 			custom_dialog_update.setVisibility(View.VISIBLE);
+                			dialog.setTitle(R.string.update_available);
                 			Button dialogButton2 = (Button) dialog.findViewById(R.id.custom_dialog_ok2);
                 			dialogButton2.setBackgroundResource(R.drawable.small_button);
                 			dialogButton2.setVisibility(View.VISIBLE);
