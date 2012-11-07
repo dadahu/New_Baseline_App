@@ -47,18 +47,18 @@ public final class R {
         public static final int TextView04=0x7f070012;
         public static final int TextView05=0x7f07001e;
         public static final int TextView06=0x7f070013;
-        public static final int button_check_webver=0x7f07002a;
+        public static final int button_check_webver=0x7f070039;
         public static final int button_install_adw=0x7f070015;
         public static final int button_install_golauncher=0x7f070018;
         public static final int button_install_nova=0x7f07001b;
         public static final int button_install_popstyle=0x7f070023;
         public static final int button_install_redics=0x7f070026;
         public static final int button_install_ssdred=0x7f070020;
-        public static final int button_power_off=0x7f070032;
-        public static final int button_reboot=0x7f07002d;
-        public static final int button_reboot_recovery=0x7f07002f;
-        public static final int button_wireless_adb_disable=0x7f070038;
-        public static final int button_wireless_adb_enable=0x7f070035;
+        public static final int button_power_off=0x7f07002e;
+        public static final int button_reboot=0x7f070029;
+        public static final int button_reboot_recovery=0x7f07002b;
+        public static final int button_wireless_adb_disable=0x7f070034;
+        public static final int button_wireless_adb_enable=0x7f070031;
         public static final int custom_alert_dialog_cancel=0x7f070003;
         public static final int custom_alert_dialog_image=0x7f070001;
         public static final int custom_alert_dialog_ok=0x7f070004;
@@ -70,10 +70,10 @@ public final class R {
         public static final int custom_dialog_update=0x7f070008;
         public static final int fragment_container=0x7f07000b;
         public static final int imageView1=0x7f070010;
-        public static final int imageView2=0x7f070030;
-        public static final int imageView3=0x7f070033;
-        public static final int imageView_adb_disable=0x7f070039;
-        public static final int imageView_adb_enable=0x7f070036;
+        public static final int imageView2=0x7f07002c;
+        public static final int imageView3=0x7f07002f;
+        public static final int imageView_adb_disable=0x7f070035;
+        public static final int imageView_adb_enable=0x7f070032;
         public static final int imageview_adw=0x7f070016;
         public static final int imageview_golauncher=0x7f070019;
         public static final int imageview_nova=0x7f07001c;
@@ -85,15 +85,15 @@ public final class R {
         public static final int padder1_custom_alert_dialog=0x7f070000;
         public static final int padder1_custom_dialog=0x7f070005;
         public static final int padder1_tab1=0x7f07000f;
-        public static final int padder1_tab3=0x7f070029;
-        public static final int padder2_tab3=0x7f07002b;
+        public static final int padder1_tab3=0x7f070038;
+        public static final int padder2_tab3=0x7f07003a;
         public static final int scroller=0x7f07000c;
-        public static final int tableRow1=0x7f07002c;
-        public static final int tableRow2=0x7f07002e;
-        public static final int tableRow3=0x7f070031;
-        public static final int tableRow4=0x7f070034;
-        public static final int tableRow5=0x7f070037;
-        public static final int tableRow6=0x7f07003a;
+        public static final int tableRow1=0x7f070028;
+        public static final int tableRow2=0x7f07002a;
+        public static final int tableRow3=0x7f07002d;
+        public static final int tableRow4=0x7f070030;
+        public static final int tableRow5=0x7f070033;
+        public static final int tableRow6=0x7f070036;
         public static final int tablerow_Nova=0x7f07001a;
         public static final int tablerow_adw=0x7f070014;
         public static final int tablerow_golauncher=0x7f070017;
@@ -101,7 +101,7 @@ public final class R {
         public static final int tablerow_redics=0x7f070025;
         public static final int tablerow_ssdred=0x7f07001f;
         public static final int textView1=0x7f070011;
-        public static final int webview=0x7f070028;
+        public static final int webview=0x7f070037;
     }
     public static final class layout {
         public static final int custom_alert_dialog=0x7f030000;
@@ -110,8 +110,8 @@ public final class R {
         public static final int tab1_tools=0x7f030003;
         public static final int tab2_addons=0x7f030004;
         public static final int tab3_tweaks=0x7f030005;
-        public static final int tab4_online=0x7f030006;
-        public static final int tab5_recovery=0x7f030007;
+        public static final int tab4_recovery=0x7f030006;
+        public static final int tab5_online=0x7f030007;
     }
     public static final class menu {
         public static final int main=0x7f060000;

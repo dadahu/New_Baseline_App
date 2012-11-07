@@ -17,12 +17,12 @@ import android.widget.Toast;
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
 
-public class Tab5_Recovery extends Fragment {
+public class Tab4_Recovery extends Fragment {
 	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	 //** Inflate the layout for this fragment */
-    		View view = inflater.inflate(R.layout.tab5_recovery, container, false);
+    		View view = inflater.inflate(R.layout.tab4_recovery, container, false);
     		
     		//** Retrieve wireless adb setting on tab4 inflate, and set icon according to whether enabled or disabled */
     		

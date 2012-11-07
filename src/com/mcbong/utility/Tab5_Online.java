@@ -35,7 +35,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Tab4_Online extends Fragment {
+public class Tab5_Online extends Fragment {
 	 
 	 
 	 
@@ -46,7 +46,7 @@ public class Tab4_Online extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		    //** Inflate the layout for this fragment */
 
-    		final View view = inflater.inflate(R.layout.tab4_online, container, false);
+    		final View view = inflater.inflate(R.layout.tab5_online, container, false);
     		
     		//** Define WebView component & Buttons,also load required WebSite.. */
     		final WebView myWebView = (WebView) view.findViewById(R.id.webview);
