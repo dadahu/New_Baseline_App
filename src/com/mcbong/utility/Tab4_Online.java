@@ -1,15 +1,22 @@
 package com.mcbong.utility;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeoutException;
+import com.stericson.RootTools.CommandCapture;
+import com.stericson.RootTools.RootTools;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DownloadManager;
 import android.app.Fragment;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -66,7 +73,6 @@ public class Tab4_Online extends Fragment {
                 Activity activity = getActivity();
                 if (activity != null) {
                     try {
-                    	//Toast.makeText(activity, R.string.checking, Toast.LENGTH_SHORT).show();
                     	//** ..... */
                 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                     	StrictMode.setThreadPolicy(policy); 
@@ -123,8 +129,23 @@ public class Tab4_Online extends Fragment {
             			custom_dialog_update.setOnClickListener(new OnClickListener() {
             				public void onClick(View v) {
             					Activity activity = getActivity();
+            					
+            					//** Remove any old downloads of McBong-Utility from /Download folder before downloading new version */
+            					CommandCapture command = new CommandCapture(0, "rm /sdcard/Download/McBong-Utility.apk");
+ 	                          	try {
+ 	      							RootTools.getShell(true).add(command).waitForFinish();
+ 	      						} catch (InterruptedException e) {
+ 	      							// TODO Auto-generated catch block
+ 	      							e.printStackTrace();
+ 	      						} catch (IOException e) {
+ 	      							// TODO Auto-generated catch block
+ 	      							e.printStackTrace();
+ 	      						} catch (TimeoutException e) {
+ 	      							// TODO Auto-generated catch block
+ 	      							e.printStackTrace();
+ 	      						}
+            						            					
             					//** Download latest version from server ... */
-        	                	
         	                	String url = "http://dl.dropbox.com/u/18271886/Test_Builds/McBong-Utility.apk";
         	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
         	                	request.setDescription("McBong Utility Updater");
@@ -141,10 +162,18 @@ public class Tab4_Online extends Fragment {
         	                	manager.enqueue(request);
         	                	Toast.makeText(activity, R.string.downloading, Toast.LENGTH_SHORT).show();
         	                	dialog.dismiss();
-        	                	Toast.makeText(activity, R.string.downloading_instructions, Toast.LENGTH_LONG).show();
-        	                	        	                  
-            					
-            				}
+        	                	
+        	                	//** Set up broadcast receiver to detect when the download completes.. */
+        	                	BroadcastReceiver onComplete=new BroadcastReceiver() {
+ 	                          	    public void onReceive(Context ctxt, Intent intent) {
+ 	                          	    	Toast.makeText(ctxt, R.string.installing_update, Toast.LENGTH_SHORT).show();
+ 	                          	    	Intent install = new Intent(Intent.ACTION_VIEW);
+ 	                          	    	install.setDataAndType(Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/Download/" + "McBong-Utility.apk")), "application/vnd.android.package-archive");
+ 		        	                	startActivity(install);
+ 	                          	    }
+ 	                          	};
+ 	                          	activity.registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+ 	                          }
             			});	
             			Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
             			dialogButton.setBackgroundResource(R.drawable.small_button);
@@ -163,7 +192,6 @@ public class Tab4_Online extends Fragment {
             				}
             			});
             			
-            		
             			dialog.show();
                      } catch (MalformedURLException e) {
                     	 Toast.makeText(activity, R.string.error_unsupported_p, Toast.LENGTH_SHORT).show();

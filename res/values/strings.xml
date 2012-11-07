@@ -6,7 +6,7 @@
     <!-- Menu Strings -->
     <string name="menu_quit">Quit</string>
     <string name="menu_version">App Version</string>
-    <string name="version">Test Build 123 (06/11)</string>
+    <string name="version">Test Build 131 (07/11)</string>
     <string name="installed_version">Current Installed Version ..</string>
    	<string name="test">Test Buttons</string>
    	<string name="testbutton1">TEST BUTTON NUMBER 1 HAS BEEN CALLED</string>
@@ -17,6 +17,7 @@
     <string name="latest_version">The Latest Online Version is ..</string>
     <string name="download_latest">Download Update ?</string>
     <string name="update">Download Update ?</string>
+    <string name="installing_update">Installing McBong-Utility Update ..</string>
     <string name="downloading">Downloading Update ..</string>
     <string name="downloading_launcher">Downloading Launcher ..</string>
     <string name="downloading_instructions">Please install manually once download completes</string>
@@ -24,6 +25,7 @@
     <string name="checking">Checking ..</string>
     <string name="error_unsupported_p">Error, unsupported protocol</string>
     <string name="error_no_internet">Not Connected To Internet</string>
+    <string name="download_failed">Sorry, Download Failed</string>
     <string name="reboot">Reboot.. Device</string>
     <string name="reboot_recovery">Reboot.. Recovery</string>
     <string name="power_off">Power Off Device</string>
@@ -41,6 +43,7 @@
     <string name="disabling">Disabling Wireless ADB ..</string>
     <string name="version_uptodate">You are using the most current version !</string>
     <string name="version_notuptodate">There is an update available !</string>
+    <string name="installing_launcher">Installing Launcher ..</string>
     <string name="install_adw">Download ADW Launcher ?</string>
     <string name="install_golauncher">Download Go-Launcher EX ?</string>
     <string name="install_nova">Download Nova Launcher ?</string>

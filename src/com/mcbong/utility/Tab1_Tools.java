@@ -47,6 +47,11 @@ public class Tab1_Tools extends Fragment {
 	                
 	                if (activity != null) {
 	                	//* add code here for 'Tweak's' section.. */ 
+	                	
+	                	
+	                	
+	                	
+	                	
 	                    Toast.makeText(activity, R.string.testbutton1, Toast.LENGTH_SHORT).show();
 	                }
 	            }
