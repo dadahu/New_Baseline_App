@@ -6,8 +6,22 @@
     <!-- Menu Strings -->
     <string name="menu_quit">Quit</string>
     <string name="menu_version">App Version</string>
-    <string name="version">Test Build 138 (07/11)</string>
+    <string name="version">Test Build 143 (09/11)</string>
     <string name="installed_version">Current Installed Version ..</string>
+   	<string name="backup">Backup.. Contact\'s + Calls\'s and Message\'s .. </string>
+   	<string name="restore">Restore.. Contact\'s + Calls\'s and Message\'s .. </string>
+   	<string name="restore_complete">Restore Completed Succesfully</string>
+   	<string name="restore_failed">Sorry, Restore Failed</string>
+   	<string name="backup_complete">Backup Completed Succesfully</string>
+   	<string name="backup_failed">Sorry, Backup Failed</string>
+   	<string name="backup_contacts_and_calls">Backup Contact\'s and Call\'s</string>
+   	<string name="backup_messages">Backup Message\'s</string>
+  	<string name="restore_contacts_and_calls">Restore Contact\'s and Call\'s</string>
+   	<string name="restore_messages">Restore Message\'s</string>
+   	<string name="restoring_contacts_and_calls">Restoring Contact\'s and Call-Log\'s, please wait ..</string>
+   	<string name="restoring_messages">Restoring Restoring Message\'s, please wait ..</string>
+   	<string name="backing_up_contacts_and_calls">Backing up Contact\'s and Call-Log\'s, please wait ..</string>
+   	<string name="backing_up_messages">Backing up Message\'s, please wait ..</string>
    	<string name="launchers">Download and Install 3rd Party Launcher\'s ..</string>
     <string name="themes">Download and Install 3rd Party Theme\'s ..</string>
     <string name="power_functions">Device Power Option\'s ..</string>
