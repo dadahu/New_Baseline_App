@@ -8,6 +8,19 @@
 ------------------------------------------------------------------------------------------------------
 
 
+Update 10/11/2012 ... Update no.8 ...
+
+		> Added Contacts & Call Logs and Messages backup and restore feature,
+		  More layout changes,drawable additions and cleanups,
+		  BUGFIX : added ' if (.exists()) { ' to both backup and restore functions..
+		  Now checks are made after a backup is 'made' to verify the backup
+		  database is where it should be to verify the backup process.
+		  Checks are also made before restoring to verify that there is an actual
+		  database backup to restore to begin with.
+		  This solves that bug.
+	  
+-
+
 Update 7/11/2012 ... Update no.7 ...
 
 		> integrated update downloader into the update checker, so now its an 
