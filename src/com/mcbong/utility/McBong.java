@@ -43,26 +43,26 @@ public class McBong extends Activity {
         ActionBar.Tab ToolsTab = actionbar.newTab().setText("| Tool's ..|..");
         ActionBar.Tab AddonsTab = actionbar.newTab().setText("| Add-on's ..|..");
         ActionBar.Tab TweaksTab = actionbar.newTab().setText("| Tweak's ..|..");
-		ActionBar.Tab RecoveryTab = actionbar.newTab().setText("| Recovery..|");
+        ActionBar.Tab RecoveryTab = actionbar.newTab().setText("| Recovery..|");
 		ActionBar.Tab OnlineTab = actionbar.newTab().setText("| Online..|..");
 	   
         Fragment ToolsFragment = new Tab1_Tools();
         Fragment AddonsFragment = new Tab2_Addons();
         Fragment TweaksFragment = new Tab3_Tweaks();
-    	Fragment RecoveryFragment = new Tab4_Recovery();
-     	Fragment OnlineFragment = new Tab5_Online();
+        Fragment RecoveryFragment = new Tab4_Recovery();
+        Fragment OnlineFragment = new Tab5_Online();
 
         ToolsTab.setTabListener(new MyTabsListener(ToolsFragment));
         AddonsTab.setTabListener(new MyTabsListener(AddonsFragment));
         TweaksTab.setTabListener(new MyTabsListener(TweaksFragment));
-   		OnlineTab.setTabListener(new MyTabsListener(OnlineFragment));
-  		RecoveryTab.setTabListener(new MyTabsListener(RecoveryFragment));
+        OnlineTab.setTabListener(new MyTabsListener(OnlineFragment));
+        RecoveryTab.setTabListener(new MyTabsListener(RecoveryFragment));
 
         actionbar.addTab(ToolsTab);
         actionbar.addTab(AddonsTab);
         actionbar.addTab(TweaksTab);
 		actionbar.addTab(RecoveryTab);
-     	actionbar.addTab(OnlineTab);
+        actionbar.addTab(OnlineTab);
         
    }
     

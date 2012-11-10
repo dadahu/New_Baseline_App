@@ -6,10 +6,11 @@
     <!-- Menu Strings -->
     <string name="menu_quit">Quit</string>
     <string name="menu_version">App Version</string>
-    <string name="version">Test Build 143 (09/11)</string>
+    <string name="version">Test Build 144 (10/11)</string>
     <string name="installed_version">Current Installed Version ..</string>
    	<string name="backup">Backup.. Contact\'s + Calls\'s and Message\'s .. </string>
    	<string name="restore">Restore.. Contact\'s + Calls\'s and Message\'s .. </string>
+   	<string name="no_backup_found">No Backup databases found on SDcard, cant restore.</string>
    	<string name="restore_complete">Restore Completed Succesfully</string>
    	<string name="restore_failed">Sorry, Restore Failed</string>
    	<string name="backup_complete">Backup Completed Succesfully</string>
