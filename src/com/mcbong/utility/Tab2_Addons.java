@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -62,9 +63,13 @@ public class Tab2_Addons extends Fragment {
 		                
 		                if (activity != null) {
 		                	
-		                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-	                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-	                    	alert_dialog.setTitle(R.string.install_adw);
+		                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+		                	alert_dialog.getWindow();
+		                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+		                	
+		                	//** TODO --- Set new texview to display title .... */ 
+	                    	//alert_dialog.setTitle(R.string.install_adw);
 	            			
 	                    	//** set up the custom dialog components */ 
 	            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
@@ -147,9 +152,13 @@ public class Tab2_Addons extends Fragment {
 		                if (activity != null) {
 		                	
 		                	
-		                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-	                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-	                    	alert_dialog.setTitle(R.string.install_golauncher);
+		                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+		                	alert_dialog.getWindow();
+		                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+	                    	
+		                	//** TODO --- Set new texview to display title .... */ 
+	                    	//alert_dialog.setTitle(R.string.install_golauncher);
 	            			
 	             
 	            			//** set up the custom dialog components */ 
@@ -231,9 +240,13 @@ public class Tab2_Addons extends Fragment {
 		                
 		                if (activity != null) {
 		                	
-		                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-	                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-	                    	alert_dialog.setTitle(R.string.install_nova);
+		                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+		                	alert_dialog.getWindow();
+		                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+		                	
+		                	//** TODO --- Set new texview to display title .... */ 
+	                    	//alert_dialog.setTitle(R.string.install_nova);
 	            			
 	             
 	            			//** set up the custom dialog components */ 
@@ -315,9 +328,13 @@ public class Tab2_Addons extends Fragment {
 		                
 		                if (activity != null) {
 		                	
-		                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-	                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-	                    	alert_dialog.setTitle(R.string.install_ssdred);
+		                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+		                	alert_dialog.getWindow();
+		                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+		                	
+		                	//** TODO --- Set new texview to display title .... */ 
+	                    	//alert_dialog.setTitle(R.string.install_ssdred);
 	            			
 	             
 	            			//** set up the custom dialog components */ 
@@ -399,9 +416,13 @@ public class Tab2_Addons extends Fragment {
 			                
 			                if (activity != null) {
 			                	
-			                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-		                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-		                    	alert_dialog.setTitle(R.string.install_popstyle);
+			                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+			                	alert_dialog.getWindow();
+			                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+			                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+			                	
+			                	//** TODO --- Set new texview to display title .... */ 
+		                    	//alert_dialog.setTitle(R.string.install_popstyle);
 		            			
 		             
 		            			//** set up the custom dialog components */ 
@@ -483,9 +504,13 @@ public class Tab2_Addons extends Fragment {
 			                
 			                if (activity != null) {
 			                	
-			                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-		                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-		                    	alert_dialog.setTitle(R.string.install_redics);
+			                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+			                	alert_dialog.getWindow();
+			                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+			                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+			                	
+			                	//** TODO --- Set new texview to display title .... */ 
+		                    	//alert_dialog.setTitle(R.string.install_redics);
 		            			
 		             
 		            			//** set up the custom dialog components */ 

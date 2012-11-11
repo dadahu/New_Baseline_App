@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -50,9 +51,14 @@ public class Tab1_Tools extends Fragment {
 	                
 	                if (activity != null) {
 	                	
-	                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                    	alert_dialog.setTitle(R.string.backup_contacts_and_calls);
+	                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+	                	alert_dialog.getWindow();
+	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+	                	
+                    	//** TODO --- Set new texview to display title .... */ 
+	                	
+	                	
             			
                     	//** set up the custom dialog components */ 
             			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
@@ -121,9 +127,13 @@ public class Tab1_Tools extends Fragment {
 	                if (activity != null) {
 	                	
 	                	
-	                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                    	alert_dialog.setTitle(R.string.backup_messages);
+	                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+	                	alert_dialog.getWindow();
+	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+	                	
+	                	//** TODO --- Set new texview to display title .... */ 
+	                	//alert_dialog.setTitle(R.string.backup_messages);
             			
                     	//** set up the custom dialog components */ 
             			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
@@ -198,9 +208,13 @@ public class Tab1_Tools extends Fragment {
 
     					if (contacts_r.exists()) {
     						
-    					final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                    	alert_dialog.setTitle(R.string.restore_contacts_and_calls);
+    						final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+    	                	alert_dialog.getWindow();
+    	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+    	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+    	                	
+    	                	//** TODO --- Set new texview to display title .... */ 
+    	                	//alert_dialog.setTitle(R.string.restore_contacts_and_calls);
             			
                     	//** set up the custom dialog components */ 
             			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
@@ -271,9 +285,13 @@ public class Tab1_Tools extends Fragment {
 	    					if (messages_r.exists()) {
 		                	
 		                	
-		                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-	                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-	                    	alert_dialog.setTitle(R.string.restore_messages);
+	    						final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+	    	                	alert_dialog.getWindow();
+	    	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	    	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+	                    	
+	    	                	//** TODO --- Set new texview to display title .... */ 
+	    	                	//alert_dialog.setTitle(R.string.restore_messages);
 	            			
 	                    	//** set up the custom dialog components */ 
 	            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);

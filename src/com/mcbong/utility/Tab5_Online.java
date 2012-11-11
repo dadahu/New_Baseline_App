@@ -25,6 +25,7 @@ import android.os.StrictMode;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
@@ -32,8 +33,10 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.RelativeLayout.LayoutParams;
 
 public class Tab5_Online extends Fragment {
 	 
@@ -91,9 +94,13 @@ public class Tab5_Online extends Fragment {
                         in.close();
                         
                         //** call custom dialog into view */
-            			final Dialog dialog = new Dialog(activity, R.style.custom_dialog);
-            			dialog.setContentView(R.layout.custom_dialog);
-            			dialog.setTitle(R.string.latest_version);
+                        final Dialog dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+                        dialog.getWindow();
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog.setContentView(R.layout.custom_dialog);
+        				
+        				//** TODO --- Set new texview to display title .... */ 
+            			//dialog.setTitle(R.string.latest_version);
             			
             			//** set up the custom dialog components */ 
             			TextView text = (TextView) dialog.findViewById(R.id.custom_dialog_textview);
@@ -104,6 +111,10 @@ public class Tab5_Online extends Fragment {
             			
             			if (current_version_string.equals(remote_version_string))
             			{
+            				Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+                            LayoutParams params = (RelativeLayout.LayoutParams)dialogButton.getLayoutParams();
+                            params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                            dialogButton.setLayoutParams(params); //causes layout update
             				Toast.makeText(activity, R.string.version_uptodate, Toast.LENGTH_SHORT).show();
             			}	
             			else

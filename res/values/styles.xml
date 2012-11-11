@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <style name="custom_dialog" parent="android:Theme.Dialog">
-    <item name="android:textSize">15dip</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:background">#000000</item>
+<resources>
+   <style
+name="Theme_Dialog_Translucent" parent="android:Theme.Dialog">
+<item name="android:windowBackground">@color/Transparent</item>
 </style>
-    
-</resources>
+</resources> 

@@ -8,6 +8,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -70,9 +71,13 @@ public class Tab4_Recovery extends Fragment {
                     Activity activity = getActivity();
                     if (activity != null) {
                     	
- 	                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                    	alert_dialog.setTitle(R.string.dialog_title_reboot_device);
+                    	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+	                	alert_dialog.getWindow();
+	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+	                	
+	                	//** TODO --- Set new texview to display title .... */ 
+                    	//alert_dialog.setTitle(R.string.dialog_title_reboot_device);
             			
              
             			//** set up the custom dialog components */ 
@@ -122,9 +127,13 @@ public class Tab4_Recovery extends Fragment {
                     Activity activity = getActivity();
                     if (activity != null) {
                     	
- 	                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                    	alert_dialog.setTitle(R.string.dialog_title_reboot_recovery);
+                    	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+	                	alert_dialog.getWindow();
+	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+	                	
+	                	//** TODO --- Set new texview to display title .... */ 
+                    	//alert_dialog.setTitle(R.string.dialog_title_reboot_recovery);
             			
              
             			//** set up the custom dialog components */ 
@@ -175,9 +184,13 @@ public class Tab4_Recovery extends Fragment {
                     Activity activity = getActivity();
                     if (activity != null) {
                     	
- 	                	final Dialog alert_dialog = new Dialog(activity, R.style.custom_dialog);
-                    	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                    	alert_dialog.setTitle(R.string.dialog_title_power_off_device);
+                    	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+	                	alert_dialog.getWindow();
+	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
+	                	
+	                	//** TODO --- Set new texview to display title .... */ 
+                    	//alert_dialog.setTitle(R.string.dialog_title_power_off_device);
             			
              
             			//** set up the custom dialog components */ 
