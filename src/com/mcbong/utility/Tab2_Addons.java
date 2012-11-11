@@ -67,7 +67,8 @@ public class Tab2_Addons extends Fragment {
 		                	alert_dialog.getWindow();
 		                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-		                	
+							TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+							title.setText(R.string.install_adw);
 		                	//** TODO --- Set new texview to display title .... */ 
 	                    	//alert_dialog.setTitle(R.string.install_adw);
 	            			
@@ -156,7 +157,8 @@ public class Tab2_Addons extends Fragment {
 		                	alert_dialog.getWindow();
 		                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-	                    	
+							TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+							title.setText(R.string.install_golauncher);
 		                	//** TODO --- Set new texview to display title .... */ 
 	                    	//alert_dialog.setTitle(R.string.install_golauncher);
 	            			
@@ -244,7 +246,8 @@ public class Tab2_Addons extends Fragment {
 		                	alert_dialog.getWindow();
 		                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-		                	
+							TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+							title.setText(R.string.install_nova);
 		                	//** TODO --- Set new texview to display title .... */ 
 	                    	//alert_dialog.setTitle(R.string.install_nova);
 	            			
@@ -332,7 +335,8 @@ public class Tab2_Addons extends Fragment {
 		                	alert_dialog.getWindow();
 		                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-		                	
+							TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+							title.setText(R.string.install_ssdred);
 		                	//** TODO --- Set new texview to display title .... */ 
 	                    	//alert_dialog.setTitle(R.string.install_ssdred);
 	            			
@@ -420,7 +424,8 @@ public class Tab2_Addons extends Fragment {
 			                	alert_dialog.getWindow();
 			                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 			                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-			                	
+								TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+								title.setText(R.string.install_popstyle);
 			                	//** TODO --- Set new texview to display title .... */ 
 		                    	//alert_dialog.setTitle(R.string.install_popstyle);
 		            			
@@ -508,7 +513,8 @@ public class Tab2_Addons extends Fragment {
 			                	alert_dialog.getWindow();
 			                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 			                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-			                	
+								TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+								title.setText(R.string.install_redics);
 			                	//** TODO --- Set new texview to display title .... */ 
 		                    	//alert_dialog.setTitle(R.string.install_redics);
 		            			

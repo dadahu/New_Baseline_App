@@ -55,7 +55,9 @@ public class Tab1_Tools extends Fragment {
 	                	alert_dialog.getWindow();
 	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-	                	
+						TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+						title.setText(R.string.backup_contacts_and_calls);
+						//dialog.setTitle(R.string.installed_version);
                     	//** TODO --- Set new texview to display title .... */ 
 	                	
 	                	
@@ -131,7 +133,8 @@ public class Tab1_Tools extends Fragment {
 	                	alert_dialog.getWindow();
 	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-	                	
+						TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+						title.setText(R.string.backup_messages);
 	                	//** TODO --- Set new texview to display title .... */ 
 	                	//alert_dialog.setTitle(R.string.backup_messages);
             			
@@ -212,7 +215,8 @@ public class Tab1_Tools extends Fragment {
     	                	alert_dialog.getWindow();
     	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
     	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-    	                	
+    	                	TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+							title.setText(R.string.restore_contacts_and_calls);	
     	                	//** TODO --- Set new texview to display title .... */ 
     	                	//alert_dialog.setTitle(R.string.restore_contacts_and_calls);
             			
@@ -289,7 +293,8 @@ public class Tab1_Tools extends Fragment {
 	    	                	alert_dialog.getWindow();
 	    	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	    	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-	                    	
+	                    		TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+								title.setText(R.string.restore_messages);
 	    	                	//** TODO --- Set new texview to display title .... */ 
 	    	                	//alert_dialog.setTitle(R.string.restore_messages);
 	            			

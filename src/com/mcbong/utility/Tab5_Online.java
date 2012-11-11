@@ -98,7 +98,8 @@ public class Tab5_Online extends Fragment {
                         dialog.getWindow();
                         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                         dialog.setContentView(R.layout.custom_dialog);
-        				
+						TextView title = (TextView) dialog.findViewById(R.id.custom_dialog_textview_title);
+						title.setText(R.string.latest_version);
         				//** TODO --- Set new texview to display title .... */ 
             			//dialog.setTitle(R.string.latest_version);
             			

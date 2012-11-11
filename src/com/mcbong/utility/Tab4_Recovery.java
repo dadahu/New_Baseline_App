@@ -75,7 +75,8 @@ public class Tab4_Recovery extends Fragment {
 	                	alert_dialog.getWindow();
 	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-	                	
+						TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+						title.setText(R.string.dialog_title_reboot_device);
 	                	//** TODO --- Set new texview to display title .... */ 
                     	//alert_dialog.setTitle(R.string.dialog_title_reboot_device);
             			
@@ -131,7 +132,8 @@ public class Tab4_Recovery extends Fragment {
 	                	alert_dialog.getWindow();
 	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-	                	
+						TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+						title.setText(R.string.dialog_title_reboot_recovery);
 	                	//** TODO --- Set new texview to display title .... */ 
                     	//alert_dialog.setTitle(R.string.dialog_title_reboot_recovery);
             			
@@ -188,7 +190,8 @@ public class Tab4_Recovery extends Fragment {
 	                	alert_dialog.getWindow();
 	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
-	                	
+						TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
+						title.setText(R.string.dialog_title_power_off_device);
 	                	//** TODO --- Set new texview to display title .... */ 
                     	//alert_dialog.setTitle(R.string.dialog_title_power_off_device);
             			
