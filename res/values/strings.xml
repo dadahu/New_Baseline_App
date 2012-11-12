@@ -6,7 +6,7 @@
     <!-- Menu Strings -->
     <string name="menu_quit">Quit</string>
     <string name="menu_version">App Version</string>
-    <string name="version">Test Build 235 (11/11)</string>
+    <string name="version">Test Build 236 (12/11)</string>
     <string name="installed_version">Current Installed Version ..</string>
    	<string name="backup">Backup.. Contact\'s + Calls\'s and Message\'s .. </string>
    	<string name="restore">Restore.. Contact\'s + Calls\'s and Message\'s .. </string>
@@ -45,6 +45,8 @@
     <string name="power_off">Power Off Device</string>
     <string name="wireless_adb_enable">Enable Wireless ADB </string>
     <string name="wireless_adb_disable">Disable Wireless ADB </string>
+    <string name="wireless_adb_enabled">Wireless ADB - Is Enabled</string>
+    <string name="wireless_adb_disabled">Wireless ADB - Is Disabled</string>
    	<string name="dialog_cancel">Cancel</string>
     <string name="dialog_ok">Yes, Do It Now</string>
     <string name="ok">OK</string>

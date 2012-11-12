@@ -159,6 +159,12 @@
                 android:src="@drawable/adb_enable" />
 
         </TableRow>
+
+        <TextView
+            android:id="@+id/textView_adb_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
 
         <TableRow
             android:id="@+id/tableRow5"

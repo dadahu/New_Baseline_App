@@ -28,25 +28,31 @@ public class Tab4_Recovery extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	 //** Inflate the layout for this fragment */
     		View view = inflater.inflate(R.layout.tab4_recovery, container, false);
-    		//Activity activity = getActivity();
+    		Activity activity = getActivity();
     		
     		
     		
     		//** Use the following as a guide to set up an Wireless ADB check and change an image as to whether its enabled or not */ 
-    		//try {
-    		//    Process adb_check = Runtime.getRuntime().exec("getprop   service.adb.tcp.port");
-    		//    BufferedReader adb_check_IS = new BufferedReader(new InputStreamReader(adb_check.getInputStream()));
-    		//    line = adb_check_IS.readLine();
-    		//    	if (line.equals("5555"))
-    		//    	{
-    		//    Toast.makeText(activity, "Wireless ADB - Is Enabled", Toast.LENGTH_SHORT).show();
-    		//    	}	
-        	//		else
-        	//		{
-        	//			Toast.makeText(activity, "Wireless ADB - Is Disabled", Toast.LENGTH_SHORT).show();
-    		//    }
-    		//} catch (java.io.IOException e) {
-    		//}
+    		try {
+    		    Process adb_check = Runtime.getRuntime().exec("getprop   service.adb.tcp.port");
+    		    BufferedReader adb_check_IS = new BufferedReader(new InputStreamReader(adb_check.getInputStream()));
+    		    line = adb_check_IS.readLine();
+    		    	if (line.equals("5555"))
+    		    	{
+    		    		//TextView adb_status = (TextView) activity.findViewById(R.id.textView_adb_status);
+    		    		//adb_status.setText(R.string.wireless_adb_enabled);
+    		    		//adb_status.setTextColor(Color.GREEN);
+    		    		Toast.makeText(activity, "Wireless ADB - Is Enabled", Toast.LENGTH_SHORT).show();
+    		    	}	
+        			else
+        			{
+        				//TextView adb_status = (TextView) activity.findViewById(R.id.textView_adb_status);
+    		    		//adb_status.setText(R.string.wireless_adb_disabled);
+    		    		//adb_status.setTextColor(Color.RED);
+        				Toast.makeText(activity, "Wireless ADB - Is Disabled", Toast.LENGTH_SHORT).show();
+    		    }
+    		} catch (java.io.IOException e) {
+    		}
     		
     		
     		//** Define buttons.. */
@@ -249,14 +255,20 @@ public class Tab4_Recovery extends Fragment {
                 		    line = adb_check_IS.readLine();
                 		    	if (line.equals("5555"))
                 		    	{
-                		    Toast.makeText(activity, "Wireless ADB - Is Enabled", Toast.LENGTH_SHORT).show();
+                		    		//TextView adb_status = (TextView) activity.findViewById(R.id.textView_adb_status);
+                		    		//adb_status.setText(R.string.wireless_adb_enabled);
+                		    		//adb_status.setTextColor(Color.GREEN);
+                		    		Toast.makeText(activity, R.string.wireless_adb_enabled, Toast.LENGTH_SHORT).show();
                 		    	}	
                     			else
                     			{
-                    				Toast.makeText(activity, "Wireless ADB - Is Disabled", Toast.LENGTH_SHORT).show();
+                    				//TextView adb_status = (TextView) activity.findViewById(R.id.textView_adb_status);
+                		    		//adb_status.setText(R.string.wireless_adb_disabled);
+                		    		//adb_status.setTextColor(Color.RED);
+                    				Toast.makeText(activity, R.string.wireless_adb_disabled, Toast.LENGTH_SHORT).show();
                 		    }
                 		} catch (java.io.IOException e) {
-                		}
+                		} 
     				  }
  	            }
  	        });
@@ -288,11 +300,17 @@ public class Tab4_Recovery extends Fragment {
                 		    line = adb_check_IS.readLine();
                 		    	if (line.equals("5555"))
                 		    	{
-                		    Toast.makeText(activity, "Wireless ADB - Is Enabled", Toast.LENGTH_SHORT).show();
+                		    		//TextView adb_status = (TextView) activity.findViewById(R.id.textView_adb_status);
+                		    		//adb_status.setText(R.string.wireless_adb_enabled);
+                		    		//adb_status.setTextColor(Color.GREEN);
+                		    		Toast.makeText(activity, R.string.wireless_adb_enabled, Toast.LENGTH_SHORT).show();
                 		    	}	
                     			else
                     			{
-                    				Toast.makeText(activity, "Wireless ADB - Is Disabled", Toast.LENGTH_SHORT).show();
+                    				//TextView adb_status = (TextView) activity.findViewById(R.id.textView_adb_status);
+                		    		//adb_status.setText(R.string.wireless_adb_disabled);
+                		    		//adb_status.setTextColor(Color.RED);
+                    				Toast.makeText(activity, R.string.wireless_adb_disabled, Toast.LENGTH_SHORT).show();
                 		    }
                 		} catch (java.io.IOException e) {
                 		}
