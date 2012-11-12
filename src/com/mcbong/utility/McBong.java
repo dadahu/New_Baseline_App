@@ -98,30 +98,26 @@ public class McBong extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()) {
 			case R.id.menuitem_version:
-		//** Insert function for menuitem 'about' here.. */
-				 //** call custom dialog into view */
-				
+		
+				//** call custom dialog into view and set characteristic's */
 				final Dialog dialog = new Dialog(this, R.style.Theme_Dialog_Translucent);
                 dialog.getWindow();
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.custom_dialog);
                 Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+                //** Center OK button on dialog */
                 LayoutParams params = (RelativeLayout.LayoutParams)dialogButton.getLayoutParams();
                 params.addRule(RelativeLayout.CENTER_IN_PARENT);
                 dialogButton.setLayoutParams(params); //causes layout update
-                
-                
                 TextView title = (TextView) dialog.findViewById(R.id.custom_dialog_textview_title);
                 title.setText(R.string.installed_version);
-    			//dialog.setTitle(R.string.installed_version);
-    			
+    			    			
     			//** set up the custom dialog components */ 
     			TextView text = (TextView) dialog.findViewById(R.id.custom_dialog_textview);
     			text.setText(R.string.version);
     			ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
     			image.setImageResource(R.drawable.ic_launcher);
     			//* set up button image resources */
-    			//Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
     			dialogButton.setBackgroundResource(R.drawable.small_button);
     			//** if OK button is clicked, close the custom dialog */
     			dialogButton.setOnClickListener(new OnClickListener() {

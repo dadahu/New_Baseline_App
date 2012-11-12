@@ -1,53 +1,52 @@
 package com.mcbong.utility;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.concurrent.TimeoutException;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
 
 public class Tab4_Recovery extends Fragment {
-	
+	String line = "";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	 //** Inflate the layout for this fragment */
     		View view = inflater.inflate(R.layout.tab4_recovery, container, false);
+    		//Activity activity = getActivity();
     		
-    		//** Retrieve wireless adb setting on tab4 inflate, and set icon according to whether enabled or disabled */
     		
-    		//Command command = new Command(0, "getprop service.adb.tcp.port")
-    		//{
-    		//        @Override
-    		//      public void output(int id, String line)
-    		//        {
-    		//       	
-    		//           //** Do something with the output here.. */
-    		//        }
-    		// };
+    		
+    		//** Use the following as a guide to set up an Wireless ADB check and change an image as to whether its enabled or not */ 
     		//try {
-			//	RootTools.getShell(true).add(command).waitForFinish();
-			//} catch (InterruptedException e1) {
-			//	// TODO Auto-generated catch block
-			//	e1.printStackTrace();
-			//} catch (IOException e1) {
-			//	// TODO Auto-generated catch block
-			//	e1.printStackTrace();
-			//} catch (TimeoutException e1) {
-			//	// TODO Auto-generated catch block
-			//	e1.printStackTrace();
-			//}
+    		//    Process adb_check = Runtime.getRuntime().exec("getprop   service.adb.tcp.port");
+    		//    BufferedReader adb_check_IS = new BufferedReader(new InputStreamReader(adb_check.getInputStream()));
+    		//    line = adb_check_IS.readLine();
+    		//    	if (line.equals("5555"))
+    		//    	{
+    		//    Toast.makeText(activity, "Wireless ADB - Is Enabled", Toast.LENGTH_SHORT).show();
+    		//    	}	
+        	//		else
+        	//		{
+        	//			Toast.makeText(activity, "Wireless ADB - Is Disabled", Toast.LENGTH_SHORT).show();
+    		//    }
+    		//} catch (java.io.IOException e) {
+    		//}
     		
     		
     		//** Define buttons.. */
@@ -71,24 +70,22 @@ public class Tab4_Recovery extends Fragment {
                     Activity activity = getActivity();
                     if (activity != null) {
                     	
+                    	//** call custom dialog into view and set characteristic's */
                     	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
 	                	alert_dialog.getWindow();
 	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
 						TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
 						title.setText(R.string.dialog_title_reboot_device);
-	                	//** TODO --- Set new texview to display title .... */ 
-                    	//alert_dialog.setTitle(R.string.dialog_title_reboot_device);
-            			
-             
-            			//** set up the custom dialog components */ 
-            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
+	                	TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
             			alert_text.setText(R.string.confirm);
             			ImageView image = (ImageView) alert_dialog.findViewById(R.id.custom_alert_dialog_image);
             			image.setImageResource(R.drawable.ic_launcher);
+            			
             			//* set up button image resources */
             			Button custom_alert_dialog_ok = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_ok);
             			custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+            			
             			//** if button is clicked, execute the shell commands through root-tools */
             			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
             				public void onClick(View v) {
@@ -115,37 +112,32 @@ public class Tab4_Recovery extends Fragment {
             					alert_dialog.dismiss();
             				}
             			});
-            			
             			alert_dialog.show();
                     }
                }
-                
            });
-    		
     		Button button_reboot_recovery = (Button) view.findViewById(R.id.button_reboot_recovery);
     		button_reboot_recovery.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
                     Activity activity = getActivity();
                     if (activity != null) {
                     	
+                    	//** call custom dialog into view and set characteristic's */
                     	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
 	                	alert_dialog.getWindow();
 	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
 						TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
 						title.setText(R.string.dialog_title_reboot_recovery);
-	                	//** TODO --- Set new texview to display title .... */ 
-                    	//alert_dialog.setTitle(R.string.dialog_title_reboot_recovery);
-            			
-             
-            			//** set up the custom dialog components */ 
-            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
+	                	TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
             			alert_text.setText(R.string.confirm);
             			ImageView image = (ImageView) alert_dialog.findViewById(R.id.custom_alert_dialog_image);
             			image.setImageResource(R.drawable.ic_launcher);
+            			
             			//* set up button image resources */
             			Button custom_alert_dialog_ok = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_ok);
             			custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+            			
             			//** if button is clicked, execute the shell commands through root-tools */
             			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
             				public void onClick(View v) {
@@ -176,34 +168,29 @@ public class Tab4_Recovery extends Fragment {
             			alert_dialog.show();
                     }
                }
-                
-           });
-    		
-    		
+            });
     		Button dialog_title_power_off_device = (Button) view.findViewById(R.id.button_power_off);
     		dialog_title_power_off_device.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
                     Activity activity = getActivity();
                     if (activity != null) {
                     	
+                    	//** call custom dialog into view and set characteristic's */
                     	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
 	                	alert_dialog.getWindow();
 	                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
 						TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
 						title.setText(R.string.dialog_title_power_off_device);
-	                	//** TODO --- Set new texview to display title .... */ 
-                    	//alert_dialog.setTitle(R.string.dialog_title_power_off_device);
-            			
-             
-            			//** set up the custom dialog components */ 
-            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
+	                	TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
             			alert_text.setText(R.string.confirm);
             			ImageView image = (ImageView) alert_dialog.findViewById(R.id.custom_alert_dialog_image);
             			image.setImageResource(R.drawable.ic_launcher);
+            			
             			//* set up button image resources */
             			Button custom_alert_dialog_ok = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_ok);
             			custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+            			
             			//** if button is clicked, execute the shell commands through root-tools */
             			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
             				public void onClick(View v) {
@@ -234,17 +221,15 @@ public class Tab4_Recovery extends Fragment {
             			alert_dialog.show();
                     }
                }
-                
            });
-    		
     		button_wireless_adb_enable.setOnClickListener(new OnClickListener() {
  	            public void onClick(View v) {
  	                Activity activity = getActivity();
  	                
  	                if (activity != null) {
  	                	
+ 	                	//** Enable Wireless ADBD function */
  	                	Toast.makeText(activity, R.string.enabling, Toast.LENGTH_SHORT).show();
- 	                	
  	                	CommandCapture command = new CommandCapture(0, "setprop service.adb.tcp.port 5555", "stop adbd", "start adbd");
                        	try {
    							RootTools.getShell(true).add(command).waitForFinish();
@@ -258,11 +243,22 @@ public class Tab4_Recovery extends Fragment {
    							// TODO Auto-generated catch block
    							e.printStackTrace();
    						}
-    				
- 	                	 
- 	                }
+                       	try {
+                		    Process adb_check = Runtime.getRuntime().exec("getprop   service.adb.tcp.port");
+                		    BufferedReader adb_check_IS = new BufferedReader(new InputStreamReader(adb_check.getInputStream()));
+                		    line = adb_check_IS.readLine();
+                		    	if (line.equals("5555"))
+                		    	{
+                		    Toast.makeText(activity, "Wireless ADB - Is Enabled", Toast.LENGTH_SHORT).show();
+                		    	}	
+                    			else
+                    			{
+                    				Toast.makeText(activity, "Wireless ADB - Is Disabled", Toast.LENGTH_SHORT).show();
+                		    }
+                		} catch (java.io.IOException e) {
+                		}
+    				  }
  	            }
- 	            
  	        });
     		button_wireless_adb_disable.setOnClickListener(new OnClickListener() {
  	            public void onClick(View v) {
@@ -270,8 +266,8 @@ public class Tab4_Recovery extends Fragment {
  	                
  	                if (activity != null) {
  	                	
+ 	                	//** Disable Wireless ADBD function */
  	                	Toast.makeText(activity, R.string.disabling, Toast.LENGTH_SHORT).show();
- 	                	
  	                	CommandCapture command = new CommandCapture(0, "setprop service.adb.tcp.port -1", "stop adbd", "start adbd");
                        	try {
    							RootTools.getShell(true).add(command).waitForFinish();
@@ -285,11 +281,23 @@ public class Tab4_Recovery extends Fragment {
    							// TODO Auto-generated catch block
    							e.printStackTrace();
    						}
-    				
- 	                	 
- 	                }
+                       	
+                       	try {
+                		    Process adb_check = Runtime.getRuntime().exec("getprop   service.adb.tcp.port");
+                		    BufferedReader adb_check_IS = new BufferedReader(new InputStreamReader(adb_check.getInputStream()));
+                		    line = adb_check_IS.readLine();
+                		    	if (line.equals("5555"))
+                		    	{
+                		    Toast.makeText(activity, "Wireless ADB - Is Enabled", Toast.LENGTH_SHORT).show();
+                		    	}	
+                    			else
+                    			{
+                    				Toast.makeText(activity, "Wireless ADB - Is Disabled", Toast.LENGTH_SHORT).show();
+                		    }
+                		} catch (java.io.IOException e) {
+                		}
+    				 }
  	            }
- 	            
  	        });
     		
     		return view;

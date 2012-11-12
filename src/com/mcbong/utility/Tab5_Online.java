@@ -93,20 +93,17 @@ public class Tab5_Online extends Fragment {
                         }
                         in.close();
                         
-                        //** call custom dialog into view */
+                      //** call custom dialog into view and set characteristic's */
                         final Dialog dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
                         dialog.getWindow();
                         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                         dialog.setContentView(R.layout.custom_dialog);
 						TextView title = (TextView) dialog.findViewById(R.id.custom_dialog_textview_title);
 						title.setText(R.string.latest_version);
-        				//** TODO --- Set new texview to display title .... */ 
-            			//dialog.setTitle(R.string.latest_version);
-            			
-            			//** set up the custom dialog components */ 
-            			TextView text = (TextView) dialog.findViewById(R.id.custom_dialog_textview);
+        				TextView text = (TextView) dialog.findViewById(R.id.custom_dialog_textview);
             			text.setText(sb.toString()+"");
             			
+            			//** Get 'installed version' and 'remote version' strings to compare */
             			String remote_version_string = sb.toString().toString();
             			String current_version_string = getString(R.string.version).toString();
             			
@@ -158,7 +155,7 @@ public class Tab5_Online extends Fragment {
  	      							e.printStackTrace();
  	      						}
             						            					
-            					//** Download latest version from server ... */
+            					//** Set up the 'Download Manager' and Download latest version from server ... */
         	                	String url = "http://dl.dropbox.com/u/18271886/Test_Builds/McBong-Utility.apk";
         	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
         	                	request.setDescription("McBong Utility Updater");

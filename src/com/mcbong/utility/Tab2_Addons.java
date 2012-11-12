@@ -63,23 +63,22 @@ public class Tab2_Addons extends Fragment {
 		                
 		                if (activity != null) {
 		                	
+		                	//** call custom dialog into view and set characteristic's */
 		                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
 		                	alert_dialog.getWindow();
 		                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
 							TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
 							title.setText(R.string.install_adw);
-		                	//** TODO --- Set new texview to display title .... */ 
-	                    	//alert_dialog.setTitle(R.string.install_adw);
-	            			
-	                    	//** set up the custom dialog components */ 
-	            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
+		                	TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
 	            			alert_text.setText(R.string.confirm);
 	            			ImageView image = (ImageView) alert_dialog.findViewById(R.id.custom_alert_dialog_image);
 	            			image.setImageResource(R.drawable.adw);
+	            			
 	            			//* set up button image resources */
 	            			Button custom_alert_dialog_ok = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_ok);
 	            			custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+	            			
 	            			//** if button is clicked, execute the shell commands through root-tools */
 	            			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
 	            				public void onClick(View v) {
@@ -152,25 +151,22 @@ public class Tab2_Addons extends Fragment {
 		                
 		                if (activity != null) {
 		                	
-		                	
+		                	//** call custom dialog into view and set characteristic's */
 		                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
 		                	alert_dialog.getWindow();
 		                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
 							TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
 							title.setText(R.string.install_golauncher);
-		                	//** TODO --- Set new texview to display title .... */ 
-	                    	//alert_dialog.setTitle(R.string.install_golauncher);
-	            			
-	             
-	            			//** set up the custom dialog components */ 
-	            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
+		                	TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
 	            			alert_text.setText(R.string.confirm);
 	            			ImageView image = (ImageView) alert_dialog.findViewById(R.id.custom_alert_dialog_image);
 	            			image.setImageResource(R.drawable.golauncher);
+	            			
 	            			//* set up button image resources */
 	            			Button custom_alert_dialog_ok = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_ok);
 	            			custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+	            			
 	            			//** if button is clicked, execute the shell commands through root-tools */
 	            			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
 	            				public void onClick(View v) {
@@ -242,24 +238,22 @@ public class Tab2_Addons extends Fragment {
 		                
 		                if (activity != null) {
 		                	
+		                	//** call custom dialog into view and set characteristic's */
 		                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
 		                	alert_dialog.getWindow();
 		                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
 							TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
 							title.setText(R.string.install_nova);
-		                	//** TODO --- Set new texview to display title .... */ 
-	                    	//alert_dialog.setTitle(R.string.install_nova);
-	            			
-	             
-	            			//** set up the custom dialog components */ 
-	            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
+		                	TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
 	            			alert_text.setText(R.string.confirm);
 	            			ImageView image = (ImageView) alert_dialog.findViewById(R.id.custom_alert_dialog_image);
 	            			image.setImageResource(R.drawable.nova);
+	            			
 	            			//* set up button image resources */
 	            			Button custom_alert_dialog_ok = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_ok);
 	            			custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+	            			
 	            			//** if button is clicked, execute the shell commands through root-tools */
 	            			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
 	            				public void onClick(View v) {
@@ -331,24 +325,22 @@ public class Tab2_Addons extends Fragment {
 		                
 		                if (activity != null) {
 		                	
+		                	//** call custom dialog into view and set characteristic's */
 		                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
 		                	alert_dialog.getWindow();
 		                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
 							TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
 							title.setText(R.string.install_ssdred);
-		                	//** TODO --- Set new texview to display title .... */ 
-	                    	//alert_dialog.setTitle(R.string.install_ssdred);
-	            			
-	             
-	            			//** set up the custom dialog components */ 
-	            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
+		                	TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
 	            			alert_text.setText(R.string.confirm);
 	            			ImageView image = (ImageView) alert_dialog.findViewById(R.id.custom_alert_dialog_image);
 	            			image.setImageResource(R.drawable.ssdred);
+	            			
 	            			//* set up button image resources */
 	            			Button custom_alert_dialog_ok = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_ok);
 	            			custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+	            			
 	            			//** if button is clicked, execute the shell commands through root-tools */
 	            			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
 	            				public void onClick(View v) {
@@ -420,24 +412,22 @@ public class Tab2_Addons extends Fragment {
 			                
 			                if (activity != null) {
 			                	
+			                	//** call custom dialog into view and set characteristic's */
 			                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
 			                	alert_dialog.getWindow();
 			                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 			                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
 								TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
 								title.setText(R.string.install_popstyle);
-			                	//** TODO --- Set new texview to display title .... */ 
-		                    	//alert_dialog.setTitle(R.string.install_popstyle);
-		            			
-		             
-		            			//** set up the custom dialog components */ 
-		            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
+			                	TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
 		            			alert_text.setText(R.string.confirm);
 		            			ImageView image = (ImageView) alert_dialog.findViewById(R.id.custom_alert_dialog_image);
 		            			image.setImageResource(R.drawable.popstyle);
+		            			
 		            			//* set up button image resources */
 		            			Button custom_alert_dialog_ok = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_ok);
 		            			custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+		            			
 		            			//** if button is clicked, execute the shell commands through root-tools */
 		            			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
 		            				public void onClick(View v) {
@@ -509,24 +499,22 @@ public class Tab2_Addons extends Fragment {
 			                
 			                if (activity != null) {
 			                	
+			                	//** call custom dialog into view and set characteristic's */
 			                	final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
 			                	alert_dialog.getWindow();
 			                	alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 			                	alert_dialog.setContentView(R.layout.custom_alert_dialog);
 								TextView title = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview_title);
 								title.setText(R.string.install_redics);
-			                	//** TODO --- Set new texview to display title .... */ 
-		                    	//alert_dialog.setTitle(R.string.install_redics);
-		            			
-		             
-		            			//** set up the custom dialog components */ 
-		            			TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
+			                	TextView alert_text = (TextView) alert_dialog.findViewById(R.id.custom_alert_dialog_textview);
 		            			alert_text.setText(R.string.confirm);
 		            			ImageView image = (ImageView) alert_dialog.findViewById(R.id.custom_alert_dialog_image);
 		            			image.setImageResource(R.drawable.redics);
+		            			
 		            			//* set up button image resources */
 		            			Button custom_alert_dialog_ok = (Button) alert_dialog.findViewById(R.id.custom_alert_dialog_ok);
 		            			custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+		            			
 		            			//** if button is clicked, execute the shell commands through root-tools */
 		            			custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
 		            				public void onClick(View v) {
