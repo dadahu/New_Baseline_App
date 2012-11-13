@@ -4,11 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.concurrent.TimeoutException;
-
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,21 +17,23 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
 
 public class Tab4_Recovery extends Fragment {
 	String line = "";
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    	 //** Inflate the layout for this fragment */
-    		final View view = inflater.inflate(R.layout.tab4_recovery, container, false);
-    		//Activity activity = getActivity();
-    		
-    		
-    		
-    		//** Use the following as a guide to set up an Wireless ADB check and change an image as to whether its enabled or not */ 
+	 @Override
+	    public void onActivityCreated(Bundle savedInstanceState) {
+	    super.onActivityCreated(savedInstanceState);
+	    }
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState)	{
+			//** Inflate the layout for this fragment */
+			final View view = inflater.inflate(R.layout.tab4_recovery, container, false);
+    		    		
+    		//** set up Wireless ADB check and change an image as to whether its enabled or not */ 
     		try {
     		    Process adb_check = Runtime.getRuntime().exec("getprop   service.adb.tcp.port");
     		    BufferedReader adb_check_IS = new BufferedReader(new InputStreamReader(adb_check.getInputStream()));
@@ -43,14 +44,12 @@ public class Tab4_Recovery extends Fragment {
     		    		ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
             			image.setImageResource(R.drawable.on);
     		    		
-    		    		//Toast.makeText(activity, "Wireless ADB - Is Enabled", Toast.LENGTH_SHORT).show();
     		    	}	
         			else
         			{
         				ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
             			image.setImageResource(R.drawable.off);
-        				//Toast.makeText(activity, "Wireless ADB - Is Disabled", Toast.LENGTH_SHORT).show();
-    		    }
+        		}
     		} catch (java.io.IOException e) {
     		}
     		

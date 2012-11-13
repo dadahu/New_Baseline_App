@@ -6,7 +6,6 @@ import java.util.concurrent.TimeoutException;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DownloadManager;
-import android.app.Fragment;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -15,11 +14,12 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,34 +30,40 @@ import com.stericson.RootTools.RootTools;
 public class Tab2_Addons extends Fragment {
 	
 	 @Override
-	    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-	    	 //** Inflate the layout for this fragment */
-	    		View view = inflater.inflate(R.layout.tab2_addons, container, false);
+	    public void onActivityCreated(Bundle savedInstanceState) {
+	    super.onActivityCreated(savedInstanceState);
+	    }
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState)	{
+			//** Inflate the layout for this fragment */
+			View view = inflater.inflate(R.layout.tab2_addons, container, false);
 	    		
-	    		//** Define buttons.. */	
-		        Button button_install_adw = (Button) view.findViewById(R.id.button_install_adw);
-		        Button button_install_golauncher = (Button) view.findViewById(R.id.button_install_golauncher);
-		        Button button_install_nova = (Button) view.findViewById(R.id.button_install_nova);
-		        Button button_install_ssdred = (Button) view.findViewById(R.id.button_install_ssdred);
-		        Button button_install_popstyle = (Button) view.findViewById(R.id.button_install_popstyle);
-		        Button button_install_redics = (Button) view.findViewById(R.id.button_install_redics);
+	    	//** Define buttons.. */	
+		     Button button_install_adw = (Button) view.findViewById(R.id.button_install_adw);
+		     Button button_install_golauncher = (Button) view.findViewById(R.id.button_install_golauncher);
+		     Button button_install_nova = (Button) view.findViewById(R.id.button_install_nova);
+		     Button button_install_ssdred = (Button) view.findViewById(R.id.button_install_ssdred);
+		     Button button_install_popstyle = (Button) view.findViewById(R.id.button_install_popstyle);
+		     Button button_install_redics = (Button) view.findViewById(R.id.button_install_redics);
 		        
-		        //** Set button image resources.. */    
-		        Button button_install_adw_views= (Button)view.findViewById(R.id.button_install_adw);
-		        button_install_adw_views.setBackgroundResource(R.drawable.button);
-		        Button button_install_golauncher_views= (Button)view.findViewById(R.id.button_install_golauncher);
-		        button_install_golauncher_views.setBackgroundResource(R.drawable.button);
-		        Button button_install_nova_views= (Button)view.findViewById(R.id.button_install_nova);
-		        button_install_nova_views.setBackgroundResource(R.drawable.button);
-		        Button button_install_ssdred_views= (Button)view.findViewById(R.id.button_install_ssdred);
-		        button_install_ssdred_views.setBackgroundResource(R.drawable.button);
-		        Button button_install_popstyle_views= (Button)view.findViewById(R.id.button_install_popstyle);
-		        button_install_popstyle_views.setBackgroundResource(R.drawable.button);
-		        Button button_install_redics_views= (Button)view.findViewById(R.id.button_install_redics);
-		        button_install_redics_views.setBackgroundResource(R.drawable.button);
+		     //** Set button image resources.. */    
+		     Button button_install_adw_views= (Button)view.findViewById(R.id.button_install_adw);
+		     button_install_adw_views.setBackgroundResource(R.drawable.button);
+		     Button button_install_golauncher_views= (Button)view.findViewById(R.id.button_install_golauncher);
+		     button_install_golauncher_views.setBackgroundResource(R.drawable.button);
+		     Button button_install_nova_views= (Button)view.findViewById(R.id.button_install_nova);
+		     button_install_nova_views.setBackgroundResource(R.drawable.button);
+		     Button button_install_ssdred_views= (Button)view.findViewById(R.id.button_install_ssdred);
+		     button_install_ssdred_views.setBackgroundResource(R.drawable.button);
+		     Button button_install_popstyle_views= (Button)view.findViewById(R.id.button_install_popstyle);
+		     button_install_popstyle_views.setBackgroundResource(R.drawable.button);
+		     Button button_install_redics_views= (Button)view.findViewById(R.id.button_install_redics);
+		     button_install_redics_views.setBackgroundResource(R.drawable.button);
 	    		
 	    		
-		        button_install_adw.setOnClickListener(new OnClickListener() {
+		     button_install_adw.setOnClickListener(new OnClickListener() {
 		            public void onClick(View v) {
 		                Activity activity = getActivity();
 		                

@@ -7,12 +7,9 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeoutException;
-import com.stericson.RootTools.CommandCapture;
-import com.stericson.RootTools.RootTools;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DownloadManager;
-import android.app.Fragment;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -22,21 +19,24 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
+import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.RelativeLayout.LayoutParams;
+import com.stericson.RootTools.CommandCapture;
+import com.stericson.RootTools.RootTools;
 
 public class Tab5_Online extends Fragment {
 	 
@@ -45,13 +45,18 @@ public class Tab5_Online extends Fragment {
 	 
     protected static final TextView text = null;
     
-	@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		    //** Inflate the layout for this fragment */
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+    super.onActivityCreated(savedInstanceState);
+    }
 
-    		final View view = inflater.inflate(R.layout.tab5_online, container, false);
+@Override
+public View onCreateView(LayoutInflater inflater, ViewGroup container,
+		Bundle savedInstanceState)	{
+		//** Inflate the layout for this fragment */
+		final View view = inflater.inflate(R.layout.tab5_online, container, false);
     		
-    		//** Define WebView component & Buttons,also load required WebSite.. */
+			//** Define WebView component & Buttons,also load required WebSite.. */
     		final WebView myWebView = (WebView) view.findViewById(R.id.webview);
     		myWebView.setWebViewClient(new WebViewClient());
     		myWebView.loadUrl("http://team-scrat.blogspot.co.uk");

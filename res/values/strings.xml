@@ -6,7 +6,7 @@
     <!-- Menu Strings -->
     <string name="menu_quit">Quit</string>
     <string name="menu_version">App Version</string>
-    <string name="version">Test Build 247 (12/11)</string>
+    <string name="version">Test Build 252 (13/11)</string>
     <string name="installed_version">Current Installed Version ..</string>
    	<string name="backup">Backup.. Contact\'s + Calls\'s and Message\'s .. </string>
    	<string name="restore">Restore.. Contact\'s + Calls\'s and Message\'s .. </string>
@@ -30,7 +30,7 @@
     <string name="tools">Android Tool\'s Section ..</string>
     <string name="tweaks">Android Tweak\'s Section ..</string>
     <string name="latest_version">The Latest Online Version is ..</string>
-   	<string name="update"> Download Update </string>
+    <string name="update"> Download Update </string>
     <string name="update_available">  NEW Update Available! ..</string>
     <string name="installing_update">Installing McBong-Utility Update ..</string>
     <string name="downloading">Downloading Update ..</string>

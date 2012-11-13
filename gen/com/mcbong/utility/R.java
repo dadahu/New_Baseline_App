@@ -172,24 +172,23 @@ public final class R {
         public static final int exit=0x7f02000f;
         public static final int golauncher=0x7f020010;
         public static final int ic_launcher=0x7f020011;
-        public static final int ic_stat_name=0x7f020012;
-        public static final int nova=0x7f020013;
-        public static final int off=0x7f020014;
-        public static final int on=0x7f020015;
-        public static final int popstyle=0x7f020016;
-        public static final int power_off=0x7f020017;
-        public static final int power_offbackup=0x7f020018;
-        public static final int reboot=0x7f020019;
-        public static final int reboot_recovery=0x7f02001a;
-        public static final int redics=0x7f02001b;
-        public static final int restore_contacts_and_calls=0x7f02001c;
-        public static final int restore_messages=0x7f02001d;
-        public static final int shape=0x7f02001e;
-        public static final int small_button=0x7f02001f;
-        public static final int small_button_update=0x7f020020;
-        public static final int ssdred=0x7f020021;
-        public static final int tabbar=0x7f020022;
-        public static final int wip=0x7f020023;
+        public static final int nova=0x7f020012;
+        public static final int off=0x7f020013;
+        public static final int on=0x7f020014;
+        public static final int popstyle=0x7f020015;
+        public static final int power_off=0x7f020016;
+        public static final int power_offbackup=0x7f020017;
+        public static final int reboot=0x7f020018;
+        public static final int reboot_recovery=0x7f020019;
+        public static final int redics=0x7f02001a;
+        public static final int restore_contacts_and_calls=0x7f02001b;
+        public static final int restore_messages=0x7f02001c;
+        public static final int shape=0x7f02001d;
+        public static final int small_button=0x7f02001e;
+        public static final int small_button_update=0x7f02001f;
+        public static final int ssdred=0x7f020020;
+        public static final int tabbar=0x7f020021;
+        public static final int wip=0x7f020022;
     }
     public static final class id {
         public static final int TextView01=0x7f080010;
@@ -200,6 +199,7 @@ public final class R {
         public static final int TextView04a=0x7f080018;
         public static final int TextView05=0x7f08002b;
         public static final int TextView06=0x7f080021;
+        public static final int button1=0x7f08004c;
         public static final int button_backup_contacts_and_calls=0x7f080013;
         public static final int button_backup_messages=0x7f080016;
         public static final int button_check_webver=0x7f08004a;
@@ -227,7 +227,6 @@ public final class R {
         public static final int custom_dialog_textview=0x7f080009;
         public static final int custom_dialog_textview_title=0x7f080007;
         public static final int custom_dialog_update=0x7f08000a;
-        public static final int fragment_container=0x7f08000d;
         public static final int imageView1=0x7f080036;
         public static final int imageView2=0x7f08003c;
         public static final int imageView3=0x7f08003f;
@@ -244,13 +243,14 @@ public final class R {
         public static final int imageview_popstyle=0x7f080031;
         public static final int imageview_redics=0x7f080034;
         public static final int imageview_ssdred=0x7f08002e;
-        public static final int menuitem_quit=0x7f08004d;
-        public static final int menuitem_version=0x7f08004c;
+        public static final int menuitem_quit=0x7f08004e;
+        public static final int menuitem_version=0x7f08004d;
         public static final int padder1_custom_alert_dialog=0x7f080000;
         public static final int padder1_custom_dialog=0x7f080006;
         public static final int padder1_tab1=0x7f080035;
         public static final int padder1_tab3=0x7f080049;
         public static final int padder2_tab3=0x7f08004b;
+        public static final int pager=0x7f08000d;
         public static final int scroller=0x7f08000e;
         public static final int tableRow1=0x7f080038;
         public static final int tableRow2=0x7f08003a;
@@ -280,6 +280,8 @@ public final class R {
         public static final int tab3_tweaks=0x7f030005;
         public static final int tab4_recovery=0x7f030006;
         public static final int tab5_online=0x7f030007;
+        public static final int tabone=0x7f030008;
+        public static final int tabtwo=0x7f030009;
     }
     public static final class menu {
         public static final int main=0x7f070000;
