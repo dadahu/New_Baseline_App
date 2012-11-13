@@ -6,7 +6,7 @@
     <!-- Menu Strings -->
     <string name="menu_quit">Quit</string>
     <string name="menu_version">App Version</string>
-    <string name="version">Test Build 236 (12/11)</string>
+    <string name="version">Test Build 247 (12/11)</string>
     <string name="installed_version">Current Installed Version ..</string>
    	<string name="backup">Backup.. Contact\'s + Calls\'s and Message\'s .. </string>
    	<string name="restore">Restore.. Contact\'s + Calls\'s and Message\'s .. </string>

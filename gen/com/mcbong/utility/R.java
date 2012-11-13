@@ -174,20 +174,22 @@ public final class R {
         public static final int ic_launcher=0x7f020011;
         public static final int ic_stat_name=0x7f020012;
         public static final int nova=0x7f020013;
-        public static final int popstyle=0x7f020014;
-        public static final int power_off=0x7f020015;
-        public static final int power_offbackup=0x7f020016;
-        public static final int reboot=0x7f020017;
-        public static final int reboot_recovery=0x7f020018;
-        public static final int redics=0x7f020019;
-        public static final int restore_contacts_and_calls=0x7f02001a;
-        public static final int restore_messages=0x7f02001b;
-        public static final int shape=0x7f02001c;
-        public static final int small_button=0x7f02001d;
-        public static final int small_button_update=0x7f02001e;
-        public static final int ssdred=0x7f02001f;
-        public static final int tabbar=0x7f020020;
-        public static final int wip=0x7f020021;
+        public static final int off=0x7f020014;
+        public static final int on=0x7f020015;
+        public static final int popstyle=0x7f020016;
+        public static final int power_off=0x7f020017;
+        public static final int power_offbackup=0x7f020018;
+        public static final int reboot=0x7f020019;
+        public static final int reboot_recovery=0x7f02001a;
+        public static final int redics=0x7f02001b;
+        public static final int restore_contacts_and_calls=0x7f02001c;
+        public static final int restore_messages=0x7f02001d;
+        public static final int shape=0x7f02001e;
+        public static final int small_button=0x7f02001f;
+        public static final int small_button_update=0x7f020020;
+        public static final int ssdred=0x7f020021;
+        public static final int tabbar=0x7f020022;
+        public static final int wip=0x7f020023;
     }
     public static final class id {
         public static final int TextView01=0x7f080010;
@@ -231,6 +233,7 @@ public final class R {
         public static final int imageView3=0x7f08003f;
         public static final int imageView_adb_disable=0x7f080046;
         public static final int imageView_adb_enable=0x7f080042;
+        public static final int imageView_adb_status=0x7f080043;
         public static final int imageview_adw=0x7f080024;
         public static final int imageview_contacts=0x7f080014;
         public static final int imageview_contacts_r=0x7f08001d;
@@ -266,7 +269,6 @@ public final class R {
         public static final int tablerow_redics=0x7f080032;
         public static final int tablerow_ssdred=0x7f08002c;
         public static final int textView1=0x7f080037;
-        public static final int textView_adb_status=0x7f080043;
         public static final int webview=0x7f080048;
     }
     public static final class layout {
