@@ -80,7 +80,7 @@ public class Tab1_Backup_Restore extends Fragment
             					Toast.makeText(activity, R.string.backing_up_contacts_and_calls, Toast.LENGTH_SHORT).show();
             					
             					//** Remove old contacts and call-logs backups from /sdcard/mcb/... before making the new backups */
-            					CommandCapture command = new CommandCapture(0, "mkdir /sdcard/mcb/", "mkdir /sdcard/mcb/cb", "rm /sdcard/mcb/cb/contacts2.db", "rm /sdcard/mcb/cb/contacts2.db-journal", "cp -p /data/data/com.android.providers.contacts/databases/contacts2.db /sdcard/mcb/cb/contacts2.db", "cp -p /data/data/com.android.providers.contacts/databases/contacts2.db-journal /sdcard/mcb/cb/contacts2.db-journal" );
+            					CommandCapture command = new CommandCapture(0, "mkdir /sdcard/mcb/", "mkdir /sdcard/mcb/cb", "rm /sdcard/mcb/cb/c", "rm /sdcard/mcb/cb/cj", "cp -p /data/data/com.android.providers.contacts/databases/contacts2.db /sdcard/mcb/cb/c", "cp -p /data/data/com.android.providers.contacts/databases/contacts2.db-journal /sdcard/mcb/cb/cj" );
  	                          	try {
  	      							RootTools.getShell(true).add(command).waitForFinish();
  	      						} catch (InterruptedException e) {
@@ -99,7 +99,7 @@ public class Tab1_Backup_Restore extends Fragment
             					alert_dialog.dismiss();
             					
             					//** Check to see if database backup was ACTUALLY made .. */
-            					String fileUrl = "/mcb/cb/contacts2.db";
+            					String fileUrl = "/mcb/cb/c";
             					String file = android.os.Environment.getExternalStorageDirectory().getPath() + fileUrl;
             					File contacts = new File(file);
 
@@ -152,7 +152,7 @@ public class Tab1_Backup_Restore extends Fragment
             					Toast.makeText(activity, R.string.backing_up_messages, Toast.LENGTH_SHORT).show();
             					
             					///** Remove old messages backups from /sdcard/mcb/... before making the new backups */
-            					CommandCapture command = new CommandCapture(0, "mkdir /sdcard/mcb/", "mkdir /sdcard/mcb/mb", "rm /sdcard/mcb/mb/mmssms.db", "rm /sdcard/mcb/mb/mmssms.db-journal", "cp /data/data/com.android.providers.telephony/databases/mmssms.db /sdcard/mcb/mb/mmssms.db", "cp /data/data/com.android.providers.telephony/databases/mmssms.db-journal /sdcard/mcb/mb/mmssms.db-journal" );
+            					CommandCapture command = new CommandCapture(0, "mkdir /sdcard/mcb/", "mkdir /sdcard/mcb/mb", "rm /sdcard/mcb/mb/m", "rm /sdcard/mcb/mb/mj", "cp /data/data/com.android.providers.telephony/databases/mmssms.db /sdcard/mcb/mb/m", "cp /data/data/com.android.providers.telephony/databases/mmssms.db-journal /sdcard/mcb/mb/mj" );
  	                          	try {
  	      							RootTools.getShell(true).add(command).waitForFinish();
  	      						} catch (InterruptedException e) {
@@ -171,7 +171,7 @@ public class Tab1_Backup_Restore extends Fragment
             					alert_dialog.dismiss();
             					
             					//** Check to see if database backup was ACTUALLY made .. */
-            					String fileUrl = "/mcb/mb/mmssms.db";
+            					String fileUrl = "/mcb/mb/m";
             					String file = android.os.Environment.getExternalStorageDirectory().getPath() + fileUrl;
             					File messages = new File(file);
 
@@ -201,7 +201,7 @@ public class Tab1_Backup_Restore extends Fragment
 	                if (activity != null) {
 	                	
 	                	//** Check to see if database backups are ACTUALLY there to be restored from before continuing .. */
-	                	String fileUrl = "/mcb/cb/contacts2.db";
+	                	String fileUrl = "/mcb/cb/c";
     					String file = android.os.Environment.getExternalStorageDirectory().getPath() + fileUrl;
     					File contacts_r = new File(file);
 
@@ -231,7 +231,7 @@ public class Tab1_Backup_Restore extends Fragment
             					Toast.makeText(activity, R.string.restoring_contacts_and_calls, Toast.LENGTH_SHORT).show();
             					
             					///** Remove current contacts and call-logs databases from /data/data/... before restoring the created backups */
-            					CommandCapture command = new CommandCapture(0, "cp -p /sdcard/mcb/cb/contacts2.db /data/data/com.android.providers.contacts/databases/contacts2.db", "cp -p /sdcard/mcb/cb/contacts2.db-journal /data/data/com.android.providers.contacts/databases/contacts2.db-journal");
+            					CommandCapture command = new CommandCapture(0, "cp -p /sdcard/mcb/cb/c /data/data/com.android.providers.contacts/databases/contacts2.db", "cp -p /sdcard/mcb/cb/cj /data/data/com.android.providers.contacts/databases/contacts2.db-journal");
  	                          	try {
  	      							RootTools.getShell(true).add(command).waitForFinish();
  	      							Toast.makeText(activity, R.string.restore_complete, Toast.LENGTH_SHORT).show();
@@ -275,7 +275,7 @@ public class Tab1_Backup_Restore extends Fragment
 		                if (activity != null) {
 		                	
 		                	//** Check to see if database backups are ACTUALLY there to be restored from before continuing .. */
-		                	String fileUrl = "/mcb/mb/mmssms.db";
+		                	String fileUrl = "/mcb/mb/m";
 	    					String file = android.os.Environment.getExternalStorageDirectory().getPath() + fileUrl;
 	    					File messages_r = new File(file);
 
@@ -305,7 +305,7 @@ public class Tab1_Backup_Restore extends Fragment
 	            					Toast.makeText(activity, R.string.restoring_messages, Toast.LENGTH_SHORT).show();
 	            					
 	            					///** Remove current messages databases from /data/data/... before restoring the created backups */
-	            					CommandCapture command = new CommandCapture(0, "cp -p /sdcard/mcb/mb/mmssms.db /data/data/com.android.providers.telephony/databases/mmssms.db", "cp -p /sdcard/mcb/mb/mmssms.db-journal /data/data/com.android.providers.telephony/databases/mmssms.db-journal" );
+	            					CommandCapture command = new CommandCapture(0, "cp -p /sdcard/mcb/mb/m /data/data/com.android.providers.telephony/databases/mmssms.db", "cp -p /sdcard/mcb/mb/mj /data/data/com.android.providers.telephony/databases/mmssms.db-journal" );
 	 	                          	try {
 	 	      							RootTools.getShell(true).add(command).waitForFinish();
 	 	      							Toast.makeText(activity, R.string.restore_complete, Toast.LENGTH_SHORT).show();

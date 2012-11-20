@@ -8,7 +8,7 @@
     <string name="menu_version">App Version</string>
     <string name="version">Test Build 255 (20/11)</string>
     <string name="installed_version">Current Installed Version ..</string>
-    <string name="mainpage_header">Choose Your Poison ..</string>
+    <string name="mainpage_header">Choose Your Poison .. \n (Jump to Page)</string>
     <string name="mainpage_link_backup_restore">Backup / Restore Section ..</string>
     <string name="mainpage_link_addons">Addon\'s Section ..</string>
     <string name="mainpage_link_tweaks">Tweak\'s Section ..</string>
