@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-   	android:layout_width="fill_parent"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:background="@drawable/shape"
-    android:padding="0dp">
- 	
-     <ImageView
-      android:id="@+id/padder1_custom_dialog"
-      android:layout_width="wrap_content"
-      android:layout_height="15dp" />
-    
-      <TextView
-          android:id="@+id/custom_dialog_textview_title"
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:layout_alignParentTop="true"
-          android:layout_below="@+id/padder1_custom_dialog"
-          android:layout_centerHorizontal="true"
-          android:layout_marginRight="10dp"
-          android:layout_marginTop="10dp"
-          android:layout_marginBottom="10dp"
-          android:gravity="center"
-          android:textColor="#FFF"
-          android:textSize="20dip"
-          android:textStyle="bold" />
-     
-   <ImageView
+    android:padding="0dp" >
+
+    <ImageView
+        android:id="@+id/padder1_custom_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp" />
+
+    <TextView
+        android:id="@+id/custom_dialog_textview_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/padder1_custom_dialog"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="20dip"
+        android:textStyle="bold" />
+
+    <ImageView
         android:id="@+id/custom_dialog_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-       	android:layout_below="@+id/custom_dialog_textview_title"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/custom_dialog_textview_title"
+        android:layout_marginBottom="3dp"
         android:layout_marginLeft="19dp"
-        android:layout_marginBottom="3dp" />
- 
+        android:layout_marginTop="20dp" />
+
     <TextView
         android:id="@+id/custom_dialog_textview"
         android:layout_width="fill_parent"
@@ -47,47 +47,47 @@
         android:gravity="center_vertical"
         android:textColor="#FFF"
         android:textSize="20dip" />
- 
-  
-     <Button
-         android:id="@+id/custom_dialog_update"
-         android:layout_width="140dp"
-         android:layout_height="58dp"
-         android:layout_alignParentLeft="false"
-         android:layout_alignParentRight="true"
-         android:layout_below="@+id/custom_dialog_image"
-         android:layout_margin="8dp"
-         android:layout_marginBottom="3dp"
-         android:layout_marginTop="3dp"
-         android:text="@+string/update"
-         android:textColor="#FFFFFF"
-         android:textSize="12.5dip"
-         android:visibility="invisible" />
-    
-     <Button
-         android:id="@+id/custom_dialog_ok"
-         android:layout_width="53dp"
-         android:layout_height="53dp"
-         android:layout_alignParentRight="true"
-         android:layout_below="@+id/custom_dialog_image"
-         android:layout_marginBottom="3dp"
-         android:layout_marginRight="18dp"
-         android:layout_marginTop="3dp"
-         android:text="@+string/ok"
-         android:textColor="#FFFFFF"
-         android:textSize="10dip" />
 
-     <Button
-         android:id="@+id/custom_dialog_ok2"
-         android:layout_width="53dp"
-         android:layout_height="53dp"
-         android:layout_alignParentLeft="true"
-         android:layout_below="@+id/custom_dialog_image"
-         android:layout_marginBottom="2dp"
-         android:layout_marginLeft="8dp"
-         android:layout_marginTop="7dp"
-         android:text="@string/dialog_cancel"
-         android:textColor="#FFFFFF"
-         android:textSize="10dip"
-         android:visibility="invisible" />
+    <Button
+        android:id="@+id/custom_dialog_update"
+        android:layout_width="140dp"
+        android:layout_height="58dp"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/custom_dialog_image"
+        android:layout_margin="8dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:text="@+string/update"
+        android:textColor="#FFFFFF"
+        android:textSize="12.5dip"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/custom_dialog_ok"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/custom_dialog_image"
+        android:layout_marginBottom="3dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="3dp"
+        android:text="@+string/ok"
+        android:textColor="#FFFFFF"
+        android:textSize="10dip" />
+
+    <Button
+        android:id="@+id/custom_dialog_ok2"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/custom_dialog_image"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="7dp"
+        android:text="@string/dialog_cancel"
+        android:textColor="#FFFFFF"
+        android:textSize="10dip"
+        android:visibility="invisible" />
+
 </RelativeLayout>

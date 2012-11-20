@@ -324,6 +324,7 @@ public final class R {
         public static final int downloading=0x7f050029;
         public static final int downloading_launcher=0x7f05002a;
         public static final int downloading_theme=0x7f05002b;
+        public static final int dummy=0x7f05004c;
         public static final int enabling=0x7f05003f;
         public static final int error_no_internet=0x7f05002f;
         public static final int error_unsupported_p=0x7f05002e;
@@ -368,7 +369,6 @@ public final class R {
         public static final int restore_messages=0x7f05001a;
         public static final int restoring_contacts_and_calls=0x7f05001b;
         public static final int restoring_messages=0x7f05001c;
-        public static final int test=0x7f05004c;
         public static final int themes=0x7f050020;
         public static final int tools=0x7f050023;
         public static final int tweaks=0x7f050024;
