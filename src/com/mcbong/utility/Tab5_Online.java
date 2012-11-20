@@ -86,7 +86,7 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
                     	StrictMode.setThreadPolicy(policy); 
                     	
                     	//** Define a URL for the desired page */
-                        URL url = new URL("http://dl.dropbox.com/u/18271886/Test_Builds/version.txt");
+                        URL url = new URL("http://dl.dropbox.com/u/18271886/mcb/Test_Builds/version.txt");
                     	
                     	//** Read all the text within remote file */
                         BufferedReader in = new BufferedReader(new     InputStreamReader(url.openStream()));
@@ -119,9 +119,7 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
                             params.addRule(RelativeLayout.CENTER_IN_PARENT);
                             dialogButton.setLayoutParams(params); //causes layout update
             				Toast.makeText(activity, R.string.version_uptodate, Toast.LENGTH_SHORT).show();
-            			}	
-            			else
-            			{
+            			}else{
             				Toast.makeText(activity, R.string.version_notuptodate, Toast.LENGTH_SHORT).show();
             				Button custom_dialog_update = (Button) dialog.findViewById(R.id.custom_dialog_update);
                 			custom_dialog_update.setVisibility(View.VISIBLE);
@@ -131,8 +129,7 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 			dialogButton2.setVisibility(View.VISIBLE);
                 			Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
                 			dialogButton.setVisibility(View.INVISIBLE);
-                			
-            			}
+                		}
             			
             			ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
             			image.setImageResource(R.drawable.ic_launcher);
@@ -161,7 +158,7 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
  	      						}
             						            					
             					//** Set up the 'Download Manager' and Download latest version from server ... */
-        	                	String url = "http://dl.dropbox.com/u/18271886/Test_Builds/McBong-Utility.apk";
+        	                	String url = "http://dl.dropbox.com/u/18271886/mcb/Test_Builds/McBong-Utility.apk";
         	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
         	                	request.setDescription("McBong Utility Updater");
         	                	request.setTitle("McBong-Utility Update");

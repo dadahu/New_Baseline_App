@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
 
-public class Tab1_Tools extends Fragment
+public class Tab1_Backup_Restore extends Fragment
 {
 	
 	 @Override
@@ -31,7 +31,7 @@ public class Tab1_Tools extends Fragment
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState)	{
 			//** Inflate the layout for this fragment */
-			View view = inflater.inflate(R.layout.tab1_tools, container, false);
+			View view = inflater.inflate(R.layout.tab1_backup_restore, container, false);
 
 			//** Define buttons.. */	
 	        Button button_backup_contacts_and_calls = (Button) view.findViewById(R.id.button_backup_contacts_and_calls);

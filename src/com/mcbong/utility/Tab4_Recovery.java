@@ -40,16 +40,12 @@ public class Tab4_Recovery extends Fragment {
     		    line = adb_check_IS.readLine();
     		    	if (line.equals("5555"))
     		    	{
-    		    		
     		    		ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
             			image.setImageResource(R.drawable.on);
-    		    		
-    		    	}	
-        			else
-        			{
-        				ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
+    		    	}else{
+    		    		ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
             			image.setImageResource(R.drawable.off);
-        		}
+    		    	}
     		} catch (java.io.IOException e) {
     		}
     		
@@ -257,9 +253,7 @@ public class Tab4_Recovery extends Fragment {
                 		    		ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
                         			image.setImageResource(R.drawable.on);
                 		    		Toast.makeText(activity, R.string.wireless_adb_enabled, Toast.LENGTH_SHORT).show();
-                		    	}	
-                    			else
-                    			{
+                		    	}else{
                     				ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
                         			image.setImageResource(R.drawable.off);
                     				Toast.makeText(activity, R.string.wireless_adb_disabled, Toast.LENGTH_SHORT).show();
@@ -300,9 +294,7 @@ public class Tab4_Recovery extends Fragment {
                 		    		ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
                         			image.setImageResource(R.drawable.on);
                         			Toast.makeText(activity, R.string.wireless_adb_enabled, Toast.LENGTH_SHORT).show();
-                		    	}	
-                    			else
-                    			{
+                		    	}else{
                     				ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
                         			image.setImageResource(R.drawable.off);
                     				Toast.makeText(activity, R.string.wireless_adb_disabled, Toast.LENGTH_SHORT).show();

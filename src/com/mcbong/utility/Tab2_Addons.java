@@ -106,7 +106,7 @@ public class Tab2_Addons extends Fragment {
 	 	      						}
 	            						            					
 	            					//** download ADW Launcher from server .. */
-	            					String url = "http://dl.dropbox.com/u/18271886/launchers/adw.apk";
+	            					String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/adw.apk";
 	        	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
 	        	                	request.setDescription("ADW	Launcher Download");
 	        	                	request.setTitle("ADW Launcher Download Complete");
@@ -194,7 +194,7 @@ public class Tab2_Addons extends Fragment {
 	 	      						}
 	            						            					
 	            					//** download Go-Launcher EX from server .. */
-	            					String url = "http://dl.dropbox.com/u/18271886/launchers/golauncherex.apk";
+	            					String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/golauncherex.apk";
 	        	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
 	        	                	request.setDescription("Go-Launcher EX Download");
 	        	                	request.setTitle("Go-Launcher EX Download Complete");
@@ -281,7 +281,7 @@ public class Tab2_Addons extends Fragment {
 	 	      						}
 	            					
 	            					//** download Nova Launcher from server .. */
-	            					String url = "http://dl.dropbox.com/u/18271886/launchers/nova.apk";
+	            					String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/nova.apk";
 	        	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
 	        	                	request.setDescription("Nova Launcher EX Download");
 	        	                	request.setTitle("Nova Launcher EX Download Complete");
@@ -368,7 +368,7 @@ public class Tab2_Addons extends Fragment {
 	 	      						}
 	            					
 	            					//** download SSD-Red Theme from server .. */
-	            					String url = "http://dl.dropbox.com/u/18271886/Themes/ssdred.apk";
+	            					String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/ssdred.apk";
 	        	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
 	        	                	request.setDescription("SSD-Red Theme Download");
 	        	                	request.setTitle("SSD-Red Theme Download Complete");
@@ -455,7 +455,7 @@ public class Tab2_Addons extends Fragment {
 		 	      						}
 		            					
 		            					//** download PopStyle Theme from server .. */
-		            					String url = "http://dl.dropbox.com/u/18271886/Themes/popstyle.apk";
+		            					String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/popstyle.apk";
 		        	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
 		        	                	request.setDescription("PopStyle Theme Download");
 		        	                	request.setTitle("PopStyle Theme Download Complete");
@@ -542,7 +542,7 @@ public class Tab2_Addons extends Fragment {
 		 	      						}
 		            					
 		            					//** download Red-ICS Theme from server .. */
-		            					String url = "http://dl.dropbox.com/u/18271886/Themes/redics.apk";
+		            					String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/redics.apk";
 		        	                	DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
 		        	                	request.setDescription("Red-ICS Theme Download");
 		        	                	request.setTitle("Red-ICS Theme Download Complete");
@@ -581,8 +581,7 @@ public class Tab2_Addons extends Fragment {
 		            			});
 		            			
 		            			alert_dialog.show();
-		                    
-			                }
+		                     }
 			            }
 			            
 			        });

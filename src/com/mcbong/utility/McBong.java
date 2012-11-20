@@ -42,13 +42,15 @@ public class McBong extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        Fragment tabOneFragment = new Tab1_Tools();
+        Fragment tabZeroFragment = new Tab0_Main();
+        Fragment tabOneFragment = new Tab1_Backup_Restore();
         Fragment tabTwoFragment = new Tab2_Addons();
         Fragment tabThreeFragment = new Tab3_Tweaks();
         Fragment tabFourFragment = new Tab4_Recovery();
         Fragment tabFiveFragment = new Tab5_Online();
         
         PagerAdapter mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        mPagerAdapter.addFragment(tabZeroFragment);
         mPagerAdapter.addFragment(tabOneFragment);
         mPagerAdapter.addFragment(tabTwoFragment);
         mPagerAdapter.addFragment(tabThreeFragment);
@@ -71,9 +73,13 @@ public class McBong extends FragmentActivity {
         
         ActionBar ab = getActionBar();
         ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        Tab tab0 = ab.newTab().setText("| Main Page Selector ..|..")
+        		.setTabListener(new TabListener<Tab0_Main>(
+                        this, "tabzero", Tab0_Main.class));
+        
         Tab tab1 = ab.newTab().setText("| Tool's ..|..")
-        		.setTabListener(new TabListener<Tab1_Tools>(
-                        this, "tabone", Tab1_Tools.class));
+        		.setTabListener(new TabListener<Tab1_Backup_Restore>(
+                        this, "tabone", Tab1_Backup_Restore.class));
 
 		Tab tab2 = ab.newTab().setText("| Add-on's ..|..")
 				.setTabListener(new TabListener<Tab2_Addons>(
@@ -83,14 +89,15 @@ public class McBong extends FragmentActivity {
 				.setTabListener(new TabListener<Tab3_Tweaks>(
                         this, "tabthree", Tab3_Tweaks.class));
 		
-		Tab tab4 = ab.newTab().setText("| Recovery..|")
+		Tab tab4 = ab.newTab().setText("| Recovery..|..")
 				.setTabListener(new TabListener<Tab4_Recovery>(
-                        this, "tabtwo", Tab4_Recovery.class));
+                        this, "tabfour", Tab4_Recovery.class));
 		
-		Tab tab5 = ab.newTab().setText("| Online..|..")
+		Tab tab5 = ab.newTab().setText("| Online..|")
 				.setTabListener(new TabListener<Tab5_Online>(
-                        this, "tabthree", Tab5_Online.class));
+                        this, "tabfive", Tab5_Online.class));
 		
+		ab.addTab(tab0);
 		ab.addTab(tab1);
 		ab.addTab(tab2);
 		ab.addTab(tab3);
@@ -116,6 +123,7 @@ public class McBong extends FragmentActivity {
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.custom_dialog);
                 Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+                
                 //** Center OK button on dialog */
                 LayoutParams params = (RelativeLayout.LayoutParams)dialogButton.getLayoutParams();
                 params.addRule(RelativeLayout.CENTER_IN_PARENT);
@@ -242,5 +250,4 @@ public class McBong extends FragmentActivity {
             return mFragments.get(position);
         }
     }
-    
 }
