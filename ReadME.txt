@@ -8,6 +8,24 @@
 ------------------------------------------------------------------------------------------------------
 
 
+Update 21/11/2012 ... Update no.9 ...
+
+		> Completely new custom_alert_dialog & custom_dialog , changed button 
+		  behavior's etc.
+		  Added browser bookmark database backup to backup/restore section,
+		  Part 2 of new custom layouts, dialog titles now set correctly etc.
+		  Added GetProp input stream checks for wireless adb state.
+		  Added swipe to change tabs using : FragmentPagerAdapter and
+		  FragmentTransaction.
+		  Added android.support.v4 library
+		  Main page selector semi-added, more layout changes etc.
+		  Stripped filename's of backup database's, so their not immediatly 
+		  recognizable etc
+		  Changed external storage folders so they are now hidden as " /.mcb " etc
+		  Complete code Format, and indentation fix's .
+	  
+-
+
 Update 10/11/2012 ... Update no.8 ...
 
 		> Added Contacts & Call Logs and Messages backup and restore feature,
