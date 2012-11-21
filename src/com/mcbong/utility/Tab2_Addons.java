@@ -3,6 +3,7 @@ package com.mcbong.utility;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DownloadManager;
@@ -24,6 +25,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
 
@@ -61,7 +63,7 @@ public class Tab2_Addons extends Fragment {
 		Button button_install_golauncher_views = (Button) view
 				.findViewById(R.id.button_install_golauncher);
 		button_install_golauncher_views
-		.setBackgroundResource(R.drawable.button);
+				.setBackgroundResource(R.drawable.button);
 		Button button_install_nova_views = (Button) view
 				.findViewById(R.id.button_install_nova);
 		button_install_nova_views.setBackgroundResource(R.drawable.button);
@@ -102,100 +104,100 @@ public class Tab2_Addons extends Fragment {
 					Button custom_alert_dialog_ok = (Button) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_ok);
 					custom_alert_dialog_ok
-					.setBackgroundResource(R.drawable.small_button);
+							.setBackgroundResource(R.drawable.small_button);
 
 					// ** if button is clicked, execute the shell commands
 					// through root-tools */
 					custom_alert_dialog_ok
-					.setOnClickListener(new OnClickListener() {
-						public void onClick(View v) {
-							Activity activity = getActivity();
+							.setOnClickListener(new OnClickListener() {
+								public void onClick(View v) {
+									Activity activity = getActivity();
 
-							// ** Remove any old downloads of
-							// ADW-Launcher from /Download folder before
-							// downloading new version */
-							CommandCapture command = new CommandCapture(
-									0,
-									"rm /sdcard/Download/ADW-Launcher.apk");
-							try {
-								RootTools.getShell(true).add(command)
-								.waitForFinish();
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (TimeoutException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+									// ** Remove any old downloads of
+									// ADW-Launcher from /Download folder before
+									// downloading new version */
+									CommandCapture command = new CommandCapture(
+											0,
+											"rm /sdcard/Download/ADW-Launcher.apk");
+									try {
+										RootTools.getShell(true).add(command)
+												.waitForFinish();
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (TimeoutException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 
-							// ** download ADW Launcher from server ..
-							// */
-							String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/adw.apk";
-							DownloadManager.Request request = new DownloadManager.Request(
-									Uri.parse(url));
-							request.setDescription("ADW	Launcher Download");
-							request.setTitle("ADW Launcher Download Complete");
+									// ** download ADW Launcher from server ..
+									// */
+									String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/adw.apk";
+									DownloadManager.Request request = new DownloadManager.Request(
+											Uri.parse(url));
+									request.setDescription("ADW	Launcher Download");
+									request.setTitle("ADW Launcher Download Complete");
 
-							if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-								request.allowScanningByMediaScanner();
-								request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-							}
-							request.setDestinationInExternalPublicDir(
-									Environment.DIRECTORY_DOWNLOADS,
-									"ADW-Launcher.apk");
+									if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+										request.allowScanningByMediaScanner();
+										request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+									}
+									request.setDestinationInExternalPublicDir(
+											Environment.DIRECTORY_DOWNLOADS,
+											"ADW-Launcher.apk");
 
-							// ** get download service and enqueue file
-							// */
-							DownloadManager manager = (DownloadManager) activity
-									.getSystemService(Context.DOWNLOAD_SERVICE);
-							manager.enqueue(request);
-							alert_dialog.dismiss();
-							Toast.makeText(activity,
-									R.string.downloading_launcher,
-									Toast.LENGTH_SHORT).show();
-
-							// ** Set up broadcast receiver to detect
-							// when the download completes.. */
-							BroadcastReceiver onComplete = new BroadcastReceiver() {
-								public void onReceive(Context ctxt,
-										Intent intent) {
-									Toast.makeText(
-											ctxt,
-											R.string.installing_launcher,
+									// ** get download service and enqueue file
+									// */
+									DownloadManager manager = (DownloadManager) activity
+											.getSystemService(Context.DOWNLOAD_SERVICE);
+									manager.enqueue(request);
+									alert_dialog.dismiss();
+									Toast.makeText(activity,
+											R.string.downloading_launcher,
 											Toast.LENGTH_SHORT).show();
-									Intent install = new Intent(
-											Intent.ACTION_VIEW);
-									install.setDataAndType(
-											Uri.fromFile(new File(
-													Environment
-													.getExternalStorageDirectory()
-													+ "/Download/"
-													+ "ADW-Launcher.apk")),
-											"application/vnd.android.package-archive");
-									startActivity(install);
-								}
-							};
-							activity.registerReceiver(
-									onComplete,
-									new IntentFilter(
-											DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
-						}
-					});
+									// ** Set up broadcast receiver to detect
+									// when the download completes.. */
+									BroadcastReceiver onComplete = new BroadcastReceiver() {
+										public void onReceive(Context ctxt,
+												Intent intent) {
+											Toast.makeText(
+													ctxt,
+													R.string.installing_launcher,
+													Toast.LENGTH_SHORT).show();
+											Intent install = new Intent(
+													Intent.ACTION_VIEW);
+											install.setDataAndType(
+													Uri.fromFile(new File(
+															Environment
+																	.getExternalStorageDirectory()
+																	+ "/Download/"
+																	+ "ADW-Launcher.apk")),
+													"application/vnd.android.package-archive");
+											startActivity(install);
+										}
+									};
+									activity.registerReceiver(
+											onComplete,
+											new IntentFilter(
+													DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+
+								}
+							});
 					Button custom_alert_dialog_cancel = (Button) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_cancel);
 					custom_alert_dialog_cancel
-					.setBackgroundResource(R.drawable.small_button);
+							.setBackgroundResource(R.drawable.small_button);
 					// if OK button is clicked, close the custom dialog */
 					custom_alert_dialog_cancel
-					.setOnClickListener(new OnClickListener() {
-						public void onClick(View v) {
-							alert_dialog.dismiss();
-						}
-					});
+							.setOnClickListener(new OnClickListener() {
+								public void onClick(View v) {
+									alert_dialog.dismiss();
+								}
+							});
 
 					alert_dialog.show();
 
@@ -230,99 +232,99 @@ public class Tab2_Addons extends Fragment {
 					Button custom_alert_dialog_ok = (Button) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_ok);
 					custom_alert_dialog_ok
-					.setBackgroundResource(R.drawable.small_button);
+							.setBackgroundResource(R.drawable.small_button);
 
 					// ** if button is clicked, execute the shell commands
 					// through root-tools */
 					custom_alert_dialog_ok
-					.setOnClickListener(new OnClickListener() {
-						public void onClick(View v) {
-							Activity activity = getActivity();
+							.setOnClickListener(new OnClickListener() {
+								public void onClick(View v) {
+									Activity activity = getActivity();
 
-							// ** Remove any old downloads of
-							// Go-Launcher from /Download folder before
-							// downloading new version */
-							CommandCapture command = new CommandCapture(
-									0,
-									"rm /sdcard/Download/Go-Launcher.apk");
-							try {
-								RootTools.getShell(true).add(command)
-								.waitForFinish();
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (TimeoutException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+									// ** Remove any old downloads of
+									// Go-Launcher from /Download folder before
+									// downloading new version */
+									CommandCapture command = new CommandCapture(
+											0,
+											"rm /sdcard/Download/Go-Launcher.apk");
+									try {
+										RootTools.getShell(true).add(command)
+												.waitForFinish();
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (TimeoutException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 
-							// ** download Go-Launcher EX from server ..
-							// */
-							String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/golauncherex.apk";
-							DownloadManager.Request request = new DownloadManager.Request(
-									Uri.parse(url));
-							request.setDescription("Go-Launcher EX Download");
-							request.setTitle("Go-Launcher EX Download Complete");
+									// ** download Go-Launcher EX from server ..
+									// */
+									String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/golauncherex.apk";
+									DownloadManager.Request request = new DownloadManager.Request(
+											Uri.parse(url));
+									request.setDescription("Go-Launcher EX Download");
+									request.setTitle("Go-Launcher EX Download Complete");
 
-							if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-								request.allowScanningByMediaScanner();
-								request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-							}
-							request.setDestinationInExternalPublicDir(
-									Environment.DIRECTORY_DOWNLOADS,
-									"Go-Launcher.apk");
+									if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+										request.allowScanningByMediaScanner();
+										request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+									}
+									request.setDestinationInExternalPublicDir(
+											Environment.DIRECTORY_DOWNLOADS,
+											"Go-Launcher.apk");
 
-							// ** get download service and enqueue file
-							// */
-							DownloadManager manager = (DownloadManager) activity
-									.getSystemService(Context.DOWNLOAD_SERVICE);
-							manager.enqueue(request);
-							alert_dialog.dismiss();
-							Toast.makeText(activity,
-									R.string.downloading_launcher,
-									Toast.LENGTH_SHORT).show();
-
-							// ** Set up broadcast receiver to detect
-							// when the download completes.. */
-							BroadcastReceiver onComplete = new BroadcastReceiver() {
-								public void onReceive(Context ctxt,
-										Intent intent) {
-									Toast.makeText(
-											ctxt,
-											R.string.installing_launcher,
+									// ** get download service and enqueue file
+									// */
+									DownloadManager manager = (DownloadManager) activity
+											.getSystemService(Context.DOWNLOAD_SERVICE);
+									manager.enqueue(request);
+									alert_dialog.dismiss();
+									Toast.makeText(activity,
+											R.string.downloading_launcher,
 											Toast.LENGTH_SHORT).show();
-									Intent install = new Intent(
-											Intent.ACTION_VIEW);
-									install.setDataAndType(
-											Uri.fromFile(new File(
-													Environment
-													.getExternalStorageDirectory()
-													+ "/Download/"
-													+ "Go-Launcher.apk")),
-											"application/vnd.android.package-archive");
-									startActivity(install);
+
+									// ** Set up broadcast receiver to detect
+									// when the download completes.. */
+									BroadcastReceiver onComplete = new BroadcastReceiver() {
+										public void onReceive(Context ctxt,
+												Intent intent) {
+											Toast.makeText(
+													ctxt,
+													R.string.installing_launcher,
+													Toast.LENGTH_SHORT).show();
+											Intent install = new Intent(
+													Intent.ACTION_VIEW);
+											install.setDataAndType(
+													Uri.fromFile(new File(
+															Environment
+																	.getExternalStorageDirectory()
+																	+ "/Download/"
+																	+ "Go-Launcher.apk")),
+													"application/vnd.android.package-archive");
+											startActivity(install);
+										}
+									};
+									activity.registerReceiver(
+											onComplete,
+											new IntentFilter(
+													DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 								}
-							};
-							activity.registerReceiver(
-									onComplete,
-									new IntentFilter(
-											DownloadManager.ACTION_DOWNLOAD_COMPLETE));
-						}
-					});
+							});
 					Button custom_alert_dialog_cancel = (Button) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_cancel);
 					custom_alert_dialog_cancel
-					.setBackgroundResource(R.drawable.small_button);
+							.setBackgroundResource(R.drawable.small_button);
 					// if OK button is clicked, close the custom dialog */
 					custom_alert_dialog_cancel
-					.setOnClickListener(new OnClickListener() {
-						public void onClick(View v) {
-							alert_dialog.dismiss();
-						}
-					});
+							.setOnClickListener(new OnClickListener() {
+								public void onClick(View v) {
+									alert_dialog.dismiss();
+								}
+							});
 
 					alert_dialog.show();
 
@@ -357,99 +359,99 @@ public class Tab2_Addons extends Fragment {
 					Button custom_alert_dialog_ok = (Button) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_ok);
 					custom_alert_dialog_ok
-					.setBackgroundResource(R.drawable.small_button);
+							.setBackgroundResource(R.drawable.small_button);
 
 					// ** if button is clicked, execute the shell commands
 					// through root-tools */
 					custom_alert_dialog_ok
-					.setOnClickListener(new OnClickListener() {
-						public void onClick(View v) {
-							Activity activity = getActivity();
+							.setOnClickListener(new OnClickListener() {
+								public void onClick(View v) {
+									Activity activity = getActivity();
 
-							// ** Remove any old downloads of
-							// Nova-Launcher from /Download folder
-							// before downloading new version */
-							CommandCapture command = new CommandCapture(
-									0,
-									"rm /sdcard/Download/Nova-Launcher.apk");
-							try {
-								RootTools.getShell(true).add(command)
-								.waitForFinish();
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (TimeoutException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+									// ** Remove any old downloads of
+									// Nova-Launcher from /Download folder
+									// before downloading new version */
+									CommandCapture command = new CommandCapture(
+											0,
+											"rm /sdcard/Download/Nova-Launcher.apk");
+									try {
+										RootTools.getShell(true).add(command)
+												.waitForFinish();
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (TimeoutException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 
-							// ** download Nova Launcher from server ..
-							// */
-							String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/nova.apk";
-							DownloadManager.Request request = new DownloadManager.Request(
-									Uri.parse(url));
-							request.setDescription("Nova Launcher EX Download");
-							request.setTitle("Nova Launcher EX Download Complete");
+									// ** download Nova-Launcher from server ..
+									// */
+									String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/nova.apk";
+									DownloadManager.Request request = new DownloadManager.Request(
+											Uri.parse(url));
+									request.setDescription("Nova Launcher EX Download");
+									request.setTitle("Nova Launcher EX Download Complete");
 
-							if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-								request.allowScanningByMediaScanner();
-								request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-							}
-							request.setDestinationInExternalPublicDir(
-									Environment.DIRECTORY_DOWNLOADS,
-									"Nova-Launcher.apk");
+									if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+										request.allowScanningByMediaScanner();
+										request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+									}
+									request.setDestinationInExternalPublicDir(
+											Environment.DIRECTORY_DOWNLOADS,
+											"Nova-Launcher.apk");
 
-							// ** get download service and enqueue file
-							// */
-							DownloadManager manager = (DownloadManager) activity
-									.getSystemService(Context.DOWNLOAD_SERVICE);
-							manager.enqueue(request);
-							alert_dialog.dismiss();
-							Toast.makeText(activity,
-									R.string.downloading_launcher,
-									Toast.LENGTH_SHORT).show();
-
-							// ** Set up broadcast receiver to detect
-							// when the download completes.. */
-							BroadcastReceiver onComplete = new BroadcastReceiver() {
-								public void onReceive(Context ctxt,
-										Intent intent) {
-									Toast.makeText(
-											ctxt,
-											R.string.installing_launcher,
+									// ** get download service and enqueue file
+									// */
+									DownloadManager manager = (DownloadManager) activity
+											.getSystemService(Context.DOWNLOAD_SERVICE);
+									manager.enqueue(request);
+									alert_dialog.dismiss();
+									Toast.makeText(activity,
+											R.string.downloading_launcher,
 											Toast.LENGTH_SHORT).show();
-									Intent install = new Intent(
-											Intent.ACTION_VIEW);
-									install.setDataAndType(
-											Uri.fromFile(new File(
-													Environment
-													.getExternalStorageDirectory()
-													+ "/Download/"
-													+ "Nova-Launcher.apk")),
-											"application/vnd.android.package-archive");
-									startActivity(install);
+
+									// ** Set up broadcast receiver to detect
+									// when the download completes.. */
+									BroadcastReceiver onComplete = new BroadcastReceiver() {
+										public void onReceive(Context ctxt,
+												Intent intent) {
+											Toast.makeText(
+													ctxt,
+													R.string.installing_launcher,
+													Toast.LENGTH_SHORT).show();
+											Intent install = new Intent(
+													Intent.ACTION_VIEW);
+											install.setDataAndType(
+													Uri.fromFile(new File(
+															Environment
+																	.getExternalStorageDirectory()
+																	+ "/Download/"
+																	+ "Nova-Launcher.apk")),
+													"application/vnd.android.package-archive");
+											startActivity(install);
+										}
+									};
+									activity.registerReceiver(
+											onComplete,
+											new IntentFilter(
+													DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 								}
-							};
-							activity.registerReceiver(
-									onComplete,
-									new IntentFilter(
-											DownloadManager.ACTION_DOWNLOAD_COMPLETE));
-						}
-					});
+							});
 					Button custom_alert_dialog_cancel = (Button) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_cancel);
 					custom_alert_dialog_cancel
-					.setBackgroundResource(R.drawable.small_button);
+							.setBackgroundResource(R.drawable.small_button);
 					// if OK button is clicked, close the custom dialog */
 					custom_alert_dialog_cancel
-					.setOnClickListener(new OnClickListener() {
-						public void onClick(View v) {
-							alert_dialog.dismiss();
-						}
-					});
+							.setOnClickListener(new OnClickListener() {
+								public void onClick(View v) {
+									alert_dialog.dismiss();
+								}
+							});
 
 					alert_dialog.show();
 
@@ -484,97 +486,97 @@ public class Tab2_Addons extends Fragment {
 					Button custom_alert_dialog_ok = (Button) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_ok);
 					custom_alert_dialog_ok
-					.setBackgroundResource(R.drawable.small_button);
+							.setBackgroundResource(R.drawable.small_button);
 
 					// ** if button is clicked, execute the shell commands
 					// through root-tools */
 					custom_alert_dialog_ok
-					.setOnClickListener(new OnClickListener() {
-						public void onClick(View v) {
-							Activity activity = getActivity();
+							.setOnClickListener(new OnClickListener() {
+								public void onClick(View v) {
+									Activity activity = getActivity();
 
-							// ** Remove any old downloads of SSD-Red
-							// from /Download folder before downloading
-							// new version */
-							CommandCapture command = new CommandCapture(
-									0, "rm /sdcard/Download/ssdred.apk");
-							try {
-								RootTools.getShell(true).add(command)
-								.waitForFinish();
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (TimeoutException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+									// ** Remove any old downloads of SSD-Red
+									// from /Download folder before downloading
+									// new version */
+									CommandCapture command = new CommandCapture(
+											0, "rm /sdcard/Download/ssdred.apk");
+									try {
+										RootTools.getShell(true).add(command)
+												.waitForFinish();
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (TimeoutException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 
-							// ** download SSD-Red Theme from server ..
-							// */
-							String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/ssdred.apk";
-							DownloadManager.Request request = new DownloadManager.Request(
-									Uri.parse(url));
-							request.setDescription("SSD-Red Theme Download");
-							request.setTitle("SSD-Red Theme Download Complete");
+									// ** download SSD-Red Theme from server ..
+									// */
+									String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/ssdred.apk";
+									DownloadManager.Request request = new DownloadManager.Request(
+											Uri.parse(url));
+									request.setDescription("SSD-Red Theme Download");
+									request.setTitle("SSD-Red Theme Download Complete");
 
-							if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-								request.allowScanningByMediaScanner();
-								request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-							}
-							request.setDestinationInExternalPublicDir(
-									Environment.DIRECTORY_DOWNLOADS,
-									"ssdred.apk");
+									if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+										request.allowScanningByMediaScanner();
+										request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+									}
+									request.setDestinationInExternalPublicDir(
+											Environment.DIRECTORY_DOWNLOADS,
+											"ssdred.apk");
 
-							// ** get download service and enqueue file
-							// */
-							DownloadManager manager = (DownloadManager) activity
-									.getSystemService(Context.DOWNLOAD_SERVICE);
-							manager.enqueue(request);
-							alert_dialog.dismiss();
-							Toast.makeText(activity,
-									R.string.downloading_theme,
-									Toast.LENGTH_SHORT).show();
-
-							// ** Set up broadcast receiver to detect
-							// when the download completes.. */
-							BroadcastReceiver onComplete = new BroadcastReceiver() {
-								public void onReceive(Context ctxt,
-										Intent intent) {
-									Toast.makeText(ctxt,
-											R.string.installing_theme,
+									// ** get download service and enqueue file
+									// */
+									DownloadManager manager = (DownloadManager) activity
+											.getSystemService(Context.DOWNLOAD_SERVICE);
+									manager.enqueue(request);
+									alert_dialog.dismiss();
+									Toast.makeText(activity,
+											R.string.downloading_theme,
 											Toast.LENGTH_SHORT).show();
-									Intent install = new Intent(
-											Intent.ACTION_VIEW);
-									install.setDataAndType(
-											Uri.fromFile(new File(
-													Environment
-													.getExternalStorageDirectory()
-													+ "/Download/"
-													+ "ssdred.apk")),
-											"application/vnd.android.package-archive");
-									startActivity(install);
+
+									// ** Set up broadcast receiver to detect
+									// when the download completes.. */
+									BroadcastReceiver onComplete = new BroadcastReceiver() {
+										public void onReceive(Context ctxt,
+												Intent intent) {
+											Toast.makeText(ctxt,
+													R.string.installing_theme,
+													Toast.LENGTH_SHORT).show();
+											Intent install = new Intent(
+													Intent.ACTION_VIEW);
+											install.setDataAndType(
+													Uri.fromFile(new File(
+															Environment
+																	.getExternalStorageDirectory()
+																	+ "/Download/"
+																	+ "ssdred.apk")),
+													"application/vnd.android.package-archive");
+											startActivity(install);
+										}
+									};
+									activity.registerReceiver(
+											onComplete,
+											new IntentFilter(
+													DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 								}
-							};
-							activity.registerReceiver(
-									onComplete,
-									new IntentFilter(
-											DownloadManager.ACTION_DOWNLOAD_COMPLETE));
-						}
-					});
+							});
 					Button custom_alert_dialog_cancel = (Button) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_cancel);
 					custom_alert_dialog_cancel
-					.setBackgroundResource(R.drawable.small_button);
+							.setBackgroundResource(R.drawable.small_button);
 					// if OK button is clicked, close the custom dialog */
 					custom_alert_dialog_cancel
-					.setOnClickListener(new OnClickListener() {
-						public void onClick(View v) {
-							alert_dialog.dismiss();
-						}
-					});
+							.setOnClickListener(new OnClickListener() {
+								public void onClick(View v) {
+									alert_dialog.dismiss();
+								}
+							});
 
 					alert_dialog.show();
 
@@ -609,98 +611,98 @@ public class Tab2_Addons extends Fragment {
 					Button custom_alert_dialog_ok = (Button) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_ok);
 					custom_alert_dialog_ok
-					.setBackgroundResource(R.drawable.small_button);
+							.setBackgroundResource(R.drawable.small_button);
 
 					// ** if button is clicked, execute the shell commands
 					// through root-tools */
 					custom_alert_dialog_ok
-					.setOnClickListener(new OnClickListener() {
-						public void onClick(View v) {
-							Activity activity = getActivity();
+							.setOnClickListener(new OnClickListener() {
+								public void onClick(View v) {
+									Activity activity = getActivity();
 
-							// ** Remove any old downloads of PopStyle
-							// Theme from /Download folder before
-							// downloading new version */
-							CommandCapture command = new CommandCapture(
-									0,
-									"rm /sdcard/Download/popstyle.apk");
-							try {
-								RootTools.getShell(true).add(command)
-								.waitForFinish();
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (TimeoutException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+									// ** Remove any old downloads of PopStyle
+									// Theme from /Download folder before
+									// downloading new version */
+									CommandCapture command = new CommandCapture(
+											0,
+											"rm /sdcard/Download/popstyle.apk");
+									try {
+										RootTools.getShell(true).add(command)
+												.waitForFinish();
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (TimeoutException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 
-							// ** download PopStyle Theme from server ..
-							// */
-							String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/popstyle.apk";
-							DownloadManager.Request request = new DownloadManager.Request(
-									Uri.parse(url));
-							request.setDescription("PopStyle Theme Download");
-							request.setTitle("PopStyle Theme Download Complete");
+									// ** download PopStyle Theme from server ..
+									// */
+									String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/popstyle.apk";
+									DownloadManager.Request request = new DownloadManager.Request(
+											Uri.parse(url));
+									request.setDescription("PopStyle Theme Download");
+									request.setTitle("PopStyle Theme Download Complete");
 
-							if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-								request.allowScanningByMediaScanner();
-								request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-							}
-							request.setDestinationInExternalPublicDir(
-									Environment.DIRECTORY_DOWNLOADS,
-									"popstyle.apk");
+									if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+										request.allowScanningByMediaScanner();
+										request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+									}
+									request.setDestinationInExternalPublicDir(
+											Environment.DIRECTORY_DOWNLOADS,
+											"popstyle.apk");
 
-							// ** get download service and enqueue file
-							// */
-							DownloadManager manager = (DownloadManager) activity
-									.getSystemService(Context.DOWNLOAD_SERVICE);
-							manager.enqueue(request);
-							alert_dialog.dismiss();
-							Toast.makeText(activity,
-									R.string.downloading_theme,
-									Toast.LENGTH_SHORT).show();
-
-							// ** Set up broadcast receiver to detect
-							// when the download completes.. */
-							BroadcastReceiver onComplete = new BroadcastReceiver() {
-								public void onReceive(Context ctxt,
-										Intent intent) {
-									Toast.makeText(ctxt,
-											R.string.installing_theme,
+									// ** get download service and enqueue file
+									// */
+									DownloadManager manager = (DownloadManager) activity
+											.getSystemService(Context.DOWNLOAD_SERVICE);
+									manager.enqueue(request);
+									alert_dialog.dismiss();
+									Toast.makeText(activity,
+											R.string.downloading_theme,
 											Toast.LENGTH_SHORT).show();
-									Intent install = new Intent(
-											Intent.ACTION_VIEW);
-									install.setDataAndType(
-											Uri.fromFile(new File(
-													Environment
-													.getExternalStorageDirectory()
-													+ "/Download/"
-													+ "popstyle.apk")),
-											"application/vnd.android.package-archive");
-									startActivity(install);
+
+									// ** Set up broadcast receiver to detect
+									// when the download completes.. */
+									BroadcastReceiver onComplete = new BroadcastReceiver() {
+										public void onReceive(Context ctxt,
+												Intent intent) {
+											Toast.makeText(ctxt,
+													R.string.installing_theme,
+													Toast.LENGTH_SHORT).show();
+											Intent install = new Intent(
+													Intent.ACTION_VIEW);
+											install.setDataAndType(
+													Uri.fromFile(new File(
+															Environment
+																	.getExternalStorageDirectory()
+																	+ "/Download/"
+																	+ "popstyle.apk")),
+													"application/vnd.android.package-archive");
+											startActivity(install);
+										}
+									};
+									activity.registerReceiver(
+											onComplete,
+											new IntentFilter(
+													DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 								}
-							};
-							activity.registerReceiver(
-									onComplete,
-									new IntentFilter(
-											DownloadManager.ACTION_DOWNLOAD_COMPLETE));
-						}
-					});
+							});
 					Button custom_alert_dialog_cancel = (Button) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_cancel);
 					custom_alert_dialog_cancel
-					.setBackgroundResource(R.drawable.small_button);
+							.setBackgroundResource(R.drawable.small_button);
 					// if OK button is clicked, close the custom dialog */
 					custom_alert_dialog_cancel
-					.setOnClickListener(new OnClickListener() {
-						public void onClick(View v) {
-							alert_dialog.dismiss();
-						}
-					});
+							.setOnClickListener(new OnClickListener() {
+								public void onClick(View v) {
+									alert_dialog.dismiss();
+								}
+							});
 
 					alert_dialog.show();
 
@@ -735,97 +737,97 @@ public class Tab2_Addons extends Fragment {
 					Button custom_alert_dialog_ok = (Button) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_ok);
 					custom_alert_dialog_ok
-					.setBackgroundResource(R.drawable.small_button);
+							.setBackgroundResource(R.drawable.small_button);
 
 					// ** if button is clicked, execute the shell commands
 					// through root-tools */
 					custom_alert_dialog_ok
-					.setOnClickListener(new OnClickListener() {
-						public void onClick(View v) {
-							Activity activity = getActivity();
+							.setOnClickListener(new OnClickListener() {
+								public void onClick(View v) {
+									Activity activity = getActivity();
 
-							// ** Remove any old downloads of Red-ICS
-							// Theme from /Download folder before
-							// downloading new version */
-							CommandCapture command = new CommandCapture(
-									0, "rm /sdcard/Download/redics.apk");
-							try {
-								RootTools.getShell(true).add(command)
-								.waitForFinish();
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (TimeoutException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+									// ** Remove any old downloads of Red-ICS
+									// Theme from /Download folder before
+									// downloading new version */
+									CommandCapture command = new CommandCapture(
+											0, "rm /sdcard/Download/redics.apk");
+									try {
+										RootTools.getShell(true).add(command)
+												.waitForFinish();
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (TimeoutException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 
-							// ** download Red-ICS Theme from server ..
-							// */
-							String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/redics.apk";
-							DownloadManager.Request request = new DownloadManager.Request(
-									Uri.parse(url));
-							request.setDescription("Red-ICS Theme Download");
-							request.setTitle("Red-ICS Theme Download Complete");
+									// ** download Red-ICS Theme from server ..
+									// */
+									String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/redics.apk";
+									DownloadManager.Request request = new DownloadManager.Request(
+											Uri.parse(url));
+									request.setDescription("Red-ICS Theme Download");
+									request.setTitle("Red-ICS Theme Download Complete");
 
-							if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-								request.allowScanningByMediaScanner();
-								request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-							}
-							request.setDestinationInExternalPublicDir(
-									Environment.DIRECTORY_DOWNLOADS,
-									"redics.apk");
+									if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+										request.allowScanningByMediaScanner();
+										request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+									}
+									request.setDestinationInExternalPublicDir(
+											Environment.DIRECTORY_DOWNLOADS,
+											"redics.apk");
 
-							// ** get download service and enqueue file
-							// */
-							DownloadManager manager = (DownloadManager) activity
-									.getSystemService(Context.DOWNLOAD_SERVICE);
-							manager.enqueue(request);
-							alert_dialog.dismiss();
-							Toast.makeText(activity,
-									R.string.downloading_theme,
-									Toast.LENGTH_SHORT).show();
-
-							// ** Set up broadcast receiver to detect
-							// when the download completes.. */
-							BroadcastReceiver onComplete = new BroadcastReceiver() {
-								public void onReceive(Context ctxt,
-										Intent intent) {
-									Toast.makeText(ctxt,
-											R.string.installing_theme,
+									// ** get download service and enqueue file
+									// */
+									DownloadManager manager = (DownloadManager) activity
+											.getSystemService(Context.DOWNLOAD_SERVICE);
+									manager.enqueue(request);
+									alert_dialog.dismiss();
+									Toast.makeText(activity,
+											R.string.downloading_theme,
 											Toast.LENGTH_SHORT).show();
-									Intent install = new Intent(
-											Intent.ACTION_VIEW);
-									install.setDataAndType(
-											Uri.fromFile(new File(
-													Environment
-													.getExternalStorageDirectory()
-													+ "/Download/"
-													+ "redics.apk")),
-											"application/vnd.android.package-archive");
-									startActivity(install);
+
+									// ** Set up broadcast receiver to detect
+									// when the download completes.. */
+									BroadcastReceiver onComplete = new BroadcastReceiver() {
+										public void onReceive(Context ctxt,
+												Intent intent) {
+											Toast.makeText(ctxt,
+													R.string.installing_theme,
+													Toast.LENGTH_SHORT).show();
+											Intent install = new Intent(
+													Intent.ACTION_VIEW);
+											install.setDataAndType(
+													Uri.fromFile(new File(
+															Environment
+																	.getExternalStorageDirectory()
+																	+ "/Download/"
+																	+ "redics.apk")),
+													"application/vnd.android.package-archive");
+											startActivity(install);
+										}
+									};
+									activity.registerReceiver(
+											onComplete,
+											new IntentFilter(
+													DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 								}
-							};
-							activity.registerReceiver(
-									onComplete,
-									new IntentFilter(
-											DownloadManager.ACTION_DOWNLOAD_COMPLETE));
-						}
-					});
+							});
 					Button custom_alert_dialog_cancel = (Button) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_cancel);
 					custom_alert_dialog_cancel
-					.setBackgroundResource(R.drawable.small_button);
+							.setBackgroundResource(R.drawable.small_button);
 					// if OK button is clicked, close the custom dialog */
 					custom_alert_dialog_cancel
-					.setOnClickListener(new OnClickListener() {
-						public void onClick(View v) {
-							alert_dialog.dismiss();
-						}
-					});
+							.setOnClickListener(new OnClickListener() {
+								public void onClick(View v) {
+									alert_dialog.dismiss();
+								}
+							});
 
 					alert_dialog.show();
 				}

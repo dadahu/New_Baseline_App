@@ -1,6 +1,7 @@
 package com.mcbong.utility;
 
 import java.util.ArrayList;
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
@@ -24,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
+
 import com.stericson.RootTools.RootTools;
 
 public class McBong extends FragmentActivity {
@@ -36,7 +38,8 @@ public class McBong extends FragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-		// ** Grant This App full root access via roottools interactive shell */
+		// ** Grant This Application full root access via root-tools interactive
+		// shell */
 		if (RootTools.isAccessGiven()) {
 		}
 		super.onCreate(savedInstanceState);
@@ -64,14 +67,14 @@ public class McBong extends FragmentActivity {
 		mViewPager.setCurrentItem(0);
 
 		mViewPager
-		.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-			@Override
-			public void onPageSelected(int position) {
-				// ** When swiping between pages select the correct Tab
-				// */
-				getActionBar().setSelectedNavigationItem(position);
-			}
-		});
+				.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+					@Override
+					public void onPageSelected(int position) {
+						// ** When swiping between pages select the correct Tab
+						// */
+						getActionBar().setSelectedNavigationItem(position);
+					}
+				});
 
 		ActionBar ab = getActionBar();
 		ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -194,7 +197,7 @@ public class McBong extends FragmentActivity {
 	}
 
 	public static class TabListener<T extends Fragment> implements
-	ActionBar.TabListener {
+			ActionBar.TabListener {
 		private Fragment mFragment;
 		private final Activity mActivity;
 		private final String mTag;
@@ -216,9 +219,9 @@ public class McBong extends FragmentActivity {
 			mClass = clz;
 		}
 
-		// ** The following are each of the ActionBar.TabListener callbacks */
+		// ** The following are each of the ActionBar.TabListener call-backs */
 		public void onTabSelected(Tab tab, FragmentTransaction ft) {
-			// ** Check if the fragment is already initialized */
+			// ** Check if the fragment is already initialised */
 			if (mFragment == null) {
 				// If not, instantiate and add it to the activity
 				mFragment = Fragment.instantiate(mActivity, mClass.getName());

@@ -23,23 +23,23 @@ public class Tab0_Main extends Fragment {
 		// ** Inflate the layout for this fragment */
 		View view = inflater.inflate(R.layout.tab0_main, container, false);
 
-		// ** Set up Dummy onclick handlers for buttons */
+		// ** Set up Dummy on-click handlers for buttons */
 		// TODO - set up each button to initialise the required fragment and
-		// change the actionbar tab to corresponding tab //
+		// change the action-bar tab to corresponding tab //
 
 		Button button_mainpage_link_backup_restore = (Button) view
 				.findViewById(R.id.button_mainpage_link_backup_restore);
 		button_mainpage_link_backup_restore
-		.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				Activity activity = getActivity();
-				// if (activity != null) {
+				.setOnClickListener(new OnClickListener() {
+					public void onClick(View v) {
+						Activity activity = getActivity();
+						// if (activity != null) {
 
-				Toast.makeText(activity, R.string.dummy,
-						Toast.LENGTH_SHORT).show();
+						Toast.makeText(activity, R.string.dummy,
+								Toast.LENGTH_SHORT).show();
 
-			}
-		});
+					}
+				});
 
 		Button button_mainpage_link_addons = (Button) view
 				.findViewById(R.id.button_mainpage_link_addons);
@@ -49,7 +49,7 @@ public class Tab0_Main extends Fragment {
 				// if (activity != null) {
 
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
-				.show();
+						.show();
 
 			}
 		});
@@ -62,7 +62,7 @@ public class Tab0_Main extends Fragment {
 				// if (activity != null) {
 
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
-				.show();
+						.show();
 
 			}
 		});
@@ -75,7 +75,7 @@ public class Tab0_Main extends Fragment {
 				// if (activity != null) {
 
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
-				.show();
+						.show();
 
 			}
 		});
@@ -88,7 +88,7 @@ public class Tab0_Main extends Fragment {
 				// if (activity != null) {
 
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
-				.show();
+						.show();
 
 			}
 		});
