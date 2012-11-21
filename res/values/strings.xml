@@ -21,8 +21,8 @@
     <string name="mainpage_text_tweaks">Android Tweak\'s\n includes ..\n \n *This is currently a WIP, Functions will be added very soon :) </string>
     <string name="mainpage_text_recovery">Recovery Section\n includes ..\n \n *Reboot Device \n *Reboot Into Recovery \n *Shutdown Device \n *Turn On/Off Wireless-ADB </string>
     <string name="mainpage_text_online">Online/Update Section\n includes ..\n \n *Direct access to Team Website, using built in webview component \n *Full Update Checker and Update Downloader \n </string>
-    <string name="backup">Backup .. \n *Contact\'s and Calls\'s\n *Message\'s\n *Browser Bookmark\'s .. </string>
-    <string name="restore">Restore.. \n *Contact\'s and Calls\'s\n *Message\'s\n *Browser Bookmark\'s .. </string>
+    <string name="backup">Backup Database\'s .. </string>
+    <string name="restore">Restore Database\'s .. </string>
     <string name="no_backup_found">No Backup databases found on SDcard, cant restore.</string>
     <string name="restore_complete">Restore Completed Succesfully</string>
     <string name="restore_failed">Sorry, Restore Failed</string>
