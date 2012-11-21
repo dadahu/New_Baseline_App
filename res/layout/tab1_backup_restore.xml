@@ -71,14 +71,14 @@
                 android:layout_gravity="center_horizontal" >
 
                 <Button
-                    android:id="@+id/button_backup_messages"
+                    android:id="@+id/button_backup_text_messages"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_normal"
                     android:gravity="center"
                     android:onClick="myClickHandler"
                     android:paddingBottom="10dp"
-                    android:text="@+string/backup_messages"
+                    android:text="@+string/backup_text_messages"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold" />
 
@@ -157,7 +157,7 @@
                 android:layout_height="wrap_content" >
 
                 <Button
-                    android:id="@+id/button_restore_messages"
+                    android:id="@+id/button_restore_text_messages"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_normal"

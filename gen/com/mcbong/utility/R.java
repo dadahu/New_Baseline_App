@@ -210,7 +210,7 @@ public final class R {
         public static final int TextView07=0x7f080036;
         public static final int button_backup_browser_bookmarks=0x7f080035;
         public static final int button_backup_contacts_and_calls=0x7f080030;
-        public static final int button_backup_messages=0x7f080033;
+        public static final int button_backup_text_messages=0x7f080033;
         public static final int button_check_webver=0x7f08005e;
         public static final int button_install_adw=0x7f080040;
         public static final int button_install_golauncher=0x7f080043;
@@ -228,7 +228,7 @@ public final class R {
         public static final int button_reboot_recovery=0x7f080052;
         public static final int button_restore_browser_bookmarks=0x7f08003e;
         public static final int button_restore_contacts_and_calls=0x7f080039;
-        public static final int button_restore_messages=0x7f08003c;
+        public static final int button_restore_text_messages=0x7f08003c;
         public static final int button_wireless_adb_disable=0x7f080059;
         public static final int button_wireless_adb_enable=0x7f080056;
         public static final int custom_alert_dialog_cancel=0x7f080004;
@@ -316,7 +316,6 @@ public final class R {
         public static final int backup_complete=0x7f050015;
         public static final int backup_contacts_and_calls=0x7f050017;
         public static final int backup_failed=0x7f050016;
-        public static final int backup_messages=0x7f050050;
         public static final int backup_text_messages=0x7f050018;
         public static final int checking=0x7f050031;
         public static final int confirm=0x7f05003e;

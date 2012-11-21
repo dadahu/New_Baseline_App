@@ -38,14 +38,14 @@ public class Tab1_Backup_Restore extends Fragment {
 		// ** Define buttons.. */
 		Button button_backup_contacts_and_calls = (Button) view
 				.findViewById(R.id.button_backup_contacts_and_calls);
-		Button button_backup_messages = (Button) view
-				.findViewById(R.id.button_backup_messages);
+		Button button_backup_text_messages = (Button) view
+				.findViewById(R.id.button_backup_text_messages);
 		Button button_backup_browser_bookmarks = (Button) view
 				.findViewById(R.id.button_backup_browser_bookmarks);
 		Button button_restore_contacts_and_calls = (Button) view
 				.findViewById(R.id.button_restore_contacts_and_calls);
-		Button button_restore_messages = (Button) view
-				.findViewById(R.id.button_restore_messages);
+		Button button_restore_text_messages = (Button) view
+				.findViewById(R.id.button_restore_text_messages);
 		Button button_restore_browser_bookmarks = (Button) view
 				.findViewById(R.id.button_restore_browser_bookmarks);
 
@@ -54,9 +54,9 @@ public class Tab1_Backup_Restore extends Fragment {
 				.findViewById(R.id.button_backup_contacts_and_calls);
 		button_backup_contacts_and_calls_views
 				.setBackgroundResource(R.drawable.button);
-		Button button_backup_messages_views = (Button) view
-				.findViewById(R.id.button_backup_messages);
-		button_backup_messages_views.setBackgroundResource(R.drawable.button);
+		Button button_backup_text_messages_views = (Button) view
+				.findViewById(R.id.button_backup_text_messages);
+		button_backup_text_messages_views.setBackgroundResource(R.drawable.button);
 		Button button_backup_browser_bookmarks_views = (Button) view
 				.findViewById(R.id.button_backup_browser_bookmarks);
 		button_backup_browser_bookmarks_views
@@ -65,9 +65,9 @@ public class Tab1_Backup_Restore extends Fragment {
 				.findViewById(R.id.button_restore_contacts_and_calls);
 		button_restore_contacts_and_calls_views
 				.setBackgroundResource(R.drawable.button);
-		Button button_restore_messages_views = (Button) view
-				.findViewById(R.id.button_restore_messages);
-		button_restore_messages_views.setBackgroundResource(R.drawable.button);
+		Button button_restore_text_messages_views = (Button) view
+				.findViewById(R.id.button_restore_text_messages);
+		button_restore_text_messages_views.setBackgroundResource(R.drawable.button);
 		Button button_restore_browser_bookmarks_views = (Button) view
 				.findViewById(R.id.button_restore_browser_bookmarks);
 		button_restore_browser_bookmarks_views
@@ -199,7 +199,7 @@ public class Tab1_Backup_Restore extends Fragment {
 						}
 					}
 				});
-		button_backup_messages.setOnClickListener(new OnClickListener() {
+		button_backup_text_messages.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
@@ -214,7 +214,7 @@ public class Tab1_Backup_Restore extends Fragment {
 					alert_dialog.setContentView(R.layout.custom_alert_dialog);
 					TextView title = (TextView) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_textview_title);
-					title.setText(R.string.backup_messages);
+					title.setText(R.string.backup_text_messages);
 					TextView alert_text = (TextView) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_textview);
 					alert_text.setText(R.string.confirm);
@@ -565,7 +565,7 @@ public class Tab1_Backup_Restore extends Fragment {
 						}
 					}
 				});
-		button_restore_messages.setOnClickListener(new OnClickListener() {
+		button_restore_text_messages.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
