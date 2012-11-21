@@ -60,7 +60,7 @@ public class McBong extends FragmentActivity {
 
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setAdapter(mPagerAdapter);
-		mViewPager.setOffscreenPageLimit(5);
+		mViewPager.setOffscreenPageLimit(6);
 		mViewPager.setCurrentItem(0);
 
 		mViewPager

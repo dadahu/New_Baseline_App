@@ -8,7 +8,7 @@
     <!-- Menu Strings -->
     <string name="menu_quit">Quit</string>
     <string name="menu_version">App Version</string>
-    <string name="version">Test Build 256 (20/11)</string>
+    <string name="version">Test Build 258 (20/11)</string>
     <string name="installed_version">Current Installed Version ..</string>
     <string name="mainpage_header">Choose Your Poison .. \n (Jump to Page)</string>
     <string name="mainpage_link_backup_restore">Backup / Restore Section ..</string>
@@ -21,8 +21,8 @@
     <string name="mainpage_text_tweaks">Android Tweak\'s\n includes ..\n \n *This is currently a WIP, Functions will be added very soon :) </string>
     <string name="mainpage_text_recovery">Recovery Section\n includes ..\n \n *Reboot Device \n *Reboot Into Recovery \n *Shutdown Device \n *Turn On/Off Wireless-ADB </string>
     <string name="mainpage_text_online">Online/Update Section\n includes ..\n \n *Direct access to Team Website, using built in webview component \n *Full Update Checker and Update Downloader \n </string>
-    <string name="backup">Backup.. Contact\'s + Calls\'s and Message\'s .. </string>
-    <string name="restore">Restore.. Contact\'s + Calls\'s and Message\'s .. </string>
+    <string name="backup">Backup .. \n *Contact\'s and Calls\'s\n *Message\'s\n *Browser Bookmark\'s .. </string>
+    <string name="restore">Restore.. \n *Contact\'s and Calls\'s\n *Message\'s\n *Browser Bookmark\'s .. </string>
     <string name="no_backup_found">No Backup databases found on SDcard, cant restore.</string>
     <string name="restore_complete">Restore Completed Succesfully</string>
     <string name="restore_failed">Sorry, Restore Failed</string>
@@ -30,12 +30,16 @@
     <string name="backup_failed">Sorry, Backup Failed</string>
     <string name="backup_contacts_and_calls">Backup Contact\'s and Call\'s</string>
     <string name="backup_messages">Backup Message\'s</string>
+    <string name="backup_browser_bookmarks">Backup Browser Bookmark\'s</string>
     <string name="restore_contacts_and_calls">Restore Contact\'s and Call\'s</string>
     <string name="restore_messages">Restore Message\'s</string>
+    <string name="restore_browser_bookmarks">Restore Browser Bookmark\'s</string>
     <string name="restoring_contacts_and_calls">Restoring Contact\'s and Call-Log\'s, please wait ..</string>
     <string name="restoring_messages">Restoring Restoring Message\'s, please wait ..</string>
+    <string name="restoring__browser_bookmarks">Restoring Restoring Message\'s, please wait ..</string>
     <string name="backing_up_contacts_and_calls">Backing up Contact\'s and Call-Log\'s, please wait ..</string>
     <string name="backing_up_messages">Backing up Message\'s, please wait ..</string>
+    <string name="backing_up_browser_bookmarks">Backing up Browser Bookmark\'s, please wait ..</string>
     <string name="launchers">Download and Install 3rd Party Launcher\'s ..</string>
     <string name="themes">Download and Install 3rd Party Theme\'s ..</string>
     <string name="power_functions">Device Power Option\'s ..</string>

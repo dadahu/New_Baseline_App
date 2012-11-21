@@ -91,27 +91,44 @@
                     android:src="@drawable/backup_messages" />
             </TableRow>
 
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/button_backup_browser_bookmarks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_normal"
+                    android:gravity="center"
+                    android:onClick="myClickHandler"
+                    android:paddingBottom="10dp"
+                    android:text="@+string/backup_browser_bookmarks"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+            </TableRow>
+
             <TextView
-                android:id="@+id/TextView04a"
+                android:id="@+id/TextView05"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/TextView01a"
+                android:id="@+id/TextView07"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/restore" />
 
             <TextView
-                android:id="@+id/TextView02"
+                android:id="@+id/TextView04a"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content" />
 
             <TableRow
                 android:id="@+id/tablerow_contacts_r"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" >
+                android:layout_height="wrap_content" >
 
                 <Button
                     android:id="@+id/button_restore_contacts_and_calls"
@@ -137,8 +154,7 @@
             <TableRow
                 android:id="@+id/tablerow_messages_r"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" >
+                android:layout_height="wrap_content" >
 
                 <Button
                     android:id="@+id/button_restore_messages"
@@ -160,7 +176,43 @@
                     android:paddingRight="35dp"
                     android:src="@drawable/backup_messages" />
             </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/button_restore_browser_bookmarks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_normal"
+                    android:gravity="center"
+                    android:onClick="myClickHandler"
+                    android:paddingBottom="10dp"
+                    android:text="@+string/restore_browser_bookmarks"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TextView
+                android:id="@+id/TextView06"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <TableRow
+                android:id="@+id/TableRow02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+            </TableRow>
         </TableLayout>
+
     </LinearLayout>
 
 </ScrollView>
