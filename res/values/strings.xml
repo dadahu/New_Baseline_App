@@ -6,24 +6,24 @@
 
 
     <!-- Menu Strings -->
-    <string name="menu_quit">Quit</string>
-    <string name="menu_version">App Version</string>
+    <string name="menu_quit">Exit App</string>
+    <string name="menu_version">App Info</string>
     <string name="version">Test Build 262 (21/11)</string>
     <string name="installed_version">Current Installed Version ..</string>
-    <string name="mainpage_header">Choose Your Poison .. </string>
+    <string name="mainpage_header">Pick Your Poison .. </string>
     <string name="mainpage_link_backup_restore">Backup / Restore Section ..</string>
     <string name="mainpage_link_addons">Addon\'s Section ..</string>
     <string name="mainpage_link_tweaks">Tweak\'s Section ..</string>
     <string name="mainpage_link_recovery">Recovery Section ..</string>
     <string name="mainpage_link_Online">Online/Update Section ..</string>
-    <string name="mainpage_text_backup_restore">Backup and Restore Various Database\'s\n including ..\n \n *Text Message\'s \n *Contact\'s \n *Call Logs \n *Browser Bookmarks etc ..</string>
-    <string name="mainpage_text_addons">Download and Install Various Android Addon\'s\n including ..\n \n *3rd Party Launchers eg. Nova and Apex \n *Great Theme\'s </string>
+    <string name="mainpage_text_backup_restore">Backup and Restore Various Database\'s\n including ..\n \n *Contact\'s \n *Call Logs \n *Text Message\'s \n *Browser Bookmarks </string>
+    <string name="mainpage_text_addons">Download and Install Various Android Addon\'s\n including ..\n \n *3rd Party Launchers eg. Nova, Apex etc \n *Great Theme\'s </string>
     <string name="mainpage_text_tweaks">Android Tweak\'s\n includes ..\n \n *This is currently a WIP, Functions will be added very soon :) </string>
     <string name="mainpage_text_recovery">Recovery Section\n includes ..\n \n *Reboot Device \n *Reboot Into Recovery \n *Shutdown Device \n *Turn On/Off Wireless-ADB </string>
     <string name="mainpage_text_online">Online/Update Section\n includes ..\n \n *Direct access to Team Website, using built in webview component \n *Full Update Checker and Update Downloader \n </string>
     <string name="backup">Backup Database\'s .. </string>
     <string name="restore">Restore Database\'s .. </string>
-    <string name="no_backup_found">No Backup databases found on SDcard, cant restore.</string>
+    <string name="no_backup_found">No Backup database\'s found on SDcard.</string>
     <string name="restore_complete">Restore Completed Succesfully</string>
     <string name="restore_failed">Sorry, Restore Failed</string>
     <string name="backup_complete">Backup Completed Succesfully</string>

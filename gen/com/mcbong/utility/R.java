@@ -200,7 +200,7 @@ public final class R {
         public static final int TableRow03=0x7f080026;
         public static final int TableRow04=0x7f080020;
         public static final int TableRow05=0x7f08002c;
-        public static final int TextView01=0x7f08000f;
+        public static final int TextView01=0x7f080010;
         public static final int TextView02=0x7f080016;
         public static final int TextView03=0x7f08001c;
         public static final int TextView04=0x7f080022;
@@ -262,7 +262,7 @@ public final class R {
         public static final int menuitem_version=0x7f080060;
         public static final int padder1_custom_alert_dialog=0x7f080000;
         public static final int padder1_custom_dialog=0x7f080006;
-        public static final int padder1_tab1=0x7f080010;
+        public static final int padder1_tab1=0x7f08000f;
         public static final int padder1_tab3=0x7f08005d;
         public static final int padder2_tab3=0x7f08005f;
         public static final int pager=0x7f08000d;
