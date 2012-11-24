@@ -48,8 +48,7 @@ public class Tab0_Main extends Fragment {
 		button_mainpage_link_addons.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
-				// if (activity != null) {
-
+				
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
 				.show();
 
@@ -62,8 +61,7 @@ public class Tab0_Main extends Fragment {
 		button_mainpage_link_tweaks.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
-				// if (activity != null) {
-
+				
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
 				.show();
 
@@ -76,8 +74,7 @@ public class Tab0_Main extends Fragment {
 		button_mainpage_link_recovery.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
-				// if (activity != null) {
-
+				
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
 				.show();
 
@@ -90,8 +87,7 @@ public class Tab0_Main extends Fragment {
 		button_mainpage_link_online.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
-				// if (activity != null) {
-
+				
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
 				.show();
 

@@ -35,7 +35,7 @@ public class Tab4_Recovery extends Fragment {
 		final View view = inflater.inflate(R.layout.tab4_recovery, container,
 				false);
 
-		// ** set up Wireless ADB check and change an image as to whether its
+		// ** Set up Wireless ADB check and change an ImageView and TextView as to whether its
 		// enabled or not */
 		try {
 			Process adb_check = Runtime.getRuntime().exec(
@@ -289,8 +289,6 @@ public class Tab4_Recovery extends Fragment {
 				if (activity != null) {
 
 					// ** Enable Wireless ADBD function */
-					// Toast.makeText(activity, R.string.enabling,
-					// Toast.LENGTH_SHORT).show();
 					CommandCapture command = new CommandCapture(0,
 							"setprop service.adb.tcp.port 5555", "stop adbd",
 							"start adbd");
@@ -306,6 +304,9 @@ public class Tab4_Recovery extends Fragment {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					
+					//** Make checks to see if Wireless ADB has ACTUALLY been Enabled .. */
+					//** .. And Set The TextView Accordingly */
 					try {
 						Process adb_check = Runtime.getRuntime().exec(
 								"getprop   service.adb.tcp.port");
@@ -346,8 +347,6 @@ public class Tab4_Recovery extends Fragment {
 				if (activity != null) {
 
 					// ** Disable Wireless ADBD function */
-					// Toast.makeText(activity, R.string.disabling,
-					// Toast.LENGTH_SHORT).show();
 					CommandCapture command = new CommandCapture(0,
 							"setprop service.adb.tcp.port -1", "stop adbd",
 							"start adbd");
@@ -363,7 +362,9 @@ public class Tab4_Recovery extends Fragment {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-
+					
+					//** Make checks to see if Wireless ADB has ACTUALLY been Disabled .. */
+					//** .. And Set The TextView Accordingly */
 					try {
 						Process adb_check = Runtime.getRuntime().exec(
 								"getprop   service.adb.tcp.port");
