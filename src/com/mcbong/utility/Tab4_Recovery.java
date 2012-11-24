@@ -47,10 +47,16 @@ public class Tab4_Recovery extends Fragment {
 				ImageView image = (ImageView) view
 						.findViewById(R.id.imageView_adb_status);
 				image.setImageResource(R.drawable.on);
+				TextView ip = (TextView) view
+						.findViewById(R.id.textView_ip);
+				ip.setVisibility(View.VISIBLE);
 			} else {
 				ImageView image = (ImageView) view
 						.findViewById(R.id.imageView_adb_status);
 				image.setImageResource(R.drawable.off);
+				TextView ip = (TextView) view
+						.findViewById(R.id.textView_ip);
+				ip.setVisibility(View.INVISIBLE);
 			}
 		} catch (java.io.IOException e) {
 		}
@@ -311,6 +317,9 @@ public class Tab4_Recovery extends Fragment {
 							ImageView image = (ImageView) view
 									.findViewById(R.id.imageView_adb_status);
 							image.setImageResource(R.drawable.on);
+							TextView ip = (TextView) view
+									.findViewById(R.id.textView_ip);
+							ip.setVisibility(View.VISIBLE);
 							Toast.makeText(activity,
 									R.string.wireless_adb_enabled,
 									Toast.LENGTH_SHORT).show();
@@ -318,6 +327,9 @@ public class Tab4_Recovery extends Fragment {
 							ImageView image = (ImageView) view
 									.findViewById(R.id.imageView_adb_status);
 							image.setImageResource(R.drawable.off);
+							TextView ip = (TextView) view
+									.findViewById(R.id.textView_ip);
+							ip.setVisibility(View.INVISIBLE);
 							Toast.makeText(activity,
 									R.string.wireless_adb_disabled,
 									Toast.LENGTH_SHORT).show();
@@ -363,6 +375,9 @@ public class Tab4_Recovery extends Fragment {
 							ImageView image = (ImageView) view
 									.findViewById(R.id.imageView_adb_status);
 							image.setImageResource(R.drawable.on);
+							TextView ip = (TextView) view
+									.findViewById(R.id.textView_ip);
+							ip.setVisibility(View.VISIBLE);
 							Toast.makeText(activity,
 									R.string.wireless_adb_enabled,
 									Toast.LENGTH_SHORT).show();
@@ -370,6 +385,9 @@ public class Tab4_Recovery extends Fragment {
 							ImageView image = (ImageView) view
 									.findViewById(R.id.imageView_adb_status);
 							image.setImageResource(R.drawable.off);
+							TextView ip = (TextView) view
+									.findViewById(R.id.textView_ip);
+							ip.setVisibility(View.INVISIBLE);
 							Toast.makeText(activity,
 									R.string.wireless_adb_disabled,
 									Toast.LENGTH_SHORT).show();

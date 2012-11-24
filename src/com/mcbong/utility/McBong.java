@@ -67,14 +67,14 @@ public class McBong extends FragmentActivity {
 		mViewPager.setCurrentItem(0);
 
 		mViewPager
-				.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-					@Override
-					public void onPageSelected(int position) {
-						// ** When swiping between pages select the correct Tab
-						// */
-						getActionBar().setSelectedNavigationItem(position);
-					}
-				});
+		.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+			@Override
+			public void onPageSelected(int position) {
+				// ** When swiping between pages select the correct Tab
+				// */
+				getActionBar().setSelectedNavigationItem(position);
+			}
+		});
 
 		ActionBar ab = getActionBar();
 		ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -197,7 +197,7 @@ public class McBong extends FragmentActivity {
 	}
 
 	public static class TabListener<T extends Fragment> implements
-			ActionBar.TabListener {
+	ActionBar.TabListener {
 		private Fragment mFragment;
 		private final Activity mActivity;
 		private final String mTag;

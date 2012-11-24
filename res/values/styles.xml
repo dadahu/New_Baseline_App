@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme_Dialog_Translucent" parent="android:Theme.Dialog">
-        <item name="android:windowBackground">@color/Transparent</item>
-    </style>
+	<style name="Theme_Dialog_Translucent" parent="android:Theme.Dialog">
+		<item name="android:windowBackground">@color/Transparent</item>
+	</style>
 
 </resources>

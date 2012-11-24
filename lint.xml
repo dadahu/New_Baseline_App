@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="AlwaysShowAction">
+        <ignore path="res/menu/main.xml" />
+    </issue>
+    <issue id="IconColors">
+        <ignore path="res/drawable-hdpi/button_version.png" />
+    </issue>
+    <issue id="IconDensities" severity="ignore" />
+    <issue id="IconDuplicates">
+        <ignore path="res/drawable-hdpi/restore_contacts_and_calls.png" />
+        <ignore path="res/drawable-hdpi/restore_messages.png" />
+    </issue>
+    <issue id="OldTargetApi">
+        <ignore path="AndroidManifest.xml" />
+    </issue>
+    <issue id="OnClick">
+        <ignore path="res/layout/tab0_main.xml" />
+    </issue>
+    <issue id="Overdraw">
+        <ignore path="res/layout/tab5_online.xml" />
+    </issue>
+    <issue id="ProtectedPermissons">
+        <ignore path="AndroidManifest.xml" />
+    </issue>
+    <issue id="UnusedResources">
+        <ignore path="res/drawable-hdpi/exit.png" />
+        <ignore path="res/drawable-hdpi/power_offbackup.png" />
+        <ignore path="res/drawable-hdpi/tabbar.png" />
+        <ignore path="res/layout/custom_alert_dialog.xml" />
+        <ignore path="res/layout/custom_dialog.xml" />
+        <ignore path="res/layout/tab4_recovery.xml" />
+        <ignore path="res/layout/tab5_online.xml" />
+        <ignore path="res/menu/main.xml" />
+        <ignore path="res/values/color.xml" />
+        <ignore path="res/values/strings.xml" />
+    </issue>
+</lint>

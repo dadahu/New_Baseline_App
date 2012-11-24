@@ -29,66 +29,71 @@ public class Tab0_Main extends Fragment {
 
 		Button button_mainpage_link_backup_restore = (Button) view
 				.findViewById(R.id.button_mainpage_link_backup_restore);
+		button_mainpage_link_backup_restore.setBackgroundResource(R.drawable.button);
 		button_mainpage_link_backup_restore
-				.setOnClickListener(new OnClickListener() {
-					public void onClick(View v) {
-						Activity activity = getActivity();
-						// if (activity != null) {
+		.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				Activity activity = getActivity();
+				// if (activity != null) {
 
-						Toast.makeText(activity, R.string.dummy,
-								Toast.LENGTH_SHORT).show();
+				Toast.makeText(activity, R.string.dummy,
+						Toast.LENGTH_SHORT).show();
 
-					}
-				});
+			}
+		});
 
 		Button button_mainpage_link_addons = (Button) view
 				.findViewById(R.id.button_mainpage_link_addons);
+		button_mainpage_link_addons.setBackgroundResource(R.drawable.button);
 		button_mainpage_link_addons.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				// if (activity != null) {
 
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
-						.show();
+				.show();
 
 			}
 		});
 
 		Button button_mainpage_link_tweaks = (Button) view
 				.findViewById(R.id.button_mainpage_link_tweaks);
+		button_mainpage_link_tweaks.setBackgroundResource(R.drawable.button);
 		button_mainpage_link_tweaks.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				// if (activity != null) {
 
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
-						.show();
+				.show();
 
 			}
 		});
 
 		Button button_mainpage_link_recovery = (Button) view
 				.findViewById(R.id.button_mainpage_link_recovery);
+		button_mainpage_link_recovery.setBackgroundResource(R.drawable.button);
 		button_mainpage_link_recovery.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				// if (activity != null) {
 
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
-						.show();
+				.show();
 
 			}
 		});
 
 		Button button_mainpage_link_online = (Button) view
 				.findViewById(R.id.button_mainpage_link_online);
+		button_mainpage_link_online.setBackgroundResource(R.drawable.button);
 		button_mainpage_link_online.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				// if (activity != null) {
 
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
-						.show();
+				.show();
 
 			}
 		});

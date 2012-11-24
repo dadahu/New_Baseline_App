@@ -11,8 +11,8 @@
 Update 21/11/2012 ... Update no.9 ...
 
 		> Added browser bookmark database backup to backup/restore section,
-		  Stripped filename's of backup database's, so their not immediatly 
-		  recognizable etc.
+		  Stripped filename's of backup database's, so their not immediately 
+		  recognisable etc.
 		  Added GetProp input stream check's for wireless adb state.
 		  Added swipe to change tabs using : FragmentPagerAdapter and
 		  FragmentTransaction.
@@ -109,7 +109,7 @@ Update 26/10/2012 ...  Update no.4 ...
 
 		> Added Stericson's 'roottools' library to project for easy one time SU-
 		  init and shell command pass throughs.
-		  added some more test strings, implimented first 'recovery' fragment tab
+		  added some more test strings, implemented first 'recovery' fragment tab
 		  option : 'Reboot'.
 		  fixed Landscape tab fragment issue
 		  added new strings, changed 'online' webview url, major code cleanup.

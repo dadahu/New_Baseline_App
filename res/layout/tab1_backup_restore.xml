@@ -1,218 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scroller"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fillViewport="true"
-    android:orientation="vertical"
-    android:scrollbarAlwaysDrawVerticalTrack="false"
-    android:scrollbars="none" >
+	android:id="@+id/scroller"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:fillViewport="true"
+	android:scrollbarAlwaysDrawVerticalTrack="false"
+	android:scrollbars="none" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/background"
-        android:orientation="vertical"
-        android:scrollbarAlwaysDrawVerticalTrack="false"
-        android:scrollbars="none" >
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/background"
+		android:orientation="vertical"
+		android:scrollbarAlwaysDrawVerticalTrack="false"
+		android:scrollbars="none" >
 
-        <TableLayout
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" >
+		<TextView
+			android:id="@+id/padder1_tab1"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center" />
 
-            <TextView
-                android:id="@+id/TextView03"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
+		<TableLayout
+			android:layout_width="300dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center" >
 
-            <TextView
-                android:id="@+id/TextView01"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/backup" />
+			<TextView
+				android:id="@+id/TextView01"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/backup" />
 
-            <TextView
-                android:id="@+id/TextView04"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
+			<TextView
+				android:id="@+id/TextView05"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
 
-            <TableRow
-                android:id="@+id/tablerow_contacts"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" >
+			<TableRow
+				android:id="@+id/tablerow_contacts"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal" >
 
-                <Button
-                    android:id="@+id/button_backup_contacts_and_calls"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_normal"
-                    android:gravity="center"
-                    android:onClick="myClickHandler"
-                    android:paddingBottom="10dp"
-                    android:text="@+string/backup_contacts_and_calls"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+				<Button
+					android:id="@+id/button_backup_contacts_and_calls"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/button_normal"
+					android:gravity="center"
+					android:onClick="myClickHandler"
+					android:paddingBottom="10dp"
+					android:text="@+string/backup_contacts_and_calls"
+					android:textColor="@color/White"
+					android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageview_contacts"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:paddingBottom="10dp"
-                    android:paddingRight="35dp"
-                    android:src="@drawable/backup_contacts_and_calls" />
-            </TableRow>
+				<ImageView
+					android:id="@+id/imageview_contacts"
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:contentDescription="@string/backup_contacts_and_calls"
+					android:paddingBottom="10dp"
+					android:paddingRight="35dp"
+					android:src="@drawable/backup_contacts_and_calls" />
+			</TableRow>
 
-            <TableRow
-                android:id="@+id/tablerow_messages"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" >
+			<TableRow
+				android:id="@+id/tablerow_messages"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal" >
 
-                <Button
-                    android:id="@+id/button_backup_text_messages"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_normal"
-                    android:gravity="center"
-                    android:onClick="myClickHandler"
-                    android:paddingBottom="10dp"
-                    android:text="@+string/backup_text_messages"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+				<Button
+					android:id="@+id/button_backup_text_messages"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/button_normal"
+					android:gravity="center"
+					android:onClick="myClickHandler"
+					android:paddingBottom="10dp"
+					android:text="@+string/backup_text_messages"
+					android:textColor="@color/White"
+					android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageview_messages"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:paddingBottom="10dp"
-                    android:paddingRight="35dp"
-                    android:src="@drawable/backup_messages" />
-            </TableRow>
+				<ImageView
+					android:id="@+id/imageview_messages"
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:contentDescription="@string/backup_text_messages"
+					android:paddingBottom="10dp"
+					android:paddingRight="35dp"
+					android:src="@drawable/backup_messages" />
+			</TableRow>
 
-            <TableRow
-                android:id="@+id/tableRow1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+			<TableRow
+				android:id="@+id/tableRow1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" >
 
-                <Button
-                    android:id="@+id/button_backup_browser_bookmarks"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_normal"
-                    android:gravity="center"
-                    android:onClick="myClickHandler"
-                    android:paddingBottom="10dp"
-                    android:text="@+string/backup_browser_bookmarks"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
-            </TableRow>
+				<Button
+					android:id="@+id/button_backup_browser_bookmarks"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/button_normal"
+					android:gravity="center"
+					android:onClick="myClickHandler"
+					android:paddingBottom="10dp"
+					android:text="@+string/backup_browser_bookmarks"
+					android:textColor="@color/White"
+					android:textStyle="bold" />
+			</TableRow>
 
-            <TextView
-                android:id="@+id/TextView05"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
+			<TextView
+				android:id="@+id/TextView15"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/TextView07"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/restore" />
+			<TextView
+				android:id="@+id/TextView07"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/restore" />
 
-            <TextView
-                android:id="@+id/TextView04a"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
+			<TextView
+				android:id="@+id/TextView04a"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
 
-            <TableRow
-                android:id="@+id/tablerow_contacts_r"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+			<TableRow
+				android:id="@+id/tablerow_contacts_r"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" >
 
-                <Button
-                    android:id="@+id/button_restore_contacts_and_calls"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_normal"
-                    android:gravity="center"
-                    android:onClick="myClickHandler"
-                    android:paddingBottom="10dp"
-                    android:text="@+string/restore_contacts_and_calls"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+				<Button
+					android:id="@+id/button_restore_contacts_and_calls"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/button_normal"
+					android:gravity="center"
+					android:onClick="myClickHandler"
+					android:paddingBottom="10dp"
+					android:text="@+string/restore_contacts_and_calls"
+					android:textColor="@color/White"
+					android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageview_contacts_r"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:paddingBottom="10dp"
-                    android:paddingRight="35dp"
-                    android:src="@drawable/backup_contacts_and_calls" />
-            </TableRow>
+				<ImageView
+					android:id="@+id/imageview_contacts_r"
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:contentDescription="@string/restore_contacts_and_calls"
+					android:paddingBottom="10dp"
+					android:paddingRight="35dp"
+					android:src="@drawable/backup_contacts_and_calls" />
+			</TableRow>
 
-            <TableRow
-                android:id="@+id/tablerow_messages_r"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+			<TableRow
+				android:id="@+id/tablerow_messages_r"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" >
 
-                <Button
-                    android:id="@+id/button_restore_text_messages"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_normal"
-                    android:gravity="center"
-                    android:onClick="myClickHandler"
-                    android:paddingBottom="10dp"
-                    android:text="@+string/restore_text_messages"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+				<Button
+					android:id="@+id/button_restore_text_messages"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/button_normal"
+					android:gravity="center"
+					android:onClick="myClickHandler"
+					android:paddingBottom="10dp"
+					android:text="@+string/restore_text_messages"
+					android:textColor="@color/White"
+					android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageview_messages_r"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:paddingBottom="10dp"
-                    android:paddingRight="35dp"
-                    android:src="@drawable/backup_messages" />
-            </TableRow>
+				<ImageView
+					android:id="@+id/imageview_messages_r"
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:contentDescription="@string/restore_text_messages"
+					android:paddingBottom="10dp"
+					android:paddingRight="35dp"
+					android:src="@drawable/backup_messages" />
+			</TableRow>
 
-            <TableRow
-                android:id="@+id/tableRow2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+			<TableRow
+				android:id="@+id/tableRow2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" >
 
-                <Button
-                    android:id="@+id/button_restore_browser_bookmarks"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_normal"
-                    android:gravity="center"
-                    android:onClick="myClickHandler"
-                    android:paddingBottom="10dp"
-                    android:text="@+string/restore_browser_bookmarks"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
-            </TableRow>
+				<Button
+					android:id="@+id/button_restore_browser_bookmarks"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/button_normal"
+					android:gravity="center"
+					android:onClick="myClickHandler"
+					android:paddingBottom="10dp"
+					android:text="@+string/restore_browser_bookmarks"
+					android:textColor="#FFFFFF"
+					android:textStyle="bold" />
+			</TableRow>
 
-            <TextView
-                android:id="@+id/TextView06"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
+			<TextView
+				android:id="@+id/TextView06"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
 
-            <TableRow
-                android:id="@+id/TableRow02"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-            </TableRow>
+			<TableRow
+				android:id="@+id/TableRow02"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" >
+			</TableRow>
 
-            <TableRow
-                android:id="@+id/TableRow01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-            </TableRow>
-        </TableLayout>
-
-    </LinearLayout>
+			<TableRow
+				android:id="@+id/TableRow01"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" >
+			</TableRow>
+		</TableLayout>
+	</LinearLayout>
 
 </ScrollView>
