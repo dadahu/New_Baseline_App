@@ -49,14 +49,16 @@ public class Tab4_Recovery extends Fragment {
 				image.setImageResource(R.drawable.on);
 				TextView ip = (TextView) view
 						.findViewById(R.id.textView_ip);
-				ip.setVisibility(View.VISIBLE);
+				ip.setText(R.string.wireless_adb_enabled_ip);
+				ip.setTextColor(getResources().getColor(R.color.Green));
 			} else {
 				ImageView image = (ImageView) view
 						.findViewById(R.id.imageView_adb_status);
 				image.setImageResource(R.drawable.off);
 				TextView ip = (TextView) view
 						.findViewById(R.id.textView_ip);
-				ip.setVisibility(View.INVISIBLE);
+				ip.setText(R.string.wireless_adb_disabled_ip);
+				ip.setTextColor(getResources().getColor(R.color.DarkRed));
 			}
 		} catch (java.io.IOException e) {
 		}
@@ -320,7 +322,8 @@ public class Tab4_Recovery extends Fragment {
 							image.setImageResource(R.drawable.on);
 							TextView ip = (TextView) view
 									.findViewById(R.id.textView_ip);
-							ip.setVisibility(View.VISIBLE);
+							ip.setText(R.string.wireless_adb_enabled_ip);
+							ip.setTextColor(getResources().getColor(R.color.Green));
 							Toast.makeText(activity,
 									R.string.wireless_adb_enabled,
 									Toast.LENGTH_SHORT).show();
@@ -330,7 +333,8 @@ public class Tab4_Recovery extends Fragment {
 							image.setImageResource(R.drawable.off);
 							TextView ip = (TextView) view
 									.findViewById(R.id.textView_ip);
-							ip.setVisibility(View.INVISIBLE);
+							ip.setText(R.string.wireless_adb_disabled_ip);
+							ip.setTextColor(getResources().getColor(R.color.DarkRed));
 							Toast.makeText(activity,
 									R.string.wireless_adb_disabled,
 									Toast.LENGTH_SHORT).show();
@@ -378,7 +382,8 @@ public class Tab4_Recovery extends Fragment {
 							image.setImageResource(R.drawable.on);
 							TextView ip = (TextView) view
 									.findViewById(R.id.textView_ip);
-							ip.setVisibility(View.VISIBLE);
+							ip.setText(R.string.wireless_adb_enabled_ip);
+							ip.setTextColor(getResources().getColor(R.color.Green));
 							Toast.makeText(activity,
 									R.string.wireless_adb_enabled,
 									Toast.LENGTH_SHORT).show();
@@ -388,7 +393,8 @@ public class Tab4_Recovery extends Fragment {
 							image.setImageResource(R.drawable.off);
 							TextView ip = (TextView) view
 									.findViewById(R.id.textView_ip);
-							ip.setVisibility(View.INVISIBLE);
+							ip.setText(R.string.wireless_adb_disabled_ip);
+							ip.setTextColor(getResources().getColor(R.color.DarkRed));
 							Toast.makeText(activity,
 									R.string.wireless_adb_disabled,
 									Toast.LENGTH_SHORT).show();

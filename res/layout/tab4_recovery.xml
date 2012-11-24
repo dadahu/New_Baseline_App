@@ -171,9 +171,7 @@
 					android:layout_width="fill_parent"
 					android:layout_height="fill_parent"
 					android:gravity="center|center_horizontal"
-					android:text="@+string/wireless_adb_enabled_ip"
-					android:textColor="@color/Green"
-					android:visibility="invisible" />
+					android:text="@+string/wireless_adb_enabled_ip" />
 
 				<ImageView
 					android:id="@+id/imageView_adb_status"

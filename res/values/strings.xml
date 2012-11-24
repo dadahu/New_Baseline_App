@@ -61,6 +61,7 @@
 	<string name="reboot_recovery">Reboot.. Recovery</string>
 	<string name="power_off">Power Off Device</string>
 	<string name="wireless_adb_enabled_ip">\n Connect to IP:port ; 192.168.0.2:5555 \n</string>
+	<string name="wireless_adb_disabled_ip">\n Wireless ADB is Curently Disabled \n</string>
 	<string name="wireless_adb_enable">Enable Wireless ADB </string>
 	<string name="wireless_adb_disable">Disable Wireless ADB </string>
 	<string name="wireless_adb_enabled">Wireless ADB - Is Enabled</string>
