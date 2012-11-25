@@ -51,7 +51,7 @@
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
-					android:text="@+string/install_adw"
+					android:text="@string/install_adw"
 					android:textColor="@color/White"
 					android:textStyle="bold" />
 
@@ -79,7 +79,7 @@
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
-					android:text="@+string/install_golauncher"
+					android:text="@string/install_golauncher"
 					android:textColor="@color/White"
 					android:textStyle="bold" />
 
@@ -107,7 +107,7 @@
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
-					android:text="@+string/install_nova"
+					android:text="@string/install_nova"
 					android:textColor="@color/White"
 					android:textStyle="bold" />
 
@@ -151,7 +151,7 @@
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
-					android:text="@+string/install_ssdred"
+					android:text="@string/install_ssdred"
 					android:textColor="@color/White"
 					android:textStyle="bold" />
 
@@ -179,7 +179,7 @@
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
-					android:text="@+string/install_popstyle"
+					android:text="@string/install_popstyle"
 					android:textColor="@color/White"
 					android:textStyle="bold" />
 
@@ -207,7 +207,7 @@
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
-					android:text="@+string/install_redics"
+					android:text="@string/install_redics"
 					android:textColor="@color/White"
 					android:textStyle="bold" />
 

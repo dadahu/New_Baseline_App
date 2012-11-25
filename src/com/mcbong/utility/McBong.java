@@ -21,7 +21,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageView;
+//import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
@@ -87,7 +87,7 @@ public class McBong extends FragmentActivity {
 
 		Tab tab1 = ab
 				.newTab()
-				.setText("| Tool's ..|..")
+				.setText("| Backup & Restore ..|..")
 				.setTabListener(
 						new TabListener<Tab1_Backup_Restore>(this, "tabone",
 								Tab1_Backup_Restore.class));
@@ -108,14 +108,14 @@ public class McBong extends FragmentActivity {
 
 		Tab tab4 = ab
 				.newTab()
-				.setText("| Recovery..|..")
+				.setText("| Recovery ..|..")
 				.setTabListener(
 						new TabListener<Tab4_Recovery>(this, "tabfour",
 								Tab4_Recovery.class));
 
 		Tab tab5 = ab
 				.newTab()
-				.setText("| Online..|")
+				.setText("| Online ..|")
 				.setTabListener(
 						new TabListener<Tab5_Online>(this, "tabfive",
 								Tab5_Online.class));
@@ -145,26 +145,43 @@ public class McBong extends FragmentActivity {
 					R.style.Theme_Dialog_Translucent);
 			dialog.getWindow();
 			dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-			dialog.setContentView(R.layout.custom_dialog);
+			dialog.setContentView(R.layout.custom_about_dialog);
 			Button dialogButton = (Button) dialog
-					.findViewById(R.id.custom_dialog_ok);
+					.findViewById(R.id.custom_about_dialog_ok);
 
+			
+			String app_info_title = new String(
+					"McBong-Utility\n" +
+					"\n" +
+					"An App designed for users who want all the useful feature's ALL in one place.."); 
+			
+			String app_info = new String(
+					"*This Project was started as a mean's to easily set up a device after an initial ROM Flash," +
+					"and has had small feature's added here and there to make post-ROM-Flash even quicker.\n" +
+					"\n" +
+					"This was an idea I just had to get done and so here we are .. " +
+					"\n");
+			
 			// ** Center OK button on dialog */
 			LayoutParams params = (RelativeLayout.LayoutParams) dialogButton
 					.getLayoutParams();
 			params.addRule(RelativeLayout.CENTER_IN_PARENT);
 			dialogButton.setLayoutParams(params); // causes layout update
 			TextView title = (TextView) dialog
-					.findViewById(R.id.custom_dialog_textview_title);
-			title.setText(R.string.installed_version);
+					.findViewById(R.id.custom_about_dialog_textview_title);
+			title.setText(app_info_title);
 
 			// ** set up the custom dialog components */
 			TextView text = (TextView) dialog
-					.findViewById(R.id.custom_dialog_textview);
-			text.setText(R.string.version);
-			ImageView image = (ImageView) dialog
-					.findViewById(R.id.custom_dialog_image);
-			image.setImageResource(R.drawable.ic_launcher);
+					.findViewById(R.id.custom_about_dialog_textview);
+			text.setText(app_info);
+			
+//			Set up app logo image ..
+			//ImageView image = (ImageView) dialog
+					//.findViewById(R.id.custom_about_dialog_image);
+			//image.setImageResource(R.drawable.ic_launcher);
+			
+			
 			// * set up button image resources */
 			dialogButton.setBackgroundResource(R.drawable.small_button);
 			// ** if OK button is clicked, close the custom dialog */

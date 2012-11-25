@@ -51,7 +51,7 @@
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
-					android:text="@+string/reboot"
+					android:text="@string/reboot"
 					android:textColor="@color/White"
 					android:textStyle="bold" />
 
@@ -78,7 +78,7 @@
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
-					android:text="@+string/reboot_recovery"
+					android:text="@string/reboot_recovery"
 					android:textColor="@color/White"
 					android:textStyle="bold" />
 
@@ -106,7 +106,7 @@
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
-					android:text="@+string/power_off"
+					android:text="@string/power_off"
 					android:textColor="@color/White"
 					android:textStyle="bold" />
 
@@ -148,7 +148,7 @@
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
-					android:text="@+string/wireless_adb_enable"
+					android:text="@string/wireless_adb_enable"
 					android:textColor="@color/White"
 					android:textStyle="bold" />
 
@@ -171,7 +171,7 @@
 					android:layout_width="fill_parent"
 					android:layout_height="fill_parent"
 					android:gravity="center|center_horizontal"
-					android:text="@+string/wireless_adb_enabled_ip" />
+					android:text="@string/wireless_adb_enabled_ip" />
 
 				<ImageView
 					android:id="@+id/imageView_adb_status"
@@ -195,7 +195,7 @@
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
-					android:text="@+string/wireless_adb_disable"
+					android:text="@string/wireless_adb_disable"
 					android:textColor="@color/White"
 					android:textStyle="bold" />
 

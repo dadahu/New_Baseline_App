@@ -11,7 +11,7 @@
 		android:id="@+id/menuitem_quit"
 		android:icon="@android:drawable/ic_menu_close_clear_cancel"
 		android:showAsAction="always"
-		android:title="@+string/menu_quit">
+		android:title="@string/menu_quit">
 	</item>
 
 </menu>

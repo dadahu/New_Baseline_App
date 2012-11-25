@@ -88,6 +88,25 @@ public class Tab0_Main extends Fragment {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				
+				//** Swap fragment and ActionBar tab to Tab5_Online */
+				
+//				ActionBar actionBar = getActivity().getActionBar();
+//				actionBar.selectTab(ActionBar.Tab. Tab5_Online);
+
+				
+				
+				
+//			    FragmentManager fragmentManager = getFragmentManager();
+//			    Fragment tabFiveFragment = new Tab5_Online();
+//			    FragmentTransaction transaction = fragmentManager.beginTransaction();
+//			    transaction.replace(android.R.id.tabcontent, tabFiveFragment);
+//			    transaction.addToBackStack(null);
+//			    transaction.commit();
+//			                }
+//
+//			            });
+				
+					
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
 				.show();
 
