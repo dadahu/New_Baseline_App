@@ -62,7 +62,7 @@
 					android:contentDescription="@string/backup_contacts_and_calls"
 					android:paddingBottom="10dp"
 					android:paddingRight="35dp"
-					android:src="@drawable/backup_contacts_and_calls" />
+					android:src="@drawable/icon_contacts_and_calls" />
 			</TableRow>
 
 			<TableRow
@@ -90,7 +90,7 @@
 					android:contentDescription="@string/backup_text_messages"
 					android:paddingBottom="10dp"
 					android:paddingRight="35dp"
-					android:src="@drawable/backup_messages" />
+					android:src="@drawable/icon_messages" />
 			</TableRow>
 
 			<TableRow
@@ -99,16 +99,25 @@
 				android:layout_height="wrap_content" >
 
 				<Button
-					android:id="@+id/button_backup_browser_bookmarks"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:background="@drawable/button_normal"
-					android:gravity="center"
-					android:onClick="myClickHandler"
-					android:paddingBottom="10dp"
-					android:text="@string/backup_browser_bookmarks"
-					android:textColor="@color/White"
-					android:textStyle="bold" />
+				    android:id="@+id/button_backup_browser_bookmarks"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/button_normal"
+				    android:gravity="center"
+				    android:onClick="myClickHandler"
+				    android:paddingBottom="10dp"
+				    android:text="@string/backup_browser_bookmarks"
+				    android:textColor="@color/White"
+				    android:textStyle="bold" />
+
+				<ImageView
+				    android:id="@+id/ImageView01"
+				    android:layout_width="fill_parent"
+				    android:layout_height="fill_parent"
+				    android:contentDescription="@string/backup_text_messages"
+				    android:paddingBottom="10dp"
+				    android:paddingRight="35dp"
+				    android:src="@drawable/icon_browser" />
 			</TableRow>
 
 			<TextView
@@ -151,7 +160,7 @@
 					android:contentDescription="@string/restore_contacts_and_calls"
 					android:paddingBottom="10dp"
 					android:paddingRight="35dp"
-					android:src="@drawable/backup_contacts_and_calls" />
+					android:src="@drawable/icon_contacts_and_calls" />
 			</TableRow>
 
 			<TableRow
@@ -178,7 +187,7 @@
 					android:contentDescription="@string/restore_text_messages"
 					android:paddingBottom="10dp"
 					android:paddingRight="35dp"
-					android:src="@drawable/backup_messages" />
+					android:src="@drawable/icon_messages" />
 			</TableRow>
 
 			<TableRow
@@ -187,16 +196,25 @@
 				android:layout_height="wrap_content" >
 
 				<Button
-					android:id="@+id/button_restore_browser_bookmarks"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:background="@drawable/button_normal"
-					android:gravity="center"
-					android:onClick="myClickHandler"
-					android:paddingBottom="10dp"
-					android:text="@string/restore_browser_bookmarks"
-					android:textColor="@color/White"
-					android:textStyle="bold" />
+				    android:id="@+id/button_restore_browser_bookmarks"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/button_normal"
+				    android:gravity="center"
+				    android:onClick="myClickHandler"
+				    android:paddingBottom="10dp"
+				    android:text="@string/restore_browser_bookmarks"
+				    android:textColor="@color/White"
+				    android:textStyle="bold" />
+
+				<ImageView
+				    android:id="@+id/ImageView02"
+				    android:layout_width="fill_parent"
+				    android:layout_height="fill_parent"
+				    android:contentDescription="@string/restore_text_messages"
+				    android:paddingBottom="10dp"
+				    android:paddingRight="35dp"
+				    android:src="@drawable/icon_browser" />
 			</TableRow>
 
 			<TextView

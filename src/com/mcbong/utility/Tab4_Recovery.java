@@ -105,7 +105,7 @@ public class Tab4_Recovery extends Fragment {
 					alert_text.setText(R.string.confirm);
 					ImageView image = (ImageView) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_image);
-					image.setImageResource(R.drawable.ic_launcher);
+					image.setImageResource(R.drawable.reboot);
 
 					// * set up button image resources */
 					Button custom_alert_dialog_ok = (Button) alert_dialog
@@ -171,7 +171,7 @@ public class Tab4_Recovery extends Fragment {
 					alert_text.setText(R.string.confirm);
 					ImageView image = (ImageView) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_image);
-					image.setImageResource(R.drawable.ic_launcher);
+					image.setImageResource(R.drawable.reboot_recovery);
 
 					// * set up button image resources */
 					Button custom_alert_dialog_ok = (Button) alert_dialog
@@ -238,7 +238,7 @@ public class Tab4_Recovery extends Fragment {
 					alert_text.setText(R.string.confirm);
 					ImageView image = (ImageView) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_image);
-					image.setImageResource(R.drawable.ic_launcher);
+					image.setImageResource(R.drawable.power_off);
 
 					// * set up button image resources */
 					Button custom_alert_dialog_ok = (Button) alert_dialog

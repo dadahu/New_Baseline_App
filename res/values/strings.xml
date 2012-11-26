@@ -8,7 +8,7 @@
 	<!-- Menu Strings -->
 	<string name="menu_quit">Exit App</string>
 	<string name="menu_version">App Info</string>
-	<string name="version">Test Build 272 (26/11)</string>
+	<string name="version">Test Build 276 (26/11)</string>
 	<string name="installed_version">Current Installed Version ..</string>
 	<string name="mainpage_header">Pick Your Poison .. </string>
 	<string name="mainpage_link_backup_restore">Backup / Restore Section ..</string>
@@ -28,7 +28,7 @@
 	<string name="restore_failed">Sorry, Restore Failed</string>
 	<string name="backup_complete">Backup Completed Successfully</string>
 	<string name="backup_failed">Sorry, Backup Failed</string>
-	<string name="backup_contacts_and_calls">Backup Contact\'s and Call\'s</string>
+	<string name="backup_contacts_and_calls">Backup Contact\'s and Calls</string>
 	<string name="backup_text_messages">Backup Text Message\'s</string>
 	<string name="backup_browser_bookmarks">Backup Browser Bookmark\'s</string>
 	<string name="restore_contacts_and_calls">Restore Contact\'s and Call\'s</string>
@@ -46,8 +46,9 @@
 	<string name="adb_functions">Device [ADB] Debugging Option\'s ..</string>
 	<string name="tools">Android Tool\'s Section ..</string>
 	<string name="tweaks">Android Tweak\'s Section ..</string>
+	<string name="update_checker_header">Online Update Checker</string>
 	<string name="latest_version">The Latest Online Version is ..</string>
-	<string name="update"> Download Update </string>
+	<string name="update">Update </string>
 	<string name="update_available">  NEW Update Available! ..</string>
 	<string name="installing_update">Installing McBong-Utility Update ..</string>
 	<string name="downloading">Downloading Update ..</string>

@@ -85,7 +85,7 @@ public class Tab1_Backup_Restore extends Fragment {
 					alert_text.setText(R.string.confirm);
 					ImageView image = (ImageView) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_image);
-					image.setImageResource(R.drawable.backup_contacts_and_calls);
+					image.setImageResource(R.drawable.icon_contacts_and_calls);
 
 					// * set up custom dialog button image resources */
 					Button custom_alert_dialog_ok = (Button) alert_dialog
@@ -99,6 +99,8 @@ public class Tab1_Backup_Restore extends Fragment {
 					.setOnClickListener(new OnClickListener() {
 						public void onClick(View v) {
 							Activity activity = getActivity();
+
+							alert_dialog.dismiss();
 
 							Toast.makeText(
 									activity,
@@ -146,7 +148,7 @@ public class Tab1_Backup_Restore extends Fragment {
 										.show();
 								e.printStackTrace();
 							}
-							alert_dialog.dismiss();
+							//alert_dialog.dismiss();
 
 							// ** Check to see if database
 							// backup was ACTUALLY made .. */
@@ -209,7 +211,7 @@ public class Tab1_Backup_Restore extends Fragment {
 					alert_text.setText(R.string.confirm);
 					ImageView image = (ImageView) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_image);
-					image.setImageResource(R.drawable.backup_messages);
+					image.setImageResource(R.drawable.icon_messages);
 
 					// * set up button image resources */
 					Button custom_alert_dialog_ok = (Button) alert_dialog
@@ -223,6 +225,8 @@ public class Tab1_Backup_Restore extends Fragment {
 					.setOnClickListener(new OnClickListener() {
 						public void onClick(View v) {
 							Activity activity = getActivity();
+
+							alert_dialog.dismiss();
 
 							Toast.makeText(activity,
 									R.string.backing_up_text_messages,
@@ -261,7 +265,7 @@ public class Tab1_Backup_Restore extends Fragment {
 										Toast.LENGTH_SHORT).show();
 								e.printStackTrace();
 							}
-							alert_dialog.dismiss();
+							//alert_dialog.dismiss();
 
 							// ** Check to see if database backup was
 							// ACTUALLY made .. */
@@ -323,7 +327,7 @@ public class Tab1_Backup_Restore extends Fragment {
 					alert_text.setText(R.string.confirm);
 					ImageView image = (ImageView) alert_dialog
 							.findViewById(R.id.custom_alert_dialog_image);
-					image.setImageResource(R.drawable.backup_messages);
+					image.setImageResource(R.drawable.icon_browser);
 
 					// * set up button image resources */
 					Button custom_alert_dialog_ok = (Button) alert_dialog
@@ -339,6 +343,8 @@ public class Tab1_Backup_Restore extends Fragment {
 						public void onClick(View v) {
 							Activity activity = getActivity();
 
+							alert_dialog.dismiss();
+
 							Toast.makeText(
 									activity,
 									R.string.backing_up_browser_bookmarks,
@@ -349,7 +355,8 @@ public class Tab1_Backup_Restore extends Fragment {
 							// new
 							// backups */
 							CommandCapture command = new CommandCapture(
-									0, "mkdir /sdcard/.mcb/",
+									0, 
+									"mkdir /sdcard/.mcb/",
 									"mkdir /sdcard/.mcb/.bb",
 									"rm /sdcard/mcb/bb/b",
 									"cp /data/data/com.android.browser/databases/browser2.db /sdcard/.mcb/.bb/b");
@@ -382,7 +389,7 @@ public class Tab1_Backup_Restore extends Fragment {
 										.show();
 								e.printStackTrace();
 							}
-							alert_dialog.dismiss();
+							//alert_dialog.dismiss();
 
 							// ** Check to see if database
 							// backup was
@@ -459,7 +466,7 @@ public class Tab1_Backup_Restore extends Fragment {
 						alert_text.setText(R.string.confirm);
 						ImageView image = (ImageView) alert_dialog
 								.findViewById(R.id.custom_alert_dialog_image);
-						image.setImageResource(R.drawable.restore_contacts_and_calls);
+						image.setImageResource(R.drawable.icon_contacts_and_calls);
 
 						// * set up button image resources */
 						Button custom_alert_dialog_ok = (Button) alert_dialog
@@ -474,6 +481,8 @@ public class Tab1_Backup_Restore extends Fragment {
 						.setOnClickListener(new OnClickListener() {
 							public void onClick(View v) {
 								Activity activity = getActivity();
+
+								alert_dialog.dismiss();
 
 								Toast.makeText(
 										activity,
@@ -527,7 +536,7 @@ public class Tab1_Backup_Restore extends Fragment {
 											.show();
 									e.printStackTrace();
 								}
-								alert_dialog.dismiss();
+								//alert_dialog.dismiss();
 							}
 						});
 						Button custom_alert_dialog_cancel = (Button) alert_dialog
@@ -587,7 +596,7 @@ public class Tab1_Backup_Restore extends Fragment {
 						alert_text.setText(R.string.confirm);
 						ImageView image = (ImageView) alert_dialog
 								.findViewById(R.id.custom_alert_dialog_image);
-						image.setImageResource(R.drawable.restore_messages);
+						image.setImageResource(R.drawable.icon_messages);
 
 						// * set up button image resources */
 						Button custom_alert_dialog_ok = (Button) alert_dialog
@@ -601,6 +610,8 @@ public class Tab1_Backup_Restore extends Fragment {
 						.setOnClickListener(new OnClickListener() {
 							public void onClick(View v) {
 								Activity activity = getActivity();
+
+								alert_dialog.dismiss();
 
 								Toast.makeText(
 										activity,
@@ -640,7 +651,7 @@ public class Tab1_Backup_Restore extends Fragment {
 											Toast.LENGTH_SHORT).show();
 									e.printStackTrace();
 								}
-								alert_dialog.dismiss();
+								//alert_dialog.dismiss();
 							}
 						});
 						Button custom_alert_dialog_cancel = (Button) alert_dialog
@@ -702,7 +713,7 @@ public class Tab1_Backup_Restore extends Fragment {
 						alert_text.setText(R.string.confirm);
 						ImageView image = (ImageView) alert_dialog
 								.findViewById(R.id.custom_alert_dialog_image);
-						image.setImageResource(R.drawable.restore_messages);
+						image.setImageResource(R.drawable.icon_browser);
 
 						// * set up button image resources */
 						Button custom_alert_dialog_ok = (Button) alert_dialog
@@ -717,6 +728,8 @@ public class Tab1_Backup_Restore extends Fragment {
 						.setOnClickListener(new OnClickListener() {
 							public void onClick(View v) {
 								Activity activity = getActivity();
+								
+								alert_dialog.dismiss();
 
 								Toast.makeText(
 										activity,
@@ -769,7 +782,7 @@ public class Tab1_Backup_Restore extends Fragment {
 											.show();
 									e.printStackTrace();
 								}
-								alert_dialog.dismiss();
+								//alert_dialog.dismiss();
 							}
 						});
 						Button custom_alert_dialog_cancel = (Button) alert_dialog

@@ -112,7 +112,7 @@ public class Tab5_Online extends Fragment {
 						dialog.setContentView(R.layout.custom_dialog);
 						TextView title = (TextView) dialog
 								.findViewById(R.id.custom_dialog_textview_title);
-						title.setText(R.string.latest_version);
+						title.setText(R.string.update_checker_header);
 						TextView text = (TextView) dialog
 								.findViewById(R.id.custom_dialog_textview);
 						text.setText(sb.toString() + "");
