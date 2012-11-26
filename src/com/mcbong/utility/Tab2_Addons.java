@@ -42,42 +42,35 @@ public class Tab2_Addons extends Fragment {
 		// ** Inflate the layout for this fragment */
 		View view = inflater.inflate(R.layout.tab2_addons, container, false);
 
-		// ** Define buttons.. */
+		// ** Define buttons and set image resources .. */
 		Button button_install_adw = (Button) view
 				.findViewById(R.id.button_install_adw);
+			button_install_adw
+				.setBackgroundResource(R.drawable.button);	
 		Button button_install_golauncher = (Button) view
 				.findViewById(R.id.button_install_golauncher);
+			button_install_golauncher
+				.setBackgroundResource(R.drawable.button);		
 		Button button_install_nova = (Button) view
 				.findViewById(R.id.button_install_nova);
+			button_install_nova
+				.setBackgroundResource(R.drawable.button);	
 		Button button_install_ssdred = (Button) view
 				.findViewById(R.id.button_install_ssdred);
+			button_install_ssdred
+				.setBackgroundResource(R.drawable.button);	
 		Button button_install_popstyle = (Button) view
 				.findViewById(R.id.button_install_popstyle);
+			button_install_popstyle
+				.setBackgroundResource(R.drawable.button);	
 		Button button_install_redics = (Button) view
 				.findViewById(R.id.button_install_redics);
+			button_install_redics
+				.setBackgroundResource(R.drawable.button);
+				
 
-		// ** Set button image resources.. */
-		Button button_install_adw_views = (Button) view
-				.findViewById(R.id.button_install_adw);
-		button_install_adw_views.setBackgroundResource(R.drawable.button);
-		Button button_install_golauncher_views = (Button) view
-				.findViewById(R.id.button_install_golauncher);
-		button_install_golauncher_views
-		.setBackgroundResource(R.drawable.button);
-		Button button_install_nova_views = (Button) view
-				.findViewById(R.id.button_install_nova);
-		button_install_nova_views.setBackgroundResource(R.drawable.button);
-		Button button_install_ssdred_views = (Button) view
-				.findViewById(R.id.button_install_ssdred);
-		button_install_ssdred_views.setBackgroundResource(R.drawable.button);
-		Button button_install_popstyle_views = (Button) view
-				.findViewById(R.id.button_install_popstyle);
-		button_install_popstyle_views.setBackgroundResource(R.drawable.button);
-		Button button_install_redics_views = (Button) view
-				.findViewById(R.id.button_install_redics);
-		button_install_redics_views.setBackgroundResource(R.drawable.button);
-
-		button_install_adw.setOnClickListener(new OnClickListener() {
+		button_install_adw.
+		setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
@@ -205,7 +198,8 @@ public class Tab2_Addons extends Fragment {
 			}
 
 		});
-		button_install_golauncher.setOnClickListener(new OnClickListener() {
+		button_install_golauncher
+		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
@@ -332,7 +326,8 @@ public class Tab2_Addons extends Fragment {
 			}
 
 		});
-		button_install_nova.setOnClickListener(new OnClickListener() {
+		button_install_nova
+		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
@@ -459,7 +454,8 @@ public class Tab2_Addons extends Fragment {
 			}
 
 		});
-		button_install_ssdred.setOnClickListener(new OnClickListener() {
+		button_install_ssdred
+		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
@@ -584,7 +580,8 @@ public class Tab2_Addons extends Fragment {
 			}
 
 		});
-		button_install_popstyle.setOnClickListener(new OnClickListener() {
+		button_install_popstyle
+		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
@@ -710,7 +707,8 @@ public class Tab2_Addons extends Fragment {
 			}
 
 		});
-		button_install_redics.setOnClickListener(new OnClickListener() {
+		button_install_redics
+		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 

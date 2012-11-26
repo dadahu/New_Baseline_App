@@ -73,9 +73,11 @@ public class Tab5_Online extends Fragment {
 		// * set up button image resources */
 		Button button_check_webver = (Button) view
 				.findViewById(R.id.button_check_webver);
-		button_check_webver.setBackgroundResource(R.drawable.button);
+			button_check_webver
+				.setBackgroundResource(R.drawable.button);
 
-		button_check_webver.setOnClickListener(new OnClickListener() {
+		button_check_webver
+		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				if (activity != null) {

@@ -8,7 +8,7 @@
 	<!-- Menu Strings -->
 	<string name="menu_quit">Exit App</string>
 	<string name="menu_version">App Info</string>
-	<string name="version">Test Build 271 (25/11)</string>
+	<string name="version">Test Build 272 (26/11)</string>
 	<string name="installed_version">Current Installed Version ..</string>
 	<string name="mainpage_header">Pick Your Poison .. </string>
 	<string name="mainpage_link_backup_restore">Backup / Restore Section ..</string>

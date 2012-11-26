@@ -64,26 +64,28 @@ public class Tab4_Recovery extends Fragment {
 		}
 
 		// ** Define buttons.. */
-		Button button_reboot_views = (Button) view
+		Button button_reboot = (Button) view
 				.findViewById(R.id.button_reboot);
-		Button button_reboot_recovery_views = (Button) view
+			button_reboot
+				.setBackgroundResource(R.drawable.button);	
+		Button button_reboot_recovery = (Button) view
 				.findViewById(R.id.button_reboot_recovery);
-		Button button_power_off_views = (Button) view
+			button_reboot_recovery
+				.setBackgroundResource(R.drawable.button);	
+		Button button_power_off = (Button) view
 				.findViewById(R.id.button_power_off);
+			button_power_off
+				.setBackgroundResource(R.drawable.button);	
 		Button button_wireless_adb_enable = (Button) view
 				.findViewById(R.id.button_wireless_adb_enable);
+			button_wireless_adb_enable
+				.setBackgroundResource(R.drawable.button);	
 		Button button_wireless_adb_disable = (Button) view
 				.findViewById(R.id.button_wireless_adb_disable);
 
-		// ** Set button image resources.. */
-		button_reboot_views.setBackgroundResource(R.drawable.button);
-		button_reboot_recovery_views.setBackgroundResource(R.drawable.button);
-		button_power_off_views.setBackgroundResource(R.drawable.button);
-		button_wireless_adb_enable.setBackgroundResource(R.drawable.button);
-		button_wireless_adb_disable.setBackgroundResource(R.drawable.button);
-
-		Button button_reboot = (Button) view.findViewById(R.id.button_reboot);
-		button_reboot.setOnClickListener(new OnClickListener() {
+		
+		button_reboot
+		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				if (activity != null) {
@@ -148,9 +150,8 @@ public class Tab4_Recovery extends Fragment {
 				}
 			}
 		});
-		Button button_reboot_recovery = (Button) view
-				.findViewById(R.id.button_reboot_recovery);
-		button_reboot_recovery.setOnClickListener(new OnClickListener() {
+		button_reboot_recovery
+		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				if (activity != null) {
@@ -216,9 +217,8 @@ public class Tab4_Recovery extends Fragment {
 				}
 			}
 		});
-		Button dialog_title_power_off_device = (Button) view
-				.findViewById(R.id.button_power_off);
-		dialog_title_power_off_device.setOnClickListener(new OnClickListener() {
+		button_power_off
+		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				if (activity != null) {
@@ -284,7 +284,8 @@ public class Tab4_Recovery extends Fragment {
 				}
 			}
 		});
-		button_wireless_adb_enable.setOnClickListener(new OnClickListener() {
+		button_wireless_adb_enable
+		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
@@ -344,7 +345,8 @@ public class Tab4_Recovery extends Fragment {
 				}
 			}
 		});
-		button_wireless_adb_disable.setOnClickListener(new OnClickListener() {
+		button_wireless_adb_disable
+		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
