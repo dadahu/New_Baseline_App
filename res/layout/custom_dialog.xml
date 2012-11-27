@@ -7,6 +7,7 @@
     android:padding="0dp" >
 
     <RelativeLayout
+        android:id="@+id/RelativeLayout2"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -41,25 +42,58 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/custom_dialog_textview_title"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:contentDescription="@string/content_description_custom_dialog_image" />
 
         <TextView
-            android:id="@+id/custom_dialog_textview"
+            android:id="@+id/custom_dialog_textview_installedver_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/custom_dialog_image"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:gravity="center_vertical"
             android:textColor="@color/White"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/custom_dialog_textview_installedver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/custom_dialog_textview_installedver_header"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/custom_dialog_textview_onlinever_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/custom_dialog_textview_installedver"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/custom_dialog_textview_onlinever"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/custom_dialog_textview_onlinever_header"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/White"
+            android:textSize="20sp"
+            android:visibility="invisible" />
 
         <ImageView
             android:id="@+id/padder2_custom_dialog"
             android:layout_width="fill_parent"
             android:layout_height="15dp"
-            android:layout_below="@+id/custom_dialog_textview"
+            android:layout_below="@+id/custom_dialog_textview_onlinever"
             android:contentDescription="@string/content_description_padder" />
 
         <Button

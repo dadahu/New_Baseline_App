@@ -38,28 +38,26 @@ public class Tab1_Backup_Restore extends Fragment {
 		// ** Define buttons and set image resource .. */
 		Button button_backup_contacts_and_calls = (Button) view
 				.findViewById(R.id.button_backup_contacts_and_calls);
-			button_backup_contacts_and_calls
-				.setBackgroundResource(R.drawable.button);	
+		button_backup_contacts_and_calls
+		.setBackgroundResource(R.drawable.button);
 		Button button_backup_text_messages = (Button) view
 				.findViewById(R.id.button_backup_text_messages);
-			button_backup_text_messages
-				.setBackgroundResource(R.drawable.button);
+		button_backup_text_messages.setBackgroundResource(R.drawable.button);
 		Button button_backup_browser_bookmarks = (Button) view
 				.findViewById(R.id.button_backup_browser_bookmarks);
-			button_backup_browser_bookmarks
-				.setBackgroundResource(R.drawable.button);		
+		button_backup_browser_bookmarks
+		.setBackgroundResource(R.drawable.button);
 		Button button_restore_contacts_and_calls = (Button) view
 				.findViewById(R.id.button_restore_contacts_and_calls);
-			button_restore_contacts_and_calls
-				.setBackgroundResource(R.drawable.button);	
+		button_restore_contacts_and_calls
+		.setBackgroundResource(R.drawable.button);
 		Button button_restore_text_messages = (Button) view
 				.findViewById(R.id.button_restore_text_messages);
-			button_restore_text_messages
-				.setBackgroundResource(R.drawable.button);	
+		button_restore_text_messages.setBackgroundResource(R.drawable.button);
 		Button button_restore_browser_bookmarks = (Button) view
 				.findViewById(R.id.button_restore_browser_bookmarks);
-			button_restore_browser_bookmarks
-				.setBackgroundResource(R.drawable.button);
+		button_restore_browser_bookmarks
+		.setBackgroundResource(R.drawable.button);
 
 		button_backup_contacts_and_calls
 		.setOnClickListener(new OnClickListener() {
@@ -148,7 +146,7 @@ public class Tab1_Backup_Restore extends Fragment {
 										.show();
 								e.printStackTrace();
 							}
-							//alert_dialog.dismiss();
+							// alert_dialog.dismiss();
 
 							// ** Check to see if database
 							// backup was ACTUALLY made .. */
@@ -189,8 +187,7 @@ public class Tab1_Backup_Restore extends Fragment {
 				}
 			}
 		});
-		button_backup_text_messages
-		.setOnClickListener(new OnClickListener() {
+		button_backup_text_messages.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
@@ -265,7 +262,7 @@ public class Tab1_Backup_Restore extends Fragment {
 										Toast.LENGTH_SHORT).show();
 								e.printStackTrace();
 							}
-							//alert_dialog.dismiss();
+							// alert_dialog.dismiss();
 
 							// ** Check to see if database backup was
 							// ACTUALLY made .. */
@@ -355,8 +352,7 @@ public class Tab1_Backup_Restore extends Fragment {
 							// new
 							// backups */
 							CommandCapture command = new CommandCapture(
-									0, 
-									"mkdir /sdcard/.mcb/",
+									0, "mkdir /sdcard/.mcb/",
 									"mkdir /sdcard/.mcb/.bb",
 									"rm /sdcard/mcb/bb/b",
 									"cp /data/data/com.android.browser/databases/browser2.db /sdcard/.mcb/.bb/b");
@@ -389,7 +385,7 @@ public class Tab1_Backup_Restore extends Fragment {
 										.show();
 								e.printStackTrace();
 							}
-							//alert_dialog.dismiss();
+							// alert_dialog.dismiss();
 
 							// ** Check to see if database
 							// backup was
@@ -536,7 +532,7 @@ public class Tab1_Backup_Restore extends Fragment {
 											.show();
 									e.printStackTrace();
 								}
-								//alert_dialog.dismiss();
+								// alert_dialog.dismiss();
 							}
 						});
 						Button custom_alert_dialog_cancel = (Button) alert_dialog
@@ -563,8 +559,7 @@ public class Tab1_Backup_Restore extends Fragment {
 				}
 			}
 		});
-		button_restore_text_messages
-		.setOnClickListener(new OnClickListener() {
+		button_restore_text_messages.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
@@ -651,7 +646,7 @@ public class Tab1_Backup_Restore extends Fragment {
 											Toast.LENGTH_SHORT).show();
 									e.printStackTrace();
 								}
-								//alert_dialog.dismiss();
+								// alert_dialog.dismiss();
 							}
 						});
 						Button custom_alert_dialog_cancel = (Button) alert_dialog
@@ -728,7 +723,7 @@ public class Tab1_Backup_Restore extends Fragment {
 						.setOnClickListener(new OnClickListener() {
 							public void onClick(View v) {
 								Activity activity = getActivity();
-								
+
 								alert_dialog.dismiss();
 
 								Toast.makeText(
@@ -782,7 +777,7 @@ public class Tab1_Backup_Restore extends Fragment {
 											.show();
 									e.printStackTrace();
 								}
-								//alert_dialog.dismiss();
+								// alert_dialog.dismiss();
 							}
 						});
 						Button custom_alert_dialog_cancel = (Button) alert_dialog

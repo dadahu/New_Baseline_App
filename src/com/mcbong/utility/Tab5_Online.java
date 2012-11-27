@@ -73,11 +73,9 @@ public class Tab5_Online extends Fragment {
 		// * set up button image resources */
 		Button button_check_webver = (Button) view
 				.findViewById(R.id.button_check_webver);
-			button_check_webver
-				.setBackgroundResource(R.drawable.button);
+		button_check_webver.setBackgroundResource(R.drawable.button);
 
-		button_check_webver
-		.setOnClickListener(new OnClickListener() {
+		button_check_webver.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				if (activity != null) {
@@ -113,9 +111,16 @@ public class Tab5_Online extends Fragment {
 						TextView title = (TextView) dialog
 								.findViewById(R.id.custom_dialog_textview_title);
 						title.setText(R.string.update_checker_header);
-						TextView text = (TextView) dialog
-								.findViewById(R.id.custom_dialog_textview);
-						text.setText(sb.toString() + "");
+
+						TextView title_installedver_header = (TextView) dialog
+								.findViewById(R.id.custom_dialog_textview_installedver_header);
+						title_installedver_header
+						.setText(getString(R.string.installed_version));
+
+						TextView title_installedver = (TextView) dialog
+								.findViewById(R.id.custom_dialog_textview_installedver);
+						title_installedver.setText(getString(R.string.version)
+								+ "\n" + "\n" + ". . .\n");
 
 						// ** Get 'installed version' and 'remote version'
 						// strings to compare */
@@ -125,11 +130,20 @@ public class Tab5_Online extends Fragment {
 
 						if (current_version_string
 								.equals(remote_version_string)) {
+							TextView title_onlinever_header = (TextView) dialog
+									.findViewById(R.id.custom_dialog_textview_onlinever_header);
+							title_onlinever_header.setTextColor(getResources()
+									.getColor(R.color.Cyan));
+							title_onlinever_header
+							.setText(getString(R.string.versions_match));
+							ImageView padder = (ImageView) dialog
+									.findViewById(R.id.padder2_custom_dialog);
+							padder.setVisibility(View.INVISIBLE);
 							Button dialogButton = (Button) dialog
 									.findViewById(R.id.custom_dialog_ok);
 							LayoutParams params = (RelativeLayout.LayoutParams) dialogButton
 									.getLayoutParams();
-							params.addRule(RelativeLayout.CENTER_IN_PARENT);
+							params.addRule(RelativeLayout.CENTER_HORIZONTAL);
 							dialogButton.setLayoutParams(params); // causes
 							// layout
 							// update
@@ -143,6 +157,18 @@ public class Tab5_Online extends Fragment {
 									.findViewById(R.id.custom_dialog_update);
 							custom_dialog_update.setVisibility(View.VISIBLE);
 							dialog.setTitle(R.string.update_available);
+							TextView title_onlinever_header = (TextView) dialog
+									.findViewById(R.id.custom_dialog_textview_onlinever_header);
+							title_onlinever_header.setTextColor(getResources()
+									.getColor(R.color.Green));
+							title_onlinever_header
+							.setText(getString(R.string.update_available));
+							TextView title_onlinever = (TextView) dialog
+									.findViewById(R.id.custom_dialog_textview_onlinever);
+							title_onlinever.setVisibility(View.VISIBLE);
+							title_onlinever.setTextColor(getResources()
+									.getColor(R.color.Green));
+							title_onlinever.setText(sb.toString());
 							Button dialogButton2 = (Button) dialog
 									.findViewById(R.id.custom_dialog_ok2);
 							dialogButton2

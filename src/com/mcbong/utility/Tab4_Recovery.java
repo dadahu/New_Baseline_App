@@ -35,7 +35,8 @@ public class Tab4_Recovery extends Fragment {
 		final View view = inflater.inflate(R.layout.tab4_recovery, container,
 				false);
 
-		// ** Set up Wireless ADB check and change an ImageView and TextView as to whether its
+		// ** Set up Wireless ADB check and change an ImageView and TextView as
+		// to whether its
 		// enabled or not */
 		try {
 			Process adb_check = Runtime.getRuntime().exec(
@@ -47,16 +48,14 @@ public class Tab4_Recovery extends Fragment {
 				ImageView image = (ImageView) view
 						.findViewById(R.id.imageView_adb_status);
 				image.setImageResource(R.drawable.on);
-				TextView ip = (TextView) view
-						.findViewById(R.id.textView_ip);
+				TextView ip = (TextView) view.findViewById(R.id.textView_ip);
 				ip.setText(R.string.wireless_adb_enabled_ip);
 				ip.setTextColor(getResources().getColor(R.color.Green));
 			} else {
 				ImageView image = (ImageView) view
 						.findViewById(R.id.imageView_adb_status);
 				image.setImageResource(R.drawable.off);
-				TextView ip = (TextView) view
-						.findViewById(R.id.textView_ip);
+				TextView ip = (TextView) view.findViewById(R.id.textView_ip);
 				ip.setText(R.string.wireless_adb_disabled_ip);
 				ip.setTextColor(getResources().getColor(R.color.DarkRed));
 			}
@@ -64,28 +63,21 @@ public class Tab4_Recovery extends Fragment {
 		}
 
 		// ** Define buttons.. */
-		Button button_reboot = (Button) view
-				.findViewById(R.id.button_reboot);
-			button_reboot
-				.setBackgroundResource(R.drawable.button);	
+		Button button_reboot = (Button) view.findViewById(R.id.button_reboot);
+		button_reboot.setBackgroundResource(R.drawable.button);
 		Button button_reboot_recovery = (Button) view
 				.findViewById(R.id.button_reboot_recovery);
-			button_reboot_recovery
-				.setBackgroundResource(R.drawable.button);	
+		button_reboot_recovery.setBackgroundResource(R.drawable.button);
 		Button button_power_off = (Button) view
 				.findViewById(R.id.button_power_off);
-			button_power_off
-				.setBackgroundResource(R.drawable.button);	
+		button_power_off.setBackgroundResource(R.drawable.button);
 		Button button_wireless_adb_enable = (Button) view
 				.findViewById(R.id.button_wireless_adb_enable);
-			button_wireless_adb_enable
-				.setBackgroundResource(R.drawable.button);	
+		button_wireless_adb_enable.setBackgroundResource(R.drawable.button);
 		Button button_wireless_adb_disable = (Button) view
 				.findViewById(R.id.button_wireless_adb_disable);
 
-		
-		button_reboot
-		.setOnClickListener(new OnClickListener() {
+		button_reboot.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				if (activity != null) {
@@ -150,8 +142,7 @@ public class Tab4_Recovery extends Fragment {
 				}
 			}
 		});
-		button_reboot_recovery
-		.setOnClickListener(new OnClickListener() {
+		button_reboot_recovery.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				if (activity != null) {
@@ -217,8 +208,7 @@ public class Tab4_Recovery extends Fragment {
 				}
 			}
 		});
-		button_power_off
-		.setOnClickListener(new OnClickListener() {
+		button_power_off.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 				if (activity != null) {
@@ -284,8 +274,7 @@ public class Tab4_Recovery extends Fragment {
 				}
 			}
 		});
-		button_wireless_adb_enable
-		.setOnClickListener(new OnClickListener() {
+		button_wireless_adb_enable.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
@@ -307,9 +296,10 @@ public class Tab4_Recovery extends Fragment {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					
-					//** Make checks to see if Wireless ADB has ACTUALLY been Enabled .. */
-					//** .. And Set The TextView Accordingly */
+
+					// ** Make checks to see if Wireless ADB has ACTUALLY been
+					// Enabled .. */
+					// ** .. And Set The TextView Accordingly */
 					try {
 						Process adb_check = Runtime.getRuntime().exec(
 								"getprop   service.adb.tcp.port");
@@ -324,7 +314,8 @@ public class Tab4_Recovery extends Fragment {
 							TextView ip = (TextView) view
 									.findViewById(R.id.textView_ip);
 							ip.setText(R.string.wireless_adb_enabled_ip);
-							ip.setTextColor(getResources().getColor(R.color.Green));
+							ip.setTextColor(getResources().getColor(
+									R.color.Green));
 							Toast.makeText(activity,
 									R.string.wireless_adb_enabled,
 									Toast.LENGTH_SHORT).show();
@@ -335,7 +326,8 @@ public class Tab4_Recovery extends Fragment {
 							TextView ip = (TextView) view
 									.findViewById(R.id.textView_ip);
 							ip.setText(R.string.wireless_adb_disabled_ip);
-							ip.setTextColor(getResources().getColor(R.color.DarkRed));
+							ip.setTextColor(getResources().getColor(
+									R.color.DarkRed));
 							Toast.makeText(activity,
 									R.string.wireless_adb_disabled,
 									Toast.LENGTH_SHORT).show();
@@ -345,8 +337,7 @@ public class Tab4_Recovery extends Fragment {
 				}
 			}
 		});
-		button_wireless_adb_disable
-		.setOnClickListener(new OnClickListener() {
+		button_wireless_adb_disable.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
 
@@ -368,9 +359,10 @@ public class Tab4_Recovery extends Fragment {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					
-					//** Make checks to see if Wireless ADB has ACTUALLY been Disabled .. */
-					//** .. And Set The TextView Accordingly */
+
+					// ** Make checks to see if Wireless ADB has ACTUALLY been
+					// Disabled .. */
+					// ** .. And Set The TextView Accordingly */
 					try {
 						Process adb_check = Runtime.getRuntime().exec(
 								"getprop   service.adb.tcp.port");
@@ -385,7 +377,8 @@ public class Tab4_Recovery extends Fragment {
 							TextView ip = (TextView) view
 									.findViewById(R.id.textView_ip);
 							ip.setText(R.string.wireless_adb_enabled_ip);
-							ip.setTextColor(getResources().getColor(R.color.Green));
+							ip.setTextColor(getResources().getColor(
+									R.color.Green));
 							Toast.makeText(activity,
 									R.string.wireless_adb_enabled,
 									Toast.LENGTH_SHORT).show();
@@ -396,7 +389,8 @@ public class Tab4_Recovery extends Fragment {
 							TextView ip = (TextView) view
 									.findViewById(R.id.textView_ip);
 							ip.setText(R.string.wireless_adb_disabled_ip);
-							ip.setTextColor(getResources().getColor(R.color.DarkRed));
+							ip.setTextColor(getResources().getColor(
+									R.color.DarkRed));
 							Toast.makeText(activity,
 									R.string.wireless_adb_disabled,
 									Toast.LENGTH_SHORT).show();

@@ -149,19 +149,21 @@ public class McBong extends FragmentActivity {
 			Button dialogButton = (Button) dialog
 					.findViewById(R.id.custom_about_dialog_ok);
 
-			
 			String app_info_title = new String(
-					"McBong-Utility\n" +
-					"\n" +
-					"An App designed for users who want all the useful feature's ALL in one place.."); 
-			
+					"McBong-Utility\n"
+							+ "\n"
+							+ "An App designed for users who want all the useful feature's ALL in one place..");
+
 			String app_info = new String(
-					"*This Project was started as a mean's to easily set up a device after an initial ROM Flash," +
-					"and has had small feature's added here and there to make post-ROM-Flash even quicker.\n" +
-					"\n" +
-					"This was an idea I just had to get done and so here we are .. " +
-					"\n");
-			
+					"*This Project was started as a mean's to easily set up a device after an initial ROM Flash,"
+							+ "and has had small feature's added here and there to make post-ROM-Flash even quicker.\n"
+							+ "\n"
+							+ "This was an idea I just had to get done and so here we are.\n"
+							+ "\n"
+							+ ". . .\n"
+							+ "\n"
+							+ "{" + "." + getString(R.string.version) + "." + "}" + "\n");
+
 			// ** Center OK button on dialog */
 			LayoutParams params = (RelativeLayout.LayoutParams) dialogButton
 					.getLayoutParams();
@@ -175,13 +177,7 @@ public class McBong extends FragmentActivity {
 			TextView text = (TextView) dialog
 					.findViewById(R.id.custom_about_dialog_textview);
 			text.setText(app_info);
-			
-//			Set up app logo image ..
-			//ImageView image = (ImageView) dialog
-					//.findViewById(R.id.custom_about_dialog_image);
-			//image.setImageResource(R.drawable.ic_launcher);
-			
-			
+
 			// * set up button image resources */
 			dialogButton.setBackgroundResource(R.drawable.small_button);
 			// ** if OK button is clicked, close the custom dialog */

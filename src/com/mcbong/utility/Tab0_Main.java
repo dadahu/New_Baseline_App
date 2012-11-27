@@ -29,7 +29,8 @@ public class Tab0_Main extends Fragment {
 
 		Button button_mainpage_link_backup_restore = (Button) view
 				.findViewById(R.id.button_mainpage_link_backup_restore);
-		button_mainpage_link_backup_restore.setBackgroundResource(R.drawable.button);
+		button_mainpage_link_backup_restore
+		.setBackgroundResource(R.drawable.button);
 		button_mainpage_link_backup_restore
 		.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -48,7 +49,7 @@ public class Tab0_Main extends Fragment {
 		button_mainpage_link_addons.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
-				
+
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
 				.show();
 
@@ -61,7 +62,7 @@ public class Tab0_Main extends Fragment {
 		button_mainpage_link_tweaks.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
-				
+
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
 				.show();
 
@@ -74,7 +75,7 @@ public class Tab0_Main extends Fragment {
 		button_mainpage_link_recovery.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
-				
+
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
 				.show();
 
@@ -87,26 +88,24 @@ public class Tab0_Main extends Fragment {
 		button_mainpage_link_online.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Activity activity = getActivity();
-				
-				//** Swap fragment and ActionBar tab to Tab5_Online */
-				
-//				ActionBar actionBar = getActivity().getActionBar();
-//				actionBar.selectTab(ActionBar.Tab. Tab5_Online);
 
-				
-				
-				
-//			    FragmentManager fragmentManager = getFragmentManager();
-//			    Fragment tabFiveFragment = new Tab5_Online();
-//			    FragmentTransaction transaction = fragmentManager.beginTransaction();
-//			    transaction.replace(android.R.id.tabcontent, tabFiveFragment);
-//			    transaction.addToBackStack(null);
-//			    transaction.commit();
-//			                }
-//
-//			            });
-				
-					
+				// ** Swap fragment and ActionBar tab to Tab5_Online */
+
+				// ActionBar actionBar = getActivity().getActionBar();
+				// actionBar.selectTab(ActionBar.Tab. Tab5_Online);
+
+				// FragmentManager fragmentManager = getFragmentManager();
+				// Fragment tabFiveFragment = new Tab5_Online();
+				// FragmentTransaction transaction =
+				// fragmentManager.beginTransaction();
+				// transaction.replace(android.R.id.tabcontent,
+				// tabFiveFragment);
+				// transaction.addToBackStack(null);
+				// transaction.commit();
+				// }
+				//
+				// });
+
 				Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT)
 				.show();
 
