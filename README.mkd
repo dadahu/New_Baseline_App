@@ -17,6 +17,7 @@ McBong-Utility
 ![Screenshot]
 (http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-04-15-18-56.png).
 
+
 Brief..
 ------------
 
@@ -53,10 +54,10 @@ Planned Features..
 
 Dependencies..
 ------------
-This project requires both the 'RootTools.jar'[created by 'Stericson'] and the 'android.support.v4 library'.
+This project requires both ['Roottools library, Created by Stericson'](http://code.google.com/p/roottools/) and the 'android.support.v4 library'.
 
 **NOTE**: A copy of both compatible JAR's can be found in the `libs/` directory of
-the project.
+this project.
 
 Changelogs..
 ------------
