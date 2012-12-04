@@ -6,7 +6,7 @@ McBong-Utility
 Brief..
 ------------
 
-This Project was started as a mean's to easily set up a device after
+This Project was started as a mean's to easily set up an Android 4.1+ device after
  an initial ROM Flash.
 This has had small feature's added here and there to make post-ROM-Flash even easier.
 This was an idea I just had to get done and so here we are.
