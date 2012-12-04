@@ -4,14 +4,16 @@
     <item
         android:id="@+id/menuitem_version"
         android:icon="@drawable/button_version"
-        android:showAsAction="always"
-        android:title="@string/menu_version">
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_version" android:orderInCategory="1">
     </item>
-    <item
+    <item android:id="@+id/menuitem_device_info" android:icon="@android:drawable/ic_menu_close_clear_cancel" android:showAsAction="ifRoom" android:title="@string/menu_device_info" android:orderInCategory="2">
+    </item><item
         android:id="@+id/menuitem_quit"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
         android:showAsAction="always"
-        android:title="@string/menu_quit">
+        android:title="@string/menu_quit" android:orderInCategory="3">
     </item>
+    
 
 </menu>
