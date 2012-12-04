@@ -1,0 +1,185 @@
+McBong-Utility
+==========================================
+
+"An App designed for users who want all the useful feature's ALL in one place.."
+
+Brief..
+------------
+
+This Project was started as a mean's to easily set up a device after
+ an initial ROM Flash.
+This has had small feature's added here and there to make post-ROM-Flash even easier.
+This was an idea I just had to get done and so here we are.
+
+**NOTE**: This Project is a MAJOR Work-in-progress.
+
+Current Features..
+------------
+
+* Backup Contact's Database's
+* Backup Call Log's Database's
+* Backup Browser Bookmark's Database's
+* Download & Install 3rd Party Launcher's
+* Download & Install 3rd Theme's
+* Reboot Device
+* Reboot Device into Recovery 
+* Power Off Device
+* Turn On/Off Wireless ADB 
+* Direct Webview to Team Blog page
+* Complete Integrated Update Checker
+* Complete Integrated Update Downloader
+
+**NOTE**: More Features, Tweaks, Addon's etc are being added and tested as frequently as I can,
+there will be more added, keep and eye open for them.
+
+Planned Features..
+------------
+* Lot's !
+
+Dependencies..
+------------
+This project requires both the 'RootTools.jar'[created by 'Stericson'] and the 'android.support.v4 library'.
+
+**NOTE**: A copy of both compatible JAR's can be found in the `libs/` directory of
+the project.
+
+Changelogs..
+------------
+### 21/11/2012 ... Update no.9 ...
+
+* Added browser bookmark database backup to backup/restore section
+* Stripped filename's of backup database's, so their not immediately 
+recognisable etc.
+* Added GetProp input stream check's for wireless adb state.
+* Added swipe to change tabs using : FragmentPagerAdapter and
+FragmentTransaction.
+* Changed external storage folders so they are now hidden as " /.mcb " etc
+* Part 2 of new custom layouts, dialog titles now set correctly etc.
+* Completely new custom_alert_dialog & custom_dialog , changed button 
+behavior's etc.
+* Added android.support.v4 libraryLicense
+* Main page selector semi-added, more layout changes etc.
+* Complete code Format, and indentation fix's .
+
+### 10/11/2012 ... Update no.8 ...
+
+* Added Contacts & Call Logs and Messages backup and restore feature,
+* More layout changes,drawable additions and cleanups,
+* BUGFIX : added ' if (.exists()) { ' to both backup and restore functions..
+* Now checks are made after a backup is 'made' to verify the backup
+database is where it should be to verify the backup process.
+* Checks are also made before restoring to verify that there is an actual
+database backup to restore to begin with.
+This solves that bug.
+
+### 7/11/2012 ... Update no.7 ...
+
+* Integrated update downloader into the update checker, so now its an 
+all-in-one check and download,
+* changed URL's for test builds and test version.txt's to new remote location.
+* Added roottools library to source for easy compilation from any device,
+* Created new Tab and renamed and reordered all Tabs,
+* Also added options to download latest ADW launcher, NOVA launcher and
+Go-launcher apk's from remote server.
+* Changed the way custom_alert_dialog and custom_dialog behave when
+'update' / 'download' is called......  alert_dialog.dismiss(); is called
+when download/update starts.
+* Edited the way downloads & updates are processed,
+* Added initial deletion of requested download/update from SDcard/Download
+if file exists, to stop multiple files being created.
+* Added broadcast receiver to get Download_Complete call once the file
+download is done
+* Added instant call for download/update's package to be installed
+directly after download completes....  alot less hassle being an all in
+one function.
+* Added downloads for Launchers and Themes held remotely,
+all downloads will be notified when finished and will call the package
+manager to install them automatically,
+* More layout changes, much nicer clean ui now,.
+* Added more icons,
+* Strings cleanup,
+* Removed 'test buttons' from tab1_tools,
+* Re-arranged ALL layouts, cleaned code etc ...
+
+### 3/11/2012 ... Update no.6 ...
+
+* Added update downloader,
+* Added proper online version checker,
+* Added compare both remote and local strings function and return if
+update is available for download,
+* Added OnCreate getprop wireless adb value,
+* Cleaned up layouts,
+* Added more icons. 
+* Added tablelayout for tab4.
+* Changed versioning value.
+* Added simple wireless adb on/off option,
+* Updated version.txt to reflect build date
+
+### 30/10/2012 ... Update no.5 ...
+
+* Added complete functions for all active buttons,
+* Added confirmation dialogs for reboot actions, 
+* Minor layout and function changes,
+* Added new custom_dialog and new custom_alert_dialog layouts,
+* Created second buttons xml to define button_pressed etc,
+* Added shutdown option, reboot device option and reboot to recovery option,
+* Fixed layout again, 
+* Added current version dialog,
+* Added some other graphics,
+* Both 'custom_dialog' and 'custom_alert_dialog' have been created and
+relevant resources configured.
+* All alert dialogs and builders have now all been replaced with dialog 
+calling new layouts and styles. 
+* Small buttons been added,
+* Remote and local version strings changed, 
+* Some other minor edits,
+* General cleanup and format.
+
+### 26/10/2012 ... Update no.4 ...
+
+* Added Stericson's 'roottools' library to project for easy one time SU init and shell command pass throughs.
+* Added some more test strings,
+* Implemented first 'recovery' fragment tab option : 'Reboot'.
+* Fixed Landscape tab fragment issue
+* Added new strings, changed 'online' webview url, major code cleanup
+
+### 25/10/2012 ... Update no.3 ...
+
+* Properly configured fragment tabs,
+* Changed version string again to fit,
+* Added scrollview,  
+* Added webview for direct website access via 'online' tab,
+* Configured mobile version of website and added URL to code,
+* Enabled webview to intercept and handle any URL's called from within the webview
+fragment tab, 
+* Another minor code clean as well
+* Added proper 'onclick' method for buttons,
+* Created new button.png and button_pressed.png,
+* Added button.xml for defining 'normal' and 'pressed' images, 
+* Renamed activity properly, 
+* Changed version code to have date of compile with version number, 
+* Small code clean
+
+### 24/10/2012 ... Update no.2 ...
+
+* Properly removed hardware 'Menu' and 'Back' button activities,
+* Added test buttons, 
+* Added new button.png with shadow,
+* Other minor changes here and there
+
+### 18/10/2012 ... Update no.1 ... [Initial Git commit]
+
+* Layout Partially Configured,
+* Configured App for Android 4.1+, 
+* Removed hardware 'menu' key activity,
+* Added direct quit button,
+* Added short 'about' toast message,
+* Configured initial app icon,
+* Configured initial manifest.
+
+
+License..
+-------
+The code in this project is licensed under the Apache
+Software License 2.0, per the terms of the included LICENSE
+file.
