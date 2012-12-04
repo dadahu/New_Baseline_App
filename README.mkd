@@ -28,6 +28,7 @@ Current Features..
 * Direct Webview to Team Blog page
 * Complete Integrated Update Checker
 * Complete Integrated Update Downloader
+* Hardware and OS Information viewer
 
 **NOTE**: More Features, Tweaks, Addon's etc are being added and tested as frequently as I can,
 there will be more added, keep and eye open for them.
