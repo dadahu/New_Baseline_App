@@ -138,7 +138,7 @@ public class McBong extends FragmentActivity {
 
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menuitem_version:
+		case R.id.menuitem_device_info:
 
 			// ** call custom dialog into view and set characteristic's */
 			final Dialog dialog = new Dialog(this,
@@ -149,21 +149,6 @@ public class McBong extends FragmentActivity {
 			Button dialogButton = (Button) dialog
 					.findViewById(R.id.custom_about_dialog_ok);
 
-			String app_info_title = new String(
-					"McBong-Utility\n"
-							+ "\n"
-							+ "An App designed for users who want all the useful feature's ALL in one place..");
-
-			String app_info = new String(
-					"*This Project was started as a mean's to easily set up a device after an initial ROM Flash,"
-							+ "and has had small feature's added here and there to make post-ROM-Flash even quicker.\n"
-							+ "\n"
-							+ "This was an idea I just had to get done and so here we are.\n"
-							+ "\n"
-							+ ". . .\n"
-							+ "\n"
-							+ "{" + "." + getString(R.string.version) + "." + "}" + "\n");
-
 			// ** Center OK button on dialog */
 			LayoutParams params = (RelativeLayout.LayoutParams) dialogButton
 					.getLayoutParams();
@@ -171,12 +156,29 @@ public class McBong extends FragmentActivity {
 			dialogButton.setLayoutParams(params); // causes layout update
 			TextView title = (TextView) dialog
 					.findViewById(R.id.custom_about_dialog_textview_title);
-			title.setText(app_info_title);
+			title.setText(R.string.menu_device_info);
+
+			String device_info_title = new String(
+					"** Device:" + "\n"
+							+ "\n"
+							+ "Brand: " +android.os.Build.BRAND + "\n"
+							+ "Model: " +android.os.Build.MODEL + "\n"
+							+ "Device: " +android.os.Build.DEVICE + "\n"
+							+ "Product: " +android.os.Build.PRODUCT + "\n"
+							+ "Board: " + android.os.Build.BOARD + "\n"
+							+ "\n"
+							+ "** OS:" + "\n"
+							+ "\n"
+							+ "Android Version: " +android.os.Build.VERSION.RELEASE + "\n"
+							+ "Display build: " +android.os.Build.DISPLAY + "\n"
+							+ "Build ID: " +android.os.Build.ID + "\n"
+							+ "User: " +android.os.Build.USER + "\n");
 
 			// ** set up the custom dialog components */
 			TextView text = (TextView) dialog
 					.findViewById(R.id.custom_about_dialog_textview);
-			text.setText(app_info);
+			text.setText(device_info_title);
+
 
 			// * set up button image resources */
 			dialogButton.setBackgroundResource(R.drawable.small_button);
@@ -188,6 +190,60 @@ public class McBong extends FragmentActivity {
 			});
 
 			dialog.show();
+			return true;
+
+		case R.id.menuitem_version:
+
+			// ** call custom dialog into view and set characteristic's */
+			final Dialog dialog1 = new Dialog(this,
+					R.style.Theme_Dialog_Translucent);
+			dialog1.getWindow();
+			dialog1.requestWindowFeature(Window.FEATURE_NO_TITLE);
+			dialog1.setContentView(R.layout.custom_about_dialog);
+			Button dialogButton1 = (Button) dialog1
+					.findViewById(R.id.custom_about_dialog_ok);
+
+			String app_info_title = new String(
+					"McBong-Utility\n"
+							+ "\n"
+							+ "An App designed for users who want all the useful feature's ALL in one place..");
+
+			String app_info = new String(
+					"*This Project was started as a mean's to easily set up a device after an initial ROM Flash,"
+							+ "and has had small feature's added here and there to make post-ROM-Flash even easier.\n"
+							+ "\n"
+							+ "This was an idea I just had to get done and so here we are.\n"
+							+ "\n"
+							+ ". . .\n"
+							+ "\n"
+							+ "{"
+							+ "."
+							+ getString(R.string.version) + "." + "}" + "\n");
+
+			// ** Center OK button on dialog */
+			LayoutParams params1 = (RelativeLayout.LayoutParams) dialogButton1
+					.getLayoutParams();
+			params1.addRule(RelativeLayout.CENTER_IN_PARENT);
+			dialogButton1.setLayoutParams(params1); // causes layout update
+			TextView title1 = (TextView) dialog1
+					.findViewById(R.id.custom_about_dialog_textview_title);
+			title1.setText(app_info_title);
+
+			// ** set up the custom dialog components */
+			TextView text1 = (TextView) dialog1
+					.findViewById(R.id.custom_about_dialog_textview);
+			text1.setText(app_info);
+
+			// * set up button image resources */
+			dialogButton1.setBackgroundResource(R.drawable.small_button);
+			// ** if OK button is clicked, close the custom dialog */
+			dialogButton1.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					dialog1.dismiss();
+				}
+			});
+
+			dialog1.show();
 			return true;
 		case R.id.menuitem_quit:
 			android.os.Process.killProcess(android.os.Process.myPid());
