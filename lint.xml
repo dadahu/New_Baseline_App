@@ -7,6 +7,9 @@
     <issue id="OldTargetApi">
         <ignore path="AndroidManifest.xml" />
     </issue>
+    <issue id="OnClick">
+        <ignore path="res/layout/tab0_main.xml" />
+    </issue>
     <issue id="ProtectedPermissons">
         <ignore path="AndroidManifest.xml" />
     </issue>
