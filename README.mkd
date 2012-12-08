@@ -4,18 +4,21 @@ McBong-Utility
 "An App designed for users who want all the useful feature's ALL in one place.."
 
 
-![Screenshot](http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-04-15-18-05.png).
+![Screenshot](http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-05-52.png).
 ![Screenshot]
-(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-04-15-18-10.png).
+(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-06-04.png).
 ![Screenshot]
-(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-04-15-18-16.png).
-
+(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-06-13.png).
 ![Screenshot]
-(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-04-15-18-27.png).
+(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-06-23.png).
 ![Screenshot]
-(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-04-15-18-39.png).
+(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-06-33.png).
 ![Screenshot]
-(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-04-15-18-56.png).
+(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-07-12.png).
+![Screenshot]
+(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-06-52.png).
+![Screenshot]
+(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-07-23.png).
 
 
 Brief..
@@ -61,6 +64,26 @@ this project.
 
 Changelogs..
 ------------
+### 08/12/2012 ... Update no.10 ...
+
+* Fixed all 235+ lint compile errors
+* Wireless ADB checks are now 100% complete
+* Online Update Checker now 100% complete
+* Created new custom_about_dialog
+* Added simple Device Info menu option for both Hardware & OS 
+* Replaced 'Readme' file convention with new Markdown file
+* BUGFIX : Fixed background redraw bug, now using custom theme to 
+override the background color instead of drawing another background bitmap
+ontop of the stock android app theme 
+* Removed lint suppression for 'onclick', replaced with lint ignore
+* Fixed code based strings [non xml strings]
+* More derpfix's
+* Fixed duplicate references
+* Added new screenshots to reflect current changes
+* Removed unused Strings
+* Removed unused Drawables 
+* More layout changes
+
 ### 21/11/2012 ... Update no.9 ...
 
 * Added browser bookmark database backup to backup/restore section
