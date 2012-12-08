@@ -10,7 +10,6 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background"
         android:orientation="vertical"
         android:scrollbarAlwaysDrawVerticalTrack="false"
         android:scrollbars="none" >
@@ -30,7 +29,8 @@
                 android:id="@+id/TextView03"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/power_functions" />
+                android:text="@string/power_functions"
+                android:textColor="@color/CadetBlue" />
 
             <TextView
                 android:id="@+id/TextView06"
@@ -128,7 +128,8 @@
                 android:id="@+id/TextView05"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/adb_functions" />
+                android:text="@string/adb_functions"
+                android:textColor="@color/CadetBlue" />
 
             <TextView
                 android:id="@+id/TextView02"
