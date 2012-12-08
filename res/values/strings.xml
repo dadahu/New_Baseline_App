@@ -9,7 +9,7 @@
     <string name="menu_quit">Exit App</string>
     <string name="menu_device_info">Device Info</string>
     <string name="menu_version">Application Info</string>
-    <string name="version">Test Build 280 (03/12)</string>
+    <string name="version">Test Build 283 (08/12)</string>
     <string name="installed_version">Current Installed Version ..</string>
     <string name="mainpage_header">Pick Your Poison .. </string>
     <string name="mainpage_link_backup_restore">Backup / Restore Section ..</string>
@@ -45,10 +45,8 @@
     <string name="themes">Download and Install 3rd Party Theme\'s ..</string>
     <string name="power_functions">Device Power Option\'s ..</string>
     <string name="adb_functions">Device [ADB] Debugging Option\'s ..</string>
-    <string name="tools">Android Tool\'s Section ..</string>
     <string name="tweaks">Android Tweak\'s Section ..</string>
     <string name="update_checker_header">Online Update Checker</string>
-    <string name="latest_version">The Latest Online Version is ..</string>
     <string name="update">Update </string>
     <string name="update_available">  NEW Update Available! ..</string>
     <string name="installing_update">Installing McBong-Utility Update ..</string>
@@ -56,7 +54,6 @@
     <string name="downloading_launcher">Downloading Launcher ..</string>
     <string name="downloading_theme">Downloading Theme ..</string>
     <string name="app_version_check">Check Latest Online Version &gt;</string>
-    <string name="checking">Checking ..</string>
     <string name="error_unsupported_p">Error, unsupported protocol</string>
     <string name="error_no_internet">Not Connected To Internet</string>
     <string name="reboot">Reboot.. Device</string>
@@ -75,8 +72,6 @@
     <string name="dialog_title_reboot_recovery"> Perform Reboot into Recovery ?</string>
     <string name="dialog_title_reboot_device"> Perform Device Reboot ?</string>
     <string name="dialog_title_power_off_device"> Perform Device Shutdown ?</string>
-    <string name="enabling">Enabling Wireless ADB ..</string>
-    <string name="disabling">Disabling Wireless ADB ..</string>
     <string name="version_uptodate">You are using the most current version !</string>
     <string name="versions_match">No Update Available</string>
     <string name="version_notuptodate">There is an update available !</string>

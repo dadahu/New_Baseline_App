@@ -10,10 +10,10 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background"
         android:orientation="vertical"
         android:scrollbarAlwaysDrawVerticalTrack="false"
         android:scrollbars="none" >
+ 
 
         <TextView
             android:id="@+id/padder1_tab1"
@@ -30,7 +30,8 @@
                 android:id="@+id/TextView01"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/launchers" />
+                android:text="@string/launchers"
+                android:textColor="@color/CadetBlue" />
 
             <TextView
                 android:id="@+id/TextView06"
@@ -130,7 +131,8 @@
                 android:id="@+id/TextView05"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/themes" />
+                android:text="@string/themes"
+                android:textColor="@color/CadetBlue" />
 
             <TextView
                 android:id="@+id/TextView02"
