@@ -9,7 +9,7 @@
     <string name="menu_quit">Exit App</string>
     <string name="menu_device_info">Device Info</string>
     <string name="menu_version">Application Info</string>
-    <string name="version">Test Build 283 (08/12)</string>
+    <string name="version">Test Build 284 (08/12)</string>
     <string name="installed_version">Current Installed Version ..</string>
     <string name="mainpage_header">Pick Your Poison .. </string>
     <string name="mainpage_link_backup_restore">Backup / Restore Section ..</string>
