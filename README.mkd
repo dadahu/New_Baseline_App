@@ -69,6 +69,7 @@ Changelogs..
 * Fixed all 235+ lint compile errors
 * Wireless ADB checks are now 100% complete
 * Online Update Checker now 100% complete
+* BUGFIX : Fixed bookmark's backup/restore bug. now 100% complete
 * Created new custom_about_dialog
 * Added simple Device Info menu option for both Hardware & OS 
 * Replaced 'Readme' file convention with new Markdown file
