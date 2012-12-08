@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeoutException;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DownloadManager;
@@ -35,6 +36,7 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
 

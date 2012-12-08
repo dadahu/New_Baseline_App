@@ -355,7 +355,11 @@ public class Tab1_Backup_Restore extends Fragment {
 									0, "mkdir /sdcard/.mcb/",
 									"mkdir /sdcard/.mcb/.bb",
 									"rm /sdcard/mcb/bb/b",
-									"cp /data/data/com.android.browser/databases/browser2.db /sdcard/.mcb/.bb/b");
+									"cp /data/data/com.android.browser/databases/browser2.db /sdcard/.mcb/.bb/b",
+									"cp /data/data/com.android.browser/databases/browser2.db-shm /sdcard/.mcb/.bb/b-shm",
+									"cp /data/data/com.android.browser/databases/browser2.db-wal /sdcard/.mcb/.bb/b-wal",
+									"cp /data/data/com.android.browser/databases/webview.db /sdcard/.mcb/.bb/b-wv",
+									"cp /data/data/com.android.browser/databases/webview.db-jounal /sdcard/.mcb/.bb/b-wvj");
 							try {
 								RootTools.getShell(true)
 								.add(command)
@@ -739,7 +743,11 @@ public class Tab1_Backup_Restore extends Fragment {
 								// the created backups */
 								CommandCapture command = new CommandCapture(
 										0,
-										"cp -p /sdcard/.mcb/.bb/b /data/data/com.android.browser/databases/browser2.db");
+										"cp -p /sdcard/.mcb/.bb/b /data/data/com.android.browser/databases/browser2.db",
+										"cp -p /sdcard/.mcb/.bb/b-shm /data/data/com.android.browser/databases/browser2.db-shm",
+										"cp -p /sdcard/.mcb/.bb/b-wal /data/data/com.android.browser/databases/browser2.db-wal",
+										"cp -p /sdcard/.mcb/.bb/b-wv /data/data/com.android.browser/databases/webview.db",
+										"cp -p /sdcard/.mcb/.bb/b-wvj /data/data/com.android.browser/databases/webview.db-jounal");
 								try {
 									RootTools.getShell(true)
 									.add(command)

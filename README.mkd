@@ -1,10 +1,10 @@
-McBong-Utility
-==========================================
+<center>McBong-Utility</center>
+<center>==========================================</center>
 
-"An App designed for users who want all the useful feature's ALL in one place.."
+<center>"An App designed for users who want all the useful feature's ALL in one place.."</center>
 
 
-![Screenshot](http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-05-52.png).
+<center>![Screenshot](http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-05-52.png).
 ![Screenshot]
 (http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-06-04.png).
 ![Screenshot]
@@ -18,7 +18,7 @@ McBong-Utility
 ![Screenshot]
 (http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-06-52.png).
 ![Screenshot]
-(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-07-23.png).
+(http://dl.dropbox.com/u/18271886/mcb/images/Screenshot_2012-12-08-15-07-23.png).</center>
 
 
 Brief..
@@ -69,6 +69,7 @@ Changelogs..
 * Fixed all 235+ lint compile errors
 * Wireless ADB checks are now 100% complete
 * Online Update Checker now 100% complete
+* BUGFIX : Fixed bookmark's backup/restore bug. now 100% complete
 * Created new custom_about_dialog
 * Added simple Device Info menu option for both Hardware & OS 
 * Replaced 'Readme' file convention with new Markdown file
