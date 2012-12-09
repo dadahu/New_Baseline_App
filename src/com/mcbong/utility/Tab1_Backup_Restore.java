@@ -238,8 +238,8 @@ public class Tab1_Backup_Restore extends Fragment {
 									"mkdir /sdcard/.mcb/.mb",
 									"rm /sdcard/mcb/mb/m",
 									"rm /sdcard/.mcb/.mb/mj",
-									"cp /data/data/com.android.providers.telephony/databases/mmssms.db /sdcard/.mcb/.mb/m",
-									"cp /data/data/com.android.providers.telephony/databases/mmssms.db-journal /sdcard/.mcb/.mb/mj");
+									"cp -p/data/data/com.android.providers.telephony/databases/mmssms.db /sdcard/.mcb/.mb/m",
+									"cp -p /data/data/com.android.providers.telephony/databases/mmssms.db-journal /sdcard/.mcb/.mb/mj");
 							try {
 								RootTools.getShell(true).add(command)
 								.waitForFinish();
@@ -355,11 +355,11 @@ public class Tab1_Backup_Restore extends Fragment {
 									0, "mkdir /sdcard/.mcb/",
 									"mkdir /sdcard/.mcb/.bb",
 									"rm /sdcard/mcb/bb/b",
-									"cp /data/data/com.android.browser/databases/browser2.db /sdcard/.mcb/.bb/b",
-									"cp /data/data/com.android.browser/databases/browser2.db-shm /sdcard/.mcb/.bb/b-shm",
-									"cp /data/data/com.android.browser/databases/browser2.db-wal /sdcard/.mcb/.bb/b-wal",
-									"cp /data/data/com.android.browser/databases/webview.db /sdcard/.mcb/.bb/b-wv",
-									"cp /data/data/com.android.browser/databases/webview.db-jounal /sdcard/.mcb/.bb/b-wvj");
+									"cp -p /data/data/com.android.browser/databases/browser2.db /sdcard/.mcb/.bb/b",
+									"cp -p /data/data/com.android.browser/databases/browser2.db-shm /sdcard/.mcb/.bb/b-shm",
+									"cp -p /data/data/com.android.browser/databases/browser2.db-wal /sdcard/.mcb/.bb/b-wal",
+									"cp -p /data/data/com.android.browser/databases/webview.db /sdcard/.mcb/.bb/b-wv",
+									"cp -p /data/data/com.android.browser/databases/webview.db-jounal /sdcard/.mcb/.bb/b-wvj");
 							try {
 								RootTools.getShell(true)
 								.add(command)
