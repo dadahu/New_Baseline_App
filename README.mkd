@@ -1,6 +1,5 @@
 <center>McBong-Utility</center>
-<center>==========================================</center>
-
+==========================================
 <center>"An App designed for users who want all the useful feature's ALL in one place.."</center>
 
 
