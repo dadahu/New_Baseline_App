@@ -159,16 +159,20 @@ public class McBong extends FragmentActivity {
 			title.setText(R.string.menu_device_info);
 
 			String device_info_title = new String(
-					"** Device:" + "\n"
-							+ "\n"
+					"====" + "\n"
+							+ " Device:"  + "\n"
+							+ "====" + "\n"
+							//+ "\n"
 							+ "Brand: " +android.os.Build.BRAND + "\n"
 							+ "Model: " +android.os.Build.MODEL + "\n"
 							+ "Device: " +android.os.Build.DEVICE + "\n"
 							+ "Product: " +android.os.Build.PRODUCT + "\n"
 							+ "Board: " + android.os.Build.BOARD + "\n"
 							+ "\n"
-							+ "** OS:" + "\n"
-							+ "\n"
+					+ "====" + "\n"
+							+ " OS:"  + "\n"
+							+ "====" + "\n"
+							//+ "\n"
 							+ "Android Version: " +android.os.Build.VERSION.RELEASE + "\n"
 							+ "Display build: " +android.os.Build.DISPLAY + "\n"
 							+ "Build ID: " +android.os.Build.ID + "\n"
@@ -204,7 +208,9 @@ public class McBong extends FragmentActivity {
 					.findViewById(R.id.custom_about_dialog_ok);
 
 			String app_info_title = new String(
-					"McBong-Utility\n"
+					"==========" + "\n"
+							+ "McBong-Utility" + "\n"
+							+ "==========" + "\n"
 							+ "\n"
 							+ "An App designed for users who want all the useful feature's ALL in one place..");
 
