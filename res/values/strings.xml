@@ -24,11 +24,12 @@
     <string name="mainpage_text_online">Online/Update Section\n includes ..\n \n *Direct access to Team Website, using built in webview component \n *Full Update Checker and Update Downloader \n </string>
     <string name="backup">Backup Database\'s .. </string>
     <string name="restore">Restore Database\'s .. </string>
-    <string name="no_backup_found">No Backup database\'s found on SDcard.</string>
+    <string name="no_backup_found">Sorry, There are Missing or Corrupt Backup database\'s. Cannot Restore database\'s.</string>
     <string name="restore_complete">Restore Completed Successfully !</string>
     <string name="restore_failed">Sorry, Restore Failed</string>
     <string name="verify_database">Database Backup Verified !\n \n .. Verifying Database-Journal Backup .. </string>
-    <string name="verify_database_journal">Database-Journal Backup Verified !\n \n .. Backup Completed Successfully ! </string>
+    <string name="verify_database_journal">Database-Journal Backup Verified !\n .. </string>
+    <string name="backup_complete">Backup Completed Successfully !</string>
     <string name="backup_failed">Sorry, Backup Failed</string>
     <string name="backup_contacts_and_calls">Backup Contact\'s and Calls</string>
     <string name="backup_text_messages">Backup Text Message\'s</string>
@@ -36,7 +37,7 @@
     <string name="restore_contacts_and_calls">Restore Contact\'s and Call\'s</string>
     <string name="restore_text_messages">Restore Text Message\'s</string>
     <string name="restore_browser_bookmarks">Restore Browser Bookmark\'s</string>
-<!--     <string name="restoring_database">Restoring Database\'s \n \n  please wait ..</string> -->
+    <!-- <string name="restoring_database">Restoring Database\'s \n \n  please wait ..</string> -->
     <string name="restoring_contacts_and_calls">Restoring Contact\'s and Call-Log\'s, please wait ..</string>
     <string name="restoring_text_messages">Restoring Text Message\'s, please wait ..</string>
     <string name="restoring__browser_bookmarks">Restoring Browser Bookmark\'s, please wait ..</string>

@@ -202,24 +202,25 @@ public class Tab1_Backup_Restore extends Fragment {
                             String fileUrl_contacts_database = "/.mcb/.c/c.mcbong";
                             String file = sd + fileUrl_contacts_database;
                             File contacts_database = new File(file);
-
-                            if (contacts_database.exists()) {
-                                Toast.makeText(activity, R.string.verify_database,
-                                        Toast.LENGTH_LONG).show();
-                            } else {
-                                Toast.makeText(activity, R.string.backup_failed, Toast.LENGTH_LONG)
-                                .show();
-                            }
                             String fileUrl_contacts_database_journal = "/.mcb/.c/c2.mcbong";
                             String file1 = sd + fileUrl_contacts_database_journal;
                             File contacts_database_journal = new File(file1);
 
+                            if (contacts_database.exists()) {
+                                Toast.makeText(activity, R.string.verify_database,
+                                        Toast.LENGTH_LONG).show();
+                            }
                             if (contacts_database_journal.exists()) {
                                 Toast.makeText(activity, R.string.verify_database_journal,
                                         Toast.LENGTH_LONG).show();
+
+                                Toast.makeText(activity, R.string.backup_complete,
+                                        Toast.LENGTH_LONG).show();
+
                             } else {
+
                                 Toast.makeText(activity, R.string.backup_failed, Toast.LENGTH_LONG)
-                                .show();
+                                        .show();
 
                             }
                         }
@@ -377,24 +378,22 @@ public class Tab1_Backup_Restore extends Fragment {
                             String fileUrl_messages_database = "/.mcb/.m/m.mcbong";
                             String file = sd + fileUrl_messages_database;
                             File messages_database = new File(file);
-
-                            if (messages_database.exists()) {
-                                Toast.makeText(activity, R.string.verify_database,
-                                        Toast.LENGTH_LONG).show();
-                            } else {
-                                Toast.makeText(activity, R.string.backup_failed, Toast.LENGTH_LONG)
-                                .show();
-                            }
                             String fileUrl_messages_database_journal = "/.mcb/.m/m2.mcbong";
                             String file1 = sd + fileUrl_messages_database_journal;
                             File messages_database_journal = new File(file1);
 
+                            if (messages_database.exists()) {
+                                Toast.makeText(activity, R.string.verify_database,
+                                        Toast.LENGTH_LONG).show();
+                            }
                             if (messages_database_journal.exists()) {
                                 Toast.makeText(activity, R.string.verify_database_journal,
                                         Toast.LENGTH_LONG).show();
+                                Toast.makeText(activity, R.string.backup_complete,
+                                        Toast.LENGTH_LONG).show();
                             } else {
                                 Toast.makeText(activity, R.string.backup_failed, Toast.LENGTH_LONG)
-                                .show();
+                                        .show();
 
                             }
 
@@ -553,24 +552,22 @@ public class Tab1_Backup_Restore extends Fragment {
                             String fileUrl_browser_database = "/.mcb/.b/b.mcbong";
                             String file = sd + fileUrl_browser_database;
                             File browser_database = new File(file);
-
-                            if (browser_database.exists()) {
-                                Toast.makeText(activity, R.string.verify_database,
-                                        Toast.LENGTH_LONG).show();
-                            } else {
-                                Toast.makeText(activity, R.string.backup_failed, Toast.LENGTH_LONG)
-                                .show();
-                            }
                             String fileUrl_browser_database_journal = "/.mcb/.b/b2.mcbong";
                             String file1 = sd + fileUrl_browser_database_journal;
                             File browser_database_journal = new File(file1);
 
+                            if (browser_database.exists()) {
+                                Toast.makeText(activity, R.string.verify_database,
+                                        Toast.LENGTH_LONG).show();
+                            }
                             if (browser_database_journal.exists()) {
                                 Toast.makeText(activity, R.string.verify_database_journal,
                                         Toast.LENGTH_LONG).show();
+                                Toast.makeText(activity, R.string.backup_complete,
+                                        Toast.LENGTH_LONG).show();
                             } else {
                                 Toast.makeText(activity, R.string.backup_failed, Toast.LENGTH_LONG)
-                                .show();
+                                        .show();
 
                             }
 
@@ -603,8 +600,11 @@ public class Tab1_Backup_Restore extends Fragment {
                     String fileUrl_c = "/.mcb/.c/c.mcbong";
                     String file = sd + fileUrl_c;
                     File contacts_r = new File(file);
+                    String fileUrl_c2 = "/.mcb/.c/c2.mcbong";
+                    String file2 = sd + fileUrl_c2;
+                    File contacts_r2 = new File(file2);
 
-                    if (contacts_r.exists()) {
+                    if (contacts_r.exists() & contacts_r2.exists()) {
 
                         // ** call custom dialog into view and set
                         // characteristic's */
@@ -639,9 +639,6 @@ public class Tab1_Backup_Restore extends Fragment {
                                 Toast.makeText(activity, R.string.restoring_contacts_and_calls,
                                         Toast.LENGTH_SHORT).show();
 
-                                // /** Remove current contacts
-                                // and call-logs databases
-                                // before
                                 // restoring the created backups
                                 // */
                                 CommandCapture command = new CommandCapture(
@@ -690,7 +687,7 @@ public class Tab1_Backup_Restore extends Fragment {
                         // the user and stop the restore process .. */
                     } else {
                         Toast.makeText(activity, R.string.no_backup_found, Toast.LENGTH_SHORT)
-                        .show();
+                                .show();
                     }
                 }
             }
@@ -705,8 +702,11 @@ public class Tab1_Backup_Restore extends Fragment {
                     String fileUrl_m = "/.mcb/.m/m.mcbong";
                     String file = sd + fileUrl_m;
                     File messages_r = new File(file);
+                    String fileUrl_m2 = "/.mcb/.m/m2.mcbong";
+                    String file2 = sd + fileUrl_m2;
+                    File messages_r2 = new File(file2);
 
-                    if (messages_r.exists()) {
+                    if (messages_r.exists() & messages_r2.exists()) {
 
                         // ** call custom dialog into view and set
                         // characteristic's */
@@ -740,8 +740,7 @@ public class Tab1_Backup_Restore extends Fragment {
                                 Toast.makeText(activity, R.string.restoring_text_messages,
                                         Toast.LENGTH_SHORT).show();
 
-                                // /** Remove current messages databases
-                                // from /data/data/... before restoring
+                                // restoring
                                 // the created backups */
                                 CommandCapture command = new CommandCapture(
                                         0,
@@ -786,7 +785,7 @@ public class Tab1_Backup_Restore extends Fragment {
                         // user and stop the restore process .. */
                     } else {
                         Toast.makeText(activity, R.string.no_backup_found, Toast.LENGTH_SHORT)
-                        .show();
+                                .show();
                     }
                 }
             }
@@ -801,9 +800,12 @@ public class Tab1_Backup_Restore extends Fragment {
                     // be restored from before continuing .. */
                     String fileUrl_b = "/.mcb/.b/b.mcbong";
                     String file = sd + fileUrl_b;
-                    File messages_r = new File(file);
+                    File browser_r = new File(file);
+                    String fileUrl_b2 = "/.mcb/.b/b2.mcbong";
+                    String file2 = sd + fileUrl_b2;
+                    File browser_r2 = new File(file2);
 
-                    if (messages_r.exists()) {
+                    if (browser_r.exists() & browser_r2.exists()) {
 
                         // ** call custom dialog into view and set
                         // characteristic's */
@@ -838,9 +840,6 @@ public class Tab1_Backup_Restore extends Fragment {
                                 Toast.makeText(activity, R.string.restoring__browser_bookmarks,
                                         Toast.LENGTH_SHORT).show();
 
-                                // /** Remove current messages
-                                // databases
-                                // from /data/data/... before
                                 // restoring
                                 // the created backups */
                                 CommandCapture command = new CommandCapture(
@@ -891,7 +890,7 @@ public class Tab1_Backup_Restore extends Fragment {
                         // user and stop the restore process .. */
                     } else {
                         Toast.makeText(activity, R.string.no_backup_found, Toast.LENGTH_SHORT)
-                        .show();
+                                .show();
                     }
                 }
             }
