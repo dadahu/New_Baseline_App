@@ -1,14 +1,6 @@
 
 package com.mcbong.utility;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeoutException;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.DownloadManager;
@@ -41,6 +33,14 @@ import android.widget.Toast;
 import com.stericson.RootTools.CommandCapture;
 import com.stericson.RootTools.RootTools;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeoutException;
+
 public class Tab5_Online extends Fragment {
 
     protected static final TextView text = null;
@@ -55,6 +55,219 @@ public class Tab5_Online extends Fragment {
         // ** Inflate the layout for this fragment */
         final View view = inflater.inflate(R.layout.tab5_online, container, false);
         final Activity activity = getActivity();
+        // ** Call setup_webview method
+        setup_webview(view);
+
+        // * set up button image resources */
+        Button button_check_webver = (Button) view.findViewById(R.id.button_check_webver);
+        button_check_webver.setBackgroundResource(R.drawable.button);
+
+        button_check_webver.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+
+                try {
+                    // ** ..... */
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                            .permitAll().build();
+                    StrictMode.setThreadPolicy(policy);
+
+                    // ** Define a URL for the desired page */
+                    URL url = new URL(
+                            "http://dl.dropbox.com/u/18271886/mcb/Test_Builds/version.txt");
+
+                    // ** Read all the text within remote file */
+                    BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+                    String str;
+                    StringBuilder sb = new StringBuilder(100);
+                    while ((str = in.readLine()) != null) {
+                        sb.append(str);
+                        // ** str is one line of text; readLine() strips the
+                        // newline character(s) */
+                    }
+                    in.close();
+
+                    // ** call custom dialog into view and set
+                    // characteristic's */
+                    final Dialog dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+                    dialog.getWindow();
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.custom_dialog);
+                    TextView title = (TextView) dialog
+                            .findViewById(R.id.custom_dialog_textview_title);
+                    title.setText(R.string.update_checker_header);
+
+                    TextView title_installedver_header = (TextView) dialog
+                            .findViewById(R.id.custom_dialog_textview_installedver_header);
+                    title_installedver_header.setText(getString(R.string.installed_version));
+
+                    TextView title_installedver = (TextView) dialog
+                            .findViewById(R.id.custom_dialog_textview_installedver);
+                    title_installedver.setText(getString(R.string.version) + "\n" + "\n"
+                            + ". . .\n");
+
+                    // ** Get 'installed version' and 'remote version'
+                    // strings to compare */
+                    String remote_version_string = sb.toString().toString();
+                    String current_version_string = getString(R.string.version).toString();
+
+                    if (current_version_string.equals(remote_version_string)) {
+                        TextView title_onlinever_header = (TextView) dialog
+                                .findViewById(R.id.custom_dialog_textview_onlinever_header);
+                        title_onlinever_header.setTextColor(getResources().getColor(R.color.Cyan));
+                        title_onlinever_header.setText(getString(R.string.versions_match));
+                        ImageView padder = (ImageView) dialog
+                                .findViewById(R.id.padder2_custom_dialog);
+                        padder.setVisibility(View.INVISIBLE);
+                        Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+                        LayoutParams params = (RelativeLayout.LayoutParams) dialogButton
+                                .getLayoutParams();
+                        params.addRule(RelativeLayout.CENTER_HORIZONTAL);
+                        dialogButton.setLayoutParams(params); // causes
+                        // layout
+                        // update
+                        Toast.makeText(activity, R.string.version_uptodate, Toast.LENGTH_SHORT)
+                                .show();
+                    } else {
+                        Toast.makeText(activity, R.string.version_notuptodate, Toast.LENGTH_SHORT)
+                                .show();
+                        Button custom_dialog_update = (Button) dialog
+                                .findViewById(R.id.custom_dialog_update);
+                        custom_dialog_update.setVisibility(View.VISIBLE);
+                        dialog.setTitle(R.string.update_available);
+                        TextView title_onlinever_header = (TextView) dialog
+                                .findViewById(R.id.custom_dialog_textview_onlinever_header);
+                        title_onlinever_header.setTextColor(getResources().getColor(R.color.Green));
+                        title_onlinever_header.setText(getString(R.string.update_available));
+                        TextView title_onlinever = (TextView) dialog
+                                .findViewById(R.id.custom_dialog_textview_onlinever);
+                        title_onlinever.setVisibility(View.VISIBLE);
+                        title_onlinever.setTextColor(getResources().getColor(R.color.Green));
+                        title_onlinever.setText(sb.toString());
+                        Button dialogButton2 = (Button) dialog.findViewById(R.id.custom_dialog_ok2);
+                        dialogButton2.setBackgroundResource(R.drawable.small_button);
+                        dialogButton2.setVisibility(View.VISIBLE);
+                        Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+                        dialogButton.setVisibility(View.INVISIBLE);
+                    }
+
+                    ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
+                    image.setImageResource(R.drawable.ic_launcher);
+
+                    // * set up button image resources */
+                    Button custom_dialog_update = (Button) dialog
+                            .findViewById(R.id.custom_dialog_update);
+                    custom_dialog_update.setBackgroundResource(R.drawable.small_button_update);
+                    // if OK button is clicked, close the custom dialog */
+                    custom_dialog_update.setOnClickListener(new OnClickListener() {
+                        public void onClick(View v) {
+                            // ** Call download_update method
+                            download_update(activity, dialog);
+                        }
+
+                        /**
+                         * @param activity
+                         * @param dialog
+                         */
+                        private void download_update(final Activity activity, final Dialog dialog) {
+                            // ** Remove any old downloads of
+                            // McBong-Utility from /Download folder
+                            // before downloading new version */
+                            CommandCapture command = new CommandCapture(0,
+                                    "rm /sdcard/Download/McBong-Utility.apk");
+                            try {
+                                RootTools.getShell(true).add(command).waitForFinish();
+                            } catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            } catch (TimeoutException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+
+                            // ** Set up the 'Download Manager' and
+                            // Download latest version from server
+                            // ... */
+                            String url = "http://dl.dropbox.com/u/18271886/mcb/Test_Builds/McBong-Utility.apk";
+                            DownloadManager.Request request = new DownloadManager.Request(Uri
+                                    .parse(url));
+                            request.setDescription("McBong Utility Updater");
+                            request.setTitle("McBong-Utility Update");
+
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                                request.allowScanningByMediaScanner();
+                                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                            }
+                            request.setDestinationInExternalPublicDir(
+                                    Environment.DIRECTORY_DOWNLOADS, "McBong-Utility.apk");
+
+                            // ** get download service and enqueue
+                            // file */
+                            DownloadManager manager = (DownloadManager) activity
+                                    .getSystemService(Context.DOWNLOAD_SERVICE);
+                            manager.enqueue(request);
+                            Toast.makeText(activity, R.string.downloading, Toast.LENGTH_SHORT)
+                                    .show();
+                            dialog.dismiss();
+
+                            // ** Set up broadcast receiver to
+                            // detect when the download completes..
+                            // */
+                            BroadcastReceiver onComplete = new BroadcastReceiver() {
+                                public void onReceive(Context ctxt, Intent intent) {
+                                    Toast.makeText(ctxt, R.string.installing_update,
+                                            Toast.LENGTH_SHORT).show();
+                                    Intent install = new Intent(Intent.ACTION_VIEW);
+                                    install.setDataAndType(Uri.fromFile(new File(Environment
+                                            .getExternalStorageDirectory()
+                                            + "/Download/"
+                                            + "McBong-Utility.apk")),
+                                            "application/vnd.android.package-archive");
+                                    startActivity(install);
+                                }
+                            };
+                            activity.registerReceiver(onComplete, new IntentFilter(
+                                    DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+                        }
+                    });
+                    Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+                    dialogButton.setBackgroundResource(R.drawable.small_button);
+                    // ** if OK button is clicked, close the custom dialog
+                    // */
+                    dialogButton.setOnClickListener(new OnClickListener() {
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+                    Button dialogButton2 = (Button) dialog.findViewById(R.id.custom_dialog_ok2);
+                    dialogButton2.setBackgroundResource(R.drawable.small_button);
+                    // ** if OK button is clicked, close the custom dialog
+                    // */
+                    dialogButton2.setOnClickListener(new OnClickListener() {
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.show();
+                } catch (MalformedURLException e) {
+                    Toast.makeText(activity, R.string.error_unsupported_p, Toast.LENGTH_SHORT)
+                            .show();
+                } catch (IOException e) {
+                    Toast.makeText(activity, R.string.error_no_internet, Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        });
+        return view;
+    }
+
+    /**
+     * @param view
+     */
+    private void setup_webview(final View view) {
         // ** Define WebView component & Buttons,also load required WebSite.. */
         final WebView myWebView = (WebView) view.findViewById(R.id.webview);
         myWebView.setWebViewClient(new WebViewClient());
@@ -70,210 +283,5 @@ public class Tab5_Online extends Fragment {
                 return false;
             }
         });
-
-        // * set up button image resources */
-        Button button_check_webver = (Button) view.findViewById(R.id.button_check_webver);
-        button_check_webver.setBackgroundResource(R.drawable.button);
-
-        button_check_webver.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                if (activity != null) {
-                    try {
-                        // ** ..... */
-                        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-                        .permitAll().build();
-                        StrictMode.setThreadPolicy(policy);
-
-                        // ** Define a URL for the desired page */
-                        URL url = new URL(
-                                "http://dl.dropbox.com/u/18271886/mcb/Test_Builds/version.txt");
-
-                        // ** Read all the text within remote file */
-                        BufferedReader in = new BufferedReader(new InputStreamReader(url
-                                .openStream()));
-                        String str;
-                        StringBuilder sb = new StringBuilder(100);
-                        while ((str = in.readLine()) != null) {
-                            sb.append(str);
-                            // ** str is one line of text; readLine() strips the
-                            // newline character(s) */
-                        }
-                        in.close();
-
-                        // ** call custom dialog into view and set
-                        // characteristic's */
-                        final Dialog dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
-                        dialog.getWindow();
-                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                        dialog.setContentView(R.layout.custom_dialog);
-                        TextView title = (TextView) dialog
-                                .findViewById(R.id.custom_dialog_textview_title);
-                        title.setText(R.string.update_checker_header);
-
-                        TextView title_installedver_header = (TextView) dialog
-                                .findViewById(R.id.custom_dialog_textview_installedver_header);
-                        title_installedver_header.setText(getString(R.string.installed_version));
-
-                        TextView title_installedver = (TextView) dialog
-                                .findViewById(R.id.custom_dialog_textview_installedver);
-                        title_installedver.setText(getString(R.string.version) + "\n" + "\n"
-                                + ". . .\n");
-
-                        // ** Get 'installed version' and 'remote version'
-                        // strings to compare */
-                        String remote_version_string = sb.toString().toString();
-                        String current_version_string = getString(R.string.version).toString();
-
-                        if (current_version_string.equals(remote_version_string)) {
-                            TextView title_onlinever_header = (TextView) dialog
-                                    .findViewById(R.id.custom_dialog_textview_onlinever_header);
-                            title_onlinever_header.setTextColor(getResources().getColor(
-                                    R.color.Cyan));
-                            title_onlinever_header.setText(getString(R.string.versions_match));
-                            ImageView padder = (ImageView) dialog
-                                    .findViewById(R.id.padder2_custom_dialog);
-                            padder.setVisibility(View.INVISIBLE);
-                            Button dialogButton = (Button) dialog
-                                    .findViewById(R.id.custom_dialog_ok);
-                            LayoutParams params = (RelativeLayout.LayoutParams) dialogButton
-                                    .getLayoutParams();
-                            params.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                            dialogButton.setLayoutParams(params); // causes
-                            // layout
-                            // update
-                            Toast.makeText(activity, R.string.version_uptodate, Toast.LENGTH_SHORT)
-                            .show();
-                        } else {
-                            Toast.makeText(activity, R.string.version_notuptodate,
-                                    Toast.LENGTH_SHORT).show();
-                            Button custom_dialog_update = (Button) dialog
-                                    .findViewById(R.id.custom_dialog_update);
-                            custom_dialog_update.setVisibility(View.VISIBLE);
-                            dialog.setTitle(R.string.update_available);
-                            TextView title_onlinever_header = (TextView) dialog
-                                    .findViewById(R.id.custom_dialog_textview_onlinever_header);
-                            title_onlinever_header.setTextColor(getResources().getColor(
-                                    R.color.Green));
-                            title_onlinever_header.setText(getString(R.string.update_available));
-                            TextView title_onlinever = (TextView) dialog
-                                    .findViewById(R.id.custom_dialog_textview_onlinever);
-                            title_onlinever.setVisibility(View.VISIBLE);
-                            title_onlinever.setTextColor(getResources().getColor(R.color.Green));
-                            title_onlinever.setText(sb.toString());
-                            Button dialogButton2 = (Button) dialog
-                                    .findViewById(R.id.custom_dialog_ok2);
-                            dialogButton2.setBackgroundResource(R.drawable.small_button);
-                            dialogButton2.setVisibility(View.VISIBLE);
-                            Button dialogButton = (Button) dialog
-                                    .findViewById(R.id.custom_dialog_ok);
-                            dialogButton.setVisibility(View.INVISIBLE);
-                        }
-
-                        ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
-                        image.setImageResource(R.drawable.ic_launcher);
-
-                        // * set up button image resources */
-                        Button custom_dialog_update = (Button) dialog
-                                .findViewById(R.id.custom_dialog_update);
-                        custom_dialog_update.setBackgroundResource(R.drawable.small_button_update);
-                        // if OK button is clicked, close the custom dialog */
-                        custom_dialog_update.setOnClickListener(new OnClickListener() {
-                            public void onClick(View v) {
-
-                                // ** Remove any old downloads of
-                                // McBong-Utility from /Download folder
-                                // before downloading new version */
-                                CommandCapture command = new CommandCapture(0,
-                                        "rm /sdcard/Download/McBong-Utility.apk");
-                                try {
-                                    RootTools.getShell(true).add(command).waitForFinish();
-                                } catch (InterruptedException e) {
-                                    // TODO Auto-generated catch block
-                                    e.printStackTrace();
-                                } catch (IOException e) {
-                                    // TODO Auto-generated catch block
-                                    e.printStackTrace();
-                                } catch (TimeoutException e) {
-                                    // TODO Auto-generated catch block
-                                    e.printStackTrace();
-                                }
-
-                                // ** Set up the 'Download Manager' and
-                                // Download latest version from server
-                                // ... */
-                                String url = "http://dl.dropbox.com/u/18271886/mcb/Test_Builds/McBong-Utility.apk";
-                                DownloadManager.Request request = new DownloadManager.Request(Uri
-                                        .parse(url));
-                                request.setDescription("McBong Utility Updater");
-                                request.setTitle("McBong-Utility Update");
-
-                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                                    request.allowScanningByMediaScanner();
-                                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                                }
-                                request.setDestinationInExternalPublicDir(
-                                        Environment.DIRECTORY_DOWNLOADS, "McBong-Utility.apk");
-
-                                // ** get download service and enqueue
-                                // file */
-                                DownloadManager manager = (DownloadManager) activity
-                                        .getSystemService(Context.DOWNLOAD_SERVICE);
-                                manager.enqueue(request);
-                                Toast.makeText(activity, R.string.downloading, Toast.LENGTH_SHORT)
-                                .show();
-                                dialog.dismiss();
-
-                                // ** Set up broadcast receiver to
-                                // detect when the download completes..
-                                // */
-                                BroadcastReceiver onComplete = new BroadcastReceiver() {
-                                    public void onReceive(Context ctxt, Intent intent) {
-                                        Toast.makeText(ctxt, R.string.installing_update,
-                                                Toast.LENGTH_SHORT).show();
-                                        Intent install = new Intent(Intent.ACTION_VIEW);
-                                        install.setDataAndType(Uri.fromFile(new File(Environment
-                                                .getExternalStorageDirectory()
-                                                + "/Download/"
-                                                + "McBong-Utility.apk")),
-                                                "application/vnd.android.package-archive");
-                                        startActivity(install);
-                                    }
-                                };
-                                activity.registerReceiver(onComplete, new IntentFilter(
-                                        DownloadManager.ACTION_DOWNLOAD_COMPLETE));
-                            }
-                        });
-                        Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
-                        dialogButton.setBackgroundResource(R.drawable.small_button);
-                        // ** if OK button is clicked, close the custom dialog
-                        // */
-                        dialogButton.setOnClickListener(new OnClickListener() {
-                            public void onClick(View v) {
-                                dialog.dismiss();
-                            }
-                        });
-                        Button dialogButton2 = (Button) dialog.findViewById(R.id.custom_dialog_ok2);
-                        dialogButton2.setBackgroundResource(R.drawable.small_button);
-                        // ** if OK button is clicked, close the custom dialog
-                        // */
-                        dialogButton2.setOnClickListener(new OnClickListener() {
-                            public void onClick(View v) {
-                                dialog.dismiss();
-                            }
-                        });
-
-                        dialog.show();
-                    } catch (MalformedURLException e) {
-                        Toast.makeText(activity, R.string.error_unsupported_p, Toast.LENGTH_SHORT)
-                        .show();
-                    } catch (IOException e) {
-                        Toast.makeText(activity, R.string.error_no_internet, Toast.LENGTH_SHORT)
-                        .show();
-                    }
-                }
-            }
-
-        });
-        return view;
     }
 }

@@ -77,29 +77,30 @@ public class McBong extends FragmentActivity {
 
         ActionBar ab = getActionBar();
         ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        Tab tab0 = ab.newTab().setText("| Main Page Selector ..|..")
+        Tab tab0 = ab.newTab()
+                .setText("| Main Page Selector ..|..")
                 .setTabListener(new TabListener<Tab0_Main>(this, "tabzero", Tab0_Main.class));
 
         Tab tab1 = ab
                 .newTab()
                 .setText("| Backup & Restore ..|..")
-                .setTabListener(
-                        new TabListener<Tab1_Backup_Restore>(this, "tabone",
-                                Tab1_Backup_Restore.class));
+                .setTabListener(new TabListener<Tab1_Backup_Restore>(this, "tabone", Tab1_Backup_Restore.class));
 
-        Tab tab2 = ab.newTab().setText("| Add-on's ..|..")
+        Tab tab2 = ab.newTab()
+                .setText("| Add-on's ..|..")
                 .setTabListener(new TabListener<Tab2_Addons>(this, "tabtwo", Tab2_Addons.class));
 
-        Tab tab3 = ab.newTab().setText("| Tweak's ..|..")
+        Tab tab3 = ab.newTab()
+                .setText("| Tweak's ..|..")
                 .setTabListener(new TabListener<Tab3_Tweaks>(this, "tabthree", Tab3_Tweaks.class));
 
         Tab tab4 = ab
                 .newTab()
                 .setText("| Recovery ..|..")
-                .setTabListener(
-                        new TabListener<Tab4_Recovery>(this, "tabfour", Tab4_Recovery.class));
+                .setTabListener(new TabListener<Tab4_Recovery>(this, "tabfour", Tab4_Recovery.class));
 
-        Tab tab5 = ab.newTab().setText("| Online ..|")
+        Tab tab5 = ab.newTab()
+                .setText("| Online ..|")
                 .setTabListener(new TabListener<Tab5_Online>(this, "tabfive", Tab5_Online.class));
 
         ab.addTab(tab0);
