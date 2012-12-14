@@ -33,9 +33,9 @@ This was an idea I just had to get done and so here we are.
 Current Feature's..
 ------------
 
-* Backup Contact's Database's.
-* Backup Call Log's Database's.
-* Backup Browser Bookmark's Database's.
+* Backup & Restore Contact's Database's.
+* Backup & Restore Call Log's Database's.
+* Backup & Restore Browser Bookmark's Database's.
 * Backup ALL Database's Option.
 * Download & Install 3rd Party Launcher's.
 * Download & Install 3rd Theme's.
