@@ -4,21 +4,29 @@
     <item
         android:id="@+id/menuitem_quit"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
-        android:orderInCategory="3"
+        android:orderInCategory="1"
         android:showAsAction="always"
         android:title="@string/menu_quit">
     </item>
-    <item
-        android:id="@+id/menuitem_version"
-        android:orderInCategory="1"
-        android:showAsAction="collapseActionView"
-        android:title="@string/menu_version">
-    </item>
-    <item
-        android:id="@+id/menuitem_device_info"
+
+    <group
+        android:id="@+id/group1"
+        android:enabled="true"
+        android:menuCategory="system"
         android:orderInCategory="2"
-        android:showAsAction="collapseActionView"
-        android:title="@string/menu_device_info">
-    </item>
+        android:visible="true" >
+        <item
+            android:id="@+id/menuitem_version"
+            android:orderInCategory="3"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_version">
+        </item>
+        <item
+            android:id="@+id/menuitem_device_info"
+            android:orderInCategory="4"
+            android:showAsAction="collapseActionView"
+            android:title="@string/menu_device_info">
+        </item>
+    </group>
 
 </menu>

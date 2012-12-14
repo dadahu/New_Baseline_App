@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
+    <issue id="AlwaysShowAction">
+        <ignore path="res/menu/main.xml" />
+    </issue>
     <issue id="IconColors">
         <ignore path="res/drawable-hdpi/button_version.png" />
     </issue>

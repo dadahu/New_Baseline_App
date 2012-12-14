@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<color name="White">#FFFFFF</color>
-	<color name="Red">#FF0000</color>
-	<color name="DarkRed">#8B0000</color>
-	<color name="CadetBlue">#5F9EA0</color>
-	<color name="Cyan">#00FFFF</color>
-	<color name="Green">#008000</color>
-	<color name="Black">#000000</color>
-	<color name="Transparent">#00000000</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Red">#FF0000</color>
+    <color name="DarkRed">#8B0000</color>
+    <color name="CadetBlue">#5F9EA0</color>
+    <color name="Cyan">#00FFFF</color>
+    <color name="Green">#008000</color>
+    <color name="Black">#000000</color>
+    <color name="Transparent">#00000000</color>
 
 </resources>

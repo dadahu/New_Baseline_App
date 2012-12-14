@@ -23,7 +23,7 @@
             android:id="@+id/TextView01"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tweaks" 
+            android:text="@string/tweaks"
             android:textColor="@color/CadetBlue" />
 
         <TextView
