@@ -9,7 +9,7 @@
 	<string name="menu_quit">Exit App</string>
 	<string name="menu_device_info">About Device</string>
 	<string name="menu_version">Application Info</string>
-	<string name="version">Test Build 289 (14/12)</string>
+	<string name="version">Test Build 290 (17/12)</string>
 	<string name="installed_version">Current Installed Version ..</string>
 	<string name="mainpage_header">Pick Your Poison .. </string>
 	<string name="mainpage_link_backup_restore">Backup / Restore Section ..</string>
@@ -24,6 +24,7 @@
 	<string name="mainpage_text_online">Online/Update Section\n includes ..\n \n *Direct access to Team Website, using built in webview component \n *Full Update Checker and Update Downloader \n </string>
 	<string name="backup">Backup Database\'s .. </string>
 	<string name="backup_all">Backup All Database\'s </string>
+	<string name="restore_all">Restore All Database\'s </string>
 	<string name="restore">Restore Database\'s .. </string>
 	<string name="no_backup_found">Sorry, There are Missing or Corrupt Backup database\'s. Cannot Restore database\'s.</string>
 	<string name="restore_complete">Restore Completed Successfully !</string>
@@ -39,9 +40,13 @@
 	<string name="backup_browser_complete">Browser Backup Completed Successfully !</string>
 	<!-- <string name="backup_complete">Backup Completed Successfully !</string> -->
 	<string name="backup_all_complete">All Database\'s Backup Completed Successfully !</string>
+	<string name="restore_all_complete">All Database\'s Restore Completed Successfully !</string>
 	<string name="backup_contacts_failed">Sorry, Contact\'s Backup Failed</string>
 	<string name="backup_messages_failed">Sorry, Message\'s Backup Failed</string>
 	<string name="backup_browser_failed">Sorry, Browser Backup Failed</string>
+	<string name="restore_contacts_failed">Sorry, Contact\'s Restore Failed</string>
+	<string name="restore_messages_failed">Sorry, Message\'s Restore Failed</string>
+	<string name="restore_browser_failed">Sorry, Browser Restore Failed</string>
 	<!-- <string name="backup_failed">Sorry, Backup Failed</string> -->
 	<string name="backup_contacts_and_calls">Backup Contact\'s and Calls</string>
 	<string name="backup_text_messages">Backup Text Message\'s</string>
@@ -50,6 +55,7 @@
 	<string name="restore_text_messages">Restore Text Message\'s</string>
 	<string name="restore_browser_bookmarks">Restore Browser Bookmark\'s</string>
 	<!-- <string name="restoring_database">Restoring Database\'s \n \n  please wait ..</string> -->
+	<string name="restoring_all">Restoring All Database\'s, please wait .. </string>
 	<string name="restoring_contacts_and_calls">Restoring Contact\'s and Call-Log\'s, please wait ..</string>
 	<string name="restoring_text_messages">Restoring Text Message\'s, please wait ..</string>
 	<string name="restoring__browser_bookmarks">Restoring Browser Bookmark\'s, please wait ..</string>

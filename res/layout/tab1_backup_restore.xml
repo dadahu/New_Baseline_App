@@ -51,6 +51,11 @@
 					android:src="@drawable/on" />
 			</TableRow>
 
+			<TextView
+				android:id="@+id/TextView0ss5"
+				android:layout_width="fill_parent"
+				android:layout_height="10dp" />
+
 			<TableRow
 				android:id="@+id/tablerow_contacts"
 				android:layout_width="wrap_content"
@@ -150,6 +155,34 @@
 				android:id="@+id/TextView04a"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content" />
+
+			<TableRow
+				android:id="@+id/tablerow_restore_all"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal" >
+
+				<ImageButton
+					android:id="@+id/imagebutton_restore_all"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:contentDescription="@string/restore_all"
+					android:src="@drawable/on" />
+
+				<ImageButton
+					android:id="@+id/button_reboot"
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:contentDescription="@string/reboot"
+					android:paddingRight="35dp"
+					android:src="@drawable/reboot"
+					android:visibility="invisible" />
+			</TableRow>
+
+			<TextView
+				android:id="@+id/TextView0sss5"
+				android:layout_width="fill_parent"
+				android:layout_height="10dp" />
 
 			<TableRow
 				android:id="@+id/tablerow_contacts_r"

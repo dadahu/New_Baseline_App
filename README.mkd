@@ -23,7 +23,7 @@
 Brief..
 ------------
 
-This Project was started as a mean's to easily set up an Android 4.1+ device after
+This Project was started as a mean's to easily set up an Android 4.1+ [AOSP] device after
  an initial ROM Flash.
 This has had small feature's added here and there to make post-ROM-Flash easier.
 This was an idea I just had to get done and so here we are.
@@ -37,6 +37,7 @@ Current Feature's..
 * Backup & Restore Call Log's Database's.
 * Backup & Restore Browser Bookmark's Database's.
 * Backup ALL Database's Option.
+* Restore ALL Database's Option.
 * Download & Install 3rd Party Launcher's.
 * Download & Install 3rd Theme's.
 * Reboot Device.
@@ -76,7 +77,7 @@ now hidden from actionbar, now the hardware menu key is defined to open menu.
 located on the /sdcard. Now makes full check's on ALL database backup file's before 
 attempting to restore them.
 * Added better 'if ().exists' method's for checking to see if a backup has been made
-Now makes full check's on ALL database backup file's before attempting to restore them.
+Now makes full check's on ALL database backup file's after an attempted backup.
 * Extracted all inline method's and set up their own individial 'public/private void' method's.
 * Yet more layout change's.
 * And yet more code re-format's [ this time using the correct 'android-formatting-35.xml' and

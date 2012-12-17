@@ -43,11 +43,14 @@ public class Tab1_Backup_Restore extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // ** Inflate the layout for this fragment */
-        View view = inflater.inflate(R.layout.tab1_backup_restore, container, false);
+        final View view = inflater.inflate(R.layout.tab1_backup_restore, container, false);
         final Activity activity = getActivity();
         // ** Define buttons and set image resource .. */
         ImageButton imagebutton_backup_all = (ImageButton) view
                 .findViewById(R.id.imagebutton_backup_all);
+        ImageButton imagebutton_restore_all = (ImageButton) view
+                .findViewById(R.id.imagebutton_restore_all);
+        ImageButton button_reboot = (ImageButton) view.findViewById(R.id.button_reboot);
         Button button_backup_contacts_and_calls = (Button) view
                 .findViewById(R.id.button_backup_contacts_and_calls);
         button_backup_contacts_and_calls.setBackgroundResource(R.drawable.button);
@@ -303,7 +306,8 @@ public class Tab1_Backup_Restore extends Fragment {
         });
 
         // ** Restore functions ..
-
+        // **
+        // **
         button_restore_contacts_and_calls.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
@@ -367,8 +371,12 @@ public class Tab1_Backup_Restore extends Fragment {
                                     "cp -p /sdcard/.mcb/.c/c2.mcbong /data/data/com.android.providers.contacts/databases/contacts2.db-journal");
                             try {
                                 RootTools.getShell(true).add(command).waitForFinish();
+                                ImageButton reboot = (ImageButton) alert_dialog
+                                        .findViewById(R.id.button_reboot);
+                                reboot.setVisibility(View.VISIBLE);
                                 Toast.makeText(activity, R.string.restore_complete,
                                         Toast.LENGTH_LONG).show();
+
                             } catch (InterruptedException e) {
                                 // TODO Auto-generated catch
                                 // block
@@ -388,6 +396,7 @@ public class Tab1_Backup_Restore extends Fragment {
                                         .show();
                                 e.printStackTrace();
                             }
+
                         }
                     });
                     Button custom_alert_dialog_cancel = (Button) alert_dialog
@@ -470,8 +479,12 @@ public class Tab1_Backup_Restore extends Fragment {
                                     "cp -p /sdcard/.mcb/.m/m2.mcbong /data/data/com.android.providers.telephony/databases/mmssms.db-journal");
                             try {
                                 RootTools.getShell(true).add(command).waitForFinish();
+                                ImageButton reboot = (ImageButton) alert_dialog
+                                        .findViewById(R.id.button_reboot);
+                                reboot.setVisibility(View.VISIBLE);
                                 Toast.makeText(activity, R.string.restore_complete,
                                         Toast.LENGTH_LONG).show();
+
                             } catch (InterruptedException e) {
                                 // TODO Auto-generated catch block
                                 Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_LONG)
@@ -573,8 +586,12 @@ public class Tab1_Backup_Restore extends Fragment {
                                     "cp -p /sdcard/.mcb/.b/b2.mcbong /data/data/com.android.browser/databases/browser2.db-wal");
                             try {
                                 RootTools.getShell(true).add(command).waitForFinish();
+                                ImageButton reboot = (ImageButton) alert_dialog
+                                        .findViewById(R.id.button_reboot);
+                                reboot.setVisibility(View.VISIBLE);
                                 Toast.makeText(activity, R.string.restore_complete,
                                         Toast.LENGTH_LONG).show();
+
                             } catch (InterruptedException e) {
                                 // TODO Auto-generated catch
                                 // block
@@ -619,6 +636,153 @@ public class Tab1_Backup_Restore extends Fragment {
             }
 
         });
+
+        imagebutton_restore_all.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+
+                // ** call custom dialog into view and set
+                // characteristic's */
+                // ** call custom dialog into view and set characteristic's
+                // */
+                final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+                alert_dialog.getWindow();
+                alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                alert_dialog.setContentView(R.layout.custom_alert_dialog);
+                TextView title = (TextView) alert_dialog
+                        .findViewById(R.id.custom_alert_dialog_textview_title);
+                title.setText(R.string.restore_all);
+                TextView alert_text = (TextView) alert_dialog
+                        .findViewById(R.id.custom_alert_dialog_textview);
+                alert_text.setText(R.string.confirm);
+                ImageView image = (ImageView) alert_dialog
+                        .findViewById(R.id.custom_alert_dialog_image);
+                image.setImageResource(R.drawable.on);
+
+                // * set up button image resources */
+                Button custom_alert_dialog_ok = (Button) alert_dialog
+                        .findViewById(R.id.custom_alert_dialog_ok);
+                custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+
+                // ** if custom dialog OK button is clicked, execute the
+                // shell commands through root-tools */
+                custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
+                    public void onClick(View v) {
+
+                        alert_dialog.dismiss();
+
+                        Toast.makeText(activity, R.string.restoring_all, Toast.LENGTH_LONG).show();
+
+                        // ** Call all three backup methods with try/catch
+
+                        try {
+                            backup_contacts(activity);
+                        } catch (Exception e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                            Toast.makeText(activity, R.string.restore_contacts_failed,
+                                    Toast.LENGTH_LONG).show();
+                        }
+                        try {
+                            backup_messages(activity);
+                        } catch (Exception e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                            Toast.makeText(activity, R.string.restore_messages_failed,
+                                    Toast.LENGTH_LONG).show();
+                        }
+                        try {
+                            backup_browser(activity);
+                        } catch (Exception e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                            Toast.makeText(activity, R.string.restore_browser_failed,
+                                    Toast.LENGTH_LONG).show();
+                        }
+
+                        ImageButton button_reboot = (ImageButton) view
+                                .findViewById(R.id.button_reboot);
+                        button_reboot.setVisibility(View.VISIBLE);
+                        Toast.makeText(activity, R.string.restore_all_complete, Toast.LENGTH_LONG)
+                                .show();
+                    }
+                });
+                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                        .findViewById(R.id.custom_alert_dialog_cancel);
+                custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
+                // if cancel button is clicked, close the custom dialog */
+                custom_alert_dialog_cancel.setOnClickListener(new OnClickListener() {
+                    public void onClick(View v) {
+                        alert_dialog.dismiss();
+                    }
+                });
+                alert_dialog.show();
+
+            }
+        });
+        button_reboot.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+
+                // ** call custom dialog into view and set characteristic's
+                // */
+                final Dialog alert_dialog = new Dialog(activity, R.style.Theme_Dialog_Translucent);
+                alert_dialog.getWindow();
+                alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                alert_dialog.setContentView(R.layout.custom_alert_dialog);
+                TextView title = (TextView) alert_dialog
+                        .findViewById(R.id.custom_alert_dialog_textview_title);
+                title.setText(R.string.dialog_title_reboot_device);
+                TextView alert_text = (TextView) alert_dialog
+                        .findViewById(R.id.custom_alert_dialog_textview);
+                alert_text.setText(R.string.confirm);
+                ImageView image = (ImageView) alert_dialog
+                        .findViewById(R.id.custom_alert_dialog_image);
+                image.setImageResource(R.drawable.reboot);
+
+                // * set up button image resources */
+                Button custom_alert_dialog_ok = (Button) alert_dialog
+                        .findViewById(R.id.custom_alert_dialog_ok);
+                custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+
+                // ** if button is clicked, execute the shell commands
+                // through root-tools */
+                custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
+                    public void onClick(View v) {
+                        // ** Call rootshell_reboot method
+                        rootshell_reboot();
+                    }
+
+                    /**
+                         * 
+                         */
+                    public void rootshell_reboot() {
+                        CommandCapture command = new CommandCapture(0, "reboot");
+                        try {
+                            RootTools.getShell(true).add(command).waitForFinish();
+                        } catch (InterruptedException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        } catch (TimeoutException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                        .findViewById(R.id.custom_alert_dialog_cancel);
+                custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
+                // if OK button is clicked, close the custom dialog */
+                custom_alert_dialog_cancel.setOnClickListener(new OnClickListener() {
+                    public void onClick(View v) {
+                        alert_dialog.dismiss();
+                    }
+                });
+                alert_dialog.show();
+            }
+        });
+
         return view;
     }
 

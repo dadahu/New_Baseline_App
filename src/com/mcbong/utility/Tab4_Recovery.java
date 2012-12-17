@@ -88,7 +88,7 @@ public class Tab4_Recovery extends Fragment {
                     /**
                          * 
                          */
-                    public void rootshell_reboot() {
+                    private void rootshell_reboot() {
                         CommandCapture command = new CommandCapture(0, "reboot");
                         try {
                             RootTools.getShell(true).add(command).waitForFinish();
@@ -151,7 +151,7 @@ public class Tab4_Recovery extends Fragment {
                     /**
                          * 
                          */
-                    public void rootshell_reboot_recovery() {
+                    private void rootshell_reboot_recovery() {
                         CommandCapture command = new CommandCapture(0, "reboot recovery");
                         try {
                             RootTools.getShell(true).add(command).waitForFinish();
