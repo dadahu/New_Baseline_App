@@ -304,337 +304,312 @@ public class Tab1_Backup_Restore extends Fragment {
 
             }
         });
-
         // ** Restore functions ..
-        // **
-        // **
+
         button_restore_contacts_and_calls.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-                // ** Check to see if database backups are ACTUALLY
-                // there to be restored from before continuing .. */
-                String fileUrl_c = "/.mcb/.c/c.mcbong";
-                String file = sd + fileUrl_c;
-                File contacts_r = new File(file);
-                String fileUrl_c2 = "/.mcb/.c/c2.mcbong";
-                String file2 = sd + fileUrl_c2;
-                File contacts_r2 = new File(file2);
+                if (activity != null) {
 
-                if (contacts_r.exists() & contacts_r2.exists()) {
+                    // ** Check to see if database backups are ACTUALLY
+                    // there to be restored from before continuing .. */
+                    String fileUrl_c = "/.mcb/.c/c.mcbong";
+                    String file = sd + fileUrl_c;
+                    File contacts_r = new File(file);
+                    String fileUrl_c2 = "/.mcb/.c/c2.mcbong";
+                    String file2 = sd + fileUrl_c2;
+                    File contacts_r2 = new File(file2);
 
-                    // ** call custom dialog into view and set
-                    // characteristic's */
-                    final Dialog alert_dialog = new Dialog(activity,
-                            R.style.Theme_Dialog_Translucent);
-                    alert_dialog.getWindow();
-                    alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                    alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                    TextView title = (TextView) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_textview_title);
-                    title.setText(R.string.restore_contacts_and_calls);
-                    TextView alert_text = (TextView) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_textview);
-                    alert_text.setText(R.string.confirm);
-                    ImageView image = (ImageView) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_image);
-                    image.setImageResource(R.drawable.icon_contacts_and_calls);
+                    if (contacts_r.exists() & contacts_r2.exists()) {
 
-                    // * set up button image resources */
-                    Button custom_alert_dialog_ok = (Button) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_ok);
-                    custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+                        // ** call custom dialog into view and set
+                        // characteristic's */
+                        final Dialog alert_dialog = new Dialog(activity,
+                                R.style.Theme_Dialog_Translucent);
+                        alert_dialog.getWindow();
+                        alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        alert_dialog.setContentView(R.layout.custom_alert_dialog);
+                        TextView title = (TextView) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_textview_title);
+                        title.setText(R.string.restore_contacts_and_calls);
+                        TextView alert_text = (TextView) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_textview);
+                        alert_text.setText(R.string.confirm);
+                        ImageView image = (ImageView) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_image);
+                        image.setImageResource(R.drawable.icon_contacts_and_calls);
 
-                    // ** if custom dialog OK button is clicked,
-                    // execute the shell commands through root-tools
-                    // */
-                    custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
-                        public void onClick(View v) {
+                        // * set up button image resources */
+                        Button custom_alert_dialog_ok = (Button) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_ok);
+                        custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
-                            alert_dialog.dismiss();
+                        // ** if custom dialog OK button is clicked,
+                        // execute the shell commands through root-tools
+                        // */
+                        custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
+                            public void onClick(View v) {
 
-                            Toast.makeText(activity, R.string.restoring_contacts_and_calls,
-                                    Toast.LENGTH_LONG).show();
+                                alert_dialog.dismiss();
 
-                            restore_contacts(activity);
+                                Toast.makeText(activity, R.string.restoring_contacts_and_calls,
+                                        Toast.LENGTH_SHORT).show();
 
-                        }
-
-                        /**
-                         * @param activity
-                         */
-                        private void restore_contacts(final Activity activity) {
-                            // restoring the created backups
-                            // */
-                            CommandCapture command = new CommandCapture(
-                                    0,
-                                    "cp -p /sdcard/.mcb/.c/c.mcbong /data/data/com.android.providers.contacts/databases/contacts2.db",
-                                    "cp -p /sdcard/.mcb/.c/c2.mcbong /data/data/com.android.providers.contacts/databases/contacts2.db-journal");
-                            try {
-                                RootTools.getShell(true).add(command).waitForFinish();
-                                ImageButton reboot = (ImageButton) alert_dialog
-                                        .findViewById(R.id.button_reboot);
-                                reboot.setVisibility(View.VISIBLE);
-                                Toast.makeText(activity, R.string.restore_complete,
-                                        Toast.LENGTH_LONG).show();
-
-                            } catch (InterruptedException e) {
-                                // TODO Auto-generated catch
-                                // block
-                                Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_LONG)
-                                        .show();
-                                e.printStackTrace();
-                            } catch (IOException e) {
-                                // TODO Auto-generated catch
-                                // block
-                                Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_LONG)
-                                        .show();
-                                e.printStackTrace();
-                            } catch (TimeoutException e) {
-                                // TODO Auto-generated catch
-                                // block
-                                Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_LONG)
-                                        .show();
-                                e.printStackTrace();
+                                // restoring the created backups
+                                // */
+                                CommandCapture command = new CommandCapture(
+                                        0,
+                                        "cp -p /sdcard/.mcb/.c/c.mcbong /data/data/com.android.providers.contacts/databases/contacts2.db",
+                                        "cp -p /sdcard/.mcb/.c/c2.mcbong /data/data/com.android.providers.contacts/databases/contacts2.db-journal");
+                                try {
+                                    RootTools.getShell(true).add(command).waitForFinish();
+                                    Toast.makeText(activity, R.string.restore_complete,
+                                            Toast.LENGTH_SHORT).show();
+                                } catch (InterruptedException e) {
+                                    // TODO Auto-generated catch
+                                    // block
+                                    Toast.makeText(activity, R.string.restore_failed,
+                                            Toast.LENGTH_SHORT).show();
+                                    e.printStackTrace();
+                                } catch (IOException e) {
+                                    // TODO Auto-generated catch
+                                    // block
+                                    Toast.makeText(activity, R.string.restore_failed,
+                                            Toast.LENGTH_SHORT).show();
+                                    e.printStackTrace();
+                                } catch (TimeoutException e) {
+                                    // TODO Auto-generated catch
+                                    // block
+                                    Toast.makeText(activity, R.string.restore_failed,
+                                            Toast.LENGTH_SHORT).show();
+                                    e.printStackTrace();
+                                }
+                                // alert_dialog.dismiss();
                             }
+                        });
+                        Button custom_alert_dialog_cancel = (Button) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_cancel);
+                        custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
+                        // if cancel button is clicked, close the custom
+                        // dialog */
+                        custom_alert_dialog_cancel.setOnClickListener(new OnClickListener() {
+                            public void onClick(View v) {
+                                alert_dialog.dismiss();
+                            }
+                        });
+                        alert_dialog.show();
 
-                        }
-                    });
-                    Button custom_alert_dialog_cancel = (Button) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_cancel);
-                    custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
-                    // if cancel button is clicked, close the custom
-                    // dialog */
-                    custom_alert_dialog_cancel.setOnClickListener(new OnClickListener() {
-                        public void onClick(View v) {
-                            alert_dialog.dismiss();
-                        }
-                    });
-                    alert_dialog.show();
-
-                    // ** If NO database backups are found then warn
-                    // the user and stop the restore process .. */
-                } else {
-                    Toast.makeText(activity, R.string.no_backup_found, Toast.LENGTH_LONG).show();
+                        // ** If NO database backups are found then warn
+                        // the user and stop the restore process .. */
+                    } else {
+                        Toast.makeText(activity, R.string.no_backup_found, Toast.LENGTH_SHORT)
+                                .show();
+                    }
                 }
             }
         });
         button_restore_text_messages.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-                // ** Check to see if database backups are ACTUALLY there to
-                // be restored from before continuing .. */
-                String fileUrl_m = "/.mcb/.m/m.mcbong";
-                String file = sd + fileUrl_m;
-                File messages_r = new File(file);
-                String fileUrl_m2 = "/.mcb/.m/m2.mcbong";
-                String file2 = sd + fileUrl_m2;
-                File messages_r2 = new File(file2);
+                if (activity != null) {
 
-                if (messages_r.exists() & messages_r2.exists()) {
+                    // ** Check to see if database backups are ACTUALLY there to
+                    // be restored from before continuing .. */
+                    String fileUrl_m = "/.mcb/.m/m.mcbong";
+                    String file = sd + fileUrl_m;
+                    File messages_r = new File(file);
+                    String fileUrl_m2 = "/.mcb/.m/m2.mcbong";
+                    String file2 = sd + fileUrl_m2;
+                    File messages_r2 = new File(file2);
 
-                    // ** call custom dialog into view and set
-                    // characteristic's */
-                    final Dialog alert_dialog = new Dialog(activity,
-                            R.style.Theme_Dialog_Translucent);
-                    alert_dialog.getWindow();
-                    alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                    alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                    TextView title = (TextView) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_textview_title);
-                    title.setText(R.string.restore_text_messages);
-                    TextView alert_text = (TextView) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_textview);
-                    alert_text.setText(R.string.confirm);
-                    ImageView image = (ImageView) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_image);
-                    image.setImageResource(R.drawable.icon_messages);
+                    if (messages_r.exists() & messages_r2.exists()) {
 
-                    // * set up button image resources */
-                    Button custom_alert_dialog_ok = (Button) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_ok);
-                    custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+                        // ** call custom dialog into view and set
+                        // characteristic's */
+                        final Dialog alert_dialog = new Dialog(activity,
+                                R.style.Theme_Dialog_Translucent);
+                        alert_dialog.getWindow();
+                        alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        alert_dialog.setContentView(R.layout.custom_alert_dialog);
+                        TextView title = (TextView) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_textview_title);
+                        title.setText(R.string.restore_text_messages);
+                        TextView alert_text = (TextView) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_textview);
+                        alert_text.setText(R.string.confirm);
+                        ImageView image = (ImageView) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_image);
+                        image.setImageResource(R.drawable.icon_messages);
 
-                    // ** if custom dialog OK button is clicked, execute the
-                    // shell commands through root-tools */
-                    custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
-                        public void onClick(View v) {
+                        // * set up button image resources */
+                        Button custom_alert_dialog_ok = (Button) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_ok);
+                        custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
-                            alert_dialog.dismiss();
+                        // ** if custom dialog OK button is clicked, execute the
+                        // shell commands through root-tools */
+                        custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
+                            public void onClick(View v) {
 
-                            Toast.makeText(activity, R.string.restoring_text_messages,
-                                    Toast.LENGTH_LONG).show();
+                                alert_dialog.dismiss();
 
-                            restore_messages(activity);
-                        }
+                                Toast.makeText(activity, R.string.restoring_text_messages,
+                                        Toast.LENGTH_SHORT).show();
 
-                        /**
-                         * @param activity
-                         */
-                        private void restore_messages(final Activity activity) {
-                            // restoring
-                            // the created backups */
-                            CommandCapture command = new CommandCapture(
-                                    0,
-                                    "cp -p /sdcard/.mcb/.m/m.mcbong /data/data/com.android.providers.telephony/databases/mmssms.db",
-                                    "cp -p /sdcard/.mcb/.m/m2.mcbong /data/data/com.android.providers.telephony/databases/mmssms.db-journal");
-                            try {
-                                RootTools.getShell(true).add(command).waitForFinish();
-                                ImageButton reboot = (ImageButton) alert_dialog
-                                        .findViewById(R.id.button_reboot);
-                                reboot.setVisibility(View.VISIBLE);
-                                Toast.makeText(activity, R.string.restore_complete,
-                                        Toast.LENGTH_LONG).show();
-
-                            } catch (InterruptedException e) {
-                                // TODO Auto-generated catch block
-                                Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_LONG)
-                                        .show();
-                                e.printStackTrace();
-                            } catch (IOException e) {
-                                // TODO Auto-generated catch block
-                                Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_LONG)
-                                        .show();
-                                e.printStackTrace();
-                            } catch (TimeoutException e) {
-                                // TODO Auto-generated catch block
-                                Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_LONG)
-                                        .show();
-                                e.printStackTrace();
+                                // restoring
+                                // the created backups */
+                                CommandCapture command = new CommandCapture(
+                                        0,
+                                        "cp -p /sdcard/.mcb/.m/m.mcbong /data/data/com.android.providers.telephony/databases/mmssms.db",
+                                        "cp -p /sdcard/.mcb/.m/m2.mcbong /data/data/com.android.providers.telephony/databases/mmssms.db-journal");
+                                try {
+                                    RootTools.getShell(true).add(command).waitForFinish();
+                                    Toast.makeText(activity, R.string.restore_complete,
+                                            Toast.LENGTH_SHORT).show();
+                                } catch (InterruptedException e) {
+                                    // TODO Auto-generated catch block
+                                    Toast.makeText(activity, R.string.restore_failed,
+                                            Toast.LENGTH_SHORT).show();
+                                    e.printStackTrace();
+                                } catch (IOException e) {
+                                    // TODO Auto-generated catch block
+                                    Toast.makeText(activity, R.string.restore_failed,
+                                            Toast.LENGTH_SHORT).show();
+                                    e.printStackTrace();
+                                } catch (TimeoutException e) {
+                                    // TODO Auto-generated catch block
+                                    Toast.makeText(activity, R.string.restore_failed,
+                                            Toast.LENGTH_SHORT).show();
+                                    e.printStackTrace();
+                                }
+                                // alert_dialog.dismiss();
                             }
+                        });
+                        Button custom_alert_dialog_cancel = (Button) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_cancel);
+                        custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
+                        // if cancel button is clicked, close the custom dialog
+                        // */
+                        custom_alert_dialog_cancel.setOnClickListener(new OnClickListener() {
+                            public void onClick(View v) {
+                                alert_dialog.dismiss();
+                            }
+                        });
+                        alert_dialog.show();
 
-                        }
-                    });
-                    Button custom_alert_dialog_cancel = (Button) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_cancel);
-                    custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
-                    // if cancel button is clicked, close the custom dialog
-                    // */
-                    custom_alert_dialog_cancel.setOnClickListener(new OnClickListener() {
-                        public void onClick(View v) {
-                            alert_dialog.dismiss();
-                        }
-                    });
-                    alert_dialog.show();
-
-                    // ** If NO database backups are found then warn the
-                    // user and stop the restore process .. */
-                } else {
-                    Toast.makeText(activity, R.string.no_backup_found, Toast.LENGTH_LONG).show();
+                        // ** If NO database backups are found then warn the
+                        // user and stop the restore process .. */
+                    } else {
+                        Toast.makeText(activity, R.string.no_backup_found, Toast.LENGTH_SHORT)
+                                .show();
+                    }
                 }
             }
         });
         button_restore_browser_bookmarks.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-                // ** Check to see if database backups are ACTUALLY
-                // there to
-                // be restored from before continuing .. */
-                String fileUrl_b = "/.mcb/.b/b.mcbong";
-                String file = sd + fileUrl_b;
-                File browser_r = new File(file);
-                String fileUrl_b2 = "/.mcb/.b/b2.mcbong";
-                String file2 = sd + fileUrl_b2;
-                File browser_r2 = new File(file2);
+                if (activity != null) {
 
-                if (browser_r.exists() & browser_r2.exists()) {
+                    // ** Check to see if database backups are ACTUALLY
+                    // there to
+                    // be restored from before continuing .. */
+                    String fileUrl_b = "/.mcb/.b/b.mcbong";
+                    String file = sd + fileUrl_b;
+                    File browser_r = new File(file);
+                    String fileUrl_b2 = "/.mcb/.b/b2.mcbong";
+                    String file2 = sd + fileUrl_b2;
+                    File browser_r2 = new File(file2);
 
-                    // ** call custom dialog into view and set
-                    // characteristic's */
-                    final Dialog alert_dialog = new Dialog(activity,
-                            R.style.Theme_Dialog_Translucent);
-                    alert_dialog.getWindow();
-                    alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                    alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                    TextView title = (TextView) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_textview_title);
-                    title.setText(R.string.restore_browser_bookmarks);
-                    TextView alert_text = (TextView) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_textview);
-                    alert_text.setText(R.string.confirm);
-                    ImageView image = (ImageView) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_image);
-                    image.setImageResource(R.drawable.icon_browser);
+                    if (browser_r.exists() & browser_r2.exists()) {
 
-                    // * set up button image resources */
-                    Button custom_alert_dialog_ok = (Button) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_ok);
-                    custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
+                        // ** call custom dialog into view and set
+                        // characteristic's */
+                        final Dialog alert_dialog = new Dialog(activity,
+                                R.style.Theme_Dialog_Translucent);
+                        alert_dialog.getWindow();
+                        alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        alert_dialog.setContentView(R.layout.custom_alert_dialog);
+                        TextView title = (TextView) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_textview_title);
+                        title.setText(R.string.restore_browser_bookmarks);
+                        TextView alert_text = (TextView) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_textview);
+                        alert_text.setText(R.string.confirm);
+                        ImageView image = (ImageView) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_image);
+                        image.setImageResource(R.drawable.icon_browser);
 
-                    // ** if custom dialog OK button is clicked,
-                    // execute the
-                    // shell commands through root-tools */
-                    custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
-                        public void onClick(View v) {
+                        // * set up button image resources */
+                        Button custom_alert_dialog_ok = (Button) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_ok);
+                        custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
-                            alert_dialog.dismiss();
+                        // ** if custom dialog OK button is clicked,
+                        // execute the
+                        // shell commands through root-tools */
+                        custom_alert_dialog_ok.setOnClickListener(new OnClickListener() {
+                            public void onClick(View v) {
 
-                            Toast.makeText(activity, R.string.restoring__browser_bookmarks,
-                                    Toast.LENGTH_LONG).show();
+                                alert_dialog.dismiss();
 
-                            restore_browser(activity);
-                        }
+                                Toast.makeText(activity, R.string.restoring__browser_bookmarks,
+                                        Toast.LENGTH_SHORT).show();
 
-                        /**
-                         * @param activity
-                         */
-                        private void restore_browser(final Activity activity) {
-                            // restoring
-                            // the created backups */
-                            CommandCapture command = new CommandCapture(
-                                    0,
-                                    "cp -p /sdcard/.mcb/.b/b.mcbong /data/data/com.android.browser/databases/browser2.db",
-                                    "cp -p /sdcard/.mcb/.b/b2.mcbong /data/data/com.android.browser/databases/browser2.db-wal");
-                            try {
-                                RootTools.getShell(true).add(command).waitForFinish();
-                                ImageButton reboot = (ImageButton) alert_dialog
-                                        .findViewById(R.id.button_reboot);
-                                reboot.setVisibility(View.VISIBLE);
-                                Toast.makeText(activity, R.string.restore_complete,
-                                        Toast.LENGTH_LONG).show();
-
-                            } catch (InterruptedException e) {
-                                // TODO Auto-generated catch
-                                // block
-                                Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_LONG)
-                                        .show();
-                                e.printStackTrace();
-                            } catch (IOException e) {
-                                // TODO Auto-generated catch
-                                // block
-                                Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_LONG)
-                                        .show();
-                                e.printStackTrace();
-                            } catch (TimeoutException e) {
-                                // TODO Auto-generated catch
-                                // block
-                                Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_LONG)
-                                        .show();
-                                e.printStackTrace();
+                                // restoring
+                                // the created backups */
+                                CommandCapture command = new CommandCapture(
+                                        0,
+                                        "cp -p /sdcard/.mcb/.b/b.mcbong /data/data/com.android.browser/databases/browser2.db",
+                                        "cp -p /sdcard/.mcb/.b/b2.mcbong /data/data/com.android.browser/databases/browser2.db-wal");
+                                try {
+                                    RootTools.getShell(true).add(command).waitForFinish();
+                                    Toast.makeText(activity, R.string.restore_complete,
+                                            Toast.LENGTH_SHORT).show();
+                                } catch (InterruptedException e) {
+                                    // TODO Auto-generated catch
+                                    // block
+                                    Toast.makeText(activity, R.string.restore_failed,
+                                            Toast.LENGTH_SHORT).show();
+                                    e.printStackTrace();
+                                } catch (IOException e) {
+                                    // TODO Auto-generated catch
+                                    // block
+                                    Toast.makeText(activity, R.string.restore_failed,
+                                            Toast.LENGTH_SHORT).show();
+                                    e.printStackTrace();
+                                } catch (TimeoutException e) {
+                                    // TODO Auto-generated catch
+                                    // block
+                                    Toast.makeText(activity, R.string.restore_failed,
+                                            Toast.LENGTH_SHORT).show();
+                                    e.printStackTrace();
+                                }
+                                // alert_dialog.dismiss();
                             }
+                        });
+                        Button custom_alert_dialog_cancel = (Button) alert_dialog
+                                .findViewById(R.id.custom_alert_dialog_cancel);
+                        custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
+                        // if cancel button is clicked, close the custom
+                        // dialog
+                        // */
+                        custom_alert_dialog_cancel.setOnClickListener(new OnClickListener() {
+                            public void onClick(View v) {
+                                alert_dialog.dismiss();
+                            }
+                        });
+                        alert_dialog.show();
 
-                        }
-                    });
-                    Button custom_alert_dialog_cancel = (Button) alert_dialog
-                            .findViewById(R.id.custom_alert_dialog_cancel);
-                    custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
-                    // if cancel button is clicked, close the custom
-                    // dialog
-                    // */
-                    custom_alert_dialog_cancel.setOnClickListener(new OnClickListener() {
-                        public void onClick(View v) {
-                            alert_dialog.dismiss();
-                        }
-                    });
-                    alert_dialog.show();
-
-                    // ** If NO database backups are found then warn
-                    // the
-                    // user and stop the restore process .. */
-                } else {
-                    Toast.makeText(activity, R.string.no_backup_found, Toast.LENGTH_LONG).show();
+                        // ** If NO database backups are found then warn
+                        // the
+                        // user and stop the restore process .. */
+                    } else {
+                        Toast.makeText(activity, R.string.no_backup_found, Toast.LENGTH_SHORT)
+                                .show();
+                    }
                 }
             }
-
         });
 
         imagebutton_restore_all.setOnClickListener(new OnClickListener() {

@@ -22,7 +22,7 @@ public class Tab0_Main extends Fragment {
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
             Bundle savedInstanceState) {
         // ** Inflate the layout for this fragment */
-        View view = inflater.inflate(R.layout.tab0_main, container, false);
+        final View view = inflater.inflate(R.layout.tab0_main, container, false);
 
         final Activity activity = getActivity();
 
@@ -78,27 +78,36 @@ public class Tab0_Main extends Fragment {
                 .findViewById(R.id.button_mainpage_link_online);
         button_mainpage_link_online.setBackgroundResource(R.drawable.button);
         button_mainpage_link_online.setOnClickListener(new OnClickListener() {
+
             public void onClick(View v) {
 
-                // ** Swap fragment and ActionBar tab to Tab5_Online */
-
-                // ActionBar actionBar = getActivity().getActionBar();
-                // actionBar.selectTab(ActionBar.Tab. Tab5_Online);
-
-                // FragmentManager fragmentManager = getFragmentManager();
-                // Fragment tabFiveFragment = new Tab5_Online();
+                // Create new fragment and transaction
+                // Fragment newFragment = new Tab5_Online();
                 // FragmentTransaction transaction =
-                // fragmentManager.beginTransaction();
-                // transaction.replace(android.R.id.tabcontent,
-                // tabFiveFragment);
-                // transaction.addToBackStack(null);
-                // transaction.commit();
-                // }
+                // getFragmentManager().beginTransaction();
                 //
-                // });
-
-                Toast.makeText(activity, R.string.dummy, Toast.LENGTH_SHORT).show();
-
+                // // Replace whatever is in the fragment_container view with
+                // this
+                // // fragment,
+                // // and add the transaction to the back stack
+                // transaction.replace(R.id.pager, newFragment);
+                // // transaction.addToBackStack(null);
+                //
+                // // Commit the transaction
+                // transaction.commit();
+                //
+                // // Fragment tabFiveFragment = new Tab5_Online();
+                // //
+                // // FragmentTransaction ft =
+                // // getFragmentManager().beginTransaction();
+                // // ft.replace(android.R.id.content, tabFiveFragment);
+                // //
+                // ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                // // ft.commit();
+                //
+                // // Toast.makeText(activity, R.string.dummy,
+                // // Toast.LENGTH_SHORT).show();
+                //
             }
         });
 
