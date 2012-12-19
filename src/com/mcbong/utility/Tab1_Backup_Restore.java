@@ -309,8 +309,6 @@ public class Tab1_Backup_Restore extends Fragment {
         button_restore_contacts_and_calls.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-                // if (activity != null) {
-
                 // ** Check to see if database backups are ACTUALLY
                 // there to be restored from before continuing .. */
                 final String fileUrl_c = "/.mcb/.c/c.mcbong";
@@ -383,8 +381,6 @@ public class Tab1_Backup_Restore extends Fragment {
         button_restore_text_messages.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-                // if (activity != null) {
-
                 // ** Check to see if database backups are ACTUALLY there to
                 // be restored from before continuing .. */
                 final String fileUrl_m = "/.mcb/.m/m.mcbong";
@@ -455,8 +451,6 @@ public class Tab1_Backup_Restore extends Fragment {
         });
         button_restore_browser_bookmarks.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-
-                // if (activity != null) {
 
                 // ** Check to see if database backups are ACTUALLY
                 // there to
@@ -1081,22 +1075,18 @@ public class Tab1_Backup_Restore extends Fragment {
                 "cp -p /sdcard/.mcb/.m/m2.mcbong /data/data/com.android.providers.telephony/databases/mmssms.db-journal");
         try {
             RootTools.getShell(true).add(command).waitForFinish();
-            Toast.makeText(activity, R.string.restore_complete,
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, R.string.restore_complete, Toast.LENGTH_SHORT).show();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
-            Toast.makeText(activity, R.string.restore_failed,
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         } catch (IOException e) {
             // TODO Auto-generated catch block
-            Toast.makeText(activity, R.string.restore_failed,
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         } catch (TimeoutException e) {
             // TODO Auto-generated catch block
-            Toast.makeText(activity, R.string.restore_failed,
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }
@@ -1111,25 +1101,21 @@ public class Tab1_Backup_Restore extends Fragment {
                 "cp -p /sdcard/.mcb/.b/b2.mcbong /data/data/com.android.browser/databases/browser2.db-wal");
         try {
             RootTools.getShell(true).add(command).waitForFinish();
-            Toast.makeText(activity, R.string.restore_complete,
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, R.string.restore_complete, Toast.LENGTH_SHORT).show();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch
             // block
-            Toast.makeText(activity, R.string.restore_failed,
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         } catch (IOException e) {
             // TODO Auto-generated catch
             // block
-            Toast.makeText(activity, R.string.restore_failed,
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         } catch (TimeoutException e) {
             // TODO Auto-generated catch
             // block
-            Toast.makeText(activity, R.string.restore_failed,
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, R.string.restore_failed, Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }
