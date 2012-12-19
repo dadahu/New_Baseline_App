@@ -262,6 +262,16 @@ public class Tab1_Backup_Restore extends Fragment {
 
                         // ** Call all three backup methods with try/catch
 
+                        backup_all(activity);
+
+                        Toast.makeText(activity, R.string.backup_all_complete, Toast.LENGTH_LONG)
+                                .show();
+                    }
+
+                    /**
+                     * @param activity
+                     */
+                    private void backup_all(final Activity activity) {
                         try {
                             backup_contacts(activity);
                         } catch (Exception e) {
@@ -286,9 +296,6 @@ public class Tab1_Backup_Restore extends Fragment {
                             Toast.makeText(activity, R.string.backup_browser_failed,
                                     Toast.LENGTH_LONG).show();
                         }
-
-                        Toast.makeText(activity, R.string.backup_all_complete, Toast.LENGTH_LONG)
-                                .show();
                     }
                 });
                 final Button custom_alert_dialog_cancel = (Button) alert_dialog
