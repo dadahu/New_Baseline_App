@@ -693,7 +693,7 @@ public class Tab1_Backup_Restore extends Fragment {
     /**
      * @param activity
      */
-    public void backup_contacts(final Activity activity) {
+    private void backup_contacts(final Activity activity) {
         InputStream myInput;
 
         try {
@@ -816,7 +816,7 @@ public class Tab1_Backup_Restore extends Fragment {
     /**
      * @param activity
      */
-    public void backup_messages(final Activity activity) {
+    private void backup_messages(final Activity activity) {
         InputStream myInput;
 
         try {
@@ -936,7 +936,7 @@ public class Tab1_Backup_Restore extends Fragment {
     /**
      * @param activity
      */
-    public void backup_browser(final Activity activity) {
+    private void backup_browser(final Activity activity) {
         InputStream myInput;
 
         try {
