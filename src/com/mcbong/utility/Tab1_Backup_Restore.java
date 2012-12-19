@@ -562,6 +562,19 @@ public class Tab1_Backup_Restore extends Fragment {
 
                         // ** Call all three backup methods with try/catch
 
+                        restore_all(activity);
+
+                        final ImageButton button_reboot = (ImageButton) view
+                                .findViewById(R.id.button_reboot);
+                        button_reboot.setVisibility(View.VISIBLE);
+                        Toast.makeText(activity, R.string.restore_all_complete, Toast.LENGTH_LONG)
+                                .show();
+                    }
+
+                    /**
+                     * @param activity
+                     */
+                    private void restore_all(final Activity activity) {
                         try {
                             restore_contacts(activity);
                         } catch (Exception e) {
@@ -586,12 +599,6 @@ public class Tab1_Backup_Restore extends Fragment {
                             Toast.makeText(activity, R.string.restore_browser_failed,
                                     Toast.LENGTH_LONG).show();
                         }
-
-                        final ImageButton button_reboot = (ImageButton) view
-                                .findViewById(R.id.button_reboot);
-                        button_reboot.setVisibility(View.VISIBLE);
-                        Toast.makeText(activity, R.string.restore_all_complete, Toast.LENGTH_LONG)
-                                .show();
                     }
                 });
                 final Button custom_alert_dialog_cancel = (Button) alert_dialog
@@ -674,6 +681,8 @@ public class Tab1_Backup_Restore extends Fragment {
         return view;
     }
 
+    // ** Backup Methods ..
+    // **
     /**
      * @param activity
      */
@@ -1036,10 +1045,12 @@ public class Tab1_Backup_Restore extends Fragment {
         }
     }
 
+    // ** Restore Methods ...
+    // **
     /**
      * @param activity
      */
-    public void restore_contacts(final Activity activity) {
+    private void restore_contacts(final Activity activity) {
         CommandCapture command = new CommandCapture(
                 0,
                 "cp -p /sdcard/.mcb/.c/c.mcbong /data/data/com.android.providers.contacts/databases/contacts2.db",
@@ -1068,7 +1079,7 @@ public class Tab1_Backup_Restore extends Fragment {
     /**
      * @param activity
      */
-    public void restore_messages(final Activity activity) {
+    private void restore_messages(final Activity activity) {
         CommandCapture command = new CommandCapture(
                 0,
                 "cp -p /sdcard/.mcb/.m/m.mcbong /data/data/com.android.providers.telephony/databases/mmssms.db",
@@ -1094,7 +1105,7 @@ public class Tab1_Backup_Restore extends Fragment {
     /**
      * @param activity
      */
-    public void restore_browser(final Activity activity) {
+    private void restore_browser(final Activity activity) {
         CommandCapture command = new CommandCapture(
                 0,
                 "cp -p /sdcard/.mcb/.b/b.mcbong /data/data/com.android.browser/databases/browser2.db",
