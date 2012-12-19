@@ -43,18 +43,19 @@ public class Tab2_Addons extends Fragment {
         View view = inflater.inflate(R.layout.tab2_addons, container, false);
         final Activity activity = getActivity();
         // ** Define buttons and set image resources .. */
-        Button button_install_adw = (Button) view.findViewById(R.id.button_install_adw);
+        final Button button_install_adw = (Button) view.findViewById(R.id.button_install_adw);
         button_install_adw.setBackgroundResource(R.drawable.button);
-        Button button_install_golauncher = (Button) view
+        final Button button_install_golauncher = (Button) view
                 .findViewById(R.id.button_install_golauncher);
         button_install_golauncher.setBackgroundResource(R.drawable.button);
-        Button button_install_nova = (Button) view.findViewById(R.id.button_install_nova);
+        final Button button_install_nova = (Button) view.findViewById(R.id.button_install_nova);
         button_install_nova.setBackgroundResource(R.drawable.button);
-        Button button_install_ssdred = (Button) view.findViewById(R.id.button_install_ssdred);
+        final Button button_install_ssdred = (Button) view.findViewById(R.id.button_install_ssdred);
         button_install_ssdred.setBackgroundResource(R.drawable.button);
-        Button button_install_popstyle = (Button) view.findViewById(R.id.button_install_popstyle);
+        final Button button_install_popstyle = (Button) view
+                .findViewById(R.id.button_install_popstyle);
         button_install_popstyle.setBackgroundResource(R.drawable.button);
-        Button button_install_redics = (Button) view.findViewById(R.id.button_install_redics);
+        final Button button_install_redics = (Button) view.findViewById(R.id.button_install_redics);
         button_install_redics.setBackgroundResource(R.drawable.button);
 
         button_install_adw.setOnClickListener(new OnClickListener() {
@@ -66,18 +67,18 @@ public class Tab2_Addons extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.install_adw);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.adw);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -116,7 +117,7 @@ public class Tab2_Addons extends Fragment {
 
                         // ** download ADW Launcher from server ..
                         // */
-                        String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/adw.apk";
+                        final String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/adw.apk";
                         DownloadManager.Request request = new DownloadManager.Request(Uri
                                 .parse(url));
                         request.setDescription("ADW	Launcher Download");
@@ -144,7 +145,7 @@ public class Tab2_Addons extends Fragment {
                             public void onReceive(Context ctxt, Intent intent) {
                                 Toast.makeText(ctxt, R.string.installing_launcher,
                                         Toast.LENGTH_SHORT).show();
-                                Intent install = new Intent(Intent.ACTION_VIEW);
+                                final Intent install = new Intent(Intent.ACTION_VIEW);
                                 install.setDataAndType(Uri.fromFile(new File(Environment
                                         .getExternalStorageDirectory()
                                         + "/Download/"
@@ -157,7 +158,7 @@ public class Tab2_Addons extends Fragment {
                                 DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */
@@ -182,18 +183,18 @@ public class Tab2_Addons extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.install_golauncher);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.golauncher);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -232,7 +233,7 @@ public class Tab2_Addons extends Fragment {
 
                         // ** download Go-Launcher EX from server ..
                         // */
-                        String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/golauncherex.apk";
+                        final String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/golauncherex.apk";
                         DownloadManager.Request request = new DownloadManager.Request(Uri
                                 .parse(url));
                         request.setDescription("Go-Launcher EX Download");
@@ -260,7 +261,7 @@ public class Tab2_Addons extends Fragment {
                             public void onReceive(Context ctxt, Intent intent) {
                                 Toast.makeText(ctxt, R.string.installing_launcher,
                                         Toast.LENGTH_SHORT).show();
-                                Intent install = new Intent(Intent.ACTION_VIEW);
+                                final Intent install = new Intent(Intent.ACTION_VIEW);
                                 install.setDataAndType(Uri.fromFile(new File(Environment
                                         .getExternalStorageDirectory()
                                         + "/Download/"
@@ -273,7 +274,7 @@ public class Tab2_Addons extends Fragment {
                                 DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */
@@ -298,18 +299,18 @@ public class Tab2_Addons extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.install_nova);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.nova);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -347,7 +348,7 @@ public class Tab2_Addons extends Fragment {
 
                         // ** download Nova-Launcher from server ..
                         // */
-                        String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/nova.apk";
+                        final String url = "http://dl.dropbox.com/u/18271886/mcb/launchers/nova.apk";
                         DownloadManager.Request request = new DownloadManager.Request(Uri
                                 .parse(url));
                         request.setDescription("Nova Launcher EX Download");
@@ -375,7 +376,7 @@ public class Tab2_Addons extends Fragment {
                             public void onReceive(Context ctxt, Intent intent) {
                                 Toast.makeText(ctxt, R.string.installing_launcher,
                                         Toast.LENGTH_SHORT).show();
-                                Intent install = new Intent(Intent.ACTION_VIEW);
+                                final Intent install = new Intent(Intent.ACTION_VIEW);
                                 install.setDataAndType(Uri.fromFile(new File(Environment
                                         .getExternalStorageDirectory()
                                         + "/Download/"
@@ -388,7 +389,7 @@ public class Tab2_Addons extends Fragment {
                                 DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */
@@ -413,18 +414,18 @@ public class Tab2_Addons extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.install_ssdred);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.ssdred);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -462,7 +463,7 @@ public class Tab2_Addons extends Fragment {
 
                         // ** download SSD-Red Theme from server ..
                         // */
-                        String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/ssdred.apk";
+                        final String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/ssdred.apk";
                         DownloadManager.Request request = new DownloadManager.Request(Uri
                                 .parse(url));
                         request.setDescription("SSD-Red Theme Download");
@@ -490,7 +491,7 @@ public class Tab2_Addons extends Fragment {
                             public void onReceive(Context ctxt, Intent intent) {
                                 Toast.makeText(ctxt, R.string.installing_theme, Toast.LENGTH_SHORT)
                                         .show();
-                                Intent install = new Intent(Intent.ACTION_VIEW);
+                                final Intent install = new Intent(Intent.ACTION_VIEW);
                                 install.setDataAndType(Uri.fromFile(new File(Environment
                                         .getExternalStorageDirectory()
                                         + "/Download/"
@@ -502,7 +503,7 @@ public class Tab2_Addons extends Fragment {
                                 DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */
@@ -527,18 +528,18 @@ public class Tab2_Addons extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.install_popstyle);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.popstyle);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -577,7 +578,7 @@ public class Tab2_Addons extends Fragment {
 
                         // ** download PopStyle Theme from server ..
                         // */
-                        String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/popstyle.apk";
+                        final String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/popstyle.apk";
                         DownloadManager.Request request = new DownloadManager.Request(Uri
                                 .parse(url));
                         request.setDescription("PopStyle Theme Download");
@@ -605,7 +606,7 @@ public class Tab2_Addons extends Fragment {
                             public void onReceive(Context ctxt, Intent intent) {
                                 Toast.makeText(ctxt, R.string.installing_theme, Toast.LENGTH_SHORT)
                                         .show();
-                                Intent install = new Intent(Intent.ACTION_VIEW);
+                                final Intent install = new Intent(Intent.ACTION_VIEW);
                                 install.setDataAndType(Uri.fromFile(new File(Environment
                                         .getExternalStorageDirectory()
                                         + "/Download/"
@@ -618,7 +619,7 @@ public class Tab2_Addons extends Fragment {
                                 DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */
@@ -643,18 +644,18 @@ public class Tab2_Addons extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.install_redics);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.redics);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -691,7 +692,7 @@ public class Tab2_Addons extends Fragment {
 
                         // ** download Red-ICS Theme from server ..
                         // */
-                        String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/redics.apk";
+                        final String url = "http://dl.dropbox.com/u/18271886/mcb/Themes/redics.apk";
                         DownloadManager.Request request = new DownloadManager.Request(Uri
                                 .parse(url));
                         request.setDescription("Red-ICS Theme Download");
@@ -719,7 +720,7 @@ public class Tab2_Addons extends Fragment {
                             public void onReceive(Context ctxt, Intent intent) {
                                 Toast.makeText(ctxt, R.string.installing_theme, Toast.LENGTH_SHORT)
                                         .show();
-                                Intent install = new Intent(Intent.ACTION_VIEW);
+                                final Intent install = new Intent(Intent.ACTION_VIEW);
                                 install.setDataAndType(Uri.fromFile(new File(Environment
                                         .getExternalStorageDirectory()
                                         + "/Download/"
@@ -731,7 +732,7 @@ public class Tab2_Addons extends Fragment {
                                 DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */

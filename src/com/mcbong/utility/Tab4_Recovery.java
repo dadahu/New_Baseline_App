@@ -41,16 +41,17 @@ public class Tab4_Recovery extends Fragment {
         check_adb_status(view);
 
         // ** Define buttons.. */
-        Button button_reboot = (Button) view.findViewById(R.id.button_reboot);
+        final Button button_reboot = (Button) view.findViewById(R.id.button_reboot);
         button_reboot.setBackgroundResource(R.drawable.button);
-        Button button_reboot_recovery = (Button) view.findViewById(R.id.button_reboot_recovery);
+        final Button button_reboot_recovery = (Button) view
+                .findViewById(R.id.button_reboot_recovery);
         button_reboot_recovery.setBackgroundResource(R.drawable.button);
-        Button button_power_off = (Button) view.findViewById(R.id.button_power_off);
+        final Button button_power_off = (Button) view.findViewById(R.id.button_power_off);
         button_power_off.setBackgroundResource(R.drawable.button);
-        Button button_wireless_adb_enable = (Button) view
+        final Button button_wireless_adb_enable = (Button) view
                 .findViewById(R.id.button_wireless_adb_enable);
         button_wireless_adb_enable.setBackgroundResource(R.drawable.button);
-        Button button_wireless_adb_disable = (Button) view
+        final Button button_wireless_adb_disable = (Button) view
                 .findViewById(R.id.button_wireless_adb_disable);
 
         button_reboot.setOnClickListener(new OnClickListener() {
@@ -62,18 +63,18 @@ public class Tab4_Recovery extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.dialog_title_reboot_device);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.reboot);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -104,7 +105,7 @@ public class Tab4_Recovery extends Fragment {
                         }
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */
@@ -125,18 +126,18 @@ public class Tab4_Recovery extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.dialog_title_reboot_recovery);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.reboot_recovery);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -167,7 +168,7 @@ public class Tab4_Recovery extends Fragment {
                         }
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */
@@ -189,18 +190,18 @@ public class Tab4_Recovery extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.dialog_title_power_off_device);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.power_off);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -231,7 +232,7 @@ public class Tab4_Recovery extends Fragment {
                         }
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */
@@ -280,17 +281,19 @@ public class Tab4_Recovery extends Fragment {
                             adb_check.getInputStream()));
                     line = adb_check_IS.readLine();
                     if (line.equals("5555")) {
-                        ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
+                        final ImageView image = (ImageView) view
+                                .findViewById(R.id.imageView_adb_status);
                         image.setImageResource(R.drawable.on);
-                        TextView ip = (TextView) view.findViewById(R.id.textView_ip);
+                        final TextView ip = (TextView) view.findViewById(R.id.textView_ip);
                         ip.setText(R.string.wireless_adb_enabled_ip);
                         ip.setTextColor(getResources().getColor(R.color.Green));
                         Toast.makeText(activity, R.string.wireless_adb_enabled, Toast.LENGTH_SHORT)
                                 .show();
                     } else {
-                        ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
+                        final ImageView image = (ImageView) view
+                                .findViewById(R.id.imageView_adb_status);
                         image.setImageResource(R.drawable.off);
-                        TextView ip = (TextView) view.findViewById(R.id.textView_ip);
+                        final TextView ip = (TextView) view.findViewById(R.id.textView_ip);
                         ip.setText(R.string.wireless_adb_disabled_ip);
                         ip.setTextColor(getResources().getColor(R.color.DarkRed));
                         Toast.makeText(activity, R.string.wireless_adb_disabled, Toast.LENGTH_SHORT)
@@ -336,17 +339,19 @@ public class Tab4_Recovery extends Fragment {
                             adb_check.getInputStream()));
                     line = adb_check_IS.readLine();
                     if (line.equals("5555")) {
-                        ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
+                        final ImageView image = (ImageView) view
+                                .findViewById(R.id.imageView_adb_status);
                         image.setImageResource(R.drawable.on);
-                        TextView ip = (TextView) view.findViewById(R.id.textView_ip);
+                        final TextView ip = (TextView) view.findViewById(R.id.textView_ip);
                         ip.setText(R.string.wireless_adb_enabled_ip);
                         ip.setTextColor(getResources().getColor(R.color.Green));
                         Toast.makeText(activity, R.string.wireless_adb_enabled, Toast.LENGTH_SHORT)
                                 .show();
                     } else {
-                        ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
+                        final ImageView image = (ImageView) view
+                                .findViewById(R.id.imageView_adb_status);
                         image.setImageResource(R.drawable.off);
-                        TextView ip = (TextView) view.findViewById(R.id.textView_ip);
+                        final TextView ip = (TextView) view.findViewById(R.id.textView_ip);
                         ip.setText(R.string.wireless_adb_disabled_ip);
                         ip.setTextColor(getResources().getColor(R.color.DarkRed));
                         Toast.makeText(activity, R.string.wireless_adb_disabled, Toast.LENGTH_SHORT)
@@ -374,15 +379,15 @@ public class Tab4_Recovery extends Fragment {
                     adb_check.getInputStream()));
             line = adb_check_IS.readLine();
             if (line.equals("5555")) {
-                ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
+                final ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
                 image.setImageResource(R.drawable.on);
-                TextView ip = (TextView) view.findViewById(R.id.textView_ip);
+                final TextView ip = (TextView) view.findViewById(R.id.textView_ip);
                 ip.setText(R.string.wireless_adb_enabled_ip);
                 ip.setTextColor(getResources().getColor(R.color.Green));
             } else {
-                ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
+                final ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
                 image.setImageResource(R.drawable.off);
-                TextView ip = (TextView) view.findViewById(R.id.textView_ip);
+                final TextView ip = (TextView) view.findViewById(R.id.textView_ip);
                 ip.setText(R.string.wireless_adb_disabled_ip);
                 ip.setTextColor(getResources().getColor(R.color.DarkRed));
             }

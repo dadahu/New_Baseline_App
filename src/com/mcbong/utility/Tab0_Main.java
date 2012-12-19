@@ -30,7 +30,7 @@ public class Tab0_Main extends Fragment {
         // TODO - set up each button to initialise the required fragment and
         // change the action-bar tab to corresponding tab //
 
-        Button button_mainpage_link_backup_restore = (Button) view
+        final Button button_mainpage_link_backup_restore = (Button) view
                 .findViewById(R.id.button_mainpage_link_backup_restore);
         button_mainpage_link_backup_restore.setBackgroundResource(R.drawable.button);
         button_mainpage_link_backup_restore.setOnClickListener(new OnClickListener() {
@@ -41,7 +41,7 @@ public class Tab0_Main extends Fragment {
             }
         });
 
-        Button button_mainpage_link_addons = (Button) view
+        final Button button_mainpage_link_addons = (Button) view
                 .findViewById(R.id.button_mainpage_link_addons);
         button_mainpage_link_addons.setBackgroundResource(R.drawable.button);
         button_mainpage_link_addons.setOnClickListener(new OnClickListener() {
@@ -52,7 +52,7 @@ public class Tab0_Main extends Fragment {
             }
         });
 
-        Button button_mainpage_link_tweaks = (Button) view
+        final Button button_mainpage_link_tweaks = (Button) view
                 .findViewById(R.id.button_mainpage_link_tweaks);
         button_mainpage_link_tweaks.setBackgroundResource(R.drawable.button);
         button_mainpage_link_tweaks.setOnClickListener(new OnClickListener() {
@@ -63,7 +63,7 @@ public class Tab0_Main extends Fragment {
             }
         });
 
-        Button button_mainpage_link_recovery = (Button) view
+        final Button button_mainpage_link_recovery = (Button) view
                 .findViewById(R.id.button_mainpage_link_recovery);
         button_mainpage_link_recovery.setBackgroundResource(R.drawable.button);
         button_mainpage_link_recovery.setOnClickListener(new OnClickListener() {
@@ -74,7 +74,7 @@ public class Tab0_Main extends Fragment {
             }
         });
 
-        Button button_mainpage_link_online = (Button) view
+        final Button button_mainpage_link_online = (Button) view
                 .findViewById(R.id.button_mainpage_link_online);
         button_mainpage_link_online.setBackgroundResource(R.drawable.button);
         button_mainpage_link_online.setOnClickListener(new OnClickListener() {

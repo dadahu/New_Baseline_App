@@ -59,7 +59,7 @@ public class Tab5_Online extends Fragment {
         setup_webview(view);
 
         // * set up button image resources */
-        Button button_check_webver = (Button) view.findViewById(R.id.button_check_webver);
+        final Button button_check_webver = (Button) view.findViewById(R.id.button_check_webver);
         button_check_webver.setBackgroundResource(R.drawable.button);
 
         button_check_webver.setOnClickListener(new OnClickListener() {
@@ -72,7 +72,7 @@ public class Tab5_Online extends Fragment {
                     StrictMode.setThreadPolicy(policy);
 
                     // ** Define a URL for the desired page */
-                    URL url = new URL(
+                    final URL url = new URL(
                             "http://dl.dropbox.com/u/18271886/mcb/Test_Builds/version.txt");
 
                     // ** Read all the text within remote file */
@@ -92,33 +92,34 @@ public class Tab5_Online extends Fragment {
                     dialog.getWindow();
                     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     dialog.setContentView(R.layout.custom_dialog);
-                    TextView title = (TextView) dialog
+                    final TextView title = (TextView) dialog
                             .findViewById(R.id.custom_dialog_textview_title);
                     title.setText(R.string.update_checker_header);
 
-                    TextView title_installedver_header = (TextView) dialog
+                    final TextView title_installedver_header = (TextView) dialog
                             .findViewById(R.id.custom_dialog_textview_installedver_header);
                     title_installedver_header.setText(getString(R.string.installed_version));
 
-                    TextView title_installedver = (TextView) dialog
+                    final TextView title_installedver = (TextView) dialog
                             .findViewById(R.id.custom_dialog_textview_installedver);
                     title_installedver.setText(getString(R.string.version) + "\n" + "\n"
                             + ". . .\n");
 
                     // ** Get 'installed version' and 'remote version'
                     // strings to compare */
-                    String remote_version_string = sb.toString().toString();
-                    String current_version_string = getString(R.string.version).toString();
+                    final String remote_version_string = sb.toString().toString();
+                    final String current_version_string = getString(R.string.version).toString();
 
                     if (current_version_string.equals(remote_version_string)) {
-                        TextView title_onlinever_header = (TextView) dialog
+                        final TextView title_onlinever_header = (TextView) dialog
                                 .findViewById(R.id.custom_dialog_textview_onlinever_header);
                         title_onlinever_header.setTextColor(getResources().getColor(R.color.Cyan));
                         title_onlinever_header.setText(getString(R.string.versions_match));
-                        ImageView padder = (ImageView) dialog
+                        final ImageView padder = (ImageView) dialog
                                 .findViewById(R.id.padder2_custom_dialog);
                         padder.setVisibility(View.INVISIBLE);
-                        Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+                        final Button dialogButton = (Button) dialog
+                                .findViewById(R.id.custom_dialog_ok);
                         LayoutParams params = (RelativeLayout.LayoutParams) dialogButton
                                 .getLayoutParams();
                         params.addRule(RelativeLayout.CENTER_HORIZONTAL);
@@ -130,31 +131,34 @@ public class Tab5_Online extends Fragment {
                     } else {
                         Toast.makeText(activity, R.string.version_notuptodate, Toast.LENGTH_SHORT)
                                 .show();
-                        Button custom_dialog_update = (Button) dialog
+                        final Button custom_dialog_update = (Button) dialog
                                 .findViewById(R.id.custom_dialog_update);
                         custom_dialog_update.setVisibility(View.VISIBLE);
                         dialog.setTitle(R.string.update_available);
-                        TextView title_onlinever_header = (TextView) dialog
+                        final TextView title_onlinever_header = (TextView) dialog
                                 .findViewById(R.id.custom_dialog_textview_onlinever_header);
                         title_onlinever_header.setTextColor(getResources().getColor(R.color.Green));
                         title_onlinever_header.setText(getString(R.string.update_available));
-                        TextView title_onlinever = (TextView) dialog
+                        final TextView title_onlinever = (TextView) dialog
                                 .findViewById(R.id.custom_dialog_textview_onlinever);
                         title_onlinever.setVisibility(View.VISIBLE);
                         title_onlinever.setTextColor(getResources().getColor(R.color.Green));
                         title_onlinever.setText(sb.toString());
-                        Button dialogButton2 = (Button) dialog.findViewById(R.id.custom_dialog_ok2);
+                        final Button dialogButton2 = (Button) dialog
+                                .findViewById(R.id.custom_dialog_ok2);
                         dialogButton2.setBackgroundResource(R.drawable.small_button);
                         dialogButton2.setVisibility(View.VISIBLE);
-                        Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+                        final Button dialogButton = (Button) dialog
+                                .findViewById(R.id.custom_dialog_ok);
                         dialogButton.setVisibility(View.INVISIBLE);
                     }
 
-                    ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
+                    final ImageView image = (ImageView) dialog
+                            .findViewById(R.id.custom_dialog_image);
                     image.setImageResource(R.drawable.ic_launcher);
 
                     // * set up button image resources */
-                    Button custom_dialog_update = (Button) dialog
+                    final Button custom_dialog_update = (Button) dialog
                             .findViewById(R.id.custom_dialog_update);
                     custom_dialog_update.setBackgroundResource(R.drawable.small_button_update);
                     // if OK button is clicked, close the custom dialog */
@@ -190,7 +194,7 @@ public class Tab5_Online extends Fragment {
                             // ** Set up the 'Download Manager' and
                             // Download latest version from server
                             // ... */
-                            String url = "http://dl.dropbox.com/u/18271886/mcb/Test_Builds/McBong-Utility.apk";
+                            final String url = "http://dl.dropbox.com/u/18271886/mcb/Test_Builds/McBong-Utility.apk";
                             DownloadManager.Request request = new DownloadManager.Request(Uri
                                     .parse(url));
                             request.setDescription("McBong Utility Updater");
@@ -219,7 +223,7 @@ public class Tab5_Online extends Fragment {
                                 public void onReceive(Context ctxt, Intent intent) {
                                     Toast.makeText(ctxt, R.string.installing_update,
                                             Toast.LENGTH_SHORT).show();
-                                    Intent install = new Intent(Intent.ACTION_VIEW);
+                                    final Intent install = new Intent(Intent.ACTION_VIEW);
                                     install.setDataAndType(Uri.fromFile(new File(Environment
                                             .getExternalStorageDirectory()
                                             + "/Download/"
@@ -232,7 +236,7 @@ public class Tab5_Online extends Fragment {
                                     DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                         }
                     });
-                    Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+                    final Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
                     dialogButton.setBackgroundResource(R.drawable.small_button);
                     // ** if OK button is clicked, close the custom dialog
                     // */
@@ -241,7 +245,8 @@ public class Tab5_Online extends Fragment {
                             dialog.dismiss();
                         }
                     });
-                    Button dialogButton2 = (Button) dialog.findViewById(R.id.custom_dialog_ok2);
+                    final Button dialogButton2 = (Button) dialog
+                            .findViewById(R.id.custom_dialog_ok2);
                     dialogButton2.setBackgroundResource(R.drawable.small_button);
                     // ** if OK button is clicked, close the custom dialog
                     // */

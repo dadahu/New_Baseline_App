@@ -1,8 +1,6 @@
 
 package com.mcbong.utility;
 
-import java.util.ArrayList;
-
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
@@ -22,12 +20,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
-//import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.stericson.RootTools.RootTools;
+
+import java.util.ArrayList;
 
 public class McBong extends FragmentActivity {
 
@@ -46,12 +45,12 @@ public class McBong extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        Fragment tabZeroFragment = new Tab0_Main();
-        Fragment tabOneFragment = new Tab1_Backup_Restore();
-        Fragment tabTwoFragment = new Tab2_Addons();
-        Fragment tabThreeFragment = new Tab3_Tweaks();
-        Fragment tabFourFragment = new Tab4_Recovery();
-        Fragment tabFiveFragment = new Tab5_Online();
+        final Fragment tabZeroFragment = new Tab0_Main();
+        final Fragment tabOneFragment = new Tab1_Backup_Restore();
+        final Fragment tabTwoFragment = new Tab2_Addons();
+        final Fragment tabThreeFragment = new Tab3_Tweaks();
+        final Fragment tabFourFragment = new Tab4_Recovery();
+        final Fragment tabFiveFragment = new Tab5_Online();
 
         PagerAdapter mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mPagerAdapter.addFragment(tabZeroFragment);
@@ -75,32 +74,31 @@ public class McBong extends FragmentActivity {
             }
         });
 
-        ActionBar ab = getActionBar();
+        final ActionBar ab = getActionBar();
         ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        Tab tab0 = ab.newTab()
-                .setText("| Main Page Selector ..|..")
+        Tab tab0 = ab.newTab().setText("| Main Page Selector ..|..")
                 .setTabListener(new TabListener<Tab0_Main>(this, "tabzero", Tab0_Main.class));
 
         Tab tab1 = ab
                 .newTab()
                 .setText("| Backup & Restore ..|..")
-                .setTabListener(new TabListener<Tab1_Backup_Restore>(this, "tabone", Tab1_Backup_Restore.class));
+                .setTabListener(
+                        new TabListener<Tab1_Backup_Restore>(this, "tabone",
+                                Tab1_Backup_Restore.class));
 
-        Tab tab2 = ab.newTab()
-                .setText("| Add-on's ..|..")
+        Tab tab2 = ab.newTab().setText("| Add-on's ..|..")
                 .setTabListener(new TabListener<Tab2_Addons>(this, "tabtwo", Tab2_Addons.class));
 
-        Tab tab3 = ab.newTab()
-                .setText("| Tweak's ..|..")
+        Tab tab3 = ab.newTab().setText("| Tweak's ..|..")
                 .setTabListener(new TabListener<Tab3_Tweaks>(this, "tabthree", Tab3_Tweaks.class));
 
         Tab tab4 = ab
                 .newTab()
                 .setText("| Recovery ..|..")
-                .setTabListener(new TabListener<Tab4_Recovery>(this, "tabfour", Tab4_Recovery.class));
+                .setTabListener(
+                        new TabListener<Tab4_Recovery>(this, "tabfour", Tab4_Recovery.class));
 
-        Tab tab5 = ab.newTab()
-                .setText("| Online ..|")
+        Tab tab5 = ab.newTab().setText("| Online ..|")
                 .setTabListener(new TabListener<Tab5_Online>(this, "tabfive", Tab5_Online.class));
 
         ab.addTab(tab0);
@@ -128,18 +126,19 @@ public class McBong extends FragmentActivity {
                 dialog.getWindow();
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.custom_about_dialog);
-                Button dialogButton = (Button) dialog.findViewById(R.id.custom_about_dialog_ok);
+                final Button dialogButton = (Button) dialog
+                        .findViewById(R.id.custom_about_dialog_ok);
 
                 // ** Center OK button on dialog */
                 LayoutParams params = (RelativeLayout.LayoutParams) dialogButton.getLayoutParams();
                 params.addRule(RelativeLayout.CENTER_IN_PARENT);
                 dialogButton.setLayoutParams(params); // causes layout update
-                TextView title = (TextView) dialog
+                final TextView title = (TextView) dialog
                         .findViewById(R.id.custom_about_dialog_textview_title);
                 title.setText(R.string.menu_device_info);
 
-                String device_info_title = new String("====" + "\n" + " Device:" + "\n" + "===="
-                        + "\n"
+                final String device_info_title = new String("====" + "\n" + " Device:" + "\n"
+                        + "====" + "\n"
                         // + "\n"
                         + "Brand: "
                         + android.os.Build.BRAND
@@ -174,7 +173,8 @@ public class McBong extends FragmentActivity {
                         + android.os.Build.ID + "\n" + "User: " + android.os.Build.USER + "\n");
 
                 // ** set up the custom dialog components */
-                TextView text = (TextView) dialog.findViewById(R.id.custom_about_dialog_textview);
+                final TextView text = (TextView) dialog
+                        .findViewById(R.id.custom_about_dialog_textview);
                 text.setText(device_info_title);
 
                 // * set up button image resources */
@@ -196,9 +196,10 @@ public class McBong extends FragmentActivity {
                 dialog1.getWindow();
                 dialog1.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog1.setContentView(R.layout.custom_about_dialog);
-                Button dialogButton1 = (Button) dialog1.findViewById(R.id.custom_about_dialog_ok);
+                final Button dialogButton1 = (Button) dialog1
+                        .findViewById(R.id.custom_about_dialog_ok);
 
-                String app_info_title = new String(
+                final String app_info_title = new String(
                         "=========="
                                 + "\n"
                                 + "McBong-Utility"
@@ -208,7 +209,7 @@ public class McBong extends FragmentActivity {
                                 + "\n"
                                 + "An App designed for users who want all the useful feature's ALL in one place..");
 
-                String app_info = new String(
+                final String app_info = new String(
                         "*This Project was started as a mean's to easily set up a device after an initial ROM Flash,"
                                 + "and has had small feature's added here and there to make post-ROM-Flash even easier.\n"
                                 + "\n"
@@ -221,12 +222,13 @@ public class McBong extends FragmentActivity {
                         .getLayoutParams();
                 params1.addRule(RelativeLayout.CENTER_IN_PARENT);
                 dialogButton1.setLayoutParams(params1); // causes layout update
-                TextView title1 = (TextView) dialog1
+                final TextView title1 = (TextView) dialog1
                         .findViewById(R.id.custom_about_dialog_textview_title);
                 title1.setText(app_info_title);
 
                 // ** set up the custom dialog components */
-                TextView text1 = (TextView) dialog1.findViewById(R.id.custom_about_dialog_textview);
+                final TextView text1 = (TextView) dialog1
+                        .findViewById(R.id.custom_about_dialog_textview);
                 text1.setText(app_info);
 
                 // * set up button image resources */

@@ -30,10 +30,10 @@ import java.util.concurrent.TimeoutException;
 
 public class Tab1_Backup_Restore extends Fragment {
 
-    public String sd = android.os.Environment.getExternalStorageDirectory().getPath();
-    public String dirUrl_c = "/.mcb/.c";
-    public String dirUrl_b = "/.mcb/.b";
-    public String dirUrl_m = "/.mcb/.m";
+    public final String sd = android.os.Environment.getExternalStorageDirectory().getPath();
+    public final String dirUrl_c = "/.mcb/.c";
+    public final String dirUrl_b = "/.mcb/.b";
+    public final String dirUrl_m = "/.mcb/.m";
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -46,27 +46,27 @@ public class Tab1_Backup_Restore extends Fragment {
         final View view = inflater.inflate(R.layout.tab1_backup_restore, container, false);
         final Activity activity = getActivity();
         // ** Define buttons and set image resource .. */
-        ImageButton imagebutton_backup_all = (ImageButton) view
+        final ImageButton imagebutton_backup_all = (ImageButton) view
                 .findViewById(R.id.imagebutton_backup_all);
-        ImageButton imagebutton_restore_all = (ImageButton) view
+        final ImageButton imagebutton_restore_all = (ImageButton) view
                 .findViewById(R.id.imagebutton_restore_all);
-        ImageButton button_reboot = (ImageButton) view.findViewById(R.id.button_reboot);
-        Button button_backup_contacts_and_calls = (Button) view
+        final ImageButton button_reboot = (ImageButton) view.findViewById(R.id.button_reboot);
+        final Button button_backup_contacts_and_calls = (Button) view
                 .findViewById(R.id.button_backup_contacts_and_calls);
         button_backup_contacts_and_calls.setBackgroundResource(R.drawable.button);
-        Button button_backup_text_messages = (Button) view
+        final Button button_backup_text_messages = (Button) view
                 .findViewById(R.id.button_backup_text_messages);
         button_backup_text_messages.setBackgroundResource(R.drawable.button);
-        Button button_backup_browser_bookmarks = (Button) view
+        final Button button_backup_browser_bookmarks = (Button) view
                 .findViewById(R.id.button_backup_browser_bookmarks);
         button_backup_browser_bookmarks.setBackgroundResource(R.drawable.button);
-        Button button_restore_contacts_and_calls = (Button) view
+        final Button button_restore_contacts_and_calls = (Button) view
                 .findViewById(R.id.button_restore_contacts_and_calls);
         button_restore_contacts_and_calls.setBackgroundResource(R.drawable.button);
-        Button button_restore_text_messages = (Button) view
+        final Button button_restore_text_messages = (Button) view
                 .findViewById(R.id.button_restore_text_messages);
         button_restore_text_messages.setBackgroundResource(R.drawable.button);
-        Button button_restore_browser_bookmarks = (Button) view
+        final Button button_restore_browser_bookmarks = (Button) view
                 .findViewById(R.id.button_restore_browser_bookmarks);
         button_restore_browser_bookmarks.setBackgroundResource(R.drawable.button);
 
@@ -81,18 +81,18 @@ public class Tab1_Backup_Restore extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.backup_contacts_and_calls);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.icon_contacts_and_calls);
 
                 // * set up custom dialog button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -109,7 +109,7 @@ public class Tab1_Backup_Restore extends Fragment {
                     }
 
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if custom dialog cancel button is clicked, close
@@ -131,18 +131,18 @@ public class Tab1_Backup_Restore extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.backup_text_messages);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.icon_messages);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -160,7 +160,7 @@ public class Tab1_Backup_Restore extends Fragment {
                         backup_messages(activity);
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if cancel button is clicked, close the custom dialog */
@@ -182,18 +182,18 @@ public class Tab1_Backup_Restore extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.backup_browser_bookmarks);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.icon_browser);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -211,7 +211,7 @@ public class Tab1_Backup_Restore extends Fragment {
                         backup_browser(activity);
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if cancel button is clicked, close the custom
@@ -236,18 +236,18 @@ public class Tab1_Backup_Restore extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.backup_all);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.on);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -291,7 +291,7 @@ public class Tab1_Backup_Restore extends Fragment {
                                 .show();
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if cancel button is clicked, close the custom dialog */
@@ -313,12 +313,12 @@ public class Tab1_Backup_Restore extends Fragment {
 
                     // ** Check to see if database backups are ACTUALLY
                     // there to be restored from before continuing .. */
-                    String fileUrl_c = "/.mcb/.c/c.mcbong";
-                    String file = sd + fileUrl_c;
-                    File contacts_r = new File(file);
-                    String fileUrl_c2 = "/.mcb/.c/c2.mcbong";
-                    String file2 = sd + fileUrl_c2;
-                    File contacts_r2 = new File(file2);
+                    final String fileUrl_c = "/.mcb/.c/c.mcbong";
+                    final String file = sd + fileUrl_c;
+                    final File contacts_r = new File(file);
+                    final String fileUrl_c2 = "/.mcb/.c/c2.mcbong";
+                    final String file2 = sd + fileUrl_c2;
+                    final File contacts_r2 = new File(file2);
 
                     if (contacts_r.exists() & contacts_r2.exists()) {
 
@@ -329,18 +329,18 @@ public class Tab1_Backup_Restore extends Fragment {
                         alert_dialog.getWindow();
                         alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                         alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                        TextView title = (TextView) alert_dialog
+                        final TextView title = (TextView) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_textview_title);
                         title.setText(R.string.restore_contacts_and_calls);
-                        TextView alert_text = (TextView) alert_dialog
+                        final TextView alert_text = (TextView) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_textview);
                         alert_text.setText(R.string.confirm);
-                        ImageView image = (ImageView) alert_dialog
+                        final ImageView image = (ImageView) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_image);
                         image.setImageResource(R.drawable.icon_contacts_and_calls);
 
                         // * set up button image resources */
-                        Button custom_alert_dialog_ok = (Button) alert_dialog
+                        final Button custom_alert_dialog_ok = (Button) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_ok);
                         custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -387,7 +387,7 @@ public class Tab1_Backup_Restore extends Fragment {
                                 // alert_dialog.dismiss();
                             }
                         });
-                        Button custom_alert_dialog_cancel = (Button) alert_dialog
+                        final Button custom_alert_dialog_cancel = (Button) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_cancel);
                         custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                         // if cancel button is clicked, close the custom
@@ -415,12 +415,12 @@ public class Tab1_Backup_Restore extends Fragment {
 
                     // ** Check to see if database backups are ACTUALLY there to
                     // be restored from before continuing .. */
-                    String fileUrl_m = "/.mcb/.m/m.mcbong";
-                    String file = sd + fileUrl_m;
-                    File messages_r = new File(file);
-                    String fileUrl_m2 = "/.mcb/.m/m2.mcbong";
-                    String file2 = sd + fileUrl_m2;
-                    File messages_r2 = new File(file2);
+                    final String fileUrl_m = "/.mcb/.m/m.mcbong";
+                    final String file = sd + fileUrl_m;
+                    final File messages_r = new File(file);
+                    final String fileUrl_m2 = "/.mcb/.m/m2.mcbong";
+                    final String file2 = sd + fileUrl_m2;
+                    final File messages_r2 = new File(file2);
 
                     if (messages_r.exists() & messages_r2.exists()) {
 
@@ -431,18 +431,18 @@ public class Tab1_Backup_Restore extends Fragment {
                         alert_dialog.getWindow();
                         alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                         alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                        TextView title = (TextView) alert_dialog
+                        final TextView title = (TextView) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_textview_title);
                         title.setText(R.string.restore_text_messages);
-                        TextView alert_text = (TextView) alert_dialog
+                        final TextView alert_text = (TextView) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_textview);
                         alert_text.setText(R.string.confirm);
-                        ImageView image = (ImageView) alert_dialog
+                        final ImageView image = (ImageView) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_image);
                         image.setImageResource(R.drawable.icon_messages);
 
                         // * set up button image resources */
-                        Button custom_alert_dialog_ok = (Button) alert_dialog
+                        final Button custom_alert_dialog_ok = (Button) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_ok);
                         custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -485,7 +485,7 @@ public class Tab1_Backup_Restore extends Fragment {
                                 // alert_dialog.dismiss();
                             }
                         });
-                        Button custom_alert_dialog_cancel = (Button) alert_dialog
+                        final Button custom_alert_dialog_cancel = (Button) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_cancel);
                         custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                         // if cancel button is clicked, close the custom dialog
@@ -514,12 +514,12 @@ public class Tab1_Backup_Restore extends Fragment {
                     // ** Check to see if database backups are ACTUALLY
                     // there to
                     // be restored from before continuing .. */
-                    String fileUrl_b = "/.mcb/.b/b.mcbong";
-                    String file = sd + fileUrl_b;
-                    File browser_r = new File(file);
-                    String fileUrl_b2 = "/.mcb/.b/b2.mcbong";
-                    String file2 = sd + fileUrl_b2;
-                    File browser_r2 = new File(file2);
+                    final String fileUrl_b = "/.mcb/.b/b.mcbong";
+                    final String file = sd + fileUrl_b;
+                    final File browser_r = new File(file);
+                    final String fileUrl_b2 = "/.mcb/.b/b2.mcbong";
+                    final String file2 = sd + fileUrl_b2;
+                    final File browser_r2 = new File(file2);
 
                     if (browser_r.exists() & browser_r2.exists()) {
 
@@ -530,18 +530,18 @@ public class Tab1_Backup_Restore extends Fragment {
                         alert_dialog.getWindow();
                         alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                         alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                        TextView title = (TextView) alert_dialog
+                        final TextView title = (TextView) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_textview_title);
                         title.setText(R.string.restore_browser_bookmarks);
-                        TextView alert_text = (TextView) alert_dialog
+                        final TextView alert_text = (TextView) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_textview);
                         alert_text.setText(R.string.confirm);
-                        ImageView image = (ImageView) alert_dialog
+                        final ImageView image = (ImageView) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_image);
                         image.setImageResource(R.drawable.icon_browser);
 
                         // * set up button image resources */
-                        Button custom_alert_dialog_ok = (Button) alert_dialog
+                        final Button custom_alert_dialog_ok = (Button) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_ok);
                         custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -588,7 +588,7 @@ public class Tab1_Backup_Restore extends Fragment {
                                 // alert_dialog.dismiss();
                             }
                         });
-                        Button custom_alert_dialog_cancel = (Button) alert_dialog
+                        final Button custom_alert_dialog_cancel = (Button) alert_dialog
                                 .findViewById(R.id.custom_alert_dialog_cancel);
                         custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                         // if cancel button is clicked, close the custom
@@ -623,18 +623,18 @@ public class Tab1_Backup_Restore extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.restore_all);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.on);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -674,14 +674,14 @@ public class Tab1_Backup_Restore extends Fragment {
                                     Toast.LENGTH_LONG).show();
                         }
 
-                        ImageButton button_reboot = (ImageButton) view
+                        final ImageButton button_reboot = (ImageButton) view
                                 .findViewById(R.id.button_reboot);
                         button_reboot.setVisibility(View.VISIBLE);
                         Toast.makeText(activity, R.string.restore_all_complete, Toast.LENGTH_LONG)
                                 .show();
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if cancel button is clicked, close the custom dialog */
@@ -703,18 +703,18 @@ public class Tab1_Backup_Restore extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                TextView title = (TextView) alert_dialog
+                final TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.dialog_title_reboot_device);
-                TextView alert_text = (TextView) alert_dialog
+                final TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                ImageView image = (ImageView) alert_dialog
+                final ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.reboot);
 
                 // * set up button image resources */
-                Button custom_alert_dialog_ok = (Button) alert_dialog
+                final Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -745,7 +745,7 @@ public class Tab1_Backup_Restore extends Fragment {
                         }
                     }
                 });
-                Button custom_alert_dialog_cancel = (Button) alert_dialog
+                final Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */
@@ -774,8 +774,8 @@ public class Tab1_Backup_Restore extends Fragment {
 
             // Set the output folder on the
             // SDcard
-            String file = sd + dirUrl_c;
-            File directory = new File(file);
+            final String file = sd + dirUrl_c;
+            final File directory = new File(file);
             // Create the folder if it
             // doesn't exist:
             if (!directory.exists()) {
@@ -784,7 +784,7 @@ public class Tab1_Backup_Restore extends Fragment {
             // Set the output file stream
             // up:
 
-            OutputStream myOutput = new FileOutputStream(directory.getPath() + "/c.mcbong");
+            final OutputStream myOutput = new FileOutputStream(directory.getPath() + "/c.mcbong");
 
             // Transfer bytes from the input
             // file to the output file
@@ -820,8 +820,8 @@ public class Tab1_Backup_Restore extends Fragment {
 
             // Set the output folder on the
             // SDcard
-            String file = sd + dirUrl_c;
-            File directory = new File(file);
+            final String file = sd + dirUrl_c;
+            final File directory = new File(file);
             // Create the folder if it
             // doesn't exist:
             if (!directory.exists()) {
@@ -861,12 +861,12 @@ public class Tab1_Backup_Restore extends Fragment {
 
         // ** Check to see if database's
         // were ACTUALLY backed up .. */
-        String fileUrl_contacts_database = "/.mcb/.c/c.mcbong";
-        String file = sd + fileUrl_contacts_database;
-        File contacts_database = new File(file);
-        String fileUrl_contacts_database_journal = "/.mcb/.c/c2.mcbong";
-        String file1 = sd + fileUrl_contacts_database_journal;
-        File contacts_database_journal = new File(file1);
+        final String fileUrl_contacts_database = "/.mcb/.c/c.mcbong";
+        final String file = sd + fileUrl_contacts_database;
+        final File contacts_database = new File(file);
+        final String fileUrl_contacts_database_journal = "/.mcb/.c/c2.mcbong";
+        final String file1 = sd + fileUrl_contacts_database_journal;
+        final File contacts_database_journal = new File(file1);
 
         if (contacts_database.exists()) {
             Toast.makeText(activity, R.string.verify_database_contacts, Toast.LENGTH_LONG).show();
@@ -897,8 +897,8 @@ public class Tab1_Backup_Restore extends Fragment {
 
             // Set the output folder on the
             // SDcard
-            String file = sd + dirUrl_m;
-            File directory = new File(file);
+            final String file = sd + dirUrl_m;
+            final File directory = new File(file);
             // Create the folder if it
             // doesn't exist:
             if (!directory.exists()) {
@@ -907,7 +907,7 @@ public class Tab1_Backup_Restore extends Fragment {
             // Set the output file stream
             // up:
 
-            OutputStream myOutput = new FileOutputStream(directory.getPath() + "/m.mcbong");
+            final OutputStream myOutput = new FileOutputStream(directory.getPath() + "/m.mcbong");
 
             // Transfer bytes from the input
             // file to the output file
@@ -943,8 +943,8 @@ public class Tab1_Backup_Restore extends Fragment {
 
             // Set the output folder on the
             // SDcard
-            String file = sd + dirUrl_m;
-            File directory = new File(file);
+            final String file = sd + dirUrl_m;
+            final File directory = new File(file);
             // Create the folder if it
             // doesn't exist:
             if (!directory.exists()) {
@@ -953,7 +953,7 @@ public class Tab1_Backup_Restore extends Fragment {
             // Set the output file stream
             // up:
 
-            OutputStream myOutput = new FileOutputStream(directory.getPath() + "/m2.mcbong");
+            final OutputStream myOutput = new FileOutputStream(directory.getPath() + "/m2.mcbong");
 
             // Transfer bytes from the input
             // file to the output file
@@ -984,12 +984,12 @@ public class Tab1_Backup_Restore extends Fragment {
 
         // ** Check to see if database's
         // were ACTUALLY backed up .. */
-        String fileUrl_messages_database = "/.mcb/.m/m.mcbong";
-        String file = sd + fileUrl_messages_database;
-        File messages_database = new File(file);
-        String fileUrl_messages_database_journal = "/.mcb/.m/m2.mcbong";
-        String file1 = sd + fileUrl_messages_database_journal;
-        File messages_database_journal = new File(file1);
+        final String fileUrl_messages_database = "/.mcb/.m/m.mcbong";
+        final String file = sd + fileUrl_messages_database;
+        final File messages_database = new File(file);
+        final String fileUrl_messages_database_journal = "/.mcb/.m/m2.mcbong";
+        final String file1 = sd + fileUrl_messages_database_journal;
+        final File messages_database_journal = new File(file1);
 
         if (messages_database.exists()) {
             Toast.makeText(activity, R.string.verify_database_messages, Toast.LENGTH_LONG).show();
@@ -1016,8 +1016,8 @@ public class Tab1_Backup_Restore extends Fragment {
 
             // Set the output folder on the
             // SDcard
-            String file = sd + dirUrl_b;
-            File directory = new File(file);
+            final String file = sd + dirUrl_b;
+            final File directory = new File(file);
             // Create the folder if it
             // doesn't exist:
             if (!directory.exists()) {
@@ -1026,7 +1026,7 @@ public class Tab1_Backup_Restore extends Fragment {
             // Set the output file stream
             // up:
 
-            OutputStream myOutput = new FileOutputStream(directory.getPath() + "/b.mcbong");
+            final OutputStream myOutput = new FileOutputStream(directory.getPath() + "/b.mcbong");
 
             // Transfer bytes from the input
             // file to the output file
@@ -1062,8 +1062,8 @@ public class Tab1_Backup_Restore extends Fragment {
 
             // Set the output folder on the
             // SDcard
-            String file = sd + dirUrl_b;
-            File directory = new File(file);
+            final String file = sd + dirUrl_b;
+            final File directory = new File(file);
             // Create the folder if it
             // doesn't exist:
             if (!directory.exists()) {
@@ -1072,7 +1072,7 @@ public class Tab1_Backup_Restore extends Fragment {
             // Set the output file stream
             // up:
 
-            OutputStream myOutput = new FileOutputStream(directory.getPath() + "/b2.mcbong");
+            final OutputStream myOutput = new FileOutputStream(directory.getPath() + "/b2.mcbong");
 
             // Transfer bytes from the input
             // file to the output file
@@ -1103,12 +1103,12 @@ public class Tab1_Backup_Restore extends Fragment {
 
         // ** Check to see if database's
         // were ACTUALLY backed up .. */
-        String fileUrl_browser_database = "/.mcb/.b/b.mcbong";
-        String file = sd + fileUrl_browser_database;
-        File browser_database = new File(file);
-        String fileUrl_browser_database_journal = "/.mcb/.b/b2.mcbong";
-        String file1 = sd + fileUrl_browser_database_journal;
-        File browser_database_journal = new File(file1);
+        final String fileUrl_browser_database = "/.mcb/.b/b.mcbong";
+        final String file = sd + fileUrl_browser_database;
+        final File browser_database = new File(file);
+        final String fileUrl_browser_database_journal = "/.mcb/.b/b2.mcbong";
+        final String file1 = sd + fileUrl_browser_database_journal;
+        final File browser_database_journal = new File(file1);
 
         if (browser_database.exists()) {
             Toast.makeText(activity, R.string.verify_database_browser, Toast.LENGTH_LONG).show();
