@@ -45,6 +45,7 @@ public class Tab1_Backup_Restore extends Fragment {
         // ** Inflate the layout for this fragment */
         final View view = inflater.inflate(R.layout.tab1_backup_restore, container, false);
         final Activity activity = getActivity();
+
         // ** Define buttons and set image resource .. */
         final ImageButton imagebutton_backup_all = (ImageButton) view
                 .findViewById(R.id.imagebutton_backup_all);
@@ -656,7 +657,7 @@ public class Tab1_Backup_Restore extends Fragment {
                     /**
                          * 
                          */
-                    public void rootshell_reboot() {
+                    private void rootshell_reboot() {
                         CommandCapture command = new CommandCapture(0, "reboot");
                         try {
                             RootTools.getShell(true).add(command).waitForFinish();
