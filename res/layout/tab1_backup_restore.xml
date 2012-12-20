@@ -65,13 +65,14 @@
 				<Button
 					android:id="@+id/button_backup_contacts_and_calls"
 					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
+					android:layout_height="45dp"
 					android:background="@drawable/button_normal"
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
 					android:text="@string/backup_contacts_and_calls"
 					android:textColor="@color/White"
+					android:textSize="15sp"
 					android:textStyle="bold" />
 
 				<ImageView
@@ -93,14 +94,15 @@
 				<Button
 					android:id="@+id/button_backup_text_messages"
 					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
+					android:layout_height="45dp"
 					android:background="@drawable/button_normal"
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
 					android:text="@string/backup_text_messages"
 					android:textColor="@color/White"
-					android:textStyle="bold" />
+					android:textStyle="bold"
+					android:textSize="15sp" />
 
 				<ImageView
 					android:id="@+id/imageview_messages"
@@ -120,14 +122,15 @@
 				<Button
 					android:id="@+id/button_backup_browser_bookmarks"
 					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
+					android:layout_height="45dp"
 					android:background="@drawable/button_normal"
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
 					android:text="@string/backup_browser_bookmarks"
 					android:textColor="@color/White"
-					android:textStyle="bold" />
+					android:textStyle="bold"
+					android:textSize="15sp" />
 
 				<ImageView
 					android:id="@+id/ImageView01"
@@ -192,14 +195,15 @@
 				<Button
 					android:id="@+id/button_restore_contacts_and_calls"
 					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
+					android:layout_height="45dp"
 					android:background="@drawable/button_normal"
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
 					android:text="@string/restore_contacts_and_calls"
 					android:textColor="@color/White"
-					android:textStyle="bold" />
+					android:textStyle="bold"
+					android:textSize="15sp" />
 
 				<ImageView
 					android:id="@+id/imageview_contacts_r"
@@ -219,14 +223,15 @@
 				<Button
 					android:id="@+id/button_restore_text_messages"
 					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
+					android:layout_height="45dp"
 					android:background="@drawable/button_normal"
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
 					android:text="@string/restore_text_messages"
 					android:textColor="@color/White"
-					android:textStyle="bold" />
+					android:textStyle="bold"
+					android:textSize="15sp" />
 
 				<ImageView
 					android:id="@+id/imageview_messages_r"
@@ -246,14 +251,15 @@
 				<Button
 					android:id="@+id/button_restore_browser_bookmarks"
 					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
+					android:layout_height="45dp"
 					android:background="@drawable/button_normal"
 					android:gravity="center"
 					android:onClick="myClickHandler"
 					android:paddingBottom="10dp"
 					android:text="@string/restore_browser_bookmarks"
 					android:textColor="@color/White"
-					android:textStyle="bold" />
+					android:textStyle="bold"
+					android:textSize="15sp" />
 
 				<ImageView
 					android:id="@+id/ImageView02"

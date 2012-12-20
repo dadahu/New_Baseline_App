@@ -9,7 +9,7 @@
 	<string name="menu_quit">Exit App</string>
 	<string name="menu_device_info">About Device</string>
 	<string name="menu_version">Application Info</string>
-	<string name="version">Test Build 292 (19/12)</string>
+	<string name="version">Test Build 294 (20/12)</string>
 	<string name="installed_version">Current Installed Version ..</string>
 	<string name="mainpage_header">Pick Your Poison .. </string>
 	<string name="mainpage_link_backup_restore">Backup / Restore Section ..</string>
@@ -91,6 +91,8 @@
 	<string name="dialog_ok">Yes, Do It Now</string>
 	<string name="ok">OK</string>
 	<string name="confirm">Are you sure ?</string>
+	<!-- <string name="please_reboot">Reboot Device!</string> -->
+
 	<string name="dialog_title_reboot_recovery"> Perform Reboot into Recovery ?</string>
 	<string name="dialog_title_reboot_device"> Perform Device Reboot ?</string>
 	<string name="dialog_title_power_off_device"> Perform Device Shutdown ?</string>

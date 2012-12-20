@@ -220,6 +220,8 @@ public final class R {
         public static final int dialog_ok=0x7f050050;
         public static final int dialog_title_power_off_device=0x7f050055;
         public static final int dialog_title_reboot_device=0x7f050054;
+        /**  <string name="please_reboot">Reboot Device!</string> 
+         */
         public static final int dialog_title_reboot_recovery=0x7f050053;
         public static final int downloading=0x7f050040;
         public static final int downloading_launcher=0x7f050041;

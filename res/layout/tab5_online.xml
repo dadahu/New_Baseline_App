@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical" >
 
-    <WebView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/webview"
-        android:layout_width="fill_parent"
-        android:layout_height="365dp"
-        android:orientation="vertical" />
+	<WebView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/webview"
+		android:layout_width="fill_parent"
+		android:layout_height="365dp"
+		android:orientation="vertical" />
 
-    <TextView
-        android:id="@+id/padder1_tab3"
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
+	<TextView
+		android:id="@+id/padder1_tab3"
+		android:layout_width="match_parent"
+		android:layout_height="8dp" />
 
-    <Button
-        android:id="@+id/button_check_webver"
-        android:layout_width="225dp"
-        android:layout_height="35dp"
-        android:layout_gravity="center_horizontal|bottom"
-        android:background="@drawable/button_normal"
-        android:gravity="center"
-        android:onClick="myClickHandler"
-        android:paddingBottom="10dp"
-        android:text="@string/app_version_check"
-        android:textColor="@color/White"
-        android:textSize="12sp"
-        android:textStyle="bold" />
+	<Button
+		android:id="@+id/button_check_webver"
+		android:layout_width="225dp"
+		android:layout_height="35dp"
+		android:layout_gravity="center_horizontal|bottom"
+		android:background="@drawable/button_normal"
+		android:gravity="center"
+		android:onClick="myClickHandler"
+		android:paddingBottom="5dp"
+		android:text="@string/app_version_check"
+		android:textColor="@color/White"
+		android:textSize="12sp"
+		android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/padder2_tab3"
-        android:layout_width="match_parent"
-        android:layout_height="15dp" />
+	<TextView
+		android:id="@+id/padder2_tab3"
+		android:layout_width="match_parent"
+		android:layout_height="15dp" />
 
 </LinearLayout>
