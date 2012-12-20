@@ -88,7 +88,7 @@
 	<string name="wireless_adb_enabled">Wireless ADB - Is Enabled</string>
 	<string name="wireless_adb_disabled">Wireless ADB - Is Disabled</string>
 	<string name="dialog_cancel">Cancel</string>
-	<string name="dialog_ok">Yes, Do It Now</string>
+	<string name="dialog_ok">Do It Now!</string>
 	<string name="ok">OK</string>
 	<string name="confirm">Are you sure ?</string>
 	<!-- <string name="please_reboot">Reboot Device!</string> -->

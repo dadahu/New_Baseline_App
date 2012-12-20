@@ -64,28 +64,24 @@
 		<Button
 			android:id="@+id/custom_alert_dialog_cancel"
 			android:layout_width="95dp"
-			android:layout_height="50dp"
+			android:layout_height="45dp"
 			android:layout_alignParentLeft="true"
 			android:layout_below="@+id/padder2_custom_alert_dialog"
-			android:layout_marginBottom="20dp"
 			android:layout_marginLeft="10dp"
-			android:layout_marginTop="3dp"
 			android:text="@string/dialog_cancel"
 			android:textColor="@color/White"
-			android:textSize="10sp" />
+			android:textSize="12sp" />
 
 		<Button
 			android:id="@+id/custom_alert_dialog_ok"
 			android:layout_width="95dp"
-			android:layout_height="50dp"
+			android:layout_height="45dp"
 			android:layout_alignParentRight="true"
 			android:layout_below="@+id/padder2_custom_alert_dialog"
-			android:layout_marginBottom="20dp"
 			android:layout_marginRight="10dp"
-			android:layout_marginTop="3dp"
 			android:text="@string/dialog_ok"
 			android:textColor="@color/White"
-			android:textSize="10sp" />
+			android:textSize="12sp" />
 
 		<ProgressBar
 			android:id="@+id/progressBar1"
