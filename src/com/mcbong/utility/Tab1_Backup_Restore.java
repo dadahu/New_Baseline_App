@@ -81,18 +81,18 @@ public class Tab1_Backup_Restore extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                final TextView title = (TextView) alert_dialog
+                TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.backup_contacts_and_calls);
-                final TextView alert_text = (TextView) alert_dialog
+                TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                final ImageView image = (ImageView) alert_dialog
+                ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.icon_contacts_and_calls);
 
                 // * set up custom dialog button image resources */
-                final Button custom_alert_dialog_ok = (Button) alert_dialog
+                Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -109,7 +109,7 @@ public class Tab1_Backup_Restore extends Fragment {
                     }
 
                 });
-                final Button custom_alert_dialog_cancel = (Button) alert_dialog
+                Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if custom dialog cancel button is clicked, close
@@ -131,18 +131,18 @@ public class Tab1_Backup_Restore extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                final TextView title = (TextView) alert_dialog
+                TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.backup_text_messages);
-                final TextView alert_text = (TextView) alert_dialog
+                TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                final ImageView image = (ImageView) alert_dialog
+                ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.icon_messages);
 
                 // * set up button image resources */
-                final Button custom_alert_dialog_ok = (Button) alert_dialog
+                Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -160,7 +160,7 @@ public class Tab1_Backup_Restore extends Fragment {
                         backup_messages(activity);
                     }
                 });
-                final Button custom_alert_dialog_cancel = (Button) alert_dialog
+                Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if cancel button is clicked, close the custom dialog */
@@ -182,18 +182,18 @@ public class Tab1_Backup_Restore extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                final TextView title = (TextView) alert_dialog
+                TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.backup_browser_bookmarks);
-                final TextView alert_text = (TextView) alert_dialog
+                TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                final ImageView image = (ImageView) alert_dialog
+                ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.icon_browser);
 
                 // * set up button image resources */
-                final Button custom_alert_dialog_ok = (Button) alert_dialog
+                Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -211,7 +211,7 @@ public class Tab1_Backup_Restore extends Fragment {
                         backup_browser(activity);
                     }
                 });
-                final Button custom_alert_dialog_cancel = (Button) alert_dialog
+                Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if cancel button is clicked, close the custom
@@ -236,18 +236,18 @@ public class Tab1_Backup_Restore extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                final TextView title = (TextView) alert_dialog
+                TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.backup_all);
-                final TextView alert_text = (TextView) alert_dialog
+                TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                final ImageView image = (ImageView) alert_dialog
+                ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.on);
 
                 // * set up button image resources */
-                final Button custom_alert_dialog_ok = (Button) alert_dialog
+                Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -298,7 +298,7 @@ public class Tab1_Backup_Restore extends Fragment {
                         }
                     }
                 });
-                final Button custom_alert_dialog_cancel = (Button) alert_dialog
+                Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if cancel button is clicked, close the custom dialog */
@@ -335,18 +335,18 @@ public class Tab1_Backup_Restore extends Fragment {
                     alert_dialog.getWindow();
                     alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                    final TextView title = (TextView) alert_dialog
+                    TextView title = (TextView) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_textview_title);
                     title.setText(R.string.restore_contacts_and_calls);
-                    final TextView alert_text = (TextView) alert_dialog
+                    TextView alert_text = (TextView) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_textview);
                     alert_text.setText(R.string.confirm);
-                    final ImageView image = (ImageView) alert_dialog
+                    ImageView image = (ImageView) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_image);
                     image.setImageResource(R.drawable.icon_contacts_and_calls);
 
                     // * set up button image resources */
-                    final Button custom_alert_dialog_ok = (Button) alert_dialog
+                    Button custom_alert_dialog_ok = (Button) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_ok);
                     custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -367,7 +367,7 @@ public class Tab1_Backup_Restore extends Fragment {
                             // alert_dialog.dismiss();
                         }
                     });
-                    final Button custom_alert_dialog_cancel = (Button) alert_dialog
+                    Button custom_alert_dialog_cancel = (Button) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_cancel);
                     custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                     // if cancel button is clicked, close the custom
@@ -407,18 +407,18 @@ public class Tab1_Backup_Restore extends Fragment {
                     alert_dialog.getWindow();
                     alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                    final TextView title = (TextView) alert_dialog
+                    TextView title = (TextView) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_textview_title);
                     title.setText(R.string.restore_text_messages);
-                    final TextView alert_text = (TextView) alert_dialog
+                    TextView alert_text = (TextView) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_textview);
                     alert_text.setText(R.string.confirm);
-                    final ImageView image = (ImageView) alert_dialog
+                    ImageView image = (ImageView) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_image);
                     image.setImageResource(R.drawable.icon_messages);
 
                     // * set up button image resources */
-                    final Button custom_alert_dialog_ok = (Button) alert_dialog
+                    Button custom_alert_dialog_ok = (Button) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_ok);
                     custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -438,7 +438,7 @@ public class Tab1_Backup_Restore extends Fragment {
                             // alert_dialog.dismiss();
                         }
                     });
-                    final Button custom_alert_dialog_cancel = (Button) alert_dialog
+                    Button custom_alert_dialog_cancel = (Button) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_cancel);
                     custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                     // if cancel button is clicked, close the custom dialog
@@ -479,18 +479,18 @@ public class Tab1_Backup_Restore extends Fragment {
                     alert_dialog.getWindow();
                     alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                    final TextView title = (TextView) alert_dialog
+                    TextView title = (TextView) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_textview_title);
                     title.setText(R.string.restore_browser_bookmarks);
-                    final TextView alert_text = (TextView) alert_dialog
+                    TextView alert_text = (TextView) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_textview);
                     alert_text.setText(R.string.confirm);
-                    final ImageView image = (ImageView) alert_dialog
+                    ImageView image = (ImageView) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_image);
                     image.setImageResource(R.drawable.icon_browser);
 
                     // * set up button image resources */
-                    final Button custom_alert_dialog_ok = (Button) alert_dialog
+                    Button custom_alert_dialog_ok = (Button) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_ok);
                     custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -511,7 +511,7 @@ public class Tab1_Backup_Restore extends Fragment {
                             // alert_dialog.dismiss();
                         }
                     });
-                    final Button custom_alert_dialog_cancel = (Button) alert_dialog
+                    Button custom_alert_dialog_cancel = (Button) alert_dialog
                             .findViewById(R.id.custom_alert_dialog_cancel);
                     custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                     // if cancel button is clicked, close the custom
@@ -544,18 +544,18 @@ public class Tab1_Backup_Restore extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                final TextView title = (TextView) alert_dialog
+                TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.restore_all);
-                final TextView alert_text = (TextView) alert_dialog
+                TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                final ImageView image = (ImageView) alert_dialog
+                ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.on);
 
                 // * set up button image resources */
-                final Button custom_alert_dialog_ok = (Button) alert_dialog
+                Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -606,7 +606,7 @@ public class Tab1_Backup_Restore extends Fragment {
                         }
                     }
                 });
-                final Button custom_alert_dialog_cancel = (Button) alert_dialog
+                Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if cancel button is clicked, close the custom dialog */

@@ -67,18 +67,18 @@ public class Tab2_Addons extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                final TextView title = (TextView) alert_dialog
+                TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.install_adw);
-                final TextView alert_text = (TextView) alert_dialog
+                TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                final ImageView image = (ImageView) alert_dialog
+                ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.adw);
 
                 // * set up button image resources */
-                final Button custom_alert_dialog_ok = (Button) alert_dialog
+                Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -158,7 +158,7 @@ public class Tab2_Addons extends Fragment {
                                 DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                     }
                 });
-                final Button custom_alert_dialog_cancel = (Button) alert_dialog
+                Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */
@@ -183,18 +183,18 @@ public class Tab2_Addons extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                final TextView title = (TextView) alert_dialog
+                TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.install_golauncher);
-                final TextView alert_text = (TextView) alert_dialog
+                TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                final ImageView image = (ImageView) alert_dialog
+                ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.golauncher);
 
                 // * set up button image resources */
-                final Button custom_alert_dialog_ok = (Button) alert_dialog
+                Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -299,18 +299,18 @@ public class Tab2_Addons extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                final TextView title = (TextView) alert_dialog
+                TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.install_nova);
-                final TextView alert_text = (TextView) alert_dialog
+                TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                final ImageView image = (ImageView) alert_dialog
+                ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.nova);
 
                 // * set up button image resources */
-                final Button custom_alert_dialog_ok = (Button) alert_dialog
+                Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -414,18 +414,18 @@ public class Tab2_Addons extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                final TextView title = (TextView) alert_dialog
+                TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.install_ssdred);
-                final TextView alert_text = (TextView) alert_dialog
+                TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                final ImageView image = (ImageView) alert_dialog
+                ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.ssdred);
 
                 // * set up button image resources */
-                final Button custom_alert_dialog_ok = (Button) alert_dialog
+                Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -503,7 +503,7 @@ public class Tab2_Addons extends Fragment {
                                 DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                     }
                 });
-                final Button custom_alert_dialog_cancel = (Button) alert_dialog
+                Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */
@@ -528,18 +528,18 @@ public class Tab2_Addons extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                final TextView title = (TextView) alert_dialog
+                TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.install_popstyle);
-                final TextView alert_text = (TextView) alert_dialog
+                TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                final ImageView image = (ImageView) alert_dialog
+                ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.popstyle);
 
                 // * set up button image resources */
-                final Button custom_alert_dialog_ok = (Button) alert_dialog
+                Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -619,7 +619,7 @@ public class Tab2_Addons extends Fragment {
                                 DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                     }
                 });
-                final Button custom_alert_dialog_cancel = (Button) alert_dialog
+                Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */
@@ -644,18 +644,18 @@ public class Tab2_Addons extends Fragment {
                 alert_dialog.getWindow();
                 alert_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alert_dialog.setContentView(R.layout.custom_alert_dialog);
-                final TextView title = (TextView) alert_dialog
+                TextView title = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview_title);
                 title.setText(R.string.install_redics);
-                final TextView alert_text = (TextView) alert_dialog
+                TextView alert_text = (TextView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_textview);
                 alert_text.setText(R.string.confirm);
-                final ImageView image = (ImageView) alert_dialog
+                ImageView image = (ImageView) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_image);
                 image.setImageResource(R.drawable.redics);
 
                 // * set up button image resources */
-                final Button custom_alert_dialog_ok = (Button) alert_dialog
+                Button custom_alert_dialog_ok = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_ok);
                 custom_alert_dialog_ok.setBackgroundResource(R.drawable.small_button);
 
@@ -732,7 +732,7 @@ public class Tab2_Addons extends Fragment {
                                 DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                     }
                 });
-                final Button custom_alert_dialog_cancel = (Button) alert_dialog
+                Button custom_alert_dialog_cancel = (Button) alert_dialog
                         .findViewById(R.id.custom_alert_dialog_cancel);
                 custom_alert_dialog_cancel.setBackgroundResource(R.drawable.small_button);
                 // if OK button is clicked, close the custom dialog */

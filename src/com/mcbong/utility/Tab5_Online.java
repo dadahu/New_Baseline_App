@@ -92,15 +92,15 @@ public class Tab5_Online extends Fragment {
                     dialog.getWindow();
                     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     dialog.setContentView(R.layout.custom_dialog);
-                    final TextView title = (TextView) dialog
+                    TextView title = (TextView) dialog
                             .findViewById(R.id.custom_dialog_textview_title);
                     title.setText(R.string.update_checker_header);
 
-                    final TextView title_installedver_header = (TextView) dialog
+                    TextView title_installedver_header = (TextView) dialog
                             .findViewById(R.id.custom_dialog_textview_installedver_header);
                     title_installedver_header.setText(getString(R.string.installed_version));
 
-                    final TextView title_installedver = (TextView) dialog
+                    TextView title_installedver = (TextView) dialog
                             .findViewById(R.id.custom_dialog_textview_installedver);
                     title_installedver.setText(getString(R.string.version) + "\n" + "\n"
                             + ". . .\n");
@@ -111,15 +111,14 @@ public class Tab5_Online extends Fragment {
                     final String current_version_string = getString(R.string.version).toString();
 
                     if (current_version_string.equals(remote_version_string)) {
-                        final TextView title_onlinever_header = (TextView) dialog
+                        TextView title_onlinever_header = (TextView) dialog
                                 .findViewById(R.id.custom_dialog_textview_onlinever_header);
                         title_onlinever_header.setTextColor(getResources().getColor(R.color.Cyan));
                         title_onlinever_header.setText(getString(R.string.versions_match));
-                        final ImageView padder = (ImageView) dialog
+                        ImageView padder = (ImageView) dialog
                                 .findViewById(R.id.padder2_custom_dialog);
                         padder.setVisibility(View.INVISIBLE);
-                        final Button dialogButton = (Button) dialog
-                                .findViewById(R.id.custom_dialog_ok);
+                        Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
                         LayoutParams params = (RelativeLayout.LayoutParams) dialogButton
                                 .getLayoutParams();
                         params.addRule(RelativeLayout.CENTER_HORIZONTAL);
@@ -131,34 +130,31 @@ public class Tab5_Online extends Fragment {
                     } else {
                         Toast.makeText(activity, R.string.version_notuptodate, Toast.LENGTH_SHORT)
                                 .show();
-                        final Button custom_dialog_update = (Button) dialog
+                        Button custom_dialog_update = (Button) dialog
                                 .findViewById(R.id.custom_dialog_update);
                         custom_dialog_update.setVisibility(View.VISIBLE);
                         dialog.setTitle(R.string.update_available);
-                        final TextView title_onlinever_header = (TextView) dialog
+                        TextView title_onlinever_header = (TextView) dialog
                                 .findViewById(R.id.custom_dialog_textview_onlinever_header);
                         title_onlinever_header.setTextColor(getResources().getColor(R.color.Green));
                         title_onlinever_header.setText(getString(R.string.update_available));
-                        final TextView title_onlinever = (TextView) dialog
+                        TextView title_onlinever = (TextView) dialog
                                 .findViewById(R.id.custom_dialog_textview_onlinever);
                         title_onlinever.setVisibility(View.VISIBLE);
                         title_onlinever.setTextColor(getResources().getColor(R.color.Green));
                         title_onlinever.setText(sb.toString());
-                        final Button dialogButton2 = (Button) dialog
-                                .findViewById(R.id.custom_dialog_ok2);
+                        Button dialogButton2 = (Button) dialog.findViewById(R.id.custom_dialog_ok2);
                         dialogButton2.setBackgroundResource(R.drawable.small_button);
                         dialogButton2.setVisibility(View.VISIBLE);
-                        final Button dialogButton = (Button) dialog
-                                .findViewById(R.id.custom_dialog_ok);
+                        Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
                         dialogButton.setVisibility(View.INVISIBLE);
                     }
 
-                    final ImageView image = (ImageView) dialog
-                            .findViewById(R.id.custom_dialog_image);
+                    ImageView image = (ImageView) dialog.findViewById(R.id.custom_dialog_image);
                     image.setImageResource(R.drawable.ic_launcher);
 
                     // * set up button image resources */
-                    final Button custom_dialog_update = (Button) dialog
+                    Button custom_dialog_update = (Button) dialog
                             .findViewById(R.id.custom_dialog_update);
                     custom_dialog_update.setBackgroundResource(R.drawable.small_button_update);
                     // if OK button is clicked, close the custom dialog */
@@ -236,7 +232,7 @@ public class Tab5_Online extends Fragment {
                                     DownloadManager.ACTION_DOWNLOAD_COMPLETE));
                         }
                     });
-                    final Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
+                    Button dialogButton = (Button) dialog.findViewById(R.id.custom_dialog_ok);
                     dialogButton.setBackgroundResource(R.drawable.small_button);
                     // ** if OK button is clicked, close the custom dialog
                     // */
@@ -245,8 +241,7 @@ public class Tab5_Online extends Fragment {
                             dialog.dismiss();
                         }
                     });
-                    final Button dialogButton2 = (Button) dialog
-                            .findViewById(R.id.custom_dialog_ok2);
+                    Button dialogButton2 = (Button) dialog.findViewById(R.id.custom_dialog_ok2);
                     dialogButton2.setBackgroundResource(R.drawable.small_button);
                     // ** if OK button is clicked, close the custom dialog
                     // */

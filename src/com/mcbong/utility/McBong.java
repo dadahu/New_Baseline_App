@@ -126,14 +126,13 @@ public class McBong extends FragmentActivity {
                 dialog.getWindow();
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.custom_about_dialog);
-                final Button dialogButton = (Button) dialog
-                        .findViewById(R.id.custom_about_dialog_ok);
+                Button dialogButton = (Button) dialog.findViewById(R.id.custom_about_dialog_ok);
 
                 // ** Center OK button on dialog */
                 LayoutParams params = (RelativeLayout.LayoutParams) dialogButton.getLayoutParams();
                 params.addRule(RelativeLayout.CENTER_IN_PARENT);
                 dialogButton.setLayoutParams(params); // causes layout update
-                final TextView title = (TextView) dialog
+                TextView title = (TextView) dialog
                         .findViewById(R.id.custom_about_dialog_textview_title);
                 title.setText(R.string.menu_device_info);
 
@@ -173,8 +172,7 @@ public class McBong extends FragmentActivity {
                         + android.os.Build.ID + "\n" + "User: " + android.os.Build.USER + "\n");
 
                 // ** set up the custom dialog components */
-                final TextView text = (TextView) dialog
-                        .findViewById(R.id.custom_about_dialog_textview);
+                TextView text = (TextView) dialog.findViewById(R.id.custom_about_dialog_textview);
                 text.setText(device_info_title);
 
                 // * set up button image resources */
@@ -196,8 +194,7 @@ public class McBong extends FragmentActivity {
                 dialog1.getWindow();
                 dialog1.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog1.setContentView(R.layout.custom_about_dialog);
-                final Button dialogButton1 = (Button) dialog1
-                        .findViewById(R.id.custom_about_dialog_ok);
+                Button dialogButton1 = (Button) dialog1.findViewById(R.id.custom_about_dialog_ok);
 
                 final String app_info_title = new String(
                         "=========="
@@ -222,13 +219,12 @@ public class McBong extends FragmentActivity {
                         .getLayoutParams();
                 params1.addRule(RelativeLayout.CENTER_IN_PARENT);
                 dialogButton1.setLayoutParams(params1); // causes layout update
-                final TextView title1 = (TextView) dialog1
+                TextView title1 = (TextView) dialog1
                         .findViewById(R.id.custom_about_dialog_textview_title);
                 title1.setText(app_info_title);
 
                 // ** set up the custom dialog components */
-                final TextView text1 = (TextView) dialog1
-                        .findViewById(R.id.custom_about_dialog_textview);
+                TextView text1 = (TextView) dialog1.findViewById(R.id.custom_about_dialog_textview);
                 text1.setText(app_info);
 
                 // * set up button image resources */
