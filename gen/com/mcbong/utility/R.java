@@ -327,7 +327,9 @@ public final class R {
         public static final int tweaks=0x7f050044;
         public static final int update=0x7f050052;
         public static final int update_available=0x7f050053;
-        /**  Update Checker/Installer Strings 
+        /**  <string name="connect_to">Connect To..</string> 
+ <string name="connect_to_port"> :5555</string> 
+ Update Checker/Installer Strings 
          */
         public static final int update_checker_header=0x7f050051;
         public static final int verify_database_browser=0x7f05001d;

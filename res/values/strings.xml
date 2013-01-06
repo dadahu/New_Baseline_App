@@ -3,7 +3,7 @@
 
 	<!-- App Strings -->
 	<string name="app_name">McBong Utility</string>
-	<string name="version">Test Build 298 (06/01)</string>
+	<string name="version">Test Build 299 (06/01)</string>
 
 	<!-- Tab Strings -->
 
@@ -96,6 +96,9 @@
 	<string name="dialog_title_reboot_recovery"> Perform Reboot into Recovery ?</string>
 	<string name="dialog_title_reboot_device"> Perform Device Reboot ?</string>
 	<string name="dialog_title_power_off_device"> Perform Device Shutdown ?</string>
+	<!-- <string name="connect_to">Connect To..</string> -->
+	<!-- <string name="connect_to_port"> :5555</string> -->
+
 
 	<!-- Update Checker/Installer Strings -->
 	<string name="update_checker_header">Online Update Checker</string>
