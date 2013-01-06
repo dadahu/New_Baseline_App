@@ -45,6 +45,7 @@ public class McBong extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        // ** Create Fragment's .. */
         final Fragment tabZeroFragment = new Tab0_Main();
         final Fragment tabOneFragment = new Tab1_Backup_Restore();
         final Fragment tabTwoFragment = new Tab2_Addons();
@@ -52,6 +53,7 @@ public class McBong extends FragmentActivity {
         final Fragment tabFourFragment = new Tab4_Recovery();
         final Fragment tabFiveFragment = new Tab5_Online();
 
+        // ** Add Fragment's .. */
         PagerAdapter mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mPagerAdapter.addFragment(tabZeroFragment);
         mPagerAdapter.addFragment(tabOneFragment);
@@ -60,6 +62,7 @@ public class McBong extends FragmentActivity {
         mPagerAdapter.addFragment(tabFourFragment);
         mPagerAdapter.addFragment(tabFiveFragment);
 
+        // ** Set up pager adapter .. */
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.setOffscreenPageLimit(6);
@@ -74,6 +77,7 @@ public class McBong extends FragmentActivity {
             }
         });
 
+        // ** Set up ActionBar .. */
         final ActionBar ab = getActionBar();
         ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         Tab tab0 = ab.newTab().setText("| Main Page Selector ..|..")
@@ -125,55 +129,64 @@ public class McBong extends FragmentActivity {
                 final Dialog dialog = new Dialog(this, R.style.Theme_Dialog_Translucent);
                 dialog.getWindow();
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.custom_about_dialog);
+                dialog.setContentView(R.layout.custom_info_dialog);
                 Button dialogButton = (Button) dialog.findViewById(R.id.custom_about_dialog_ok);
 
-                // ** Center OK button on dialog */
+                // ** Centre OK button on dialog */
                 LayoutParams params = (RelativeLayout.LayoutParams) dialogButton.getLayoutParams();
                 params.addRule(RelativeLayout.CENTER_IN_PARENT);
                 dialogButton.setLayoutParams(params); // causes layout update
+
+                // ** set dialog title .. */
                 TextView title = (TextView) dialog
                         .findViewById(R.id.custom_about_dialog_textview_title);
                 title.setText(R.string.menu_device_info);
 
-                final String device_info_title = new String("====" + "\n" + " Device:" + "\n"
-                        + "====" + "\n"
-                        // + "\n"
-                        + "Brand: "
-                        + android.os.Build.BRAND
-                        + "\n"
-                        + "Model: "
-                        + android.os.Build.MODEL
-                        + "\n"
-                        + "Device: "
-                        + android.os.Build.DEVICE
-                        + "\n"
-                        + "Product: "
-                        + android.os.Build.PRODUCT
-                        + "\n"
-                        + "Board: "
-                        + android.os.Build.BOARD
-                        + "\n"
-                        + "\n"
-                        + "===="
-                        + "\n"
-                        + " OS:"
-                        + "\n"
-                        + "===="
-                        + "\n"
-                        // + "\n"
-                        + "Android Version: "
-                        + android.os.Build.VERSION.RELEASE
-                        + "\n"
-                        + "Display build: "
-                        + android.os.Build.DISPLAY
-                        + "\n"
-                        + "Build ID: "
-                        + android.os.Build.ID + "\n" + "User: " + android.os.Build.USER + "\n");
+                // ** reference dialog device info textview's.. */
+                final TextView textView_device_row2 = (TextView) dialog
+                        .findViewById(R.id.textView_device_row2);
+                final TextView textView_device_row4 = (TextView) dialog
+                        .findViewById(R.id.textView_device_row4);
+                final TextView textView_device_row6 = (TextView) dialog
+                        .findViewById(R.id.textView_device_row6);
+                final TextView textView_device_row8 = (TextView) dialog
+                        .findViewById(R.id.textView_device_row8);
 
-                // ** set up the custom dialog components */
-                TextView text = (TextView) dialog.findViewById(R.id.custom_about_dialog_textview);
-                text.setText(device_info_title);
+                // ** reference dialog application info textview's.. */
+                final TextView textView_os_row2 = (TextView) dialog
+                        .findViewById(R.id.textView_os_row2);
+                // final TextView textView_application_row4 = (TextView) dialog
+                // .findViewById(R.id.textView_application_row4); - Removed for
+                // now while look into different information to collect.
+                final TextView textView_os_row6 = (TextView) dialog
+                        .findViewById(R.id.textView_os_row6);
+                final TextView textView_os_row8 = (TextView) dialog
+                        .findViewById(R.id.textView_os_row8);
+
+                // ** Define device and application string's .. */
+                final String model = new String(android.os.Build.MODEL);
+                final String device = new String(android.os.Build.DEVICE);
+                final String product = new String(android.os.Build.PRODUCT);
+                final String board = new String(android.os.Build.BOARD);
+
+                final String version = new String(android.os.Build.VERSION.RELEASE);
+                // final String build = new String(android.os.Build.DISPLAY); -
+                // Removed for now while look into different information to
+                // collect.
+                final String build_id = new String(android.os.Build.ID);
+                final String user = new String(android.os.Build.USER);
+
+                // ** Set the correct strings to the correct textview's.. */
+                textView_device_row2.setText(model);
+                textView_device_row4.setText(device);
+                textView_device_row6.setText(product);
+                textView_device_row8.setText(board);
+
+                textView_os_row2.setText(version);
+                // textView_application_row4.setText(build); - Removed for now
+                // while look into different information to collect.
+                textView_os_row6.setText(build_id);
+                textView_os_row8.setText(user);
 
                 // * set up button image resources */
                 dialogButton.setBackgroundResource(R.drawable.small_button);
@@ -187,7 +200,7 @@ public class McBong extends FragmentActivity {
                 dialog.show();
                 return true;
 
-            case R.id.menuitem_version:
+            case R.id.menuitem_appinfo:
 
                 // ** call custom dialog into view and set characteristic's */
                 final Dialog dialog1 = new Dialog(this, R.style.Theme_Dialog_Translucent);

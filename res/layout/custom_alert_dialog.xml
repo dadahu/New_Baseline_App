@@ -31,7 +31,7 @@
 			android:layout_marginTop="10dp"
 			android:gravity="center"
 			android:textColor="@color/White"
-			android:textSize="20sp"
+			android:textSize="18sp"
 			android:textStyle="bold" />
 
 		<ImageView
@@ -52,7 +52,7 @@
 			android:layout_marginTop="10dp"
 			android:gravity="center_vertical"
 			android:textColor="@color/White"
-			android:textSize="20sp" />
+			android:textSize="18sp" />
 
 		<ImageView
 			android:id="@+id/padder2_custom_alert_dialog"

@@ -42,6 +42,7 @@ public class Tab2_Addons extends Fragment {
         // ** Inflate the layout for this fragment */
         View view = inflater.inflate(R.layout.tab2_addons, container, false);
         final Activity activity = getActivity();
+
         // ** Define buttons and set image resources .. */
         final Button button_install_adw = (Button) view.findViewById(R.id.button_install_adw);
         button_install_adw.setBackgroundResource(R.drawable.button);
