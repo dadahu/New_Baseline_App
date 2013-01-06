@@ -65,6 +65,26 @@ this project.
 
 Changelog's..
 ------------
+### 06/01/2013 ... Update no.12 ...
+
+* Added Reboot button to be visible after any database restore.
+* Small 'Restore' fix. This part revert's commit: eedcbe1-
+reverted the 'Restore' methods back to being inline and not seperate
+pirvate/public void's. code reverted using commit:  d4e933f.
+* Code Format... changed strings and more to 'final'.
+* Properly re-externalized restore methods. 
+* Removed useless- 'if (activity != null) {' calls.
+* Extracted restore all method.
+* Extracted backup all method.
+* Changed to private methods.
+* Fixed methods to private.
+* Minor layout,textsize and format changes.
+* Custom_dialog, custom_alert_dialog and custom_about_dialog - Now they
+match all other overall layout spec's.
+* Made device/android info method alot easier.
+* Also cleaned up strings etc for an easier read/work flow
+* More Derpfix's. 
+
 ### 14/12/2012 ... Update no.11 ...
 
 * Completely changed the way database backup's are made now uses 
