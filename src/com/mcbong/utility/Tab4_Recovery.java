@@ -285,7 +285,17 @@ public class Tab4_Recovery extends Fragment {
                                 .findViewById(R.id.imageView_adb_status);
                         image.setImageResource(R.drawable.on);
                         final TextView ip = (TextView) view.findViewById(R.id.textView_ip);
-                        ip.setText(R.string.wireless_adb_enabled_ip);
+                        // ** Get wireless ADB IP address to show when connected
+                        // .. */
+                        Process ip_check = Runtime.getRuntime().exec("ifconfig wlan0");
+                        BufferedReader ip_check_IS = new BufferedReader(new InputStreamReader(
+                                ip_check.getInputStream()));
+                        line = ip_check_IS.readLine().substring(0, 22);
+                        // final String output = new String(R.string.connect_to
+                        // + line
+                        // + R.string.connect_to_port);
+                        final String output = new String("Connect To.." + line + ":5555");
+                        ip.setText(output);
                         ip.setTextColor(getResources().getColor(R.color.Green));
                         Toast.makeText(activity, R.string.wireless_adb_enabled, Toast.LENGTH_SHORT)
                                 .show();
@@ -343,7 +353,17 @@ public class Tab4_Recovery extends Fragment {
                                 .findViewById(R.id.imageView_adb_status);
                         image.setImageResource(R.drawable.on);
                         final TextView ip = (TextView) view.findViewById(R.id.textView_ip);
-                        ip.setText(R.string.wireless_adb_enabled_ip);
+                        // ** Get wireless ADB IP address to show when connected
+                        // .. */
+                        Process ip_check = Runtime.getRuntime().exec("ifconfig wlan0");
+                        BufferedReader ip_check_IS = new BufferedReader(new InputStreamReader(
+                                ip_check.getInputStream()));
+                        line = ip_check_IS.readLine().substring(0, 22);
+                        // final String output = new String(R.string.connect_to
+                        // + line
+                        // + R.string.connect_to_port);
+                        final String output = new String("Connect To.." + line + ":5555");
+                        ip.setText(output);
                         ip.setTextColor(getResources().getColor(R.color.Green));
                         Toast.makeText(activity, R.string.wireless_adb_enabled, Toast.LENGTH_SHORT)
                                 .show();
@@ -382,7 +402,15 @@ public class Tab4_Recovery extends Fragment {
                 final ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
                 image.setImageResource(R.drawable.on);
                 final TextView ip = (TextView) view.findViewById(R.id.textView_ip);
-                ip.setText(R.string.wireless_adb_enabled_ip);
+                // ** Get wireless ADB IP address to show when connected .. */
+                Process ip_check = Runtime.getRuntime().exec("ifconfig wlan0");
+                BufferedReader ip_check_IS = new BufferedReader(new InputStreamReader(
+                        ip_check.getInputStream()));
+                line = ip_check_IS.readLine().substring(0, 22);
+                // final String output = new String(R.string.connect_to + line
+                // + R.string.connect_to_port);
+                final String output = new String("Connect To.." + line + ":5555");
+                ip.setText(output);
                 ip.setTextColor(getResources().getColor(R.color.Green));
             } else {
                 final ImageView image = (ImageView) view.findViewById(R.id.imageView_adb_status);
